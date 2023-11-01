@@ -53,7 +53,7 @@ $tim = date("H:i:s");
     <nav class="navbar clearHeader">
         <div class="col-12">
             <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand"
-                    href="#">Hospital Management System</a> </div>
+                    href="#">Hospital Medi-sena</a> </div>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Notifications -->
                 <li>
@@ -68,6 +68,7 @@ $tim = date("H:i:s");
     <section>
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
+            <!-- esto es si el admin esta logueado le va a mostrar este menu -->
             <?php
                 if(isset($_SESSION['adminid']))
                 {
@@ -140,6 +141,8 @@ $tim = date("H:i:s");
 
 
             <!-- doctor Menu -->
+            <!-- esto es si el doctor esta logueado le va a mostrar este menu -->
+
             <?php
             if(isset($_SESSION['doctorid']))
             {
@@ -206,6 +209,8 @@ $tim = date("H:i:s");
 
 
             <!-- patient Menu -->
+            <!-- esto es si el paciente esta logueado le va a mostrar este menu -->
+
             <?php
             if(isset($_SESSION['patientid']))
             {
@@ -214,35 +219,35 @@ $tim = date("H:i:s");
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active open"><a href="patientaccount.php"><i
-                                class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                                class="zmdi zmdi-home"></i><span>panel</span></a></li>
 
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Profile</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>perfil</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patientprofile.php">View Profile</a></li>
-                            <li><a href="patientchangepassword.php">Change Password</a></li>
+                            <li><a href="patientprofile.php">Ver perfil</a></li>
+                            <li><a href="patientchangepassword.php">Cambiar la contraseña</a></li>
                         </ul>
                     </li>
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patientappointment.php" >Add Appointment</a></li>
-                            <li><a href="viewappointment.php" >View Appointments</a></li>
+                            <li><a href="patientappointment.php" >Agregar cita</a></li>
+                            <li><a href="viewappointment.php" >Ver cita</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-add"></i><span>Prescription</span> </a>
+                                class="zmdi zmdi-account-add"></i><span>prescripción</span> </a>
                         <ul class="ml-menu">
-                            <li><a  href="patviewprescription.php">View Prescription Records</a>
+                            <li><a  href="patviewprescription.php">Ver registros de prescripción</a>
                             </li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-o"></i><span>Treatment</span> </a>
+                                class="zmdi zmdi-account-o"></i><span>Tratamiento</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewtreatmentrecord.php">View Treatment Records</a></li>
+                            <li><a href="viewtreatmentrecord.php">Ver registros de tratamiento</a></li>
                     </li>
                 </ul>
                 </li>

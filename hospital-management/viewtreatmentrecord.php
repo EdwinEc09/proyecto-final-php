@@ -41,7 +41,7 @@ if(isset($_GET['delid']))
 		{
 			$sql = $sql . " AND patientid='$_SESSION[patientid]'"; 
 		}
-		if(isset($_SESSION['doctorid']))
+		if(isset($_SESSION['doctorid'])) 
 		{
 			$sql = $sql . " AND doctorid='$_SESSION[doctorid]'";
 		}

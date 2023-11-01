@@ -12,11 +12,11 @@ if(!isset($_SESSION['doctorid']))
 ?>
 <div class="container-fluid">
   <div class="block-header">
-    <h2>Welcome <?php  $sql="SELECT * FROM `doctor` WHERE doctorid='$_SESSION[doctorid]' ";
+    <h2>Bienvenido <?php  $sql="SELECT * FROM `doctor` WHERE doctorid='$_SESSION[doctorid]' ";
     $doctortable = mysqli_query($con,$sql);
     $doc = mysqli_fetch_array($doctortable);
 
-    echo 'Dr. '. $doc['doctorname']; ?>
+    echo ' Dr. ' . $doc['doctorname']; ?>
 
   </h2>
 </div>
