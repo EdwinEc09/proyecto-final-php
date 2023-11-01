@@ -11,5 +11,3 @@ esta son las contraseñas
 Username: admin
 Password: Password@123
 
-**Making an appointment creates account for the patient**
-
