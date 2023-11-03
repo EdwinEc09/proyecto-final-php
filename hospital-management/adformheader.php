@@ -54,7 +54,7 @@ $tim = date("H:i:s");
     <nav class="navbar clearHeader">
         <div class="col-12">
             <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand"
-                    href="#">Hospital Management System</a> </div>
+                    href="#">Hospital Hospital Medi-Sena</a> </div>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Notifications -->
                 <li>
@@ -76,13 +76,13 @@ $tim = date("H:i:s");
             <!--Admin Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="adminaccount.php"><i
-                                class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                                class="zmdi zmdi-home"></i><span>Panel</span></a></li>
 
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Profile</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
                             <li><a href="adminprofile.php">Admin Profile</a></li>
                             <li><a href="adminchangepassword.php">Change Password</a></li>

@@ -78,7 +78,7 @@ $tim = date("H:i:s");
                 <ul class="list" style="overflow: hidden; width: auto; height: calc(-184px + 100vh);">
                     <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="adminaccount.php"><i
-                                class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                                class="zmdi zmdi-home"></i><span>Panel</span></a></li>
 
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
