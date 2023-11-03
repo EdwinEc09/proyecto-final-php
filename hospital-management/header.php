@@ -90,16 +90,15 @@ $tim = date("H:i:s");
         <!-- NAV -->
         <div class="collapse navbar-collapse navbar-right" id="nav-open-btn">
           <ul class="nav">
-            <li> <a href="index.php">Home </a></li>
-            <li><a href="about.php">About</a></li>            
-            <li><a href="patientappointment.php">Appointment </a></li>
-            <li><a href="contact.php">Contact </a></li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In </a>
+            <li> <a href="index.php">HOGAR </a></li>
+            <li><a href="about.php">ACERCA DE</a></li>            
+            <li><a href="patientappointment.php">CITA </a></li>
+            <li><a href="contact.php">CONTACTO</a></li>
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCESO</a>
               <ul class="dropdown-menu multi-level" style="display: none;">
-                <li><a href="adminlogin.php">Admin</a></li>
+                <li><a href="adminlogin.php">Administracion</a></li>
                 <li><a href="doctorlogin.php">Doctor</a></li>
-                <li><a href="patientlogin.php">Patient </a></li>
-                
+                <li><a href="patientlogin.php">Paciente</a></li>
               </ul>
             </li>           
           </ul>

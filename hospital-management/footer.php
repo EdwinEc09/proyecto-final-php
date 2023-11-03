@@ -4,12 +4,9 @@
 
       <!-- Support -->
       <div class="col-sm-7">
-        <h6>About Us</h6>
+        <h6>SOBRE NOSOTROS</h6>
         <div class="about-foot">
-          <p>A concern of Care and Cure Group is the only multi-disciplinary super-specialty tertiary care hospital in
-            Bangladesh, confidently providing comprehensive health care with the latest medical, surgical and diagnostic
-            facilities. These services are provided by expert medical professionals, skilled nurses and technologists
-            using state-of-the-art technology. </p>
+          <p>Una preocupación de Care and Cure Group es el único hospital multidisciplinario de atención terciaria de superespecialidad en Bangladesh, que brinda con confianza atención médica integral con las últimas instalaciones médicas, quirúrgicas y de diagnóstico. Estos servicios son brindados por profesionales médicos expertos, enfermeras calificadas y tecnólogos que utilizan tecnología de punta.</p>
         </div>
       </div>
 
@@ -18,7 +15,7 @@
       <!-- Conatct -->
       <div class="col-sm-5">
         <div class="con-info">
-          <h6>Contact Us</h6>
+          <h6>CONTÁCTENOS</h6>
           <p>1942 Poe Lane, Kansas City</p>
           <ul>
             <li class="mobile">

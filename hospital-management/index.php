@@ -23,7 +23,7 @@
                 data-elementdelay="0.03" 
                 data-endelementdelay="0.4" 
                 data-endspeed="300"
-                style="z-index: 5; font-size:50px; font-weight:500; color:black;  max-width: auto; max-height: auto; white-space: nowrap;">Hospital Management System</div>
+                style="z-index: 5; font-size:50px; font-weight:500; color:black;  max-width: auto; max-height: auto; white-space: nowrap;">Sistema de Gestión Hospitalaria</div>
             
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfr tp-resizeme" 
@@ -37,7 +37,7 @@
                 data-elementdelay="0.03" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 6; font-size:40px; color:gray; font-weight:500; white-space: nowrap;">We care about your health </div>
+                style="z-index: 6; font-size:40px; color:gray; font-weight:500; white-space: nowrap;">NOS PREOCUPAMOS POR TU SALUD</div>
             
             <!-- LAYER NR. 3 -->
             <div class="tp-caption sfb tp-resizeme" 
@@ -51,7 +51,7 @@
                 data-elementdelay="0.1" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 7;  font-size:22px; color:gray; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Best Hospitality Services in your town</div>
+                style="z-index: 7;  font-size:22px; color:gray; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Los mejores servicios hospitalarios en tu ciudad</div>
             
             <!-- LAYER NR. 4 -->
             <div class="tp-caption lfb tp-resizeme scroll" 
@@ -64,7 +64,7 @@
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
                 data-scrolloffset="0"
-                style="z-index: 8;"><a href="#." class="btn">Book Now</a> </div>
+                style="z-index: 8;"><a href="#." class="btn">Reservar ahora</a> </div>
           </li>
           
           <!-- SLIDE  -->
@@ -84,7 +84,7 @@
                 data-elementdelay="0.03" 
                 data-endelementdelay="0.4" 
                 data-endspeed="300"
-                style="z-index: 5; font-size:40px; font-weight:500; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">Best Diagnostic Centre </div>
+                style="z-index: 5; font-size:40px; font-weight:500; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">Mejor centro de diagnóstico</div>
             
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfr tp-resizeme" 
@@ -98,7 +98,7 @@
                 data-elementdelay="0.03" 
                 data-endelementdelay="0.4" 
                 data-endspeed="300"
-                style="z-index: 5; font-size:55px; font-weight:500; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">Care And Cure</div>
+                style="z-index: 5; font-size:55px; font-weight:500; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">Cuidado y cura</div>
             
             <!-- LAYER NR. 3 -->
             <div class="tp-caption sfb tp-resizeme" 
@@ -112,7 +112,7 @@
                 data-elementdelay="0.1" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 7; font-size:16px; color:#000; font-weight:500; line-height:26px; max-width: auto; max-height: auto; white-space: nowrap;">Improved diagnostic performance and heightened satisfaction of patients <br> and physicians delight.</div>
+                style="z-index: 7; font-size:16px; color:#000; font-weight:500; line-height:26px; max-width: auto; max-height: auto; white-space: nowrap;">Rendimiento diagnóstico mejorado y mayor satisfacción de los pacientes.<br>y los médicos se deleitan.</div>
             
             <!-- LAYER NR. 4 -->
             <div class="tp-caption lfb tp-resizeme scroll" 
@@ -125,7 +125,7 @@
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
                 data-scrolloffset="0"
-                style="z-index: 8;"><a href="#." class="btn">CONTACT NOW</a> </div>
+                style="z-index: 8;"><a href="#." class="btn">CONTACTA AHORA</a> </div>
           </li>
           
           <!-- SLIDE  -->
@@ -144,7 +144,7 @@
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
                 data-scrolloffset="0"
-                style="z-index: 6; font-size:40px; color:#000; font-weight:500; white-space: nowrap;"> Welcome To Our Research Center </div>
+                style="z-index: 6; font-size:40px; color:#000; font-weight:500; white-space: nowrap;">Bienvenido a nuestro centro de investigación</div>
             
             <!-- LAYER NR. 3 -->
             <div class="tp-caption sfb tp-resizeme text-center" 
@@ -157,8 +157,8 @@
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
                 data-scrolloffset="0"
-                style="z-index: 7; font-size:20px; font-weight:500; line-height:26px; color:#000; max-width: auto; max-height: auto; white-space: nowrap;">We work in a friendly and efficient using the latest <br>
-              technologies and sharing our expertise.</div>
+                style="z-index: 7; font-size:20px; font-weight:500; line-height:26px; color:#000; max-width: auto; max-height: auto; white-space: nowrap;">Trabajamos de manera amigable y eficiente utilizando las últimas <br>
+                tecnologías y compartiendo nuestra experiencia.</div>
           </li>
         </ul>
       </div>
@@ -177,26 +177,26 @@
             <!-- Intro Detail -->
             <div class="col-md-8">
               <div class="text-sec">
-                <h5>Health Check Ups</h5>
-                <p>Besides providing world class clinical lab services, Labaid Diagnostic Centre houses a pool of doctors of different medical specialty to serve the ailing patients as outpatients. They are all reputed and respected in their medical specialty for outstanding clinical management</p>
+                <h5>Chequeos de salud</h5>
+                <p>Además de brindar servicios de laboratorio clínico de clase mundial, Labaid Diagnostic Center alberga un grupo de médicos de diferentes especialidades médicas para atender a los pacientes enfermos de forma ambulatoria. Todos ellos gozan de reputación y respeto en su especialidad médica por su excelente gestión clínica.</p>
                 <ul class="row">
                   <li class="col-sm-6">
-                    <h6> <i class="lnr  lnr-checkmark-circle"></i> EMERGENCY CASE</h6>
+                    <h6> <i class="lnr  lnr-checkmark-circle"></i>CASO DE EMERGENCIA</h6>
                     <p>Excepteur sint occaecat cupidatat non roident, 
                       sunt in culpa qui officia deserunt mollit </p>
                   </li>
                   <li class="col-sm-6">
-                    <h6> <i class="lnr  lnr-checkmark-circle"></i> QUALIFIED DOCTORS</h6>
+                    <h6> <i class="lnr  lnr-checkmark-circle"></i>MEDICOS CALIFICADOS</h6>
                     <p>Excepteur sint occaecat cupidatat non roident, 
                       sunt in culpa qui officia deserunt mollit </p>
                   </li>
                   <li class="col-sm-6">
-                    <h6> <i class="lnr  lnr-checkmark-circle"></i> ONLINE APPOINTMENT</h6>
+                    <h6> <i class="lnr  lnr-checkmark-circle"></i>CITA EN LÍNEA</h6>
                     <p>Excepteur sint occaecat cupidatat non roident, 
                       sunt in culpa qui officia deserunt mollit </p>
                   </li>
                   <li class="col-sm-6">
-                    <h6> <i class="lnr  lnr-checkmark-circle"></i> FREE MEDICAL COUNSELING</h6>
+                    <h6> <i class="lnr  lnr-checkmark-circle"></i>ASESORAMIENTO MÉDICO GRATUITO</h6>
                     <p>Excepteur sint occaecat cupidatat non roident, 
                       sunt in culpa qui officia deserunt mollit </p>
                   </li>
@@ -208,13 +208,13 @@
             <div class="col-md-4">
               <div class="timing"> <i class="lnr lnr-clock"></i>
                 <ul>
-                  <li> Monday <span>8.00 - 16.00</span></li>
-                  <li> Tuesday <span>8.00 - 16.00</span></li>
-                  <li> Wednesday <span>8.00 - 16.00</span></li>
-                  <li> Thursday <span>8.00 - 16.00</span></li>
-                  <li> Friday <span>8.00 - 16.00</span></li>
-                  <li> Saturday <span>8.00 - 16.00</span></li>
-                  <li> Sunday <span>8.00 - 16.00</span></li>
+                  <li> Lunes <span>8.00 - 16.00</span></li>
+                  <li> Martes <span>8.00 - 16.00</span></li>
+                  <li> Miercoles <span>8.00 - 16.00</span></li>
+                  <li> Jueves <span>8.00 - 16.00</span></li>
+                  <li> Viernes <span>8.00 - 16.00</span></li>
+                  <li> Sabado <span>8.00 - 16.00</span></li>
+                  <li> Domingo <span>8.00 - 16.00</span></li>
                 </ul>
               </div>
             </div>
@@ -232,7 +232,7 @@
         
         <!-- Heading -->
         <div class="heading-block">
-          <h2>Our Services</h2>
+          <h2>Nuestros servicios</h2>
           <hr>
           <span>Duis autem vel eum iriure dolor in hendrerit n vuew lputate velit esse molestie conseu vel illum dolore eufe ugiat nulla facilisis at vero.</span> </div>
         
@@ -245,7 +245,7 @@
               <article>
                 <div class="media-left"> <i class="flaticon-eye-2 icon"></i> </div>
                 <div class="media-body">
-                  <h6>Eye Specialist</h6>
+                  <h6>ESPECIALISTA DE LOS OJOS</h6>
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit random text.</p>
                 </div>
               </article>
@@ -256,7 +256,7 @@
               <article>
                 <div class="media-left"> <i class="flaticon-operating-room icon"></i> </div>
                 <div class="media-body">
-                  <h6>Operation Theater</h6>
+                  <h6>TEATRO DE OPERACIONES</h6>
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit random text.</p>
                 </div>
               </article>
@@ -267,7 +267,7 @@
               <article>
                 <div class="media-left"> <i class="flaticon-icu-monitor icon"></i> </div>
                 <div class="media-body">
-                  <h6>ICU Department</h6>
+                  <h6>DEPARTAMENTO DE UCI</h6>
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit random text.</p>
                 </div>
               </article>
@@ -278,7 +278,7 @@
               <article>
                 <div class="media-left"> <i class="flaticon-doctor icon"></i> </div>
                 <div class="media-body">
-                  <h6>Qualified Doctors</h6>
+                  <h6>MÉDICOS CALIFICADOS</h6>
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit random text.</p>
                 </div>
               </article>
@@ -289,7 +289,7 @@
               <article>
                 <div class="media-left"> <i class="flaticon-heartbeat icon"></i> </div>
                 <div class="media-body">
-                  <h6>Heart Problems</h6>
+                  <h6>PROBLEMAS DEL CORAZÓN</h6>
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit random text.</p>
                 </div>
               </article>
@@ -300,7 +300,7 @@
               <article>
                 <div class="media-left"> <i class="flaticon-stomach-2 icon"></i> </div>
                 <div class="media-body">
-                  <h6>Stomach Problems</h6>
+                  <h6>PROBLEMAS ESTOMACALES</h6>
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit random text.</p>
                 </div>
               </article>
