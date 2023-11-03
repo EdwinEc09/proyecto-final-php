@@ -148,19 +148,19 @@ function validateform()
 {
 	if(document.frmadmin.adminname.value == "")
 	{
-		alert("Admin name should not be empty..");
+		alert("El nombre del administrador no debe estar vacío..");
 		document.frmadmin.adminname.focus();
 		return false;
 	}
 	else if(!document.frmadmin.adminname.value.match(alphaspaceExp))
 	{
-		alert("Admin name not valid..");
+		alert("El nombre del administrador no es válido..");
 		document.frmadmin.adminname.focus();
 		return false;
 	}
 	else if(document.frmadmin.loginid.value == "")
 	{
-		alert("Login ID should not be empty..");
+		alert("El ID de inicio de sesión no debe estar vacío..");
 		document.frmadmin.loginid.focus();
 		return false;
 	}
