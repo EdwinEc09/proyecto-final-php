@@ -49,7 +49,7 @@ if(isset($_POST['submit']))
 	else
 	{
 		$err = "<div class='alert alert-danger'>
-		<strong>Oh !</strong> Change a few things up and try submitting again.
+		<strong>¡Oh!</strong> Cambie algunas cosas e intente enviarlo de nuevo.
 	</div>";
 	}
 }
@@ -110,25 +110,25 @@ function validateform()
 {
 	if(document.frmadminlogin.loginid.value == "")
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong> Please enter Password</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>¡Atención!</strong> Introduzca la contraseña</div>";
 		document.frmadminlogin.loginid.focus();
 		return false;
 	}
 	else if(!document.frmadminlogin.loginid.value.match(alphanumericExp))
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-Warning'><strong>Heads up!</strong> Invalid Password</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-Warning'><strong>¡Atención!</strong> Contraseña no válida</div>";
 		document.frmadminlogin.loginid.focus();
 		return false;
 	}
 	else if(document.frmadminlogin.password.value == "")
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong> Should not be empty</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>¡Atención!</strong> No debe estar vacío</div>";
 		document.frmadminlogin.password.focus();
 		return false;
 	}
 	else if(document.frmadminlogin.password.value.length < 8)
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong> Length should be 8</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>¡Atención!</strong> La longitud debe ser 8</div>";
 		document.frmadminlogin.password.focus();
 		return false;
 	}
