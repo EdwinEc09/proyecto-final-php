@@ -16,7 +16,7 @@ include("dbconnection.php");
 <div class="container-fluid">
     <div class="block-header">
         <h2>Dashboard</h2>
-        <small class="text-muted">Welcome to Admin Panel</small>
+        <small class="text-muted">Bienvenido al panel de administración</small>
     </div>
 
     <div class="row clearfix">
@@ -24,7 +24,7 @@ include("dbconnection.php");
             <div class="info-box-4 hover-zoom-effect">
                 <div class="icon"> <i class="zmdi zmdi-male-female col-blush"></i> </div>
                 <div class="content">
-                    <div class="text">Total Patient</div>
+                    <div class="text">Total Pacientes</div>
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM patient WHERE status='Active'";
@@ -39,7 +39,7 @@ include("dbconnection.php");
             <div class="info-box-4 hover-zoom-effect">
                 <div class="icon"> <i class="zmdi zmdi-account-circle col-cyan"></i> </div>
                 <div class="content">
-                    <div class="text">Total Doctor </div>
+                    <div class="text">Total Doctores </div>
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM doctor WHERE status='Active' ";
@@ -54,7 +54,7 @@ include("dbconnection.php");
             <div class="info-box-4 hover-zoom-effect">
                 <div class="icon"> <i class="zmdi zmdi-account-box-mail col-blue"></i> </div>
                 <div class="content">
-                    <div class="text">Total Administrator</div>
+                    <div class="text">Total Administratores</div>
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM admin WHERE status='Active'";
@@ -69,7 +69,7 @@ include("dbconnection.php");
             <div class="info-box-4 hover-zoom-effect">
                 <div class="icon"> <i class="zmdi zmdi-money col-green"></i> </div>
                 <div class="content">
-                    <div class="text">Hospital Earning</div>
+                    <div class="text">Ingresos hospitalarios</div>
                     <div class="number">$ 
                         <?php 
               $sql = "SELECT sum(bill_amount) as total  FROM `billing_records` ";
