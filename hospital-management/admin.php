@@ -43,7 +43,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center"> Addsss New Admin </h2>
+		<h2 class="text-center"> Agregar Nuevo Administrador </h2>
 	</div>
 	<div class="row clearfix">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -56,7 +56,7 @@ if(isset($_GET['editid']))
 						<div class="row clearfix">
 							<div class="col-sm-12">   
 								<div class="form-group">
-									<label> Admin Name</label>
+									<label> Nombre del Administrador</label>
 									<div class="form-line">
 										<input type="text" class="form-control"  name="adminname" id="adminname" value="<?php echo $rsedit['adminname']; ?>"/>
 									</div>
@@ -68,7 +68,7 @@ if(isset($_GET['editid']))
 						<div class="row clearfix"> 
 							<div class="col-sm-12">                           
 								<div class="form-group">
-									<label>Admin Log in Id</label>
+									<label>Id. de inicio de sesión de administrador</label>
 									<div class="form-line">
 										<input type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rsedit['loginid']; ?>" />
 									</div>
@@ -78,7 +78,7 @@ if(isset($_GET['editid']))
 						<div class="row clearfix"> 
 							<div class="col-sm-12">                              
 								<div class="form-group">
-									<label> Admin Password</label>
+									<label> Contraseña de administrador</label>
 									<div class="form-line">
 										<input type="password" class="form-control"  name="password" id="password" value="<?php echo $rsedit['password']; ?>"/>
 									</div>
@@ -88,7 +88,7 @@ if(isset($_GET['editid']))
 						<div class="row clearfix"> 
 							<div class="col-sm-12">                              
 								<div class="form-group">
-									<label>Confirm Admin Password</label>
+									<label>Confirmar contraseña de administrador</label>
 									<div class="form-line">
 										<input type="password" class="form-control"  name="cnfirmpassword" id="cnfirmpassword" value="<?php echo $rsedit['confirmpassword']; ?>"/>
 									</div>
@@ -98,12 +98,12 @@ if(isset($_GET['editid']))
 						<div class="row clearfix">                            
 							<div class="col-sm-3 col-xs-12">
 								<div class="form-group drop-custum">
-									<label>Status</label>
+									<label>Estado</label>
 
 									<select class="form-control show-tick" name="select">
-										<option value="" selected>Select One</option>
+										<option value="" selected>Seleccione uno</option>
 										<?php
-										$arr = array("Active","Inactive");
+										$arr = array("Activo","Inactivo");
 										foreach($arr as $val)
 										{
 											if($val == $rsedit['status'])
@@ -122,7 +122,7 @@ if(isset($_GET['editid']))
 						</div>                    
 
 						<div class="col-sm-12">
-							<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit" value="Submit" />
+							<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit" value="Enviar" />
 
 						</div>
 					</div>

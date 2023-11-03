@@ -58,7 +58,7 @@ if(isset($_POST['submit']))
 ?></div>
     <div class="card-top"></div>
     <div class="card">
-        <h1 class="title"><span>Hospital Management System</span>Login <span class="msg">Hello, Doctor!</span></h1>
+        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login <span class="msg">Hola, Doctor!</span></h1>
         <div class="col-md-12">
 
     <form method="post" action="" name="frmadminlogin" id="sign_in" onSubmit="return validateform()">
@@ -73,11 +73,11 @@ if(isset($_POST['submit']))
                 <div>
                     <div class="">
                         <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
-                        <label for="rememberme">Remember Me</label>
+                        <label for="rememberme">Recuérdame</label>
                     </div>
                     <div class="text-center">
-					<input type="submit" name="submit" id="submit" value="Login" class="btn btn-raised waves-effect g-bg-cyan" /></div>
-                    <div class="text-center"> <a href="forgot-password.html">Forgot Password?</a></div>
+					<input type="submit" name="submit" id="submit" value="Iniciar sesión" class="btn btn-raised waves-effect g-bg-cyan" /></div>
+                    <div class="text-center"> <a href="forgot-password.html">¿Ha olvidado su contraseña?</a></div>
                 </div>
             </form>
         </div>
