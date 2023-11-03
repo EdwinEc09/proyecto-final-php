@@ -157,7 +157,7 @@ $tim = date("H:i:s");
                                 class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
                             <li><a href="doctorprofile.php">Perfil</a></li>
-                            <li><a href="doctorchangepassword.php">Change Password</a></li>
+                            <li><a href="doctorchangepassword.php">Cambiar contraseña</a></li>
                         </ul>
                     </li>
 
