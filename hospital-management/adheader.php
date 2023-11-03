@@ -162,39 +162,37 @@ $tim = date("H:i:s");
                     </li>
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewappointmentpending.php" style="width:250px;">View Pending Appointments</a>
+                            <li><a href="viewappointmentpending.php" style="width:250px;">Ver citas pendientes</a>
                             </li>
-                            <li><a href="viewappointmentapproved.php" style="width:250px;">View Approved
-                                    Appointments</a></li>
+                            <li><a href="viewappointmentapproved.php" style="width:250px;">Ver citas aprobadas</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
+                                class="zmdi zmdi-account-add"></i><span>Doctor</span> </a>
                         <ul class="ml-menu">
                             
-                            <li><a href="doctortimings.php">Add Visiting Hour</a></li>
-                            <li><a href="viewdoctortimings.php">View Visiting Hour</a></li>
+                            <li><a href="doctortimings.php">Añadir hora de visita</a></li>
+                            <li><a href="viewdoctortimings.php">Ver la hora de visita</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                                class="zmdi zmdi-account-o"></i><span>Pacientes</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewpatient.php">View Patient</a>
+                            <li><a href="viewpatient.php">Ver Paciente</a>
                             </li>
                         </ul>
                     </li>
 
-                    <li> <a href="viewdoctorconsultancycharge.php"><i class="zmdi zmdi-copy"></i><span>Income
-                                Report</span> </a></li>
+                    <li> <a href="viewdoctorconsultancycharge.php"><i class="zmdi zmdi-copy"></i><span>Informe de ingresos</span> </a></li>
 
 
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-copy"></i><span>Service</span> </a>
+                                class="zmdi zmdi-copy"></i><span>Servicio</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewtreatmentrecord.php">View Treatment Records</a></li>
-                            <li><a href="viewtreatment.php">View Treatment</a></li>
+                            <li><a href="viewtreatmentrecord.php">Ver registros de tratamiento</a></li>
+                            <li><a href="viewtreatment.php">Ver tratamiento</a></li>
                         </ul>
                     </li>
 
@@ -216,7 +214,7 @@ $tim = date("H:i:s");
             ?>
             <div class="menu">
                 <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="patientaccount.php"><i
                                 class="zmdi zmdi-home"></i><span>panel</span></a></li>
 
