@@ -66,7 +66,7 @@ $tim = date("H:i:s");
         <ul>
           <li> <i class="fa fa-phone"></i>
             <p>1010 2020 36360<br>
-              9-269-690-HMS</p>
+              9-269-690-HMSSiuuuu</p>
           </li>
           <li> <i class="fa fa-envelope-o"></i>
             <p>hmsphp@gmail.com<br>
