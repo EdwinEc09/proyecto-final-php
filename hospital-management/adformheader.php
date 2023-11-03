@@ -76,7 +76,7 @@ $tim = date("H:i:s");
             <!--Admin Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="adminaccount.php"><i
                                 class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
 
