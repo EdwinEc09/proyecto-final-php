@@ -51,7 +51,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-            <h2>Patient Report Panel</h2>
+            <h2>Panel de informe del paciente</h2>
             
         </div>
   <div class="card">
@@ -149,7 +149,7 @@ jQuery(document).ready(function($) {
 <!-- Toggle #1 -->
 <div class="toggle">
 	<!-- Toggle Link -->
-	<a href="#" title="Title of Toggle" class="toggle-trigger">Patient Profile</a>
+	<a href="#" title="Title of Toggle" class="toggle-trigger">Perfil del paciente</a>
 	<!-- Toggle Content to display -->
 	<div class="toggle-content">
 		<p><?php include("patientdetail.php"); ?></p>
@@ -159,7 +159,7 @@ jQuery(document).ready(function($) {
 <!-- Toggle #2 -->
 <div class="toggle">
 	<!-- Toggle Link -->
-	<a href="#" title="Title of Toggle" class="toggle-trigger">Appointment record</a>
+	<a href="#" title="Title of Toggle" class="toggle-trigger">Registro de cita</a>
 	<!-- Toggle Content to display -->
 	<div class="toggle-content">
 		<p><?php include("appointmentdetail.php"); ?></p>
@@ -170,7 +170,7 @@ jQuery(document).ready(function($) {
 <!-- Toggle #3 -->
 <div class="toggle">
 	<!-- Toggle Link -->
-	<a href="#" title="Title of Toggle" class="toggle-trigger">Treatment record</a>
+	<a href="#" title="Title of Toggle" class="toggle-trigger">Registro de tratamiento</a>
 	<!-- Toggle Content to display -->
 	<div class="toggle-content">
 		<p><?php include("treatmentdetail.php"); ?></p>
@@ -180,7 +180,7 @@ jQuery(document).ready(function($) {
 <!-- Toggle #4 -->
 <div class="toggle">
 	<!-- Toggle Link -->
-	<a href="#" title="Title of Toggle" class="toggle-trigger">Prescription record</a>
+	<a href="#" title="Title of Toggle" class="toggle-trigger">Registro de preescripción</a>
 	<!-- Toggle Content to display -->
 	<div class="toggle-content">
 		<p><?php
@@ -192,7 +192,7 @@ jQuery(document).ready(function($) {
 <!-- Toggle #5 -->
 <div class="toggle">
 	<!-- Toggle Link -->
-	<a href="#" title="Title of Toggle" class="toggle-trigger">Billing Report</a>
+	<a href="#" title="Title of Toggle" class="toggle-trigger">Informe de facturación </a>
 	<!-- Toggle Content to display -->
 	<div class="toggle-content">
 		<p><?php
@@ -210,7 +210,7 @@ if(isset($_SESSION['adminid']))
     <!-- Toggle #6 -->
     <div class="toggle">
         <!-- Toggle Link -->
-        <a href="#" title="Title of Toggle" class="toggle-trigger">Payment Report</a>
+        <a href="#" title="Title of Toggle" class="toggle-trigger">Informe de pago</a>
         <!-- Toggle Content to display -->
         <div class="toggle-content">
             <p><?php

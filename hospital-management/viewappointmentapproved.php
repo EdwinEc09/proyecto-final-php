@@ -22,7 +22,7 @@ if(isset($_GET['approveid']))
 ?>
 <div class="container-fluid">
 <div class="block-header">
-        <h2 class="text-center">View Appointments - Approved</h2>
+        <h2 class="text-center">Ver citas: aprobadas</h2>
     </div>
 
 <div class="card">
@@ -32,13 +32,13 @@ if(isset($_GET['approveid']))
 			<thead>
 				<tr>
 
-					<td>Patient Detail</td>
-					<td>Date & Time</td>
-					<td>Department</td>
+					<td>Detalles del paciente</td>
+					<td>Fecha y hora</td>
+					<td>Departamento</td>
 					<td>Doctor</td>
-					<td>Appointment Reason</td>
-					<td>Status</td>
-					<td><div align="center">Action</div></td>
+					<td>Motivo de la cita</td>
+					<td>Estado</td>
+					<td><div align="center">Accion</div></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -86,7 +86,7 @@ if(isset($_GET['approveid']))
 					}
 					else
 					{
-						echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised bg-cyan'>View Report</a>";
+						echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised bg-cyan'>Vista del Reporte</a>";
 					}
 					echo "</center></td></tr>";
 				}

@@ -84,50 +84,50 @@ $tim = date("H:i:s");
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="adminprofile.php">Admin Profile</a></li>
-                            <li><a href="adminchangepassword.php">Change Password</a></li>
-                            <li><a href="admin.php">Add Admin</a></li>
-                            <li><a href="viewadmin.php">View Admin</a></li>
+                            <li><a href="adminprofile.php">Panel Del Administrador</a></li>
+                            <li><a href="adminchangepassword.php">Cambiar Contraseña</a></li>
+                            <li><a href="admin.php">Añadir Administración</a></li>
+                            <li><a href="viewadmin.php">Ver Administrador</a></li>
                         </ul>
                     </li>
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="appointment.php">New Appointment</a></li>
-                            <li><a href="viewappointmentpending.php">View Pending Appointments</a>
+                            <li><a href="appointment.php">Nueva Cita</a></li>
+                            <li><a href="viewappointmentpending.php">Ver Pacientes Pendientes</a>
                             </li>
-                            <li><a href="viewappointmentapproved.php">View Approved
-                                    Appointments</a></li>
+                            <li><a href="viewappointmentapproved.php">Ver Citas
+                                    Aprobadas</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
+                                class="zmdi zmdi-account-add"></i><span>Doctor</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="doctor.php">Add Doctor</a>
+                            <li><a href="doctor.php">Añadir Doctor</a>
                             </li>
-                            <li><a href="viewdoctor.php">View Doctor</a></li>
+                            <li><a href="viewdoctor.php">Ver Doctor</a></li>
                            
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                                class="zmdi zmdi-account-o"></i><span>Pacientes</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patient.php">Add Patient</a></li>
-                            <li><a href="viewpatient.php">View Patient Records</a></li>
+                            <li><a href="patient.php">Añadir Paciente</a></li>
+                            <li><a href="viewpatient.php">Ver El Historial Del Paciente</a></li>
                         </ul>
                     </li>
 
 
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-settings-square"></i><span>Service</span> </a>
+                                class="zmdi zmdi-settings-square"></i><span>Servicio</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="department.php">Add Department</a></li>
-                            <li><a href="viewdepartment.php">View Department</a></li>
-                            <li><a href="treatment.php">Add Treatment type</a></li>
-                            <li><a href="viewtreatment.php">View Treatment types</a></li>
-                            <li><a href="medicine.php">Add Medicine</a></li>
-                            <li><a href="viewmedicine.php">View Medicine</a></li>
+                            <li><a href="department.php">Añadir Departamento</a></li>
+                            <li><a href="viewdepartment.php">Ver Departamento</a></li>
+                            <li><a href="treatment.php">Añadir Tipo De Tratamiento</a></li>
+                            <li><a href="viewtreatment.php">Ver Tipos De Tratamiento</a></li>
+                            <li><a href="medicine.php">Añadir Medicamentos</a></li>
+                            <li><a href="viewmedicine.php">Ver Medicina</a></li>
                         </ul>
                     </li>
 

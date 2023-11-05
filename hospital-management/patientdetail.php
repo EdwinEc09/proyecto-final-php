@@ -140,21 +140,21 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
     <table class="table table-bordered table-striped">
       <tbody>
         <tr>
-          <td width="16%"><strong>Patient Name </strong></td>
+          <td width="16%"><strong>Nombre del paciente</strong></td>
           <td width="34%">&nbsp;<?php echo $rspatient['patientname']; ?></td>
-          <td width="16%"><strong>Patient ID</strong></td>
+          <td width="16%"><strong>ID del paciente</strong></td>
           <td width="34%">&nbsp;<?php echo $rspatient['patientid']; ?></td>
         </tr>
         <tr>
-          <td><strong>Address</strong></td>
+          <td><strong>DIRECCIÓN</strong></td>
           <td>&nbsp;<?php echo $rspatient['address']; ?></td>
-          <td><strong>Gender</strong></td>
+          <td><strong>Género</strong></td>
           <td> <?php echo $rspatient['gender'];?></td>
         </tr>
         <tr>
-          <td><strong>Contact Number</strong></td>
+          <td><strong>Número de contacto</strong></td>
           <td>&nbsp;<?php echo $rspatient['mobileno']; ?></td>
-          <td><strong>Date Of Birth </strong></td>
+          <td><strong>Fecha de nacimiento</strong></td>
           <td>&nbsp;<?php echo $rspatient['dob']; ?></td>
         </tr>
       </tbody>

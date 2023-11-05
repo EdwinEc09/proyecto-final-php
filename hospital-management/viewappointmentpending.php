@@ -27,7 +27,7 @@ if(isset($_GET['approveid']))
 ?>
 <div class="container-fluid">
 <div class="block-header">
-        <h2 class="text-center">View Pending Appointments</h2>
+        <h2 class="text-center">Ver citas pendientes</h2>
     </div>
 
 
@@ -38,13 +38,13 @@ if(isset($_GET['approveid']))
 
 				<tr>
 
-					<th>Patient Detail</th>
-					<th>Date & Time</th>
-					<th>Department</th>
+					<th>Detalles del paciente</th>
+					<th>Fecha y hora</th>
+					<th>Departamento</th>
 					<th>Doctor</th>
-					<th>Appointment Reason</th>
-					<th>Status</th>
-					<th width="15%">Action</th>
+					<th>Motivo de la cita</th>
+					<th>Estado</th>
+					<th width="15%">Accion</th>
 				</tr>
 			</thead>
 			<tbody>

@@ -14,7 +14,7 @@ if(isset($_GET['delid']))
 
 <div class="container-fluid">
 <div class="block-header">
-		<h2 class="text-center"> View Admin </h2>
+		<h2 class="text-center">Ver administrador</h2>
 	</div>
 </div>
 <div class="card">
@@ -24,10 +24,10 @@ if(isset($_GET['delid']))
 
     <thead>
       <tr>
-        <td width="12%" height="40">Admin Name</td>
-        <td width="11%">Login ID</td>
-        <td width="12%">Status</td>
-        <td width="10%">Action</td>
+        <td width="12%" height="40">Nombre del admin</td>
+        <td width="11%">Ingresar identificación</td>
+        <td width="12%">Estado</td>
+        <td width="10%">Accion</td>
       </tr>
     </thead>
     <tbody>
@@ -41,7 +41,7 @@ if(isset($_GET['delid']))
       <td>$rs[loginid]</td>
       <td>$rs[status]</td>
       <td>
-      <a href='admin.php?editid=$rs[adminid]' class='btn btn-raised g-bg-cyan'>Edit</a> <a href='viewadmin.php?delid=$rs[adminid]' class='btn btn-raised g-bg-blush2'>Delete</a> </td>
+      <a href='admin.php?editid=$rs[adminid]' class='btn btn-raised g-bg-cyan'>Editar</a> <a href='viewadmin.php?delid=$rs[adminid]' class='btn btn-raised g-bg-blush2'>Borrar</a> </td>
       </tr>";
     }
     ?>

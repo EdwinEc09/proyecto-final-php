@@ -15,7 +15,7 @@ include("dbconnection.php");
 
 <div class="container-fluid">
     <div class="block-header">
-        <h2>Dashboard</h2>
+        <h2>Panel</h2>
         <small class="text-muted">Bienvenido al panel de administración</small>
     </div>
 

@@ -56,7 +56,7 @@ else
   
   
   <tr>
-    <td>Department</td>
+    <td>Departamento</td>
     <td>&nbsp;<?php echo $rsdepartment['departmentname']; ?></td>
   </tr>
   <tr>
@@ -64,11 +64,11 @@ else
     <td>&nbsp;<?php echo $rsdoctor['doctorname']; ?></td>
   </tr>
   <tr>
-    <td>Appointment Date</td>
+    <td>Día de la cita</td>
     <td>&nbsp;<?php echo date("d-M-Y",strtotime($rsappointment['appointmentdate'])); ?></td>
   </tr>
   <tr>
-    <td>Appointment Time</td>
+    <td>Hora de la cita</td>
     <td>&nbsp;<?php echo date("h:i A",strtotime($rsappointment['appointmenttime'])); ?></td>
   </tr>
 </table>

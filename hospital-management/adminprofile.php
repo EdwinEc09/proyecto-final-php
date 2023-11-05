@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<div class='alert alert-success'>
-			admin record updated successfully
+			Registro de administrador actualizado exitosamente
 			</div>";
 			
 		}
@@ -46,7 +46,7 @@ if(isset($_SESSION['adminid']))
 ?>
 <div class="container-fluid">
     <div class="block-header">
-        <h2 class="text-center"> Change Admin Profile</h2>
+        <h2 class="text-center">Cambiar perfil de administrador</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -79,9 +79,9 @@ if(isset($_SESSION['adminid']))
                             <div class="col-sm-3 col-xs-12">
                                 <div class="form-group drop-custum">
                                     <select class="form-control show-tick">
-                                        <option value="" selected>-- Status --</option>
+                                        <option value="" selected>Estado</option>
                                         <?php
-										$arr = array("Active","Inactive");
+										$arr = array("Activo","Inactivo");
 										foreach($arr as $val)
 										{
 											if($val == $rsedit['status'])
@@ -100,7 +100,7 @@ if(isset($_SESSION['adminid']))
                         </div>
                         <div class="col-sm-12">
                             <input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit"
-                                value="Submit" />
+                                value="Entregar" />
 
                         </div>
                     </div>

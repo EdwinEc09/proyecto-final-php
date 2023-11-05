@@ -150,7 +150,7 @@ $tim = date("H:i:s");
                 <ul class="list">
                     <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="doctoraccount.php"><i
-                                class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                                class="zmdi zmdi-home"></i><span>z</span></a></li>
 
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i

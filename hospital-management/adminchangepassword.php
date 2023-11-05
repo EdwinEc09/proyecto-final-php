@@ -10,20 +10,20 @@ if(isset($_POST['submit']))
 	if(mysqli_affected_rows($con) == 1)
 	{
 		echo "<div class='alert alert-success'>
-		 Password updated successfully
+		¡Contraseña actualizada exitosamente :)!
 	</div>";
 	}
 	else
 	{
 		echo "<div class='alert alert-warning'>
-		 admin record update Failed
+		Error al actualizar el registro de administrador :(
 	</div>";		
 	}
 }
 ?>
 <div class="container-fluid">
     <div class="block-header">
-        <h2 class="text-center"> Admin's Password</h2>
+        <h2 class="text-center">Contraseña de administrador</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -36,7 +36,7 @@ if(isset($_POST['submit']))
 				<div class="col-sm-12">   
 					<div class="form-group">
 						<div class="form-line">
-							<input class="form-control" type="password" name="oldpassword" id="oldpassword" placeholder="Old Password" />
+							<input class="form-control" type="password" name="oldpassword" id="oldpassword" placeholder="Contraseña Anterior" />
 						</div>
 					</div>
 				
@@ -47,7 +47,7 @@ if(isset($_POST['submit']))
 				<div class="col-sm-12">                           
 				 <div class="form-group">
 						<div class="form-line">
-							<input class="form-control" type="password" name="newpassword" id="newpassword" placeholder="New Password" />
+							<input class="form-control" type="password" name="newpassword" id="newpassword" placeholder="Nueva Contraseña" />
 						</div>
 					</div>    
 				</div>                      
@@ -56,13 +56,13 @@ if(isset($_POST['submit']))
 			<div class="col-sm-12">                              
 				 <div class="form-group">
 						<div class="form-line">
-							<input class="form-control" type="password" name="password" id="password" placeholder="Confirm Password" />
+							<input class="form-control" type="password" name="password" id="password" placeholder="Confirmar Contraseña" />
 						</div>
 					</div>
 					</div>                          
 			</div>                     
 			<div class="col-sm-12">
-				<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit" value="Submit" />
+				<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit" value="Entregar" />
 				
 			</div>
 		</div>
