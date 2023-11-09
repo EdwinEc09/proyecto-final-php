@@ -192,7 +192,7 @@ if(isset($_GET['editid']))
 
                                         <option value="">Seleccionar estado</option>
                                         <?php
-                        $arr = array("Active","Inactive");
+                        $arr = array("Activo","Inactivo");
                         foreach($arr as $val)
                         {
                            if($val == $rsedit['status'])
@@ -243,7 +243,7 @@ if(isset($_GET['editid']))
 <script type="application/javascript">
 function validateform() {
     if (document.frmappnt.select4.value == "") {
-        alert("Patient name should not be empty..");
+        alert("El nombre del paciente no debe estar vacío.");
         document.frmappnt.select4.focus();
         return false;
     } else if (document.frmappnt.select3.value == "") {
@@ -251,23 +251,23 @@ function validateform() {
         document.frmappnt.select3.focus();
         return false;
     } else if (document.frmappnt.select5.value == "") {
-        alert("Department name should not be empty..");
+        alert("El tipo de habitación no debe estar vacía.");
         document.frmappnt.select5.focus();
         return false;
     } else if (document.frmappnt.appointmentdate.value == "") {
-        alert("Appointment date should not be empty..");
+        alert("La fecha de la cita no debe estar vacía.");
         document.frmappnt.appointmentdate.focus();
         return false;
     } else if (document.frmappnt.time.value == "") {
-        alert("Appointment time should not be empty..");
+        alert("El tiempo de la cita no debe estar vacío.");
         document.frmappnt.time.focus();
         return false;
     } else if (document.frmappnt.select6.value == "") {
-        alert("Doctor name should not be empty..");
+        alert("El nombre del médico no debe estar vacío.");
         document.frmappnt.select6.focus();
         return false;
     } else if (document.frmappnt.select.value == "") {
-        alert("Kindly select the status..");
+        alert("Por favor seleccione el estado.");
         document.frmappnt.select.focus();
         return false;
     } else {

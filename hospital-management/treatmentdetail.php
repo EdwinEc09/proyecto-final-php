@@ -5,11 +5,11 @@ include("dbconnection.php");
 		
 <table class="table table-bordered table-striped">
           <tr>
-            <td><strong>Treatment type</strong></td>
-            <td><strong>Treatment date & time</strong></td>
+            <td><strong>Tipo de tratamiento</strong></td>
+            <td><strong>Fecha y hora del tratamiento</strong></td>
             <td><strong>Doctor</strong></td>
-            <td><strong>Treatment Description</strong></td>
-            <td><strong>Treatment cost</strong></td>
+            <td><strong>Descripción del tratamiento</strong></td>
+            <td><strong>Descripción del tratamiento</strong></td>
           </tr>
           <?php
 		 $sql ="SELECT * FROM treatment_records LEFT JOIN treatment ON treatment_records.treatmentid=treatment.treatmentid WHERE treatment_records.patientid='$_GET[patientid]' AND treatment_records.appointmentid='$_GET[appointmentid]'";

@@ -227,7 +227,7 @@ if(isset($_SESSION['adminid']))
 				  ?>  
 				  
 			 
-				  <a class="btn btn-raised" href="paymentdischarge.php?appointmentid=<?php echo $rsappointment[0]; ?>&patientid=<?php echo $_GET['patientid']; ?>">Make Payment</a>
+				  <a class="btn btn-raised" href="paymentdischarge.php?appointmentid=<?php echo $rsappointment[0]; ?>&patientid=<?php echo $_GET['patientid']; ?>">HACER EL PAGO</a>
 			
 			<?php
 	

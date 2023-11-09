@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<div class='alert alert-success'>
-			Administrator record inserted successfully
+			Registro de administrador insertado exitosamente
 			</div>";
 
 		}
@@ -123,23 +123,23 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform() {
     if (document.frmadminprofile.adminname.value == "") {
-        alert("Admin name should not be empty..");
+        alert("El nombre del administrador no debe estar vacío.");
         document.frmadminprofile.adminname.focus();
         return false;
     } else if (!document.frmadminprofile.adminname.value.match(alphaspaceExp)) {
-        alert("Admin name not valid..");
+        alert("El nombre del administrador no es válido.");
         document.frmadminprofile.adminname.focus();
         return false;
     } else if (document.frmadminprofile.loginid.value == "") {
-        alert("Login ID should not be empty..");
+        alert("El ID de inicio de sesión no debe estar vacío.");
         document.frmadminprofile.loginid.focus();
         return false;
     } else if (!document.frmadminprofile.loginid.value.match(alphanumericExp)) {
-        alert("Login ID not valid..");
+        alert("ID de inicio de sesión no válido..");
         document.frmadminprofile.loginid.focus();
         return false;
     } else if (document.frmadminprofile.select.value == "") {
-        alert("Kindly select the status..");
+        alert("Por favor seleccione el estado.");
         document.frmadminprofile.select.focus();
         return false;
     } else {

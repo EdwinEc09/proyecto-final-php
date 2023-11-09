@@ -31,7 +31,7 @@ $billappointmentid = $_GET['appointmentid'];
 ?>
 <div class="container-fluid">
   <div class="block-header">
-    <h2>Make Payment</h2>
+    <h2>Hacer el pago</h2>
 
   </div>
 
@@ -47,32 +47,32 @@ $billappointmentid = $_GET['appointmentid'];
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th colspan="2">Discharge</th>
+              <th colspan="2">Informe de pago:</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Discharge date</td>
+              <td>Fecha de alta</td>
               <td><input class="form-control" name="dischargedate" type="text" id="dischargedate" value="<?php echo date("Y-m-d"); ?>" readonly></td>
             </tr>
             <tr>
-              <td>Discharge time</td>
+              <td>Tiempo de descarga</td>
               <td><input class="form-control" name="dischargetime" type="text" id="dischargetime" value="<?php echo date("h:i:s"); ?>" readonly></td>
             </tr>
             <tr>
-              <td>Balance amount</td>
+              <td>Balance de Cuenta</td>
               <td><input class="form-control" name="balamt" type="text" id="balamt" value="<?php echo $balanceamt; ?>" readonly onkeyup="calculatepayable()"></td>
             </tr>
             <tr>
-              <td>Discount *</td>
+              <td>Descuento *</td>
               <td><input class="form-control" name="discountamount" type="text" id="discountamount" value="0" onkeyup="calculatepayable()"></td>
             </tr>
             <tr>
-              <td>Payable amount</td>
+              <td>Cantidad a pagar</td>
               <td><input class="form-control" name="paidamount" type="text" id="paidamount" value="<?php echo $balanceamt; ?>" readonly></td>
             </tr>
             <tr>
-              <td>Discount reason</td>
+              <td>Motivo del descuento</td>
               <td><textarea name="discountreason" id="discountreason"></textarea></td>
             </tr>
             <tr>
@@ -85,7 +85,7 @@ $billappointmentid = $_GET['appointmentid'];
       <table width="342" border="3">
         <thead>
           <tr>
-            <td colspan="2" align="center"><a href='patientreport.php?patientid=<?php echo $_GET['patientid']; ?>&appointmentid=<?php echo $_GET['appointmentid']; ?>'><strong>View Patient Report>></strong></a></td>
+            <td colspan="2" align="center"><a href='patientreport.php?patientid=<?php echo $_GET['patientid']; ?>&appointmentid=<?php echo $_GET['appointmentid']; ?>'><strong>Ver informe del paciente>></strong></a></td>
           </tr>
         </thead>
       </table>   
