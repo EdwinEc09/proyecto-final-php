@@ -98,19 +98,19 @@ function validateform()
 {
 	if(document.frmpatlogin.loginid.value == "")
 	{
-		alert("Login ID should not be empty..");
+		alert("ID de inicio de sesión no debe estar vacío ..");
 		document.frmpatlogin.loginid.focus();
 		return false;
 	}
 	else if(document.frmpatlogin.password.value == "")
 	{
-		alert("Password should not be empty..");
+		alert("La contraseña no debe estar vacía ..");
 		document.frmpatlogin.password.focus();
 		return false;
 	}
 	else if(document.frmpatlogin.password.value.length < 8)
 	{
-		alert("Password length should be more than 8 characters...");
+		alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
 		document.frmpatlogin.password.focus();
 		return false;
 	}
