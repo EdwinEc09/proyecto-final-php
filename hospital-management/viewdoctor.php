@@ -7,7 +7,7 @@ if(isset($_GET['delid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('doctor record deleted successfully..');</script>";
+		echo "<script>alert('Registro médico eliminado exitosamente..');</script>";
 	}
 }
 ?>
@@ -23,15 +23,15 @@ if(isset($_GET['delid']))
 		<table class="table table-bordered table-striped table-hover js-basic-example dataTable">
 			<thead>
 				<tr>
-					<td>Name</td>
-					<td>Contact</td>
-					<td>Department</td>
-					<td>LoginID</td>
-					<td>Consultancy Charge</td>
-					<td>Education</td>
-					<td>Experience</td>
-					<td>Status</td>
-					<td>Action</td>
+					<td>Nombre</td>
+					<td>Contacto</td>
+					<td>Departamento</td>
+					<td>Ingresar identificación</td>
+					<td>Cargo por consultoría</td>
+					<td>Educación</td>
+					<td>Experiencia</td>
+					<td>Estatado</td>
+					<td>Acción</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -55,7 +55,7 @@ if(isset($_GET['delid']))
 					<td>&nbsp;$rs[experience] year</td>
 					<td>$rs[status]</td>
 					<td>&nbsp;
-					<a href='doctor.php?editid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-cyan'>Edit</a> <a href='viewdoctor.php?delid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-blush2'>Delete</a> </td>
+					<a href='doctor.php?editid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-cyan'>Editar</a> <a href='viewdoctor.php?delid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-blush2'>Borrar</a> </td>
 					</tr>";
 				}
 				?>      </tbody>
