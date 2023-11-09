@@ -14,7 +14,7 @@ if(isset($_SESSION['patientid']))
 $err='';
 if(isset($_POST['submit']))
 {
-	$sql = "SELECT * FROM patient WHERE loginid='$_POST[loginid]' AND password='$_POST[password]' AND status='Active'";
+	$sql = "SELECT * FROM patient WHERE loginid='$_POST[loginid]' AND password='$_POST[password]' AND status='Activo'";
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_num_rows($qsql) >= 1)
 	{
@@ -25,7 +25,7 @@ if(isset($_POST['submit']))
 	else
 	{
 		$err = "<div class='alert alert-danger'>
-		<strong>Oh !</strong> Change a few things up and try submitting again.
+		<strong>Oh !</strong> Cambie algunas cosas e intente enviarlo de nuevo.
 	</div>";
 	}
 }
@@ -58,7 +58,7 @@ if(isset($_POST['submit']))
 ?></div>
     <div class="card-top"></div>
     <div class="card">
-        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login <span class="msg">Hola, Patient!</span></h1>
+        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login <span class="msg">Hola, Paciente!</span></h1>
         <div class="col-md-12">
 
     <form method="post" action="" name="frmadminlogin" id="sign_in" onSubmit="return validateform()">
