@@ -169,7 +169,7 @@ if(isset($_GET['editid']))
                 <div class="form-line"><select class="form-control show-tick" name="select3" id="select3">
                         <option value="">Seleccione</option>
                         <?php
-				$arr = array("MALE","FEMALE");
+				$arr = array("MASCULINO","FEMENINO");
 				foreach($arr as $val)
 				{
 					if($val == $rsedit['gender'])
@@ -223,83 +223,83 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform() {
     if (document.frmpatient.patientname.value == "") {
-        alert("Patient name should not be empty..");
+        alert("El nombre del paciente no debe estar vacío ..");
         document.frmpatient.patientname.focus();
         return false;
     } else if (!document.frmpatient.patientname.value.match(alphaspaceExp)) {
-        alert("Patient name not valid..");
+        alert("El nombre del paciente no es válido ..");
         document.frmpatient.patientname.focus();
         return false;
     } else if (document.frmpatient.admissiondate.value == "") {
-        alert("Admission date should not be empty..");
+        alert("La fecha de admisión no debe estar vacía..");
         document.frmpatient.admissiondate.focus();
         return false;
     } else if (document.frmpatient.admissiontme.value == "") {
-        alert("Admission time should not be empty..");
+        alert("El tiempo de admisión no debe estar vacío ..");
         document.frmpatient.admissiontme.focus();
         return false;
     } else if (document.frmpatient.address.value == "") {
-        alert("Address should not be empty..");
+        alert("ALa dirección no debe estar vacía ..");
         document.frmpatient.address.focus();
         return false;
     } else if (document.frmpatient.mobilenumber.value == "") {
-        alert("Mobile number should not be empty..");
+        alert("El número de móvil no debe estar vacío ..");
         document.frmpatient.mobilenumber.focus();
         return false;
     } else if (!document.frmpatient.mobilenumber.value.match(numericExpression)) {
-        alert("Mobile number not valid..");
+        alert("Número de móvil no válido ..");
         document.frmpatient.mobilenumber.focus();
         return false;
     } else if (document.frmpatient.city.value == "") {
-        alert("City should not be empty..");
+        alert("Ciudad no debe estar vacía ..");
         document.frmpatient.city.focus();
         return false;
     } else if (!document.frmpatient.city.value.match(alphaspaceExp)) {
-        alert("City not valid..");
+        alert("Ciudad no válida ..");
         document.frmpatient.city.focus();
         return false;
     } else if (document.frmpatient.pincode.value == "") {
-        alert("Pincode should not be empty..");
+        alert("Pincode no debe estar vacío ..");
         document.frmpatient.pincode.focus();
         return false;
     } else if (!document.frmpatient.pincode.value.match(numericExpression)) {
-        alert("Pincode not valid..");
+        alert("Pincode no válido ..");
         document.frmpatient.pincode.focus();
         return false;
     } else if (document.frmpatient.loginid.value == "") {
-        alert("Login ID should not be empty..");
+        alert("ID de inicio de sesión no debe estar vacío ..");
         document.frmpatient.loginid.focus();
         return false;
     } else if (!document.frmpatient.loginid.value.match(alphanumericExp)) {
-        alert("Login ID not valid..");
+        alert("Login ID no válido..");
         document.frmpatient.loginid.focus();
         return false;
     } else if (document.frmpatient.password.value == "") {
-        alert("Password should not be empty..");
+        alert("La contraseña no debe estar vacía ..");
         document.frmpatient.password.focus();
         return false;
     } else if (document.frmpatient.password.value.length < 8) {
-        alert("Password length should be more than 8 characters...");
+        alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
         document.frmpatient.password.focus();
         return false;
     } else if (document.frmpatient.password.value != document.frmpatient.confirmpassword.value) {
-        alert("Password and confirm password should be equal..");
+        alert("La contraseña y la contraseña de confirmación deben ser iguales..");
         document.frmpatient.confirmpassword.focus();
         return false;
     } else if (document.frmpatient.select2.value == "") {
-        alert("Blood Group should not be empty..");
+        alert("Grupo sanguíneo no debe estar vacío ..");
         document.frmpatient.select2.focus();
         return false;
     } else if (document.frmpatient.select3.value == "") {
-        alert("Gender should not be empty..");
+        alert("El género no debe estar vacío..");
         document.frmpatient.select3.focus();
         return false;
     } else if (document.frmpatient.dateofbirth.value == "") {
-        alert("Date Of Birth should not be empty..");
+        alert("Fecha de nacimiento no debe estar vacía ..");
         document.frmpatient.dateofbirth.focus();
         return false;
     } else if (document.frmpatient.select.value == "") {
-        alert("Kindly select the status..");
+        alert("Por favor, seleccione el estado ..");
         document.frmpatient.select.focus();
         return false;
     } else {
