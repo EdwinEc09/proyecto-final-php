@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE patient SET patientname='$_POST[patientname]',admissiondate='$_POST[admissiondate]',admissiontime='$_POST[admissiontme]',address='$_POST[address]',mobileno='$_POST[mobilenumber]',city='$_POST[city]',pincode='$_POST[pincode]',loginid='$_POST[loginid]',password='$_POST[password]',bloodgroup='$_POST[select2]',gender='$_POST[select3]',dob='$_POST[dateofbirth]',status='$_POST[select]' WHERE patientid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('patient record updated successfully...');</script>";
+			echo "<script>alert('ficha del paciente actualizada correctamente...');</script>";
 		}
 		else
 		{
@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,mobileno,city,pincode,loginid,password,bloodgroup,gender,dob,status) values('$_POST[patientname]','$dt','$tim','$_POST[address]','$_POST[mobilenumber]','$_POST[city]','$_POST[pincode]','$_POST[loginid]','$_POST[password]','$_POST[select2]','$_POST[select3]','$_POST[dateofbirth]','Active')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('patients record inserted successfully...');</script>";
+			echo "<script>alert('registro de pacientes insertado con éxito...');</script>";
 			$insid= mysqli_insert_id($con);
 			if(isset($_SESSION['adminid']))
 			{
@@ -49,7 +49,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
     <div class="block-header">
-        <h2 class="text-center">Patient Registration Panel</h2>
+        <h2 class="text-center">Panel de registro de pacientes</h2>
 
     </div>
     <div class="card">
@@ -58,7 +58,7 @@ if(isset($_GET['editid']))
 
 
 
-            <div class="form-group"><label>Patient Name</label>
+            <div class="form-group"><label>Nombre del paciente</label>
                 <div class="form-line">
                     <input class="form-control" type="text" name="patientname" id="patientname"
                         value="<?php echo $rsedit['patientname']; ?>" />
@@ -89,13 +89,13 @@ if(isset($_GET['editid']))
 			}
 			?>
             <div class="form-group">
-                <label>Address</label>
+                <label>Dirección</label>
                 <div class="form-line">
                     <input class="form-control " name="address" id="tinymce" value="<?php echo $rsedit['address']; ?>">
                 </div>
             </div>
 
-            <div class="form-group"><label>Mobile Number</label>
+            <div class="form-group"><label>Número de móvil</label>
                 <div class="form-line">
                     <input class="form-control" type="text" name="mobilenumber" id="mobilenumber"
                         value="<?php echo $rsedit['mobileno']; ?>" />
@@ -103,7 +103,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>City</label>
+            <div class="form-group"><label>Ciudad</label>
                 <div class="form-line">
                     <input class="form-control" type="text" name="city" id="city"
                         value="<?php echo $rsedit['city']; ?>" />
@@ -111,7 +111,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>PIN Code</label>
+            <div class="form-group"><label>Código PIN</label>
                 <div class="form-line">
                     <input class="form-control" type="text" name="pincode" id="pincode"
                         value="<?php echo $rsedit['pincode']; ?>" />
@@ -119,7 +119,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>Login ID</label>
+            <div class="form-group"><label>ID de inicio de sesión</label>
                 <div class="form-line">
                     <input class="form-control" type="text" name="loginid" id="loginid"
                         value="<?php echo $rsedit['loginid']; ?>" />
@@ -127,7 +127,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>Password</label>
+            <div class="form-group"><label>Contraseña</label>
                 <div class="form-line">
                     <input class="form-control" type="password" name="password" id="password"
                         value="<?php echo $rsedit['password']; ?>" />
@@ -135,7 +135,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>Confirm Password</label>
+            <div class="form-group"><label>Confirmar contraseña</label>
                 <div class="form-line">
                     <input class="form-control" type="password" name="confirmpassword" id="confirmpassword"
                         value="<?php echo $rsedit['confirmpassword']; ?>" />
@@ -143,9 +143,9 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>Blood Group</label>
+            <div class="form-group"><label>Grupo sanguíneo</label>
                 <div class="form-line"><select class="form-control show-tick" name="select2" id="select2">
-                        <option value="">Select</option>
+                        <option value="">Seleccione</option>
                         <?php
 					$arr = array("A+","A-","B+","B-","O+","O-","AB+","AB-");
 					foreach($arr as $val)
@@ -165,9 +165,9 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>Gender</label>
+            <div class="form-group"><label>Género</label>
                 <div class="form-line"><select class="form-control show-tick" name="select3" id="select3">
-                        <option value="">Select</option>
+                        <option value="">Seleccione</option>
                         <?php
 				$arr = array("MALE","FEMALE");
 				foreach($arr as $val)
@@ -187,7 +187,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>Date Of Birth</label>
+            <div class="form-group"><label>Fecha de nacimiento</label>
                 <div class="form-line">
                     <input class="form-control" type="date" name="dateofbirth" max="<?php echo date("Y-m-d"); ?>"
                         id="dateofbirth" value="<?php echo $rsedit['dob']; ?>" />
@@ -198,7 +198,7 @@ if(isset($_GET['editid']))
 
 
 
-            <input class="btn btn-default" type="submit" name="submit" id="submit" value="Submit" />
+            <input class="btn btn-default" type="submit" name="submit" id="submit" value="Enviar" />
 
 
 
