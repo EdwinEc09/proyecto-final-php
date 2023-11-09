@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,mobileno,city,pincode,loginid,password,bloodgroup,gender,dob,status) values('$_POST[patientname]','$dt','$tim','$_POST[address]','$_POST[mobilenumber]','$_POST[city]','$_POST[pincode]','$_POST[loginid]','$_POST[password]','$_POST[select2]','$_POST[select3]','$_POST[dateofbirth]','Active')";
+		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,mobileno,city,pincode,loginid,password,bloodgroup,gender,dob,status) values('$_POST[patientname]','$dt','$tim','$_POST[address]','$_POST[mobilenumber]','$_POST[city]','$_POST[pincode]','$_POST[loginid]','$_POST[password]','$_POST[select2]','$_POST[select3]','$_POST[dateofbirth]','Activo')";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>alert('registro de pacientes insertado con éxito...');</script>";
@@ -119,7 +119,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>ID de inicio de sesión</label>
+            <div class="form-group"><label>Nombre Usuario</label>
                 <div class="form-line">
                     <input class="form-control" type="text" name="loginid" id="loginid"
                         value="<?php echo $rsedit['loginid']; ?>" />
