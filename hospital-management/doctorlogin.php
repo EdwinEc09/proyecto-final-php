@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
 	else
 	{
 		$err = "<div class='alert alert-danger'>
-		<strong>Oh !</strong> Change a few things up and try submitting again.
+		<strong>Oh !</strong> Cambie algunas cosas e intente enviarlo de nuevo.
 	</div>";
 	}
 }
@@ -105,25 +105,25 @@ function validateform()
 {
 	 if(document.frmdoctlogin.loginid.value == "")
 	{
-		alert("Login ID should not be empty..");
+		alert("ID de inicio de sesión no debe estar vacío ..");
 		document.frmdoctlogin.loginid.focus();
 		return false;
 	}
 	else if(!document.frmdoctlogin.loginid.value.match(alphanumericExp))
 	{
-		alert("Login ID not valid..");
+		alert("Login ID no válido..");
 		document.frmdoctlogin.loginid.focus();
 		return false;
 	}
 	else if(document.frmdoctlogin.password.value == "")
 	{
-		alert("Password should not be empty..");
+		alert("La contraseña no debe estar vacía ..");
 		document.frmdoctlogin.password.focus();
 		return false;
 	}
 	else if(document.frmdoctlogin.password.value.length < 8)
 	{
-		alert("Password length should be more than 8 characters...");
+		alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
 		document.frmdoctlogin.password.focus();
 		return false;
 	}
