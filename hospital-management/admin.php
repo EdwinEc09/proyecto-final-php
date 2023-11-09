@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<div class='alert alert-success'>
-			Admin Record updated successfully
+			Registro de administrador actualizado correctamente
 			</div>";
 		}
 		else
@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<div class='alert alert-success'>
-			Admin Record Inserted successfully
+			Registro de administrador insertado exitosamente
 			</div>";
 		}
 		else

@@ -22,22 +22,22 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
  	<table class="table table-bordered table-striped">
       <tbody>
         <tr>
-          <th scope="col"><div align="right">Bill number &nbsp; </div></th>
+          <th scope="col"><div align="right">Número de factura  &nbsp; </div></th>
           <td> <?php echo '#HMS_'.$rsbilling_records['billingid']; ?></td>
         </tr>
         <tr>
-          <th width="124" scope="col"><div align="right">Appointment Number &nbsp; </div></th>
+          <th width="124" scope="col"><div align="right">Número de cita &nbsp; </div></th>
           	<td width="413"> <?php echo $rsbilling_records['appointmentid']; ?>
             </td>
         </tr>
          
 		<tr>
-		  <th scope="col"><div align="right">Billing Date &nbsp; </div></th>
+		  <th scope="col"><div align="right">Fecha de facturación &nbsp; </div></th>
 		  <td>&nbsp;<?php echo $rsbilling_records['billingdate']; ?></td>
 	    </tr>
         
 		<tr>
-		  <th scope="col"><div align="right">Billing time&nbsp; </div></th>
+		  <th scope="col"><div align="right">Tiempo de facturación&nbsp; </div></th>
 		  <td>&nbsp;<?php echo $rsbilling_records['billingtime'] ; ?></td>
 	    </tr>
       </tbody>
@@ -45,9 +45,9 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
 	<table class="table table-bordered table-striped">
       <thead>
        <tr>
-          <th width="97" scope="col">Date</th>
-          <th width="245" scope="col">Decription</th>
-          <th width="86" scope="col">Bill Amount</th>
+          <th width="97" scope="col">tiempo de facturación</th>
+          <th width="245" scope="col">Descripción</th>
+          <th width="86" scope="col">Total de la factura</th>
         </tr>
         </thead>
         <tbody>
@@ -122,22 +122,22 @@ if($rs['bill_type']  == "Prescription charge")
     <table class="table table-bordered table-striped">
       <tbody>
         <tr>
-          <th scope="col"><div align="right">Bill Amount &nbsp; </div></th>
+          <th scope="col"><div align="right">Total de la factura  &nbsp; </div></th>
           <td>&nbsp;$ <?php echo $billamt; ?></td>
         </tr>
         <tr>
-          <th width="442" scope="col"><div align="right">Tax Amount (5%) &nbsp; </div></th>
+          <th width="442" scope="col"><div align="right">Monto del impuesto (5%) &nbsp; </div></th>
           	<td width="95">&nbsp;$ <?php echo $taxamt = 5 * ($billamt / 100); ?>
             </td>
         </tr>
          
 		<tr>
-		  <th scope="col"><div align="right">Discount &nbsp; </div></th>
+		  <th scope="col"><div align="right">Descuento &nbsp; </div></th>
 		  <td>&nbsp;$ <?php echo $rsbilling_records['discount']; ?></td>
 	    </tr>
         
 		<tr>
-		  <th scope="col"><div align="right">Grand Total &nbsp; </div></th>
+		  <th scope="col"><div align="right">Gran total &nbsp; </div></th>
 		  <td>&nbsp;$ <?php echo ($billamt + $taxamt)  - $rsbilling_records['discount'] ; ?></td>
 	    </tr>
       </tbody>

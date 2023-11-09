@@ -7,7 +7,7 @@ if(isset($_GET['delid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('admin record deleted successfully..');</script>";
+		echo "<script>alert('Registro de administrador eliminado exitosamente..');</script>";
 	}
 }
 ?>

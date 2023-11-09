@@ -21,13 +21,13 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
  	<table class="table table-bordered table-striped">
       <tbody>
         <tr>
-          <th scope="col"><div align="right">Bill number &nbsp; </div></th>
+          <th scope="col"><div align="right">Número de factura &nbsp; </div></th>
           <td><?php echo $rsbilling_records['billingid']; ?></td>
           <td>Appointment Number &nbsp;</td>
           <td><?php echo $rsbilling_records['appointmentid']; ?></td>
         </tr>
         <tr>
-          <th width="442" scope="col"><div align="right">Billing Date &nbsp; </div></th>
+          <th width="442" scope="col"><div align="right">Fecha de facturación &nbsp; </div></th>
           <td width="413"><?php echo $rsbilling_records['billingdate']; ?></td>
           <td width="413">Billing time&nbsp; </td>
           	<td width="413"><?php echo $rsbilling_records['billingtime'] ; ?></td>
@@ -36,7 +36,7 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
 		<tr>
           <th scope="col"><div align="right"></div></th>
           <td></td>
-          <th scope="col"><div align="right">Bill Amount &nbsp; </div></th>
+          <th scope="col"><div align="right">Total de la factura &nbsp; </div></th>
           <td><?php
 		$sql ="SELECT * FROM billing_records where billingid='$rsbilling_records[billingid]'";
 		$qsql = mysqli_query($con,$sql);
@@ -51,24 +51,24 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
         <tr>
           <th width="442" scope="col"><div align="right"></div></th>
           <td width="413">&nbsp;</td>
-          <th width="442" scope="col"><div align="right">Tax Amount (5%) &nbsp; </div></th>
+          <th width="442" scope="col"><div align="right">Monto del impuesto (5%) &nbsp; </div></th>
           <td width="413">&nbsp;$ <?php echo $taxamt = 5 * ($billamt / 100); ?></td>
        	</tr>
          
 		<tr>
-		  <th scope="col"><div align="right">Disount reason</div></th>
+		  <th scope="col"><div align="right">Motivo de descuento</div></th>
 		  <td rowspan="4" valign="top"><?php echo $rsbilling_records['discountreason']; ?></td>
-		  <th scope="col"><div align="right">Discount &nbsp; </div></th>
+		  <th scope="col"><div align="right">Descuento &nbsp; </div></th>
 		  <td>&nbsp;$ <?php echo $rsbilling_records['discount']; ?></td>
 	    </tr>
         
 		<tr>
 		  <th rowspan="3" scope="col">&nbsp;</th>
-		  <th scope="col"><div align="right">Grand Total &nbsp; </div></th>
+		  <th scope="col"><div align="right">Gran total &nbsp; </div></th>
 		  <td>&nbsp;$ <?php echo $grandtotal = ($billamt + $taxamt)  - $rsbilling_records['discount'] ; ?></td>
 	    </tr>
 		<tr>
-		  <th scope="col"><div align="right">Paid Amount </div></th>
+		  <th scope="col"><div align="right">Monto de pago </div></th>
 		  <td>$ <?php
 		  	$sqlpayment ="SELECT sum(paidamount) FROM payment where appointmentid='$billappointmentid'";
 			$qsqlpayment = mysqli_query($con,$sqlpayment);
@@ -77,12 +77,12 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
 		   ?></td>
 	    </tr>
 		<tr>
-		  <th scope="col"><div align="right">Balance Amount</div></th>
+		  <th scope="col"><div align="right">Balance de Cuenta</div></th>
 		  <td>$ <?php echo $balanceamt = $grandtotal - $rspayment[0]  ; ?></td>
 	    </tr>
       </tbody>
     </table>
-   <p><strong>Payment report:</strong></p>
+   <p><strong>Informe de pago:</strong></p>
 <?php
 $sqlpayment = "SELECT * FROM payment where appointmentid='$billappointmentid'";
 $qsqlpayment = mysqli_query($con,$sqlpayment);
@@ -96,9 +96,9 @@ else
    <table class="table table-bordered table-striped">
      <tbody>
        <tr>
-         <th scope="col">Paid Date</th>
-         <th scope="col">Paid time</th>
-         <th scope="col">Paid amount</th>
+         <th scope="col">Fecha de pago</th>
+         <th scope="col">Tiempo pagado</th>
+         <th scope="col">Monto de pago</th>
        </tr>
 <?php       
 		while($rspayment = mysqli_fetch_array($qsqlpayment))

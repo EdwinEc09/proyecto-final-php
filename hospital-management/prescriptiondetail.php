@@ -2,9 +2,9 @@
       <tbody>
         <tr>
           <th>Doctor</th>
-          <th>Patient</th>
-          <th>Prescription Date</th>
-          <th>View</th>              
+          <th>Paciente</th>
+          <th>Fecha de prescripción</th>
+          <th>Vista</th>              
         </tr>
 <?php
 $sql ="SELECT * FROM prescription WHERE patientid='$_GET[patientid]' AND appointmentid='$_GET[appointmentid]'";
