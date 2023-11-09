@@ -38,7 +38,7 @@ $err='';
 if(isset($_POST['submit']))
 
 {	
-	$sql = "SELECT * FROM admin WHERE loginid='$_POST[loginid]' AND password='$_POST[password]' AND status='Active'";
+	$sql = "SELECT * FROM admin WHERE loginid='$_POST[loginid]' AND password='$_POST[password]' AND status='Activo'";
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_num_rows($qsql) == 1)
 	{
