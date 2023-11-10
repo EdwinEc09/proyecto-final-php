@@ -143,7 +143,7 @@ $tim = date("H:i:s");
             if(isset($_SESSION['doctorid']))
             {
             ?>
-            <!-- <div class="menu">
+            <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active open"><a href="doctoraccount.php"><i
@@ -196,7 +196,7 @@ $tim = date("H:i:s");
                     </li>
 
                 </ul>
-            </div> -->
+            </div>
 
             <?php }; ?>
             <!-- doctor Menu -->
