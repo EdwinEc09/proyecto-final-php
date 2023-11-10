@@ -39,7 +39,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center"> Agregar nuevo médico </h2>
+		<h2 class="text-center"> Agregar nuevo doctor </h2>
 	</div>
 	<div class="row clearfix">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
