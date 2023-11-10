@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE treatment SET treatmenttype='$_POST[treatmenttype]',treatment_cost='$_POST[treatmentcost]',note='$_POST[textarea]',status='$_POST[select]' WHERE treatmentid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('treatment record updated successfully...');</script>";
+			echo "<script>alert('Registro de tratamiento actualizado exitosamente.');</script>";
 		}
 		else
 		{
@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO treatment(treatmenttype,treatment_cost,note,status) values('$_POST[treatmenttype]','$_POST[treatmentcost]', '$_POST[textarea]','$_POST[select]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('treatment record inserted successfully...');</script>";
+			echo "<script>alert('Registro de tratamiento insertado exitosamente.');</script>";
 		}
 		else
 		{
@@ -40,7 +40,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center">Add New treatment</h2>
+		<h2 class="text-center">Agregar nuevo tratamiento</h2>
 	</div>
 	<div class="row clearfix">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -52,7 +52,7 @@ if(isset($_GET['editid']))
 					<div class="row">
 						<div class="col-sm-4 col-xs-12">
 							<div class="form-group">
-								<label for="type">Treatment Type</label>
+								<label for="type">Tipo de tratamiento</label>
 								<div class="form-line">
 									<input type="text" class="form-control" name="treatmenttype" id="treatmenttype"
 									value="<?php echo $rsedit['treatmenttype']; ?>">
@@ -61,7 +61,7 @@ if(isset($_GET['editid']))
 						</div>
 						<div class="col-sm-4 col-xs-12">
 							<div class="form-group">
-								<label for="type">Treatment Cost</label>
+								<label for="type">Costo del tratamiento</label>
 								<div class="form-line">
 									<input type="text" class="form-control" name="treatmentcost" id="treatmentcost"
 									value="<?php echo $rsedit['treatment_cost']; ?>" />
@@ -70,11 +70,11 @@ if(isset($_GET['editid']))
 						</div>
 						<div class="col-sm-4 col-xs-12">
 							<div class="form-group">
-								<label>Status</label>
+								<label>Estado</label>
 								<div class="form-line">
 
 									<select name="select" id="select" class=" form-control show-tick">
-										<option value="">Select</option>
+										<option value="">Seleccionar</option>
 										<?php
 										$arr = array("Activo","Inactivo");
 										foreach($arr as $val)
@@ -96,7 +96,7 @@ if(isset($_GET['editid']))
 					</div>
 					<div class="col-sm-12">
 						<div class="form-group">
-							<label for="">Note</label>
+							<label for="">Nota</label>
 							<div class="form-line">
 								<textarea name="textarea" class="form-control no-resize" id="textarea" cols="45"
 								rows="5"><?php echo $rsedit['note'] ; ?></textarea>
@@ -106,7 +106,7 @@ if(isset($_GET['editid']))
 						</div>
 					</div>
 					<div class="col-sm-12">
-						<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-raised" />
+						<input type="submit" name="submit" id="submit" value="Entregar" class="btn btn-raised" />
 					</div>
 
 				</form>
@@ -128,15 +128,15 @@ var alphanumericExp = /^[0-9a-zA-Z]+$/; //Variable to validate numbers and alpha
 var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable to validate Email ID 
 function validateform() {
 	if (document.frmtreat.treatmenttype.value == "") {
-		alert("Treatment type should not be empty..");
+		alert("El tipo de tratamiento no debe estar vacío.");
 		document.frmtreat.treatmenttype.focus();
 		return false;
 	} else if (!document.frmtreat.treatmenttype.value.match(alphaspaceExp)) {
-		alert("Treatment type not valid..");
+		alert("Tipo de tratamiento no válido.");
 		document.frmtreat.treatmenttype.focus();
 		return false;
 	} else if (document.frmtreat.select.value == "") {
-		alert("Kindly select the status..");
+		alert("Por favor seleccione el estado.");
 		document.frmtreat.select.focus();
 		return false;
 	} else {

@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 			$sql ="UPDATE department SET departmentname='$_POST[departmentname]',description='$_POST[textarea]',status='$_POST[select]' WHERE departmentid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('department record updated successfully...');</script>";
+			echo "<script>alert('Registro del departamento actualizado exitosamente.');</script>";
 		}
 		else
 		{
@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 	$sql ="INSERT INTO department(departmentname,description,status) values('$_POST[departmentname]','$_POST[textarea]','$_POST[select]')";
 	if($qsql = mysqli_query($con,$sql))
 	{
-		echo "<script>alert('Department record inserted successfully...');</script>";
+		echo "<script>alert('Registro de departamento insertado exitosamente.');</script>";
 	}
 	else
 	{

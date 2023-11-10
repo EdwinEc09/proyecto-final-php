@@ -39,7 +39,7 @@ $tim = date("H:i:s");
                     </div>
                 </div>
             </div>
-            <p>Please wait...</p>
+            <p>Espere un momento...</p>
         </div>
     </div>
     <!-- #END# Page Loader -->

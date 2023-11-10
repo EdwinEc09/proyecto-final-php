@@ -70,7 +70,7 @@ if(isset($_GET['editid']))
 			{
 				?>
 
-            <div class="form-group"><label>Admission Date</label>
+            <div class="form-group"><label>Fecha de admisión</label>
                 <div class="form-line">
                     <input class="form-control" type="date" name="admissiondate" id="admissiondate"
                         value="<?php echo $rsedit['admissiondate']; ?>" readonly />
@@ -78,7 +78,7 @@ if(isset($_GET['editid']))
             </div>
 
 
-            <div class="form-group"><label>Admission Time</label>
+            <div class="form-group"><label>Tiempo de admision</label>
                 <div class="form-line">
                     <input class="form-control" type="time" name="admissiontme" id="admissiontme"
                         value="<?php echo $rsedit['admissiontime']; ?>" readonly />
