@@ -40,7 +40,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-            <h2 class="text-center">Add New Department </h2>
+            <h2 class="text-center">Agregar nuevo departamento</h2>
             
         </div>
   <div class="card">
@@ -49,19 +49,19 @@ if(isset($_GET['editid']))
     <table class="table table-hover">
       <tbody>
         <tr>
-          <td width="34%">Department Name</td>
-          <td width="66%"><input placeholder=" Enter Here " class="form-control" type="text" name="departmentname" id="departmentname" value="<?php echo $rsedit['departmentname']; ?>" /></td>
+          <td width="34%">Nombre de Departamento</td>
+          <td width="66%"><input placeholder=" Entre aquí " class="form-control" type="text" name="departmentname" id="departmentname" value="<?php echo $rsedit['departmentname']; ?>" /></td>
         </tr>
         <tr>
-          <td>Description</td>
-          <td><textarea placeholder=" Enter Here " class="form-control no-resize" name="textarea" id="textarea" cols="45" rows="5"><?php echo $rsedit['description'] ; ?></textarea></td>
+          <td>Descripción</td>
+          <td><textarea placeholder=" Entre aquí " class="form-control no-resize" name="textarea" id="textarea" cols="45" rows="5"><?php echo $rsedit['description'] ; ?></textarea></td>
         </tr>
         <tr>
-          <td>Status</td>
+          <td>Estado</td>
           <td> <select name="select" id="select" class="form-control show-tick">
-            <option value="">Select</option>
+            <option value="">Seleccionar</option>
             <?php
-		  $arr = array("Active","Inactive");
+		  $arr = array("Activo","Inactivo");
 		  foreach($arr as $val)
 		  {
 			  if($val == $rsedit['status'])
@@ -77,7 +77,7 @@ if(isset($_GET['editid']))
             </select></td>
         </tr>
         <tr>
-          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Submit" /></td>
+          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Entregar" /></td>
         </tr>
       </tbody>
     </table>
@@ -103,19 +103,19 @@ function validateform()
 {
 	if(document.frmdept.departmentname.value == "")
 	{
-		alert("Department name should not be empty..");
+		alert("El nombre del departamento no debe estar vacío.");
 		document.frmdept.departmentname.focus();
 		return false;
 	}
 	else if(!document.frmdept.departmentname.value.match(alphaspaceExp))
 	{
-		alert("Department name not valid..");
+		alert("Nombre del departamento no válido.");
 		document.frmdept.departmentname.focus();
 		return false;
 	}
 	else if(document.frmdept.select.value == "" )
 	{
-		alert("Kindly select the status..");
+		alert("Por favor seleccione el estado.");
 		document.frmdept.select.focus();
 		return false;
 	}
