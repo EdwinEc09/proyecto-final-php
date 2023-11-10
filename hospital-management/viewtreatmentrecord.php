@@ -36,7 +36,7 @@ if(isset($_GET['delid']))
         <tbody>
          
           <?php
-		$sql ="SELECT * FROM treatment_records where status='Active'";
+		$sql ="SELECT * FROM treatment_records where status='Activo'";
 		if(isset($_SESSION['patientid']))
 		{
 			$sql = $sql . " AND patientid='$_SESSION[patientid]'"; 

@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 	move_uploaded_file($_FILES["uploads"]["tmp_name"],"treatmentfiles/".$filename);
 	if(isset($_GET['editid']))
 	{
-			$sql ="UPDATE treatment_records SET appointmentid='$_POST[select2]',treatmentid='$_POST[select4]',patientid='$_POST[patientid]',doctorid='$_POST[select5]',treatment_description='$_POST[textarea]',uploads='$filename',treatment_date='$_POST[treatmentdate]',treatment_time='$_POST[treatmenttime]',status='Active' WHERE appointmentid='$_GET[editid]'";
+			$sql ="UPDATE treatment_records SET appointmentid='$_POST[select2]',treatmentid='$_POST[select4]',patientid='$_POST[patientid]',doctorid='$_POST[select5]',treatment_description='$_POST[textarea]',uploads='$filename',treatment_date='$_POST[treatmentdate]',treatment_time='$_POST[treatmenttime]',status='Activo' WHERE appointmentid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>alert('treatment record updated successfully...');</script>";
@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO treatment_records(appointmentid,treatmentid,patientid,doctorid,treatment_description,uploads,treatment_date,treatment_time,status) values('$_POST[select2]','$_POST[select4]','$_POST[patientid]','$_POST[select5]','$_POST[textarea]','$filename','$_POST[treatmentdate]','$_POST[treatmenttime]','Active')";
+		$sql ="INSERT INTO treatment_records(appointmentid,treatmentid,patientid,doctorid,treatment_description,uploads,treatment_date,treatment_time,status) values('$_POST[select2]','$_POST[select4]','$_POST[patientid]','$_POST[select5]','$_POST[textarea]','$filename','$_POST[treatmentdate]','$_POST[treatmenttime]','Activo')";
 		$qsql = mysqli_query($con,$sql);
 			echo mysqli_error($con);
 		if(mysqli_affected_rows($con)>=1)
@@ -73,7 +73,7 @@ if(isset($_GET['delid']))
           <td>
           <input class="form-control" type="hidden" name="patientid" value="<?php echo $_GET['patientid']; ?>" />
 <?php
-$sqlpatient= "SELECT * FROM patient WHERE status='Active' AND patientid='$_GET[patientid]'";
+$sqlpatient= "SELECT * FROM patient WHERE status='Activo' AND patientid='$_GET[patientid]'";
 $qsqlpatient = mysqli_query($con,$sqlpatient);
 $rspatient=mysqli_fetch_array($qsqlpatient);
 ?>			
@@ -87,7 +87,7 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
           <select name="select4" id="select4" class="form-control show-tick">
            <option value="">Select</option>
             <?php
-		  	$sqltreatment= "SELECT * FROM treatment WHERE status='Active'";
+		  	$sqltreatment= "SELECT * FROM treatment WHERE status='Activo'";
 			$qsqltreatment = mysqli_query($con,$sqltreatment);
 			while($rstreatment=mysqli_fetch_array($qsqltreatment))
 			{
@@ -114,7 +114,7 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
           <td>Doctor</td>
           <td>
     		<?php
-				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Active' AND doctor.doctorid='$_SESSION[doctorid]'";
+				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
 				$qsqldoctor = mysqli_query($con,$sqldoctor);
 				while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 				{
@@ -134,7 +134,7 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
           <select name="select5" id="select5">
     		<option value="">Select</option>
     		<?php
-				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Active'";
+				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo'";
 				$qsqldoctor = mysqli_query($con,$sqldoctor);
 				while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 				{

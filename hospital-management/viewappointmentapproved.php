@@ -43,7 +43,7 @@ if(isset($_GET['approveid']))
 			</thead>
 			<tbody>
 				<?php
-				$sql ="SELECT * FROM appointment WHERE (status='Approved' OR status='Active')";
+				$sql ="SELECT * FROM appointment WHERE (status='Approved' OR status='Activo')";
 				if(isset($_SESSION['patientid']))
 				{
 					$sql  = $sql . " AND patientid='$_SESSION[patientid]'";
