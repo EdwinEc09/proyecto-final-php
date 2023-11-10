@@ -48,7 +48,7 @@ if(!isset($_SESSION['doctorid']))
           <div class="content">
             <div class="text">Number of Patient</div>
             <div class="number"><?php
-            $sql = "SELECT * FROM patient WHERE status='Active'";
+            $sql = "SELECT * FROM patient WHERE status='Activo'";
             $qsql = mysqli_query($con,$sql);
             echo mysqli_num_rows($qsql);
             ?></div>

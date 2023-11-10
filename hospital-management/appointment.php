@@ -18,7 +18,7 @@ else
 }
 else
 {
-   $sql ="UPDATE patient SET status='Active' WHERE patientid='$_POST[select4]'";
+   $sql ="UPDATE patient SET status='Activo' WHERE patientid='$_POST[select4]'";
    $qsql=mysqli_query($con,$sql);
 
    $sql ="INSERT INTO appointment(patientid, departmentid, appointmentdate, appointmenttime, doctorid, status, app_reason) values('$_POST[select4]','$_POST[select5]','$_POST[appointmentdate]','$_POST[time]','$_POST[select6]','$_POST[select]','$_POST[appreason]')";
@@ -78,7 +78,7 @@ if(isset($_GET['editid']))
                                         <select name="select4" id="select4" class=" form-control show-tick">
                                             <option value="">Seleccionar Paciente</option>
                                             <?php
-                                            $sqlpatient= "SELECT * FROM patient WHERE status='Active'";
+                                            $sqlpatient= "SELECT * FROM patient WHERE status='Activo'";
                                             $qsqlpatient = mysqli_query($con,$sqlpatient);
                                             while($rspatient=mysqli_fetch_array($qsqlpatient))
                                             {
@@ -107,7 +107,7 @@ if(isset($_GET['editid']))
                                         <select name="select5" id="select5" class=" form-control show-tick">
                                             <option value="">Seleccionar</option>
                                             <?php
-                                    $sqldepartment= "SELECT * FROM department WHERE status='Active'";
+                                    $sqldepartment= "SELECT * FROM department WHERE status='Activo'";
                                     $qsqldepartment = mysqli_query($con,$sqldepartment);
                                     while($rsdepartment=mysqli_fetch_array($qsqldepartment))
                                     {
@@ -152,7 +152,7 @@ if(isset($_GET['editid']))
                                         <select name="select6" id="select6" class=" form-control show-tick">
                                             <option value="">Seleccionar Doctor</option>
                                             <?php
-                                $sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Active'";
+                                $sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo'";
                                 $qsqldoctor = mysqli_query($con,$sqldoctor);
                                 while($rsdoctor = mysqli_fetch_array($qsqldoctor))
                                 {

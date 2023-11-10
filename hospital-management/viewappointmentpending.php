@@ -13,7 +13,7 @@ if(isset($_GET['delid']))
 }
 if(isset($_GET['approveid']))
 {
-	$sql ="UPDATE patient SET status='Active' WHERE patientid='$_GET[patientid]'";
+	$sql ="UPDATE patient SET status='Activo' WHERE patientid='$_GET[patientid]'";
 	$qsql=mysqli_query($con,$sql);
 	
 	$sql ="UPDATE appointment SET status='Approved' WHERE appointmentid='$_GET[approveid]'";
@@ -49,7 +49,7 @@ if(isset($_GET['approveid']))
 			</thead>
 			<tbody>
 				<?php
-				$sql ="SELECT * FROM appointment WHERE (status='Pending' OR status='Inactive')";
+				$sql ="SELECT * FROM appointment WHERE (status='Pending' OR status='Inactivo')";
 				if(isset($_SESSION['patientid']))
 				{
 					$sql  = $sql . " AND patientid='$_SESSION[patientid]'";

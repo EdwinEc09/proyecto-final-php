@@ -71,15 +71,15 @@ jQuery(document).ready(function($) {
 	$('.toggle a.toggle-trigger').click(function(){
 		var el = $(this), parent = el.closest('.toggle');
 
-		if( el.hasClass('active') )
+		if( el.hasClass('activo') )
 		{
 			parent.find('.toggle-content').slideToggle();
-			el.removeClass('active');
+			el.removeClass('activo');
 		}
 		else
 		{
 			parent.find('.toggle-content').slideToggle();
-			el.addClass('active');
+			el.addClass('activo');
 		}
 		return false;
 	});
@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
 }
 
 /* Toggle link when clicked */
-.toggle a.active {
+.toggle a.activo {
 	text-decoration: none;
 	border-bottom: 1px solid #e5e5e5;
 	-webkit-box-shadow: 0 8px 6px -6px #ccc;
@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
 }
 
 /* When the toggle is active, change the "-" to a "+" */
-.toggle a.active.toggle-trigger:before {
+.toggle a.activo.toggle-trigger:before {
 	content: "+";
 }
 

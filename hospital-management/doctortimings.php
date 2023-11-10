@@ -62,7 +62,7 @@ if(isset($_GET['editid']))
           <td width="66%"><select class="form-control"  name="select2" id="select2">
            <option value="">Select</option>
             <?php
-          	$sqldoctor= "SELECT * FROM doctor WHERE status='Active'";
+          	$sqldoctor= "SELECT * FROM doctor WHERE status='Activo'";
 			$qsqldoctor = mysqli_query($con,$sqldoctor);
 			while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 			{
@@ -95,7 +95,7 @@ if(isset($_GET['editid']))
           <td><select class="form-control"  name="select" id="select">
           <option value="">Select</option>
           <?php
-		  $arr = array("Active","Inactive");
+		  $arr = array("Activo","Inactivo");
 		  foreach($arr as $val)
 		  {
 			   if($val == $rsedit['status'])

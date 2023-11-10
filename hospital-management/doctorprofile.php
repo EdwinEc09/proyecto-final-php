@@ -72,7 +72,7 @@ if(isset($_SESSION['doctorid']))
                                     <select name="select3" id="select3" class="form-control show-tick">
                                         <option value="">Select</option>
                                         <?php
-													$sqldepartment= "SELECT * FROM department WHERE status='Active'";
+													$sqldepartment= "SELECT * FROM department WHERE status='Activo'";
 													$qsqldepartment = mysqli_query($con,$sqldepartment);
 													while($rsdepartment=mysqli_fetch_array($qsqldepartment))
 													{

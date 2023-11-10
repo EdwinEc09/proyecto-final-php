@@ -41,7 +41,7 @@ if(isset($_GET['editid']))
           <td width="66%"><select name="select2" id="select2">
            <option value="">Select</option>
             <?php
-		  	$sqlpatient= "SELECT * FROM patient WHERE status='Active'";
+		  	$sqlpatient= "SELECT * FROM patient WHERE status='Activo'";
 			$qsqlpatient = mysqli_query($con,$sqlpatient);
 			while($rspatient=mysqli_fetch_array($qsqlpatient))
 			{

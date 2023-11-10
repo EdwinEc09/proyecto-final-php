@@ -27,7 +27,7 @@ include("dbconnection.php");
                     <div class="text">Total Pacientes</div>
                     <div class="number">
                         <?php
-                        $sql = "SELECT * FROM patient WHERE status='Active'";
+                        $sql = "SELECT * FROM patient WHERE status='Activo'";
                         $qsql = mysqli_query($con,$sql);
                         echo mysqli_num_rows($qsql);
                         ?>
@@ -42,7 +42,7 @@ include("dbconnection.php");
                     <div class="text">Total Doctores </div>
                     <div class="number">
                         <?php
-                        $sql = "SELECT * FROM doctor WHERE status='Active' ";
+                        $sql = "SELECT * FROM doctor WHERE status='Activo' ";
                         $qsql = mysqli_query($con,$sql);
                         echo mysqli_num_rows($qsql);
                         ?>
@@ -57,7 +57,7 @@ include("dbconnection.php");
                     <div class="text">Total Administratores</div>
                     <div class="number">
                         <?php
-                        $sql = "SELECT * FROM admin WHERE status='Active'";
+                        $sql = "SELECT * FROM admin WHERE status='Activo'";
                         $qsql = mysqli_query($con,$sql);
                         echo mysqli_num_rows($qsql);
                         ?>

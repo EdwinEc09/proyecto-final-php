@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
 	{
 		$dt = date("Y-m-d");
 		$tim = date("H:i:s");
-		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Active')";
+		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Activo')";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			/* echo "<script>alert('patient record inserted successfully...');</script>"; */
@@ -236,7 +236,7 @@ if(isset($_SESSION['patientid']))
                                                     >
                                                     <option value="">Select Department</option>
                                                     <?php
-                                $sqldept = "SELECT * FROM department WHERE status='Active'";
+                                $sqldept = "SELECT * FROM department WHERE status='Activo'";
                                 $qsqldept = mysqli_query($con,$sqldept);
                                 while($rsdept = mysqli_fetch_array($qsqldept))
                                 {
@@ -254,7 +254,7 @@ if(isset($_SESSION['patientid']))
                                                     >
                                                     <option value="">Select Doctor</option>
                                                     <?php
-                                                    $sqldept = "SELECT * FROM doctor WHERE status='Active'";
+                                                    $sqldept = "SELECT * FROM doctor WHERE status='Activo'";
                                                     $qsqldept = mysqli_query($con,$sqldept);
                                                     while($rsdept = mysqli_fetch_array($qsqldept))
                                                     {

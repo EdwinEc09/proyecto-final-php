@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO prescription_records(prescription_id,medicine_name,cost,unit,dosage,status) values('$_POST[prescriptionid]','$_POST[medicineid]','$_POST[cost]','$_POST[unit]','$_POST[select2]','Active')";
+		$sql ="INSERT INTO prescription_records(prescription_id,medicine_name,cost,unit,dosage,status) values('$_POST[prescriptionid]','$_POST[medicineid]','$_POST[cost]','$_POST[unit]','$_POST[select2]','Activo')";
 		if($qsql = mysqli_query($con,$sql))
 		{	
 			$presamt=$_POST['cost']*$_POST['unit'];
@@ -108,7 +108,7 @@ if(isset($_GET['editid']))
 		  <select class="form-control show-tick" name="medicineid" id="medicineid" onchange="loadmedicine(this.value)">
 		  <option value="">Select Medicine</option>
 		  <?php
-		$sqlmedicine ="SELECT * FROM medicine WHERE status='Active'";
+		$sqlmedicine ="SELECT * FROM medicine WHERE status='Activo'";
 		$qsqlmedicine = mysqli_query($con,$sqlmedicine);
 		while($rsmedicine = mysqli_fetch_array($qsqlmedicine))
 		{

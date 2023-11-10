@@ -61,7 +61,7 @@ if(isset($_GET['editid']))
           <td> <select name="select" id="select" class="form-control show-tick">
             <option value="">Select</option>
             <?php
-		  $arr = array("Active","Inactive");
+		  $arr = array("Activo","Inactivo");
 		  foreach($arr as $val)
 		  {
 			  if($val == $rsedit['status'])
