@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
 	{
 		
 		
-		$sql ="INSERT INTO prescription(treatment_records_id,doctorid,patientid,prescriptiondate,status) values('$_POST[treatmentid]','$_POST[doctorid]','$_POST[patientid]','$_POST[date]','Active')";
+		$sql ="INSERT INTO prescription(treatment_records_id,doctorid,patientid,prescriptiondate,status) values('$_POST[treatmentid]','$_POST[doctorid]','$_POST[patientid]','$_POST[date]','Activo')";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			$insid= mysqli_insert_id($con);
@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
 			$prescriptiondate= $_POST['date'];
 			$billtype="Prescription charge";
 			$billamt=0;			
-		$sql ="UPDATE orders SET deliverydate='$_POST[date]', status ='Active',prescriptionid='$prescriptionid' WHERE orderid='$_GET[orderid]'";
+		$sql ="UPDATE orders SET deliverydate='$_POST[date]', status ='Activo',prescriptionid='$prescriptionid' WHERE orderid='$_GET[orderid]'";
 		$qsql = mysqli_query($con,$sql);
 			echo "<script>alert('prescription record inserted successfully...');</script>";
 			echo "<script>window.location='prescriptionorderdetail.php?prescriptionid=" . $insid . "&patientid=$_GET[patientid]';</script>";
@@ -73,7 +73,7 @@ if(isset($_GET['orderid']))
           <td>Patient</td>
           <td>
             <?php
-		  	$sqlpatient= "SELECT * FROM patient WHERE status='Active' AND patientid='$rsorder[patientid]'";
+		  	$sqlpatient= "SELECT * FROM patient WHERE status='Activo' AND patientid='$rsorder[patientid]'";
 			$qsqlpatient = mysqli_query($con,$sqlpatient);
 			while($rspatient=mysqli_fetch_array($qsqlpatient))
 			{
@@ -85,7 +85,7 @@ if(isset($_GET['orderid']))
           <td width="34%">Doctor</td>
           <td width="66%">
             <?php
-          	$sqldoctor= "SELECT * FROM doctor WHERE status='Active'";
+          	$sqldoctor= "SELECT * FROM doctor WHERE status='Activo'";
 			$qsqldoctor = mysqli_query($con,$sqldoctor);
 			while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 			{

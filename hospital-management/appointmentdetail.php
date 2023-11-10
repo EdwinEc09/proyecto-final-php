@@ -22,7 +22,7 @@ if(isset($_GET['editid']))
 	
 }
 
-	$sqlappointment1 = "SELECT max(appointmentid) FROM appointment where patientid='$_GET[patientid]' AND (status='Active' OR status='Approved')";
+	$sqlappointment1 = "SELECT max(appointmentid) FROM appointment where patientid='$_GET[patientid]' AND (status='Activo' OR status='Approved')";
 	$qsqlappointment1 = mysqli_query($con,$sqlappointment1);
 	$rsappointment1=mysqli_fetch_array($qsqlappointment1);
 	

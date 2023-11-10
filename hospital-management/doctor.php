@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-	$sql ="INSERT INTO doctor(doctorname,mobileno,departmentid,loginid,password,status,education,experience,consultancy_charge) values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','Active','$_POST[education]','$_POST[experience]','$_POST[consultancy_charge]')";
+	$sql ="INSERT INTO doctor(doctorname,mobileno,departmentid,loginid,password,status,education,experience,consultancy_charge) values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','Activo','$_POST[education]','$_POST[experience]','$_POST[consultancy_charge]')";
 	if($qsql = mysqli_query($con,$sql))
 	{
 		echo "<script>alert('Registro médico insertado exitosamente...');</script>";

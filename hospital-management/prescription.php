@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO prescription(treatment_records_id,doctorid,patientid,prescriptiondate,status,appointmentid) values('$_POST[treatmentid]','$_POST[select2]','$_POST[patientid]','$_POST[date]','Active','$_GET[appid]')";
+		$sql ="INSERT INTO prescription(treatment_records_id,doctorid,patientid,prescriptiondate,status,appointmentid) values('$_POST[treatmentid]','$_POST[select2]','$_POST[patientid]','$_POST[date]','Activo','$_GET[appid]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			$insid= mysqli_insert_id($con);
@@ -62,7 +62,7 @@ if(isset($_GET['editid']))
           <td>Patient</td>
           <td>
             <?php
-		  	$sqlpatient= "SELECT * FROM patient WHERE status='Active' AND patientid='$_GET[patientid]'";
+		  	$sqlpatient= "SELECT * FROM patient WHERE status='Activo' AND patientid='$_GET[patientid]'";
 			$qsqlpatient = mysqli_query($con,$sqlpatient);
 			while($rspatient=mysqli_fetch_array($qsqlpatient))
 			{
@@ -79,7 +79,7 @@ if(isset($_GET['editid']))
           <td>Doctor</td>
           <td>
     		<?php
-				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Active' AND doctor.doctorid='$_SESSION[doctorid]'";
+				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
 				$qsqldoctor = mysqli_query($con,$sqldoctor);
 				while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 				{
@@ -98,7 +98,7 @@ if(isset($_GET['editid']))
           <td width="66%"><select class="form-control show-tick" name="select2" id="select2">
           <option value="">Select</option>
             <?php
-          	$sqldoctor= "SELECT * FROM doctor WHERE status='Active'";
+          	$sqldoctor= "SELECT * FROM doctor WHERE status='Activo'";
 			$qsqldoctor = mysqli_query($con,$sqldoctor);
 			while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 			{

@@ -4,7 +4,7 @@ include("adheader.php");
 include("dbconnection.php");
 if(isset($_POST["submitfullamount"]))
 {
-  $sql ="INSERT INTO payment(patientid,appointmentid,paiddate,paidtime,paidamount,status) values('$_GET[patientid]','$_GET[appointmentid]','$dt','$tim','$_POST[paidamount]','Active')";
+  $sql ="INSERT INTO payment(patientid,appointmentid,paiddate,paidtime,paidamount,status) values('$_GET[patientid]','$_GET[appointmentid]','$dt','$tim','$_POST[paidamount]','Activo')";
   if($qsql = mysqli_query($con,$sql))
   {
    echo "<script>alert('payment record inserted successfully...');</script>";

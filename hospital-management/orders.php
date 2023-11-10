@@ -58,7 +58,7 @@ if(isset($_GET['editid']))
           <td><select name="docid" id="docid">
             <option value="">Select</option>
             <?php
-          	$sqldoctor= "SELECT * FROM doctor WHERE status='Active'";
+          	$sqldoctor= "SELECT * FROM doctor WHERE status='Activo'";
 			$qsqldoctor = mysqli_query($con,$sqldoctor);
 			while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 			{
