@@ -7,7 +7,7 @@ if(isset($_GET['delid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('treatment deleted successfully..');</script>";
+		echo "<script>alert('Tratamiento eliminado exitosamente.');</script>";
 	}
 }
 ?>
@@ -15,7 +15,7 @@ if(isset($_GET['delid']))
 
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center">View Available Treatments</h2>
+    <h2 class="text-center">Ver tratamientos disponibles</h2>
 
   </div>
 
@@ -25,15 +25,15 @@ if(isset($_GET['delid']))
      <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
       <tbody>
         <tr>
-          <td><strong>Treatment Type</strong></td>
-          <td><strong>Cost</strong></td>
-          <td><strong>Note</strong></td>
-          <td><strong>Status</strong></td>
+          <td><strong>Tipo de tratamiento</strong></td>
+          <td><strong>Costo</strong></td>
+          <td><strong>Nota</strong></td>
+          <td><strong>Estado</strong></td>
           <?php
           if(isset($_SESSION['adminid']))
           {
             ?>
-            <td><strong>Action</strong></td>
+            <td><strong>Acción</strong></td>
             <?php
           }
           ?>
@@ -51,8 +51,8 @@ if(isset($_GET['delid']))
           if(isset($_SESSION['adminid']))
           {
             echo "<td>&nbsp;
-            <a href='treatment.php?editid=$rs[treatmentid]' class='btn btn-raised bg-green'>Edit</a> 
-            <a href='viewtreatment.php?delid=$rs[treatmentid]' class='btn btn-raised bg-blush'>Delete</a> </td>";
+            <a href='treatment.php?editid=$rs[treatmentid]' class='btn btn-raised bg-green'>Editar</a> 
+            <a href='viewtreatment.php?delid=$rs[treatmentid]' class='btn btn-raised bg-blush'>Eliminar</a> </td>";
           }
           echo "</tr>";
         }

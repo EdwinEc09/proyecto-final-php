@@ -7,7 +7,7 @@ if(isset($_GET['delid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('Medicine redcord deleted successfully..');</script>";
+		echo "<script>alert('Redcord de medicina eliminado exitosamente.');</script>";
 	}
 }
 ?>
@@ -24,11 +24,11 @@ if(isset($_GET['delid']))
 
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Cost</th>
-              <th>description</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Nombre</th>
+              <th>Costo</th>
+              <th>Descripción</th>
+              <th>Estado</th>
+              <th>Acción</th>
             </tr>
           </thead> 
           <tbody>
@@ -44,8 +44,8 @@ if(isset($_GET['delid']))
               <td>&nbsp;$rs[description]</td>
               <td>&nbsp;$rs[status]</td>
               <td>&nbsp;
-              <a href='medicine.php?editid=$rs[medicineid]' class='btn btn-raised bg-green'>Edit</a> 
-              <a href='viewmedicine.php?delid=$rs[medicineid]' class='btn btn-raised bg-blush'>Delete</a></td>
+              <a href='medicine.php?editid=$rs[medicineid]' class='btn btn-raised bg-green'>Editar</a> 
+              <a href='viewmedicine.php?delid=$rs[medicineid]' class='btn btn-raised bg-blush'>Eliminar</a></td>
               </tr>";
             }
             ?>

@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE medicine SET medicinename='$_POST[medicinename]',medicinecost='$_POST[medicinecost]',description='$_POST[description]',status='$_POST[status]' WHERE medicineid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Medicine record updated successfully...');</script>";
+			echo "<script>alert('Registro de medicamentos actualizado exitosamente.');</script>";
 		}
 		else
 		{
@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO medicine(medicinename,medicinecost,description,status) values('$_POST[medicinename]','$_POST[medicinecost]','$_POST[description]','$_POST[status]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Medicine record inserted successfully...');</script>";
+			echo "<script>alert('Registro de medicamentos insertado exitosamente.');</script>";
 		}
 		else
 		{
@@ -40,7 +40,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-            <h2 class="text-center">Add Medicine record</h2>
+            <h2 class="text-center">Agregar registro de medicina</h2>
            
         </div>
   <div class="card">
@@ -49,21 +49,21 @@ if(isset($_GET['editid']))
     <table class="table table-hover">
       <tbody>
         <tr>
-          <td width="34%">Medicine Name</td>
-          <td width="66%"><input placeholder="Enter Here" class="form-control" type="text" name="medicinename" id="medicinename" value="<?php echo $rsedit['medicinename']; ?>" /></td>
+          <td width="34%">Nombre del medicamento</td>
+          <td width="66%"><input placeholder="Entre aquí" class="form-control" type="text" name="medicinename" id="medicinename" value="<?php echo $rsedit['medicinename']; ?>" /></td>
         </tr>
         <tr>
-          <td width="34%">Medicine cost</td>
-          <td width="66%"><input placeholder="Enter Here" class="form-control" type="text" name="medicinecost" id="medicinecost" value="<?php echo $rsedit['medicinecost']; ?>" /></td>
+          <td width="34%">Costo de la medicina</td>
+          <td width="66%"><input placeholder="Entre aquí" class="form-control" type="text" name="medicinecost" id="medicinecost" value="<?php echo $rsedit['medicinecost']; ?>" /></td>
         </tr>
         <tr>
-          <td>Description</td>
-          <td><textarea placeholder="Enter Here" class="form-control no-resize" name="description" id="description" cols="45" rows="5"><?php echo $rsedit['description'] ; ?></textarea></td>
+          <td>Descripción</td>
+          <td><textarea placeholder="Entre aquí" class="form-control no-resize" name="description" id="description" cols="45" rows="5"><?php echo $rsedit['description'] ; ?></textarea></td>
         </tr>
         <tr>
-          <td>Status</td>
+          <td>Estado</td>
           <td> <select class="form-control show-tick" name="status" id="status">
-            <option value="">Select</option>
+            <option value="">Seleccionar</option>
             <?php
 		  $arr = array("Activo","Inactivo");
 		  foreach($arr as $val)
@@ -81,7 +81,7 @@ if(isset($_GET['editid']))
             </select></td>
         </tr>
         <tr>
-          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Submit" /></td>
+          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Entregar" /></td>
         </tr>
       </tbody>
     </table>
