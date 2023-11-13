@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
 			$billtype="Prescription charge";
 			$billamt=0;
 			include("insertbillingrecord.php");	
-			echo "<script>alert('prescription record inserted successfully...');</script>";
+			echo "<script>alert('Registro de prescripción insertado exitosamente...');</script>";
 			echo "<script>window.location='prescriptionrecord.php?prescriptionid=" . $insid . "&patientid=$_GET[patientid]&appid=$_GET[appid]';</script>";
 		}
 		else
@@ -45,7 +45,7 @@ if(isset($_GET['editid']))
 ?>
 <div class="container-fluid">
         <div class="block-header">
-            <h2>Add New Prescription</h2>
+            <h2>Agregar nueva receta</h2>
             
         </div>
         <div class="row clearfix">
@@ -59,7 +59,7 @@ if(isset($_GET['editid']))
     <table class="table table-bordered table-striped">
       <tbody>
         <tr>
-          <td>Patient</td>
+          <td>Paciente</td>
           <td>
             <?php
 		  	$sqlpatient= "SELECT * FROM patient WHERE status='Activo' AND patientid='$_GET[patientid]'";
@@ -96,7 +96,7 @@ if(isset($_GET['editid']))
         <tr>
           <td width="34%">Doctor</td>
           <td width="66%"><select class="form-control show-tick" name="select2" id="select2">
-          <option value="">Select</option>
+          <option value="">Seleccionar</option>
             <?php
           	$sqldoctor= "SELECT * FROM doctor WHERE status='Activo'";
 			$qsqldoctor = mysqli_query($con,$sqldoctor);
@@ -118,12 +118,12 @@ if(isset($_GET['editid']))
 		}
 		?>
         <tr>
-          <td>Prescription Date</td>
+          <td>Fecha de prescripción</td>
           <td><input class="form-control" type="date" name="date" id="date" value="<?php echo $rsedit['prescriptiondate']; ?>" /></td>
         </tr>
        
         <tr>
-          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Submit" /></td>
+          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Entregar" /></td>
         </tr>
       </tbody>
     </table>

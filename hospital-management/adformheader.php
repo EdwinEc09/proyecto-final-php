@@ -7,24 +7,25 @@ $tim = date("H:i:s");
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<title>HMS</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-<!-- JQuery DataTable Css -->
-<link href="assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
-<link href="assets/css/main.css" rel="stylesheet">
-<!-- Custom Css -->
 
-<!-- Swift Themes. You can choose a theme from css/themes instead of get all themes -->
-<link href="assets/css/themes/all-themes.css" rel="stylesheet" />
-<script src="sweetalert2.min.js"></script>
-<link rel="stylesheet" href="sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>HMS</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- JQuery DataTable Css -->
+    <link href="assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Custom Css -->
+
+    <!-- Swift Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="theme-cyan">
@@ -61,7 +62,7 @@ $tim = date("H:i:s");
                 <li>
                     <a data-placement="bottom" title="Full Screen" href="logout.php"><i
                             class="zmdi zmdi-sign-in"></i></a>
-                </li>               
+                </li>
 
             </ul>
         </div>
@@ -108,7 +109,7 @@ $tim = date("H:i:s");
                             <li><a href="doctor.php">Añadir Doctor</a>
                             </li>
                             <li><a href="viewdoctor.php">Ver Doctor</a></li>
-                           
+
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
@@ -143,60 +144,56 @@ $tim = date("H:i:s");
             if(isset($_SESSION['doctorid']))
             {
             ?>
-            <!-- <div class="menu">
+            <div class="menu">
                 <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="doctoraccount.php"><i
-                                class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                                class="zmdi zmdi-home"></i><span>Panel</span></a></li>
 
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Profile</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="doctorprofile.php">Profile</a></li>
-                            <li><a href="doctorchangepassword.php">Change Password</a></li>
+                            <li><a href="doctorprofile.php">Perfil</a></li>
+                            <li><a href="doctorchangepassword.php">Cambiar la contraseña</a></li>
                         </ul>
                     </li>
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewappointmentpending.php" style="width:250px;">View Pending Appointments</a>
+                            <li><a href="viewappointmentpending.php" style="width:250px;">Ver citas pendientes</a>
                             </li>
-                            <li><a href="viewappointmentapproved.php" style="width:250px;">View Approved
-                                    Appointments</a></li>
+                            <li><a href="viewappointmentapproved.php" style="width:250px;">Ver citas aprovadas</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
+                                class="zmdi zmdi-account-add"></i><span>Doctores</span> </a>
                         <ul class="ml-menu">
-                           
-                            <li><a href="doctortimings.php">Add Visiting Hour</a></li>
-                            <li><a href="viewdoctortimings.php">View Visiting Hour</a></li>
+
+                            <li><a href="doctortimings.php">Agregar hora de visita</a></li>
+                            <li><a href="viewdoctortimings.php">Ver horario de visita</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                                class="zmdi zmdi-account-o"></i><span>Pacientes</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewpatient.php">View Patient</a>
+                            <li><a href="viewpatient.php">Ver paciente</a>
                             </li>
                         </ul>
                     </li>
 
-                    <li> <a href="viewdoctorconsultancycharge.php"><i class="zmdi zmdi-copy"></i><span>Income
-                                Report</span> </a></li>
-
-
+                    <li> <a href="viewdoctorconsultancycharge.php"><i class="zmdi zmdi-copy"></i><span>Informe de ingresos</span> </a></li>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-settings-square"></i><span>Service</span> </a>
+                                class="zmdi zmdi-settings-square"></i><span>Servicio</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewtreatmentrecord.php">View Treatment Records</a></li>
-                            <li><a href="viewtreatment.php">View Treatment</a></li>
+                                <li><a href="viewtreatmentrecord.php">Ver registros de tratamiento</a></li>
+                            <li><a href="viewtreatment.php">Ver tratamiento</a></li>
                         </ul>
                     </li>
 
                 </ul>
-            </div> -->
+            </div>
 
             <?php }; ?>
             <!-- doctor Menu -->
@@ -227,14 +224,14 @@ $tim = date("H:i:s");
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patientappointment.php" >Add Appointment</a></li>
-                            <li><a href="viewappointment.php" >View Appointments</a></li>
+                            <li><a href="patientappointment.php">Add Appointment</a></li>
+                            <li><a href="viewappointment.php">View Appointments</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-account-add"></i><span>Prescription</span> </a>
                         <ul class="ml-menu">
-                            <li><a  href="patviewprescription.php">View Prescription Records</a>
+                            <li><a href="patviewprescription.php">View Prescription Records</a>
                             </li>
                         </ul>
                     </li>
@@ -254,6 +251,6 @@ $tim = date("H:i:s");
             <!-- patient Menu -->
         </aside>
         <!-- #END# Left Sidebar -->
-     
+
     </section>
-     <section class="content home">
+    <section class="content home">

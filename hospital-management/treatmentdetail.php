@@ -52,7 +52,7 @@ if(isset($_SESSION['doctorid']))
 <hr>
 	<table>
 	<tr>
-	<td><div align="center"><strong><a href="treatmentrecord.php?patientid=<?php echo $_GET['patientid']; ?>&appid=<?php echo $rsappointment['appointmentid']; ?>">Add Treatment records</a></strong></div></td>
+	<td><div align="center"><strong><a href="treatmentrecord.php?patientid=<?php echo $_GET['patientid']; ?>&appid=<?php echo $rsappointment['appointmentid']; ?>">Agregar registros de tratamiento</a></strong></div></td>
 	</tr>
 	</table>
 <?php

@@ -34,7 +34,7 @@ if(isset($_POST['submit']))
 			$billtype = "Prescription update";
 			$prescriptionid= $_POST['prescriptionid'];
 			include("insertbillingrecord.php");
-			echo "<script>alert('prescription record inserted successfully...');</script>";
+			echo "<script>alert('Registro de prescripción insertado exitosamente...');</script>";
 			echo "<script>window.location='prescriptionrecord.php?prescriptionid=$_GET[prescriptionid]&patientid=$_GET[patientid]&appid=$_GET[appid]';</script>";
 		}
 		else
@@ -54,15 +54,15 @@ if(isset($_GET['editid']))
 
 
 <div class="container-fluid">
-	<div class="block-header"><h2>Add New Prescription Record</h2></div>
+	<div class="block-header"><h2>Agregar nueva receta</h2></div>
   <div class="card" style="padding:10px">
  <table class="table table-bordered table-striped">
       <tbody>
         <tr>
           <td><strong>Doctor</strong></td>
-          <td><strong>Patient</strong></td>
-          <td><strong>Prescription Date</strong></td>
-          <td><strong>Status</strong></td>
+          <td><strong>Paciente</strong></td>
+          <td><strong>Fecha de prescripción</strong></td>
+          <td><strong>Estado</strong></td>
         </tr>
           <?php
 		$sql ="SELECT * FROM prescription WHERE prescriptionid='$_GET[prescriptionid]'";
@@ -103,10 +103,10 @@ if(isset($_GET['editid']))
       <tbody>
       
         <tr>
-          <td width="34%">Medicine</td>
+          <td width="34%">Medicamento</td>
           <td width="66%">
 		  <select class="form-control show-tick" name="medicineid" id="medicineid" onchange="loadmedicine(this.value)">
-		  <option value="">Select Medicine</option>
+		  <option value="">Seleccione Medicamento</option>
 		  <?php
 		$sqlmedicine ="SELECT * FROM medicine WHERE status='Activo'";
 		$qsqlmedicine = mysqli_query($con,$sqlmedicine);
@@ -119,21 +119,21 @@ if(isset($_GET['editid']))
 		  </td>
         </tr>
         <tr>
-          <td>Cost</td>
+          <td>Costo</td>
           <td><input class="form-control" type="text" name="cost" id="cost" value="<?php echo $rsmedicine['medicinecost']; ?>" readonly style="background-color:pink;" /></td>
         </tr>
         <tr>
-          <td>Unit</td>
+          <td>Unidad</td>
           <td><input class="form-control" type="number" min="1" name="unit" id="unit" value="<?php echo $rsedit['unit']; ?>" onkeyup="calctotalcost(cost.value,this.value)" onchange="" /></td>
         </tr>
         <tr>
-          <td>Total Cost</td>
+          <td>Costo total</td>
           <td><input class="form-control" type="text" name="totcost" id="totcost" value="<?php echo $rsedit['cost']; ?>" readonly style="background-color:pink;" /></td>
         </tr>
         <tr>
-          <td>Dosage</td>
+          <td>Dosis</td>
           <td><select class="form-control show-tick" name="select2" id="select2">
-           <option value="">Select</option>
+           <option value="">Seleccionar</option>
           <?php
 		  $arr = array("0-0-1","0-1-1","1-0-1","1-1-1","1-1-0","0-1-0","1-0-0");
 		  foreach($arr as $val)
@@ -151,7 +151,7 @@ if(isset($_GET['editid']))
           </select></td>
         </tr>
         <tr>
-          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Submit" /> </td>
+          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Entregar" /> </td>
         </tr>
       </tbody>
     </table>
@@ -160,22 +160,22 @@ if(isset($_GET['editid']))
 			}
 		?>
 	</div>
-	<div class="block-header"><h2>View Prescription record</h2></div>
+	<div class="block-header"><h2>Ver registro de prescripción</h2></div>
     
   	<div class="card" style="padding:10px">
     <table class="table table-hover table-striped">
       <tbody>
         <tr>
-          <td><strong>Medicine</strong></td>
-          <td><strong>Dosage</strong></td>
-          <td><strong>Cost</strong></td>
-          <td><strong>Unit</strong></td>
+          <td><strong>Medicamento</strong></td>
+          <td><strong>Dosis</strong></td>
+          <td><strong>Costo</strong></td>
+          <td><strong>Unidad</strong></td>
           <td><strong>Total</strong></td>
                     <?php
 			if(!isset($_SESSION['patientid']))
 			{
 		  ?>  
-          <td><strong>Action</strong></td>
+          <td><strong>Acción</strong></td>
           <?php
 			}
 			?>
@@ -194,20 +194,20 @@ if(isset($_GET['editid']))
 		   <td >$" . $rs['cost'] * $rs['unit'] . "</td>";
 			if(!isset($_SESSION['patientid']))
 			{
-			 echo " <td>&nbsp; <a href='prescriptionrecord.php?delid=$rs[prescription_record_id]&prescriptionid=$_GET[prescriptionid]'>Delete</a> </td>"; 
+			 echo " <td>&nbsp; <a href='prescriptionrecord.php?delid=$rs[prescription_record_id]&prescriptionid=$_GET[prescriptionid]'>Eliminar</a> </td>"; 
 			}
 		echo "</tr>";
 		$gtotal = $gtotal+($rs['cost'] * $rs['unit']);
 		}
 		?>
         <tr>
-          <th colspan="4" align="right">Grand Total </th>
+          <th colspan="4" align="right">Gran total </th>
 		  <th align="right">$<?php echo $gtotal; ?></th>
 		  <td></td>
           </tr>
         <tr>
           <td colspan="6"><div align="center">
-            <input Class="btn btn-default" type="submit" name="print" id="print" value="Print" onclick="myFunction()"/>
+            <input Class="btn btn-default" type="submit" name="print" id="print" value="Imprimir" onclick="myFunction()"/>
           </div></td>
           </tr>
       </tbody>
@@ -215,7 +215,7 @@ if(isset($_GET['editid']))
 	
 	<table>
 	<tr><td>
-	 <center><a href='patientreport.php?patientid=<?php echo $_GET['patientid']; ?>&appointmentid=<?php echo $_GET['appid']; ?>'><strong>View Patient Report>></strong></a></center>
+	 <center><a href='patientreport.php?patientid=<?php echo $_GET['patientid']; ?>&appointmentid=<?php echo $_GET['appid']; ?>'><strong>Ver reporte de paciente>></strong></a></center>
 	</td></tr>
 	</table>
 <script>

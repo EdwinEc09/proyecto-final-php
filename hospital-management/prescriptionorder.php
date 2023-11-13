@@ -29,7 +29,7 @@ if(isset($_POST['submit']))
 			$billamt=0;			
 		$sql ="UPDATE orders SET deliverydate='$_POST[date]', status ='Activo',prescriptionid='$prescriptionid' WHERE orderid='$_GET[orderid]'";
 		$qsql = mysqli_query($con,$sql);
-			echo "<script>alert('prescription record inserted successfully...');</script>";
+			echo "<script>alert('Registro de prescripción insertado exitosamente...');</script>";
 			echo "<script>window.location='prescriptionorderdetail.php?prescriptionid=" . $insid . "&patientid=$_GET[patientid]';</script>";
 		}
 		else

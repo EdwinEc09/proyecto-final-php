@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
 
 <div class="container-fluid">
     <div class="block-header">
-        <h2 class="text-center"> Doctor's Password</h2>
+        <h2 class="text-center">Contraseña del médico</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -27,26 +27,26 @@ if(isset($_POST['submit']))
                 <form method="post" action="" name="frmdoctchangepass" onSubmit="return validateform()"
                     style="padding: 10px">
                     <div class="form-group">
-                        <label>Old Password</label>
+                        <label>Contraseña anterior</label>
                         <div class="form-line">
                             <input class="form-control" type="password" name="oldpassword" id="oldpassword" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>New Password</label>
+                        <label>Nueva contraseña</label>
                         <div class="form-line">
                             <input class="form-control" type="password" name="newpassword" id="newpassword" />
 
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Confirm Password</label>
+                        <label>confirmar Contraseña</label>
                         <div class="form-line">
                             <input class="form-control" type="password" name="password" id="password" />
                         </div>
                     </div>
 
-                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Submit" />
+                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Entregar" />
 
 
                 </form>

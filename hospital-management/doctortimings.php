@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 			 $sql ="UPDATE doctor_timings SET doctorid='$_POST[select2]',start_time='$_POST[ftime]',end_time='$_POST[ttime]',status='$_POST[select]'  WHERE doctor_timings_id='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Doctor Timings record updated successfully...');</script>";
+			echo "<script>alert('Registro de horarios medicos actualizado exitosamente...');</script>";
 		}
 		else
 		{
@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 	$sql ="INSERT INTO doctor_timings(doctorid,start_time,end_time,status) values('$_POST[select2]','$_POST[ftime]','$_POST[ttime]','$_POST[select]')";
 	if($qsql = mysqli_query($con,$sql))
 	{
-		echo "<script>alert('Doctor Timings record inserted successfully...');</script>";
+		echo "<script>alert('Registro de horarios medicos insertado exitosamente...');</script>";
 	}
 	else
 	{
@@ -40,7 +40,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-            <h2 class="text-center">Add New Doctor Timings</h2>
+            <h2 class="text-center">Agregar nuevos horarios médicos</h2>
             
         </div>
   <div class="card">
@@ -83,17 +83,17 @@ if(isset($_GET['editid']))
 		}
 		?>
         <tr>
-          <td height="36">From</td>
+          <td height="36">De</td>
           <td><input class="form-control"  type="time" name="ftime" id="ftime" value="<?php echo $rsedit['start_time']; ?>"></td>
         </tr>
         <tr>
-          <td height="34">To</td>
+          <td height="34">Para</td>
           <td><input  class="form-control" type="time" name="ttime" id="ttime"  value="<?php echo $rsedit['end_time']; ?>" ></td>
         </tr>
         <tr>
-          <td height="33">Status</td>
+          <td height="33">Estado</td>
           <td><select class="form-control"  name="select" id="select">
-          <option value="">Select</option>
+          <option value="">Seleccionar</option>
           <?php
 		  $arr = array("Activo","Inactivo");
 		  foreach($arr as $val)
@@ -111,7 +111,7 @@ if(isset($_GET['editid']))
            </select></td>
         </tr>
         <tr>
-          <td height="36" colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Submit" /></td>
+          <td height="36" colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Entregar" /></td>
         </tr>
       </tbody>
     </table>
@@ -131,26 +131,26 @@ function validateform()
 {
 	if(document.frmdocttimings.select2.value == "")
 	{
-		alert("doctor name should not be empty..");
+		alert("El nombre del médico no debe estar vacío.");
 		document.frmdocttimings.select2.focus();
 		return false;
 	}
 	else if(document.frmdocttimings.ftime.value == "")
 	{
-		alert("from time should not be empty..");
+		alert("Desde el momento no debe estar vacía .");
 		document.frmdocttimings.ftime.focus();
 		return false;
 	}
 	else if(document.frmdocttimings.ttime.value == "")
 	{
-		alert("To time should not be empty..");
+		alert("Hasta el momento no debe estar vacía .");
 		document.frmdocttimings.ttime.focus();
 		return false;
 	}
 	
 	else if(document.frmdocttimings.select.value == "" )
 	{
-		alert("Kindly select the status..");
+		alert("Por favor seleccione el estado.");
 		document.frmdocttimings.select.focus();
 		return false;
 	}

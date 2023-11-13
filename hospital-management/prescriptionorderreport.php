@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 		{	
 			$billtype = "Prescription update";
 			$prescriptionid= $_POST['prescriptionid'];
-			echo "<script>alert('prescription record inserted successfully...');</script>";
+			echo "<script>alert('Registro de prescripción insertado exitosamente...');</script>";
 		}
 		else
 		{

@@ -39,7 +39,7 @@ if(isset($_SESSION['doctorid']))
 ?>
 <div class="container-fluid">
     <div class="block-header">
-        <h2 class="text-center"> Doctor's Profile</h2>
+        <h2 class="text-center">Perfil del médico</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -49,7 +49,7 @@ if(isset($_SESSION['doctorid']))
                     <div class="row">
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Doctor Name</label>
+                                <label>Nombre del médico</label>
                                 <div class="form-line">
                                     <input class="form-control" type="text" name="doctorname" id="doctorname"
                                         value="<?php echo $rsedit['doctorname']; ?>" />
@@ -58,7 +58,7 @@ if(isset($_SESSION['doctorid']))
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Mobile Number</label>
+                                <label>Número de teléfono móvil</label>
                                 <div class="form-line">
                                     <input class="form-control" type="text" name="mobilenumber" id="mobilenumber"
                                         value="<?php echo $rsedit['mobileno']; ?>" />
@@ -67,10 +67,10 @@ if(isset($_SESSION['doctorid']))
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Department</label>
+                                <label>Departamento</label>
                                 <div class="form-line">
                                     <select name="select3" id="select3" class="form-control show-tick">
-                                        <option value="">Select</option>
+                                        <option value="">Seleccionar</option>
                                         <?php
 													$sqldepartment= "SELECT * FROM department WHERE status='Activo'";
 													$qsqldepartment = mysqli_query($con,$sqldepartment);
@@ -95,7 +95,7 @@ if(isset($_SESSION['doctorid']))
                     <div class="row">
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Login ID</label>
+                                <label>Ingresar identificación</label>
                                 <div class="form-line">
                                     <input class="form-control" type="text" name="loginid" id="loginid"
                                         value="<?php echo $rsedit['loginid']; ?>" />
@@ -104,7 +104,7 @@ if(isset($_SESSION['doctorid']))
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Education</label>
+                                <label>Educación</label>
                                 <div class="form-line">
                                     <input class="form-control" type="text" name="education" id="education"
                                         value="<?php echo $rsedit['education']; ?>" />
@@ -113,7 +113,7 @@ if(isset($_SESSION['doctorid']))
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Experience</label>
+                                <label>Experiencia</label>
                                 <div class="form-line">
                                     <input class="form-control" type="text" name="experience" id="experience"
                                         value="<?php echo $rsedit['experience']; ?>" />
@@ -122,7 +122,7 @@ if(isset($_SESSION['doctorid']))
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Consultancy charge</label>
+                                <label>Cargo por consultoría</label>
                                 <div class="form-line">
 
                                     <input class="form-control" type="text" name="consultancy_charge"
@@ -130,7 +130,7 @@ if(isset($_SESSION['doctorid']))
                                 </div>
                             </div>
 
-                            <input class="btn btn-raised" type="submit" name="submit" id="submit" value="Submit" />
+                            <input class="btn btn-raised" type="submit" name="submit" id="submit" value="Entregar" />
                         </div>
                     </div>
 

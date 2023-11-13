@@ -23,7 +23,7 @@ while($rs = mysqli_fetch_array($qsql))
               		<td>&nbsp;$rsdoctor[doctorname]</td>
               		<td>&nbsp;$rspatient[patientname]</td>
                		<td>&nbsp;$rs[prescriptiondate]</td>
-					<td><a href='prescriptionrecord.php?prescriptionid=$rs[0]&patientid=$rs[patientid]' >View</td>
+					<td><a href='prescriptionrecord.php?prescriptionid=$rs[0]&patientid=$rs[patientid]' >Ver</td>
             </tr>";
 }
 ?>    
@@ -37,7 +37,7 @@ if(isset($_SESSION['doctorid']))
 	<table>
 		<tr>
 			<td>
-			<div align="center"><a href="prescription.php?patientid=<?php echo $_GET['patientid']; ?>&appid=<?php echo $rsappointment['appointmentid']; ?>">Add Prescription records</a></div>
+			<div align="center"><a href="prescription.php?patientid=<?php echo $_GET['patientid']; ?>&appid=<?php echo $rsappointment['appointmentid']; ?>">Agregar registro de recetas</a></div>
 			</td>
 		</tr>
 	</table>

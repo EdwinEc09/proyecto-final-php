@@ -33,7 +33,7 @@ if(!isset($_SESSION['doctorid']))
         <div class="info-box-4 hover-zoom-effect">
           <div class="icon"> <i class="zmdi zmdi-file-plus col-blue"></i> </div>
           <div class="content">
-            <div class="text">New Appoiment</div>
+            <div class="text">Nueva cita</div>
             <div class="number"><?php
             $sql = "SELECT * FROM appointment WHERE `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' ".date("Y-m-d")."'";
             $qsql = mysqli_query($con,$sql);
@@ -46,7 +46,7 @@ if(!isset($_SESSION['doctorid']))
         <div class="info-box-4 hover-zoom-effect">
           <div class="icon"> <i class="zmdi zmdi-account col-cyan"></i> </div>
           <div class="content">
-            <div class="text">Number of Patient</div>
+            <div class="text">Numero de paciente</div>
             <div class="number"><?php
             $sql = "SELECT * FROM patient WHERE status='Activo'";
             $qsql = mysqli_query($con,$sql);
@@ -59,7 +59,7 @@ if(!isset($_SESSION['doctorid']))
         <div class="info-box-4 hover-zoom-effect">
           <div class="icon"> <i class="zmdi zmdi-account-circle col-blush"></i> </div>
           <div class="content">
-            <div class="text">Today's Appointment</div>
+            <div class="text">La cita de hoy</div>
             <div class="number">
               <?php
               $sql = "SELECT * FROM appointment WHERE status='Approved' AND `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' ".date("Y-m-d")."'" ;
@@ -74,7 +74,7 @@ if(!isset($_SESSION['doctorid']))
         <div class="info-box-4 hover-zoom-effect">
           <div class="icon"> <i class="zmdi zmdi-money col-green"></i> </div>
           <div class="content">
-            <div class="text">Total Earnings</div>
+            <div class="text">Ganancias totales</div>
             <div class="number">$ 
               <?php 
               $sql = "SELECT sum(bill_amount) as total  FROM `billing_records` WHERE `bill_type` = 'Consultancy Charge'" ;
