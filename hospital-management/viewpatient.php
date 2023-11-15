@@ -39,13 +39,13 @@ if(isset($_GET['delid']))
        {
         echo "<tr>
         <td>$rs[patientname]<br>
-        <strong>Login ID :</strong> $rs[loginid] </td>
+        <strong>Usuario:</strong> $rs[loginid] </td>
         <td>
-        <strong>Fecha</strong>: &nbsp;$rs[admissiondate]<br>
-        <strong>Tiempo</strong>: &nbsp;$rs[admissiontime]</td>
+        <strong>Fecha:</strong> &nbsp;$rs[admissiondate]<br>
+        <strong>Tiempo:</strong> &nbsp;$rs[admissiontime]</td>
         <td>$rs[address]<br>$rs[city] -  &nbsp;$rs[pincode]<br>
         Mob No. - $rs[mobileno]</td>
-        <td><strong>Sangre group</strong> - $rs[bloodgroup]<br>
+        <td><strong>Grupo de sangre</strong> - $rs[bloodgroup]<br>
         <strong>Género</strong> - &nbsp;$rs[gender]<br>
         <strong>FECHA DE NACIMIENTO</strong> - &nbsp;$rs[dob]</td>
         <td align='center'>Estado - $rs[status] <br>";

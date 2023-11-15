@@ -13,7 +13,7 @@ if(isset($_GET['delid']))
 ?>
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center">View Doctor Timings</h2>
+    <h2 class="text-center">Ver horarios de médicos</h2>
 
   </div>
 
@@ -24,9 +24,9 @@ if(isset($_GET['delid']))
       <thead>
         <tr>
           <td>Doctor</td>
-          <td>Timings available</td>
-          <td>Status</td>
-          <td>Action</td>
+          <td>Horarios disponibles</td>
+          <td>Estado</td>
+          <td>Acción</td>
         </tr>
       </thead>
       <tbody>
@@ -48,7 +48,7 @@ if(isset($_GET['delid']))
           <td>&nbsp;$rsdoctor[doctorname]</td>
           <td>&nbsp;$rsdoct[start_time] - $rsdoct[end_time]</td>
           <td>&nbsp;$rs[status]</td>
-          <td width='250'>&nbsp;<a href='doctortimings.php?editid=$rs[doctor_timings_id]' class='btn btn-raised btn-sm g-bg-cyan'>Edit</a>  <a href='viewdoctortimings.php?delid=$rs[doctor_timings_id]' class='btn btn-raised btn-sm g-bg-blush2'>Delete</a> </td>
+          <td width='250'>&nbsp;<a href='doctortimings.php?editid=$rs[doctor_timings_id]' class='btn btn-raised btn-sm g-bg-cyan'>Editar</a>  <a href='viewdoctortimings.php?delid=$rs[doctor_timings_id]' class='btn btn-raised btn-sm g-bg-blush2'>Eliminar</a> </td>
         </tr>";
 		}
 		?>

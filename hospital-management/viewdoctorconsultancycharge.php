@@ -14,7 +14,7 @@ if(isset($_GET['delid']))
 ?>
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center">View Doctor consultancy charges</h2>
+		<h2 class="text-center">Ver cargos de consultoría médica</h2>
 
 	</div>
 
@@ -24,9 +24,9 @@ if(isset($_GET['delid']))
 		<table class="table table-bordered table-striped table-hover js-exportable dataTable" >
 			<thead>
 				<tr>
-					<th width="97" scope="col">Date</th>
-					<th width="245" scope="col">Decription</th>
-					<th width="86" scope="col">Bill Amount</th>
+					<th width="97" scope="col">Fecha</th>
+					<th width="245" scope="col">Decripción</th>
+					<th width="86" scope="col">Total de la factura</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -101,7 +101,7 @@ if(isset($_GET['delid']))
 			<tfoot>
 				<tr>
 					<td></td>
-					<td>Total Earnings :</td>
+					<td>Ganancias Totales :</td>
 					<td>$ <?php echo ($billamt + $taxamt)  - $rsbilling_records['discount'] ; ?></td>
 				</tr>
 			</tfoot>
