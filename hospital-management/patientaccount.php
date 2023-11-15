@@ -17,7 +17,7 @@ $rspatientappointment = mysqli_fetch_array($qsqlpatientappointment);
 ?>
 <div class=" container-fluid">
     <div class="block-header">
-        <h2>Dashboard</h2>
+        <h2>Panel</h2>
     </div>
 
 
@@ -29,7 +29,7 @@ $rspatientappointment = mysqli_fetch_array($qsqlpatientappointment);
                 <div class="card">
                     <div class="header">
                         <div class="alert bg-teal">
-                            <h3>Welcome , <?php echo $rspatient['patientname']; ?>! </h3>
+                            <h3>Bienvenido , <?php echo $rspatient['patientname']; ?>! </h3>
                         </div>
                     </div>
                 </div>
@@ -41,26 +41,26 @@ $rspatientappointment = mysqli_fetch_array($qsqlpatientappointment);
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs">
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home_animation_1"
-                            aria-expanded="true">Registration History</a></li>
+                            aria-expanded="true">historial de registro</a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile_animation_1"
-                            aria-expanded="false">Appointment</a></li>
+                            aria-expanded="false">Cita</a></li>
 
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content" style="padding: 10px">
                     <div role="tabpanel" class="tab-pane animated flipInX active" id="home_animation_1"
-                        aria-expanded="true"> <b>Registration History</b>
-                        <h3>You are with us from <?php echo $rspatient['admissiondate']; ?>
+                        aria-expanded="true"> <b>Historial de registro</b>
+                        <h3>Estás con nosotros desde el <?php echo $rspatient['admissiondate']; ?>
                             <?php echo $rspatient['admissiontime']; ?></h3>
                     </div>
                     <div role="tabpanel" class="tab-pane animated flipInX" id="profile_animation_1"
-                        aria-expanded="false"> <b>Appointment</b>
+                        aria-expanded="false"> <b>Cita</b>
                         <?php
                         if(mysqli_num_rows($qsqlpatientappointment) == 0)
                         {
                             ?>
-                        <h3>Appointment records not found.. </h3>
+                        <h3>Registros de citas no encontrados..</h3>
                         <?php
                         }
                         else

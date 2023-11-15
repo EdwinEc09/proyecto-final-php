@@ -10,14 +10,14 @@ if(isset($_POST['submit']))
 	if(mysqli_affected_rows($con) == 1)
 	{
 		echo "<div class='alert alert-success'>
-                            Password has been updated successfully
+                            La contraseña se ha actualizado correctamente
                         </div>
                         <script>alert('..');</script>";
 	}
 	else
 	{
 		echo "<div class='alert alert-danger'>
-                            Update Failed
+                            Actualización fallida
                         </div>
                        ";		
 	}
@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
 
 <div class="container-fluid">
     <div class="block-header">
-        <h2 class="text-center"> Patient's Password</h2>
+        <h2 class="text-center">Contraseña del paciente</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -34,26 +34,26 @@ if(isset($_POST['submit']))
                <form method="post" action="" name="frmpatchange" onSubmit="return validateform()"
                     style="padding: 10px">
                     <div class="form-group">
-                        <label>Old Password</label>
+                        <label>Contraseña anterior</label>
                         <div class="form-line">
                             <input class="form-control" type="password" name="oldpassword" id="oldpassword" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>New Password</label>
+                        <label>Nueva contraseña</label>
                         <div class="form-line">
                             <input class="form-control" type="password" name="newpassword" id="newpassword" />
 
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Confirm Password</label>
+                        <label>Confirmar Contraseña</label>
                         <div class="form-line">
                             <input class="form-control" type="password" name="password" id="password" />
                         </div>
                     </div>
 
-                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Submit" />
+                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Entregar" />
 
 
                 </form>
@@ -73,25 +73,25 @@ function validateform()
 {
 	if(document.frmpatchange.oldpassword.value == "")
 	{
-		alert("Old password should not be empty..");
+		alert("La contraseña anterior no debe estar vacía.");
 		document.frmpatchange.oldpassword.focus();
 		return false;
 	}
 	else if(document.frmpatchange.newpassword.value == "")
 	{
-		alert("New Password should not be empty..");
+		alert("La nueva contraseña no debe estar vacía.");
 		document.frmpatchange.newpassword.focus();
 		return false;
 	}
 	else if(document.frmpatchange.newpassword.value.length < 6)
 	{
-		alert("New Password length should be more than 6 characters...");
+		alert("La longitud de la nueva contraseña debe tener más de 6 caracteres...");
 		document.frmpatchange.newpassword.focus();
 		return false;
 	}
 	else if(document.frmpatchange.newpassword.value != document.frmpatchange.password.value )
 	{
-		alert(" New Password and confirm password should be equal..");
+		alert("La nueva contraseña y la confirmación de contraseña deben ser iguales.");
 		document.frmpatchange.password.focus();
 		return false;
 	}

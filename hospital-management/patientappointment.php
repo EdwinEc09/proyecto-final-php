@@ -28,14 +28,14 @@ if(isset($_POST['submit']))
 	$qsqlappointment = mysqli_query($con,$sqlappointment);
 	if(mysqli_num_rows($qsqlappointment) >= 1)
 	{
-		echo "<script>alert('Appointment already scheduled for this time..');</script>";
+		echo "<script>alert('Cita ya agendada para esta hora...');</script>";
 	}
 	else
 	{
 		$sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Appointment record inserted successfully...');</script>";
+			echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
 		}
 		else
 		{
@@ -74,15 +74,15 @@ if(isset($_SESSION['patientid']))
          {
           if(isset($_SESSION['patientid']))
           {
-             echo "<h2 class='text-center'>Appointment taken successfully.. </h2>";
-             echo "<p class='text-center'>Appointment record is in pending process. Kinldy check the appointment status. </p>";
-             echo "<p class='text-center'> <a href='viewappointment.php'>View Appointment record</a>. </p>";			
+             echo "<h2 class='text-center'>Cita tomada exitosamente...</h2>";
+             echo "<p class='text-center'>Registro de cita está en proceso pendiente. Por favor verifique el estado de la cita.</p>";
+             echo "<p class='text-center'> <a href='viewappointment.php'>Ver registro de cita</a>. </p>";			
          }
          else
          {
-             echo "<h2 class='text-center'>Appointment taken successfully.. </h2>";
-             echo "<p class='text-center'>Appointment record is in pending process. Please wait for confirmation message.. </p>";
-             echo "<p class='text-center'> <a href='patientlogin.php'>Click here to Login</a>. </p>";	
+             echo "<h2 class='text-center'>Cita tomada exitosamente...</h2>";
+             echo "<p class='text-center'>Registro de cita está en proceso pendiente. Espere el mensaje de confirmación.</p>";
+             echo "<p class='text-center'> <a href='patientlogin.php'>Haga clic aquí para ingresar</a>. </p>";	
          }
      }
  }
@@ -105,7 +105,7 @@ if(isset($_SESSION['patientid']))
 
                                 <!-- Heading -->
                                 <div class="heading-block head-left margin-bottom-50">
-                                    <h4>Make an Appointment</h4>
+                                    <h4>Haga una cita</h4>
                                     
                                 </div>
                                 <form method="post" action="" name="frmpatapp" onSubmit="return validateform()"
@@ -115,7 +115,7 @@ if(isset($_SESSION['patientid']))
                                             <label>
 
 
-                                                <input placeholder="Patient's Name" type="text" class="form-control"
+                                                <input placeholder="Nombre del paciente" type="text" class="form-control"
                                                     name="patiente" id="patiente"
                                                     value="<?php echo $rspatient['patientname'];  ?>"
                                                     <?php echo $readonly; ?>>
@@ -125,7 +125,7 @@ if(isset($_SESSION['patientid']))
                                         </li>
 
                                         <li class="col-sm-6">
-                                            <label><input placeholder="Address" type="text" class="form-control"
+                                            <label><input placeholder="Dirección" type="text" class="form-control"
                                                     name="textarea" id="textarea"
                                                     value="<?php echo $rspatient['address'];  ?>"
                                                     <?php echo $readonly; ?>><i class="icon-compass"></i>
@@ -133,7 +133,7 @@ if(isset($_SESSION['patientid']))
 
                                         </li>
                                         <li class="col-sm-6">
-                                            <label><input placeholder="City" type="text" class="form-control"
+                                            <label><input placeholder="Ciudad" type="text" class="form-control"
                                                     name="city" id="city" value="<?php echo $rspatient['city'];  ?>"
                                                     <?php echo $readonly; ?>><i class="icon-pin"></i>
                                             </label>
@@ -141,7 +141,7 @@ if(isset($_SESSION['patientid']))
                                         </li>
                                         <li class="col-sm-6">
                                             <label>
-                                                <input placeholder="Contact Number" type="text" class="form-control"
+                                                <input placeholder="Numero de contacto" type="text" class="form-control"
                                                     name="mobileno" id="mobileno"
                                                     value="<?php echo $rspatient['mobileno'];  ?>"
                                                     <?php echo $readonly; ?>><i class="icon-phone"></i>
@@ -154,7 +154,7 @@ if(isset($_SESSION['patientid']))
                                 ?>
                                         <li class="col-sm-6">
                                             <label>
-                                                <input placeholder="Login ID" type="text" class="form-control"
+                                                <input placeholder="Ingresar identificacion" type="text" class="form-control"
                                                     name="loginid" id="loginid"
                                                     value="<?php echo $rspatient['loginid'];  ?>"
                                                     <?php echo $readonly; ?>><i class="icon-login"></i>
@@ -164,7 +164,7 @@ if(isset($_SESSION['patientid']))
                                         <li class="col-sm-6">
                                             <label>
 
-                                                <input placeholder="Password" type="password" class="form-control"
+                                                <input placeholder="Contraseña" type="password" class="form-control"
                                                     name="password" id="password"
                                                     value="<?php echo $rspatient['password'];  ?>"
                                                     <?php echo $readonly; ?>><i class="icon-lock"></i>
@@ -186,9 +186,9 @@ if(isset($_SESSION['patientid']))
                                    {
                                     ?>
                                                 <select name="select6" id="select6" class="selectpicker">
-                                                    <option value="" selected="" hidden="">Select Gender</option>
+                                                    <option value="" selected="" hidden="">Selecione genero</option>
                                                     <?php
-                                        $arr = array("Male","Female");
+                                        $arr = array("Masculino","Femenino");
                                         foreach($arr as $val)
                                         {
                                             echo "<option value='$val'>$val</option>";
@@ -204,7 +204,7 @@ if(isset($_SESSION['patientid']))
                                         </li>
                                         <li class="col-sm-6">
                                             <label>
-                                                <input placeholder="Date of birth" type="text" class="form-control"
+                                                <input placeholder="Fecha de nacimiento" type="text" class="form-control"
                                                     name="dob" id="dob" onfocus="(this.type='date')"
                                                     value="<?php echo $rspatient['dob']; ?>" <?php echo $readonly; ?>><i
                                                     class="ion-calendar"></i>
@@ -213,7 +213,7 @@ if(isset($_SESSION['patientid']))
                                         </li>
                                         <li class="col-sm-6">
                                             <label>
-                                                <input placeholder="Appointment Date" type="text" class="form-control"
+                                                <input placeholder="Dia de la cita" type="text" class="form-control"
                                                     min="<?php echo date("Y-m-d"); ?>" name="appointmentdate"
                                                     onfocus="(this.type='date')" id="appointmentdate"><i
                                                     class="ion-calendar"></i>
@@ -222,7 +222,7 @@ if(isset($_SESSION['patientid']))
                                         </li>
                                         <li class="col-sm-6">
                                             <label>
-                                                <input placeholder="Appointment Time" type="text"
+                                                <input placeholder="Hora de la cita" type="text"
                                                     onfocus="(this.type='time')" class="form-control"
                                                     name="appointmenttime" id="appointmenttime"><i
                                                     class="ion-ios-clock"></i>
@@ -234,7 +234,7 @@ if(isset($_SESSION['patientid']))
 
                                                 <select name="department" class="selectpicker" id="department"
                                                     >
-                                                    <option value="">Select Department</option>
+                                                    <option value="">Seleccionar Departamento</option>
                                                     <?php
                                 $sqldept = "SELECT * FROM department WHERE status='Activo'";
                                 $qsqldept = mysqli_query($con,$sqldept);
@@ -252,7 +252,7 @@ if(isset($_SESSION['patientid']))
                                             <label>
                                                 <select name="doct" class="selectpicker" id="department"
                                                     >
-                                                    <option value="">Select Doctor</option>
+                                                    <option value="">Seleccionar medico</option>
                                                     <?php
                                                     $sqldept = "SELECT * FROM doctor WHERE status='Activo'";
                                                     $qsqldept = mysqli_query($con,$sqldept);
@@ -276,12 +276,11 @@ if(isset($_SESSION['patientid']))
                                         <li class="col-sm-12">
                                             <label>
                                                 <textarea class="form-control" name="app_reason"
-                                                    placeholder="Appointment reason"></textarea>
+                                                    placeholder="Motivo de la cita"></textarea>
                                             </label>
                                         </li>
                                         <li class="col-sm-12">
-                                            <button type="submit" class="btn" name="submit" id="submit">make an
-                                                appointment</button>
+                                            <button type="submit" class="btn" name="submit" id="submit">Hacer cita</button>
                                         </li>
                                 </form>
                             </div>
@@ -314,63 +313,63 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform() {
     if (document.frmpatapp.patiente.value == "") {
-        alert("Patient name should not be empty..");
+        alert("El nombre del paciente no debe estar vacío...");
         document.frmpatapp.patiente.focus();
         return false;
     } else if (!document.frmpatapp.patiente.value.match(alphaspaceExp)) {
-        alert("Patient name not valid..");
+        alert("Nombre del paciente no válido...");
         document.frmpatapp.patiente.focus();
         return false;
     } else if (document.frmpatapp.textarea.value == "") {
-        alert("Address should not be empty..");
+        alert("La dirección no debe estar vacía...");
         document.frmpatapp.textarea.focus();
         return false;
     } else if (document.frmpatapp.city.value == "") {
-        alert("City should not be empty..");
+        alert("La ciudad no debería estar vacía...");
         document.frmpatapp.city.focus();
         return false;
     } else if (!document.frmpatapp.city.value.match(alphaspaceExp)) {
-        alert("City name not valid..");
+        alert("Nombre de la ciudad no es válida..");
         document.frmpatapp.city.focus();
         return false;
     } else if (document.frmpatapp.mobileno.value == "") {
-        alert("Mobile number should not be empty..");
+        alert("El número de móvil no debe estar vacío...");
         document.frmpatapp.mobileno.focus();
         return false;
     } else if (!document.frmpatapp.mobileno.value.match(numericExpression)) {
-        alert("Mobile number not valid..");
+        alert("Número de móvil no válido...");
         document.frmpatapp.mobileno.focus();
         return false;
     } else if (document.frmpatapp.loginid.value == "") {
-        alert("login ID should not be empty..");
+        alert("El ID de inicio de sesión no debe estar vacío.");
         document.frmpatapp.loginid.focus();
         return false;
     } else if (!document.frmpatapp.loginid.value.match(alphanumericExp)) {
-        alert("login ID not valid..");
+        alert("ID de inicio de sesión no válido...");
         document.frmpatapp.loginid.focus();
         return false;
     } else if (document.frmpatapp.password.value == "") {
-        alert("Password should not be empty..");
+        alert("La contraseña no debe estar vacía...");
         document.frmpatapp.password.focus();
         return false;
     } else if (document.frmpatapp.password.value.length < 8) {
-        alert("Password length should be more than 8 characters...");
+        alert("La longitud de la contraseña debe tener más de 8 caracteres...");
         document.frmpatapp.password.focus();
         return false;
     } else if (document.frmpatapp.select6.value == "") {
-        alert("Gender should not be empty..");
+        alert("El género no debe estar vacío...");
         document.frmpatapp.select6.focus();
         return false;
     } else if (document.frmpatapp.dob.value == "") {
-        alert("Date Of Birth should not be empty..");
+        alert("La fecha de nacimiento no debe estar vacía...");
         document.frmpatapp.dob.focus();
         return false;
     } else if (document.frmpatapp.appointmentdate.value == "") {
-        alert("Appointment date should not be empty..");
+        alert("La fecha de la cita no debe estar vacía...");
         document.frmpatapp.appointmentdate.focus();
         return false;
     } else if (document.frmpatapp.appointmenttime.value == "") {
-        alert("Appointment time should not be empty..");
+        alert("El tiempo de la cita no debe estar vacío...");
         document.frmpatapp.appointmenttime.focus();
         return false;
     } else {

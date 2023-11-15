@@ -216,11 +216,11 @@ $tim = date("H:i:s");
                 <ul class="list">
                     <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="patientaccount.php"><i
-                                class="zmdi zmdi-home"></i><span>panel</span></a></li>
+                                class="zmdi zmdi-home"></i><span>Panel</span></a></li>
 
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>perfil</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
                             <li><a href="patientprofile.php">Ver perfil</a></li>
                             <li><a href="patientchangepassword.php">Cambiar la contraseña</a></li>
@@ -235,7 +235,7 @@ $tim = date("H:i:s");
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-add"></i><span>prescripción</span> </a>
+                                class="zmdi zmdi-account-add"></i><span>Prescripción</span> </a>
                         <ul class="ml-menu">
                             <li><a  href="patviewprescription.php">Ver registros de prescripción</a>
                             </li>
