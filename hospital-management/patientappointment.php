@@ -22,7 +22,8 @@ if(isset($_POST['submit']))
 		{
             $sqle ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Activo')";
             $qsl = mysqli_query($con,$sqle);
-            $sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
+            $sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$_POST[loginid]','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
+            
             if($qsql = mysqli_query($con,$sql))
             {
                 echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
@@ -31,9 +32,9 @@ if(isset($_POST['submit']))
             {
                 echo mysqli_error($con);
             }
-                // echo mysqli_error($con);
-            }
+            
             $lastinsid = mysqli_insert_id($con);
+        }
 	}
 	
 	// $sqlappointment="SELECT * FROM appointment WHERE appointmentdate='$_POST[appointmentdate]' AND appointmenttime='$_POST[appointmenttime]' AND doctorid='$_POST[doct]' AND status='Approved'";
