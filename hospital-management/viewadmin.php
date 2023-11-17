@@ -25,7 +25,7 @@ if(isset($_GET['delid']))
     <thead>
       <tr>
         <td width="12%" height="40">Nombre del admin</td>
-        <td width="11%">Ingresar identificación</td>
+        <td width="11%">Usuario</td>
         <td width="12%">Estado</td>
         <td width="10%">Accion</td>
       </tr>

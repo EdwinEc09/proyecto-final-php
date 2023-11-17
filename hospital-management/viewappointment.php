@@ -22,7 +22,7 @@ if(isset($_GET['approveid']))
 ?>
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center">View Appointment records</h2>
+    <h2 class="text-center">Ver registros de citas</h2>
 
   </div>
 
@@ -33,13 +33,13 @@ if(isset($_GET['approveid']))
 
       <thead>
         <tr>
-          <th>Patient Detail</th>
-          <th>Date & Time</th>
-          <th>Department</th>
+          <th>Detalle del paciente</th>
+          <th>Fecha y hora</th>
+          <th>Departamento</th>
           <th>Doctor</th>
-          <th>Reason</th>
-          <th>Status</th>
-          <th><div align="center">Action</div></th>
+          <th>Razón</th>
+          <th>Estado</th>
+          <th><div align="center">Acción</div></th>
         </tr>
         </thead>
         <tbody>

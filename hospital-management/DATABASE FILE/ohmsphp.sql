@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminid`, `adminname`, `loginid`, `password`, `status`, `usertype`) VALUES
-(1, 'Joseph Spector', 'admin', 'Password@123', 'Activo', '');
+(1, 'Joseph Spector', 'admin', '123', 'Activo', '');
 
 -- --------------------------------------------------------
 
@@ -64,13 +64,6 @@ CREATE TABLE `appointment` (
 --
 -- Dumping data for table `appointment`
 --
-
-INSERT INTO `appointment` (`appointmentid`, `appointmenttype`, `patientid`, `roomid`, `departmentid`, `appointmentdate`, `appointmenttime`, `doctorid`, `status`, `app_reason`) VALUES
-(1, '', 1, 0, 1, '2019-06-17', '03:00:00', 1, 'Approved', 'Fever'),
-(2, '', 3, 0, 2, '2021-06-25', '09:22:00', 2, 'Approved', 'this is a demo test'),
-(4, '', 5, 0, 4, '2021-06-24', '14:28:00', 5, 'Approved', 'demo demo demo'),
-(5, '', 6, 0, 7, '2021-06-24', '11:18:00', 7, 'Approved', 'Demo Test, Demo Reason!!');
-
 -- --------------------------------------------------------
 
 --
@@ -186,14 +179,7 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`doctorid`, `doctorname`, `mobileno`, `departmentid`, `loginid`, `password`, `status`, `education`, `experience`, `consultancy_charge`) VALUES
-(1, 'Carol Bosworth', '7002225650', 1, 'carol', 'password', 'Activo', 'MBBS', 7.0, 7.00),
-(2, 'Sirena S Rivera', '7023695696', 2, 'rivera', 'password', 'Activo', 'DM', 4.0, 400.00),
-(3, 'Will Williams', '7014545470', 2, 'wiliams', 'password', 'Activo', 'DM', 7.0, 500.00),
-(4, 'Thomas Borkowski', '7025558690', 3, 'thomas', 'password', 'Activo', 'MD', 4.0, 155.00),
-(5, 'Jason Graham', '7854025410', 4, 'jason', 'password', 'Activo', 'DM', 5.0, 75.00),
-(6, 'Viola McRoy', '7410002540', 5, 'viola', 'password', 'Activo', 'MD', 8.0, 4200.00),
-(7, 'Logan Fletcher', '7012569990', 7, 'logan', 'password', 'Activo', 'MD', 5.0, 995.00),
-(8, 'Ben Bernier', '7012225470', 6, 'ben', 'password', 'Activo', 'DM', 3.0, 689.00);
+(1, 'Carol Bosworth', '7002225650', 1, 'carol', 'password', 'Activo', 'MBBS', 7.0, 7.00);
 
 -- --------------------------------------------------------
 
@@ -321,11 +307,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patientid`, `patientname`, `admissiondate`, `admissiontime`, `address`, `mobileno`, `city`, `pincode`, `loginid`, `password`, `bloodgroup`, `gender`, `dob`, `status`) VALUES
-(1, 'Johnny', '2019-06-15', '18:47:22', 'Dhanmondi', '2125798361', 'Dhaka', '1207', 'admin', '123456789', 'O+', 'MALE', '1990-01-01', 'Active'),
-(3, 'Christine Moore', '2021-06-24', '14:38:04', '4327 Â Pride Avenue', '7012225690', 'Elmhurst', '63520', 'christine', 'password', 'A-', 'Female', '1992-02-12', 'Active'),
-(4, 'Demoname', '2021-06-24', '15:26:32', 'demo address', '7474747474', 'demo city', '', 'demo', 'password', '', 'Male', '1995-02-02', 'Active'),
-(5, 'Thomas Walters', '2021-06-24', '18:44:22', '1723  Cinnamon Lane', '7023658800', 'San Antonio', '', 'thomas', 'password', '', 'Female', '1992-03-12', 'Active'),
-(6, 'Eryn Carlos', '2021-06-24', '19:34:27', '2649 Wayside Lane', '7012225896', 'San Jose', '', 'carlos', 'password', '', 'Female', '1994-03-12', 'Active');
+(1, 'Johnny', '2019-06-15', '18:47:22', 'Dhanmondi', '2125798361', 'Dhaka', '1207', 'admin', '123456789', 'O+', 'MALE', '1990-01-01', 'Active');
 
 -- --------------------------------------------------------
 
@@ -350,11 +332,6 @@ CREATE TABLE `payment` (
 --
 -- Dumping data for table `payment`
 --
-
-INSERT INTO `payment` (`paymentid`, `patientid`, `appointmentid`, `paiddate`, `paidtime`, `paidamount`, `status`, `cardholder`, `cardnumber`, `cvvno`, `expdate`) VALUES
-(1, 5, 4, '2021-06-24', '19:26:51', 324.45, 'Active', '', 0, 0, '0000-00-00'),
-(2, 6, 5, '2021-06-24', '19:54:23', 6379.80, 'Active', '', 0, 0, '0000-00-00'),
-(3, 3, 2, '2021-06-24', '19:56:33', 372.75, 'Active', '', 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
