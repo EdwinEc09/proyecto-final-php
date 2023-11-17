@@ -12,36 +12,48 @@ if(isset($_POST['submit']))
 	{
 		$dt = date("Y-m-d");
 		$tim = date("H:i:s");
-		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Activo')";
-		if($qsql = mysqli_query($con,$sql))
+        $query = "SELECT loginid FROM patient WHERE loginid='$_GET[loginid]'";
+        $qsql = mysqli_query($con,$query);
+		if(mysqli_num_rows($qsql) >= 1)
 		{
-			/* echo "<script>alert('patient record inserted successfully...');</script>"; */
+			echo "<script>alert('El paciente existe...');</script>"; 
 		}
 		else
 		{
-			echo mysqli_error($con);
-		}
-		$lastinsid = mysqli_insert_id($con);
+            $sqle ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Activo')";
+            $qsl = mysqli_query($con,$sqle);
+            $sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
+            if($qsql = mysqli_query($con,$sql))
+            {
+                echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
+            }
+            else
+            {
+                echo mysqli_error($con);
+            }
+                // echo mysqli_error($con);
+            }
+            $lastinsid = mysqli_insert_id($con);
 	}
 	
-	$sqlappointment="SELECT * FROM appointment WHERE appointmentdate='$_POST[appointmentdate]' AND appointmenttime='$_POST[appointmenttime]' AND doctorid='$_POST[doct]' AND status='Approved'";
-	$qsqlappointment = mysqli_query($con,$sqlappointment);
-	if(mysqli_num_rows($qsqlappointment) >= 1)
-	{
-		echo "<script>alert('Cita ya agendada para esta hora...');</script>";
-	}
-	else
-	{
-		$sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
-		if($qsql = mysqli_query($con,$sql))
-		{
-			echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
-		}
-		else
-		{
-			echo mysqli_error($con);
-		}
-	}
+	// $sqlappointment="SELECT * FROM appointment WHERE appointmentdate='$_POST[appointmentdate]' AND appointmenttime='$_POST[appointmenttime]' AND doctorid='$_POST[doct]' AND status='Approved'";
+	// $qsqlappointment = mysqli_query($con,$sqlappointment);
+	// if(mysqli_num_rows($qsqlappointment) >= 1)
+	// {
+	// 	echo "<script>alert('Cita ya agendada para esta hora...');</script>";
+	// }
+	// else
+	// {
+	// 	$sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
+	// 	if($qsql = mysqli_query($con,$sql))
+	// 	{
+	// 		echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
+	// 	}
+	// 	else
+	// 	{
+	// 		echo mysqli_error($con);
+	// 	}
+	// }
 }
 if(isset($_GET['editid']))
 {
