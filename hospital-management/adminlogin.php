@@ -122,7 +122,7 @@ function validateform()
 	}
 	else if(document.frmadminlogin.password.value == "")
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>¡Atención!</strong> No debe estar vacío</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>¡Atención!</strong> La contraseña no debe estar vacío</div>";
 		document.frmadminlogin.password.focus();
 		return false;
 	}

@@ -5,20 +5,20 @@ include("dbconnection.php");
 session_start();
 if(isset($_POST['submit']))
 {
-	$sql = "UPDATE admin SET password='$_POST[newpassword]' WHERE password='$_POST[oldpassword]' AND adminid='$_SESSION[adminid]'";
-	$qsql= mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<div class='alert alert-success'>
-		¡Contraseña actualizada exitosamente :)!
-	</div>";
-	}
-	else
-	{
-		echo "<div class='alert alert-warning'>
-		Error al actualizar el registro de administrador :(
-	</div>";		
-	}
+	// $sql = "UPDATE admin SET password='$_POST[newpassword]' WHERE password='$_POST[oldpassword]' AND adminid='$_SESSION[adminid]'";
+	// $qsql= mysqli_query($con,$sql);
+	// if(mysqli_affected_rows($con) == 1)
+	// {
+	// 	echo "<div class='alert alert-success'>
+	// 	¡Contraseña actualizada exitosamente :)!
+	// </div>";
+	// }
+	// else
+	// {
+	// 	echo "<div class='alert alert-warning'>
+	// 	Error al actualizar el registro de administrador :(
+	// </div>";		
+	// }
 }
 ?>
 <div class="container-fluid">
@@ -62,7 +62,7 @@ if(isset($_POST['submit']))
 					</div>                          
 			</div>                     
 			<div class="col-sm-12">
-				<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit" value="Entregar" />
+				<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit" value="Enviar cambios" />
 				
 			</div>
 		</div>
@@ -78,17 +78,17 @@ if(isset($_POST['submit']))
 include("adfooter.php");
 ?>
 <script type="application/javascript">
-function validateform1()
+function validateform()
 {
 	if(document.frmadminchange.oldpassword.value == "")
 	{
-		alert("Old password should not be empty..");
+		alert("La contraseña antigua no debe estar vacía..");
 		document.frmadminchange.oldpassword.focus();
 		return false;
 	}
 	else if(document.frmadminchange.newpassword.value == "")
 	{
-		alert("New Password should not be empty..");
+		alert("Nueva contraseña no debe estar vacía ..");
 		document.frmadminchange.newpassword.focus();
 		return false;
 	}
