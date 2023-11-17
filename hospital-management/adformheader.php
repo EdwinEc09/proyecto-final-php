@@ -81,15 +81,13 @@ $tim = date("H:i:s");
                     <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="adminaccount.php"><i
                                 class="zmdi zmdi-home"></i><span>Panel</span></a></li>
-
-
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="adminprofile.php">Panel Del Administrador</a></li>
-                            <li><a href="adminchangepassword.php">Cambiar Contraseña</a></li>
-                            <li><a href="admin.php">Añadir Administración</a></li>
-                            <li><a href="viewadmin.php">Ver Administrador</a></li>
+                            <li><a href="adminprofile.php">Panel del administrador</a></li>
+                            <li><a href="adminchangepassword.php">Cambiar contraseña</a></li>
+                            <li><a href="admin.php">Añadir administración</a></li>
+                            <li><a href="viewadmin.php">Ver administrador</a></li>
                         </ul>
                     </li>
 
@@ -97,26 +95,26 @@ $tim = date("H:i:s");
                                 class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                         <ul class="ml-menu">
                             <li><a href="appointment.php">Nueva Cita</a></li>
-                            <li><a href="viewappointmentpending.php">Ver Pacientes Pendientes</a>
+                            <li><a href="viewappointmentpending.php">Ver pacientes pendientes</a>
                             </li>
-                            <li><a href="viewappointmentapproved.php">Ver Citas
-                                    Aprobadas</a></li>
+                            <li><a href="viewappointmentapproved.php">Ver citas
+                                    aprobadas</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-account-add"></i><span>Doctor</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="doctor.php">Añadir Doctor</a>
+                            <li><a href="doctor.php">Añadir doctor</a>
                             </li>
-                            <li><a href="viewdoctor.php">Ver Doctor</a></li>
+                            <li><a href="viewdoctor.php">Ver doctor</a></li>
 
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-account-o"></i><span>Pacientes</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patient.php">Añadir Paciente</a></li>
-                            <li><a href="viewpatient.php">Ver El Historial Del Paciente</a></li>
+                            <li><a href="patient.php">Añadir paciente</a></li>
+                            <li><a href="viewpatient.php">Ver el historial del paciente</a></li>
                         </ul>
                     </li>
 
@@ -124,12 +122,12 @@ $tim = date("H:i:s");
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-settings-square"></i><span>Servicio</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="department.php">Añadir Departamento</a></li>
-                            <li><a href="viewdepartment.php">Ver Departamento</a></li>
-                            <li><a href="treatment.php">Añadir Tipo De Tratamiento</a></li>
-                            <li><a href="viewtreatment.php">Ver Tipos De Tratamiento</a></li>
-                            <li><a href="medicine.php">Añadir Medicamentos</a></li>
-                            <li><a href="viewmedicine.php">Ver Medicina</a></li>
+                            <li><a href="department.php">Añadir departamento</a></li>
+                            <li><a href="viewdepartment.php">Ver departamento</a></li>
+                            <li><a href="treatment.php">Añadir tipo de tratamiento</a></li>
+                            <li><a href="viewtreatment.php">Ver tipos de tratamiento</a></li>
+                            <li><a href="medicine.php">Añadir medicamentos</a></li>
+                            <li><a href="viewmedicine.php">Ver medicina</a></li>
                         </ul>
                     </li>
 
@@ -139,7 +137,7 @@ $tim = date("H:i:s");
             <?php }?>
 
 
-            <!-- doctor Menu -->
+            <!-- Doctor Menu -->
             <?php
             if(isset($_SESSION['doctorid']))
             {
@@ -155,7 +153,7 @@ $tim = date("H:i:s");
                                 class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
                             <li><a href="doctorprofile.php">Perfil</a></li>
-                            <li><a href="doctorchangepassword.php">Cambiar la contraseña</a></li>
+                            <li><a href="doctorchangepassword.php">Cambiar contraseña</a></li>
                         </ul>
                     </li>
 
@@ -196,49 +194,49 @@ $tim = date("H:i:s");
             </div>
 
             <?php }; ?>
-            <!-- doctor Menu -->
+            <!-- Doctor Menu -->
 
 
 
 
-            <!-- patient Menu -->
+            <!-- Paciente Menu -->
             <?php
             if(isset($_SESSION['patientid']))
             {
             ?>
             <div class="menu">
                 <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="header">NAVEGACIÓN PRINCIPAL</li>
                     <li class="active open"><a href="patientaccount.php"><i
-                                class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                                class="zmdi zmdi-home"></i><span>Panel</span></a></li>
 
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Profile</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Perfil</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patientprofile.php">View Profile</a></li>
-                            <li><a href="patientchangepassword.php">Change Password</a></li>
+                            <li><a href="patientprofile.php">Ver perfil</a></li>
+                            <li><a href="patientchangepassword.php">Cambiar contraseña</a></li>
                         </ul>
                     </li>
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                                class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patientappointment.php">Add Appointment</a></li>
-                            <li><a href="viewappointment.php">View Appointments</a></li>
+                            <li><a href="patientappointment.php">Agregar cita</a></li>
+                            <li><a href="viewappointment.php">Ver cita</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-add"></i><span>Prescription</span> </a>
+                                class="zmdi zmdi-account-add"></i><span>Prescripción</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patviewprescription.php">View Prescription Records</a>
+                            <li><a href="patviewprescription.php">Ver prescripción de recetas</a>
                             </li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-account-o"></i><span>Treatment</span> </a>
+                                class="zmdi zmdi-account-o"></i><span>Tratamiento</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="viewtreatmentrecord.php">View Treatment Records</a></li>
+                            <li><a href="viewtreatmentrecord.php">Ver registros de tratamientos</a></li>
                     </li>
                 </ul>
                 </li>

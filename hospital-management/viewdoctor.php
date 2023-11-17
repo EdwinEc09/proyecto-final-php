@@ -13,7 +13,7 @@ if(isset($_GET['delid']))
 ?>
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center">View Available Doctor</h2>
+		<h2 class="text-center">Ver médico disponible</h2>
 
 	</div>
 

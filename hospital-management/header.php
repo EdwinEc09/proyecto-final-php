@@ -56,7 +56,7 @@ $tim = date("H:i:s");
   </div>
 </div>
 
-
+NAVEGACIÓN PRINCIPAL
   
   <!-- Header -->
   <header class="header-style-2">
@@ -66,7 +66,7 @@ $tim = date("H:i:s");
         <ul>
           <li> <i class="fa fa-phone"></i>
             <p>1010 2020 36360<br>
-              9-269-690-HMSSiuuuu</p>
+              9-269-690-HMSS</p>
           </li>
           <li> <i class="fa fa-envelope-o"></i>
             <p>hmsphp@gmail.com<br>
