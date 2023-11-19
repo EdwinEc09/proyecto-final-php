@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
         echo mysqli_error($con);
     }
 	
-	$sqlappointment="SELECT * FROM appointment WHERE appointmentdate='$_POST[appointmentdate]' AND appointmenttime='$_POST[appointmenttime]' AND doctorid='$_POST[doct]' AND status='Approved'";
+	$sqlappointment="SELECT * FROM appointment WHERE appointmentdate='$_POST[appointmentdate]' AND appointmenttime='$_POST[appointmenttime]' AND doctorid='$_POST[doct]' AND status='Aprobado'";
 	$qsqlappointment = mysqli_query($con,$sqlappointment);
 	if(mysqli_num_rows($qsqlappointment) >= 1)
 	{
