@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminid`, `adminname`, `loginid`, `password`, `status`, `usertype`) VALUES
-(1, 'Joseph Spector', 'admin', '123', 'Activo', '');
+(1, 'Joseph Spector', 'admin', '12345678', 'Activo', '');
 
 -- --------------------------------------------------------
 
@@ -115,17 +115,17 @@ CREATE TABLE `billing_records` (
 --
 
 INSERT INTO `billing_records` (`billingservice_id`, `billingid`, `bill_type_id`, `bill_type`, `bill_amount`, `bill_date`, `status`) VALUES
-(1, 2, 1, 'Consultancy Charge', 45.00, '2019-06-15', 'Active'),
-(2, 2, 20, 'Treatment', 300.00, '2019-06-15', 'Active'),
-(3, 2, 1, 'Prescription Charge', 45.00, '2019-06-15', 'Active'),
-(4, 3, 2, 'Consultancy Charge', 55.00, '2021-06-24', 'Active'),
-(5, 3, 20, 'Treatment', 300.00, '2021-06-24', 'Active'),
-(6, 4, 5, 'Consultancy Charge', 75.00, '2021-06-24', 'Active'),
-(7, 4, 20, 'Treatment', 179.00, '2021-06-24', 'Active'),
-(8, 4, 2, 'Prescription Charge', 55.00, '2021-06-24', 'Active'),
-(9, 5, 7, 'Consultancy Charge', 995.00, '2021-06-24', 'Active'),
-(10, 5, 33, 'Treatment', 4850.00, '2021-06-24', 'Active'),
-(11, 5, 3, 'Prescription Charge', 231.00, '2021-06-24', 'Active');
+(1, 2, 1, 'Consultancy Charge', 45.00, '2019-06-15', 'Activo'),
+(2, 2, 20, 'Treatment', 300.00, '2019-06-15', 'Activo'),
+(3, 2, 1, 'Prescription Charge', 45.00, '2019-06-15', 'Activo'),
+(4, 3, 2, 'Consultancy Charge', 55.00, '2021-06-24', 'Activo'),
+(5, 3, 20, 'Treatment', 300.00, '2021-06-24', 'Activo'),
+(6, 4, 5, 'Consultancy Charge', 75.00, '2021-06-24', 'Activo'),
+(7, 4, 20, 'Treatment', 179.00, '2021-06-24', 'Activo'),
+(8, 4, 2, 'Prescription Charge', 55.00, '2021-06-24', 'Activo'),
+(9, 5, 7, 'Consultancy Charge', 995.00, '2021-06-24', 'Activo'),
+(10, 5, 33, 'Treatment', 4850.00, '2021-06-24', 'Activo'),
+(11, 5, 3, 'Prescription Charge', 231.00, '2021-06-24', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -145,15 +145,15 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`departmentid`, `departmentname`, `description`, `status`) VALUES
-(1, 'Medicine', 'Medicine', 'Active'),
-(2, 'Cardiology', 'Provides medical care to patients who have problems with their heart or circulation.', 'Active'),
-(3, 'Gynecology', 'Investigates and treats problems relating to the female urinary tract and reproductive organs, such as Endometriosis, infertility and incontinence', 'Active'),
-(4, 'Haematology', 'These hospital services work with the laboratory. In addition doctors treat blood diseases and malignancies related to the blood', 'Active'),
-(5, 'Maternity', 'Maternity wards provide antenatal care, delivery of babies and care during childbirth, and postnatal support', 'Active'),
-(6, 'Nephrology', 'Monitors and assesses patients with various kidney (renal) problems and conditions', 'Active'),
-(7, 'Oncology', 'A branch of medicine that deals with cancer and tumors. A medical professional who practices oncology is an oncologist. The Oncology department provides treatments, including radiotherapy and chemotherapy, for cancerous tumors and blood disorders', 'Active'),
-(8, 'Orthopaedics', 'Treats conditions related to the musculoskeletal system, including joints, ligaments, bones, muscles, tendons and nerves', 'Active'),
-(9, 'Radiology', 'Deals with the study and application of imaging technology like XRay', 'Active');
+(1, 'Medicine', 'Medicine', 'Activo'),
+(2, 'Cardiology', 'Provides medical care to patients who have problems with their heart or circulation.', 'Activo'),
+(3, 'Gynecology', 'Investigates and treats problems relating to the female urinary tract and reproductive organs, such as Endometriosis, infertility and incontinence', 'Activo'),
+(4, 'Haematology', 'These hospital services work with the laboratory. In addition doctors treat blood diseases and malignancies related to the blood', 'Activo'),
+(5, 'Maternity', 'Maternity wards provide antenatal care, delivery of babies and care during childbirth, and postnatal support', 'Activo'),
+(6, 'Nephrology', 'Monitors and assesses patients with various kidney (renal) problems and conditions', 'Activo'),
+(7, 'Oncology', 'A branch of medicine that deals with cancer and tumors. A medical professional who practices oncology is an oncologist. The Oncology department provides treatments, including radiotherapy and chemotherapy, for cancerous tumors and blood disorders', 'Activo'),
+(8, 'Orthopaedics', 'Treats conditions related to the musculoskeletal system, including joints, ligaments, bones, muscles, tendons and nerves', 'Activo'),
+(9, 'Radiology', 'Deals with the study and application of imaging technology like XRay', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -201,25 +201,25 @@ CREATE TABLE `doctor_timings` (
 --
 
 INSERT INTO `doctor_timings` (`doctor_timings_id`, `doctorid`, `start_time`, `end_time`, `available_day`, `status`) VALUES
-(17, 35, '09:30:00', '13:00:00', '', 'Active'),
-(18, 36, '13:30:00', '17:00:00', '', 'Active'),
-(19, 37, '14:00:00', '18:00:00', '', 'Active'),
-(20, 38, '17:00:00', '21:00:00', '', 'Active'),
-(21, 39, '13:00:00', '19:00:00', '', 'Active'),
-(22, 40, '07:00:00', '11:00:00', '', 'Active'),
-(23, 41, '13:30:00', '16:30:00', '', 'Active'),
-(24, 42, '11:30:00', '14:30:00', '', 'Active'),
-(25, 43, '12:30:00', '16:30:00', '', 'Active'),
-(26, 44, '21:30:00', '12:30:00', '', 'Active'),
-(27, 36, '01:03:00', '13:03:00', '', 'Active'),
-(28, 61, '11:11:00', '19:07:00', '', 'Active'),
-(29, 35, '11:11:00', '16:44:00', '', 'Active'),
-(30, 35, '01:10:00', '16:11:00', '', 'Active'),
-(31, 35, '01:02:00', '15:04:00', '2018-03-26', 'Active'),
-(32, 35, '16:25:00', '01:00:00', '', 'Active'),
-(33, 1, '18:00:00', '00:02:00', '', 'Active'),
-(34, 2, '07:36:00', '15:37:00', '', 'Active'),
-(35, 7, '09:24:00', '16:24:00', '', 'Active');
+(17, 35, '09:30:00', '13:00:00', '', 'Activo'),
+(18, 36, '13:30:00', '17:00:00', '', 'Activo'),
+(19, 37, '14:00:00', '18:00:00', '', 'Activo'),
+(20, 38, '17:00:00', '21:00:00', '', 'Activo'),
+(21, 39, '13:00:00', '19:00:00', '', 'Activo'),
+(22, 40, '07:00:00', '11:00:00', '', 'Activo'),
+(23, 41, '13:30:00', '16:30:00', '', 'Activo'),
+(24, 42, '11:30:00', '14:30:00', '', 'Activo'),
+(25, 43, '12:30:00', '16:30:00', '', 'Activo'),
+(26, 44, '21:30:00', '12:30:00', '', 'Activo'),
+(27, 36, '01:03:00', '13:03:00', '', 'Activo'),
+(28, 61, '11:11:00', '19:07:00', '', 'Activo'),
+(29, 35, '11:11:00', '16:44:00', '', 'Activo'),
+(30, 35, '01:10:00', '16:11:00', '', 'Activo'),
+(31, 35, '01:02:00', '15:04:00', '2018-03-26', 'Activo'),
+(32, 35, '16:25:00', '01:00:00', '', 'Activo'),
+(33, 1, '18:00:00', '00:02:00', '', 'Activo'),
+(34, 2, '07:36:00', '15:37:00', '', 'Activo'),
+(35, 7, '09:24:00', '16:24:00', '', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -240,20 +240,20 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`medicineid`, `medicinename`, `medicinecost`, `description`, `status`) VALUES
-(1, 'Paracetamol', 3.00, 'For fever per day 1 pc', 'Active'),
-(2, 'Clotrimazole', 14.00, 'Clotrimazole is an antifungal, prescribed for local fungal infections', 'Active'),
-(3, 'Miconazole', 26.00, 'Prescribed for various skin infections such as jockitch and also for vaginal yeast infections', 'Active'),
-(4, 'Nystatin', 6.00, 'Antifungal drug, prescribed for fungal infections of the skin mouth vagina and intestinal tract', 'Active'),
-(5, 'Lotensin', 3.00, 'prevent your body from forming angiotensin', 'Active'),
-(6, 'Cozaan', 5.00, 'ARBs block the effects of angiotensin on your heart.', 'Active'),
-(7, 'Lovenox', 59.00, 'may prescribe an anticoagulant to prevent heart attack, stroke, or other serious health problems', 'Active'),
-(8, 'Abemaciclib', 278.00, 'drug for the treatment of advanced or metastatic breast cancers.', 'Active'),
-(9, 'Cyclophosphamide', 231.00, ' to treat lymphoma, multiple myeloma, leukemia, ovarian cancer, breast cancer, small cell lung cancer', 'Active'),
-(10, 'Captopril', 92.00, 'used alone or in combination with other medications to treat high blood pressure and heart failure.', 'Active'),
-(11, 'Enalapril', 18.00, 'to treat high blood pressure, diabetic kidney disease, and heart failure', 'Active'),
-(12, 'Ramipril', 31.00, 'to treat high blood pressure, diabetic kidney disease', 'Active'),
-(13, 'Hydroxyurea', 55.00, 'used in sickle-cell disease, essential thrombocythemia, chronic myelogenous leukemia and cervical cancer', 'Active'),
-(14, 'Phenprocoumon', 258.00, 'Used for prevention of thrombosis', 'Active');
+(1, 'Paracetamol', 3.00, 'For fever per day 1 pc', 'Activo'),
+(2, 'Clotrimazole', 14.00, 'Clotrimazole is an antifungal, prescribed for local fungal infections', 'Activo'),
+(3, 'Miconazole', 26.00, 'Prescribed for various skin infections such as jockitch and also for vaginal yeast infections', 'Activo'),
+(4, 'Nystatin', 6.00, 'Antifungal drug, prescribed for fungal infections of the skin mouth vagina and intestinal tract', 'Activo'),
+(5, 'Lotensin', 3.00, 'prevent your body from forming angiotensin', 'Activo'),
+(6, 'Cozaan', 5.00, 'ARBs block the effects of angiotensin on your heart.', 'Activo'),
+(7, 'Lovenox', 59.00, 'may prescribe an anticoagulant to prevent heart attack, stroke, or other serious health problems', 'Activo'),
+(8, 'Abemaciclib', 278.00, 'drug for the treatment of advanced or metastatic breast cancers.', 'Activo'),
+(9, 'Cyclophosphamide', 231.00, ' to treat lymphoma, multiple myeloma, leukemia, ovarian cancer, breast cancer, small cell lung cancer', 'Activo'),
+(10, 'Captopril', 92.00, 'used alone or in combination with other medications to treat high blood pressure and heart failure.', 'Activo'),
+(11, 'Enalapril', 18.00, 'to treat high blood pressure, diabetic kidney disease, and heart failure', 'Activo'),
+(12, 'Ramipril', 31.00, 'to treat high blood pressure, diabetic kidney disease', 'Activo'),
+(13, 'Hydroxyurea', 55.00, 'used in sickle-cell disease, essential thrombocythemia, chronic myelogenous leukemia and cervical cancer', 'Activo'),
+(14, 'Phenprocoumon', 258.00, 'Used for prevention of thrombosis', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -307,7 +307,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patientid`, `patientname`, `admissiondate`, `admissiontime`, `address`, `mobileno`, `city`, `pincode`, `loginid`, `password`, `bloodgroup`, `gender`, `dob`, `status`) VALUES
-(1, 'Johnny', '2019-06-15', '18:47:22', 'Dhanmondi', '2125798361', 'Dhaka', '1207', 'admin', '123456789', 'O+', 'MALE', '1990-01-01', 'Active');
+(1, 'Johnny', '2019-06-15', '18:47:22', 'Dhanmondi', '2125798361', 'Dhaka', '1207', 'admin', '123456789', 'O+', 'MALE', '1990-01-01', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -356,9 +356,9 @@ CREATE TABLE `prescription` (
 --
 
 INSERT INTO `prescription` (`prescriptionid`, `treatment_records_id`, `doctorid`, `patientid`, `delivery_type`, `delivery_id`, `prescriptiondate`, `status`, `appointmentid`) VALUES
-(1, 0, 1, 1, '', 0, '2019-06-17', 'Active', 1),
-(2, 0, 5, 5, '', 0, '2021-06-25', 'Active', 4),
-(3, 0, 7, 6, '', 0, '2021-06-25', 'Active', 5);
+(1, 0, 1, 1, '', 0, '2019-06-17', 'Activo', 1),
+(2, 0, 5, 5, '', 0, '2021-06-25', 'Activo', 4),
+(3, 0, 7, 6, '', 0, '2021-06-25', 'Activo', 5);
 
 -- --------------------------------------------------------
 
@@ -381,9 +381,9 @@ CREATE TABLE `prescription_records` (
 --
 
 INSERT INTO `prescription_records` (`prescription_record_id`, `prescription_id`, `medicine_name`, `cost`, `unit`, `dosage`, `status`) VALUES
-(1, 1, '1', 3.00, 15, '1-1-1', 'Active'),
-(2, 2, '13', 55.00, 1, '0-1-1', 'Active'),
-(3, 3, '9', 231.00, 1, '1-0-1', 'Active');
+(1, 1, '1', 3.00, 15, '1-1-1', 'Activo'),
+(2, 2, '13', 55.00, 1, '0-1-1', 'Activo'),
+(3, 3, '9', 231.00, 1, '1-0-1', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -405,11 +405,11 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`roomid`, `roomtype`, `roomno`, `noofbeds`, `room_tariff`, `status`) VALUES
-(15, 'GENERAL WARD', 1, 20, 500.00, 'Active'),
-(16, 'SPECIAL WARD', 2, 10, 100.00, 'Active'),
-(17, 'GENERAL WARD', 2, 10, 500.00, 'Active'),
-(18, 'GENERAL WARD', 121, 13, 150.00, 'Active'),
-(19, 'GENERAL WARD', 850, 11, 500.00, 'Active');
+(15, 'GENERAL WARD', 1, 20, 500.00, 'Activo'),
+(16, 'SPECIAL WARD', 2, 10, 100.00, 'Activo'),
+(17, 'GENERAL WARD', 2, 10, 500.00, 'Activo'),
+(18, 'GENERAL WARD', 121, 13, 150.00, 'Activo'),
+(19, 'GENERAL WARD', 850, 11, 500.00, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -430,11 +430,11 @@ CREATE TABLE `service_type` (
 --
 
 INSERT INTO `service_type` (`service_type_id`, `service_type`, `servicecharge`, `description`, `status`) VALUES
-(10, 'X-ray', 250.00, 'To take fractured photo copy', 'Active'),
-(11, 'Scanning', 450.00, 'To scan body from injury', 'Active'),
-(12, 'MRI', 300.00, 'Regarding body scan', 'Active'),
-(13, 'Blood Testing', 150.00, 'To detect the type of disease', 'Active'),
-(14, 'Diagnosis', 210.00, 'To analyse the diagnosis', 'Active');
+(10, 'X-ray', 250.00, 'To take fractured photo copy', 'Activo'),
+(11, 'Scanning', 450.00, 'To scan body from injury', 'Activo'),
+(12, 'MRI', 300.00, 'Regarding body scan', 'Activo'),
+(13, 'Blood Testing', 150.00, 'To detect the type of disease', 'Activo'),
+(14, 'Diagnosis', 210.00, 'To analyse the diagnosis', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -455,20 +455,20 @@ CREATE TABLE `treatment` (
 --
 
 INSERT INTO `treatment` (`treatmentid`, `treatmenttype`, `treatment_cost`, `note`, `status`) VALUES
-(20, 'Blood Test', '179.00', 'test checks for levels of 10 different components of every major cell in your blood', 'Active'),
-(21, 'Electrocardiogram', '70.00', 'Records the electrical activity of the heart', 'Active'),
-(22, 'Echocardiogram', '1750.00', 'Provides an ultrasound picture that shows the structure of the heart chambers and surrounding areas, and it can show how well the heart is working.', 'Active'),
-(23, 'Nuclear cardiology', '530.00', 'Nuclear imaging techniques use radioactive materials to study cardiovascular disorders and diseases in a noninvasive way.', 'Active'),
-(24, 'Colposcopy', '318.00', 'procedure to visually examine the cervix as well as the vagina and vulva using a colposcope.', 'Active'),
-(25, 'Colporrhaphy', '5518.00', 'surgical procedure in humans that repairs a defect in the wall of the vagina.', 'Active'),
-(26, 'Spine Surgery', '97560.00', 'This entails opening the operative site with a long incision so the surgeon can view and access the spinal anatomy', 'Active'),
-(27, 'Trauma surgery', '25448.00', 'surgical specialty that utilizes both operative and non-operative management to treat traumatic injuries, typically in an acute setting', 'Active'),
-(28, 'Diagnostic Tests', '989.00', 'may include MRI, CT, Bone Scan, Ultra sound, blood tests', 'Active'),
-(29, 'Chest XRay', '258.00', ' projection radiograph of the chest used to diagnose conditions affecting the chest, its contents, and nearby structures', 'Active'),
-(30, 'Ultrasound of the Abdomen', '560.00', 'noninvasive procedure used to assess the organs and structures within the abdomen', 'Active'),
-(31, 'Exercise Stress Test', '198.00', 'This test is good for evaluating chest pain to see if your heart is the cause.', 'Active'),
-(32, 'Ultrasound of the Pelvis', '520.00', 'noninvasive diagnostic exam that produces images that are used to assess organs and structures within the female pelvis', 'Active'),
-(33, 'Chemotherapy and Radiatio', '4850.00', 'Most common types of cancer treatment. They work by destroying these fast-growing cells.', 'Active');
+(20, 'Blood Test', '179.00', 'test checks for levels of 10 different components of every major cell in your blood', 'Activo'),
+(21, 'Electrocardiogram', '70.00', 'Records the electrical activity of the heart', 'Activo'),
+(22, 'Echocardiogram', '1750.00', 'Provides an ultrasound picture that shows the structure of the heart chambers and surrounding areas, and it can show how well the heart is working.', 'Activo'),
+(23, 'Nuclear cardiology', '530.00', 'Nuclear imaging techniques use radioactivo materials to study cardiovascular disorders and diseases in a noninvasive way.', 'Activo'),
+(24, 'Colposcopy', '318.00', 'procedure to visually examine the cervix as well as the vagina and vulva using a colposcope.', 'Activo'),
+(25, 'Colporrhaphy', '5518.00', 'surgical procedure in humans that repairs a defect in the wall of the vagina.', 'Activo'),
+(26, 'Spine Surgery', '97560.00', 'This entails opening the operative site with a long incision so the surgeon can view and access the spinal anatomy', 'Activo'),
+(27, 'Trauma surgery', '25448.00', 'surgical specialty that utilizes both operative and non-operative management to treat traumatic injuries, typically in an acute setting', 'Activo'),
+(28, 'Diagnostic Tests', '989.00', 'may include MRI, CT, Bone Scan, Ultra sound, blood tests', 'Activo'),
+(29, 'Chest XRay', '258.00', ' projection radiograph of the chest used to diagnose conditions affecting the chest, its contents, and nearby structures', 'Activo'),
+(30, 'Ultrasound of the Abdomen', '560.00', 'noninvasive procedure used to assess the organs and structures within the abdomen', 'Activo'),
+(31, 'Exercise Stress Test', '198.00', 'This test is good for evaluating chest pain to see if your heart is the cause.', 'Activo'),
+(32, 'Ultrasound of the Pelvis', '520.00', 'noninvasive diagnostic exam that produces images that are used to assess organs and structures within the female pelvis', 'Activo'),
+(33, 'Chemotherapy and Radiatio', '4850.00', 'Most common types of cancer treatment. They work by destroying these fast-growing cells.', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -494,10 +494,10 @@ CREATE TABLE `treatment_records` (
 --
 
 INSERT INTO `treatment_records` (`treatment_records_id`, `treatmentid`, `appointmentid`, `patientid`, `doctorid`, `treatment_description`, `uploads`, `treatment_date`, `treatment_time`, `status`) VALUES
-(1, 20, 1, 1, 1, 'Fever \r\ntake paracitamol', '1746614148', '2019-06-15', '17:00:00', 'Active'),
-(2, 20, 2, 3, 2, 'Demo Treatment Description...', '20245sample_image.jpg', '2021-06-24', '18:24:00', 'Active'),
-(3, 20, 4, 5, 5, 'to study the morphology of blood and blood-forming tissues', '853sample_image.jpg', '2021-06-24', '16:40:00', 'Active'),
-(4, 33, 5, 6, 7, 'based on small cell lung cancer', '25208sample_image.jpg', '2021-06-24', '15:22:00', 'Active');
+(1, 20, 1, 1, 1, 'Fever \r\ntake paracitamol', '1746614148', '2019-06-15', '17:00:00', 'Activo'),
+(2, 20, 2, 3, 2, 'Demo Treatment Description...', '20245sample_image.jpg', '2021-06-24', '18:24:00', 'Activo'),
+(3, 20, 4, 5, 5, 'to study the morphology of blood and blood-forming tissues', '853sample_image.jpg', '2021-06-24', '16:40:00', 'Activo'),
+(4, 33, 5, 6, 7, 'based on small cell lung cancer', '25208sample_image.jpg', '2021-06-24', '15:22:00', 'Activo');
 
 -- --------------------------------------------------------
 
