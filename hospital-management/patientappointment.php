@@ -135,7 +135,7 @@ if (isset($_SESSION['patientid'])) {
                                             ?>
                                                 <li class="col-sm-6">
                                                     <label>
-                                                        <input placeholder="Ingresar identificacion" type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rspatient['loginid'];  ?>" <?php echo $readonly; ?>><i class="icon-login"></i>
+                                                        <input placeholder="Ingresar usuario" type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rspatient['loginid'];  ?>" <?php echo $readonly; ?>><i class="icon-login"></i>
                                                     </label>
 
                                                 </li>

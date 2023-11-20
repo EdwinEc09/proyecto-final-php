@@ -169,7 +169,7 @@ if(isset($_GET['editid']))
                 <div class="form-line"><select class="form-control show-tick" name="select3" id="select3">
                         <option value="">Seleccione</option>
                         <?php
-				$arr = array("MASCULINO","FEMENINO");
+				$arr = array("Masculino","Femenino");
 				foreach($arr as $val)
 				{
 					if($val == $rsedit['gender'])
