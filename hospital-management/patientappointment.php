@@ -1,3 +1,27 @@
+
+// include("header.php");
+// include("dbconnection.php");
+// if(isset($_POST[submit]))
+// {
+// 	if(isset($_SESSION[patientid]))
+// 	{
+// 		$lastinsid =$_SESSION[patientid];
+// 	}
+// 	else
+// 	{
+// 		$dt = date("Y-m-d");
+// 		$tim = date("H:i:s");
+// 		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Active')";
+// 		if($qsql = mysqli_query($con,$sql))
+// 		{
+// 			/* echo "<script>alert('patient record inserted successfully...');</script>"; */
+// 		}
+// 		else
+// 		{
+// 			echo mysqli_error($con);
+// 		}
+// 		$lastinsid = mysqli_insert_id($con);
+// 	}
 <?php
 
 include("header.php");
@@ -135,7 +159,7 @@ if (isset($_SESSION['patientid'])) {
                                             ?>
                                                 <li class="col-sm-6">
                                                     <label>
-                                                        <input placeholder="Ingresar identificacion" type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rspatient['loginid'];  ?>" <?php echo $readonly; ?>><i class="icon-login"></i>
+                                                        <input placeholder="Ingresar usuario" type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rspatient['loginid'];  ?>" <?php echo $readonly; ?>><i class="icon-login"></i>
                                                     </label>
 
                                                 </li>
