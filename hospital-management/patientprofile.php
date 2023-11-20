@@ -4,7 +4,7 @@ include("dbconnection.php");
 if (isset($_POST['submit'])) {
 	$sql = "UPDATE patient SET patientname='$_POST[patientname]',admissiondate='$_POST[admissiondate]',admissiontime='$_POST[admissiontme]',address='$_POST[address]',mobileno='$_POST[mobilenumber]',city='$_POST[city]',pincode='$_POST[pincode]',loginid='$_POST[loginid]',bloodgroup='$_POST[select2]',gender='$_POST[select3]',dob='$_POST[dateofbirth]' WHERE patientid='$_SESSION[patientid]'";
 	if ($qsql = mysqli_query($con, $sql)) {
-		echo "<script>alert('patient record updated successfully...');</script>";
+		echo "<script>alert('registro del paciente actualizado exitosamente...');</script>";
 	} else {
 		echo mysqli_error($con);
 	}
@@ -148,7 +148,7 @@ if (isset($_SESSION['patientid'])) {
 											<select name="select3" id="select3" class="form-control show-tick">
 												<option value="" selected="" hidden="">Seleccionar</option>
 												<?php
-												$arr = array("MALE", "FEMALE");
+												$arr = array("MASCULINO", "FEMENINO");
 												foreach ($arr as $val) {
 													if ($val == $rsedit['gender']) {
 														echo "<option value='$val' selected>$val</option>";
@@ -180,7 +180,7 @@ if (isset($_SESSION['patientid'])) {
 
 							<div class="col-sm-12">
 								<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit"
-									value="Submit" />
+									value="Enviar" />
 							</div>
 						</div>
 					</div>

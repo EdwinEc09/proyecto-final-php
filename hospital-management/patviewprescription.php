@@ -15,7 +15,7 @@ if(isset($_GET['delid']))
 
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center">View Prescription Record</h2>
+    <h2 class="text-center">Ver registro de recetas</h2>
 
   </div>
 
@@ -41,9 +41,9 @@ if(isset($_GET['delid']))
         <thead>
            <tr>
               <td><strong>Doctor</strong></td>
-              <td><strong>Patient</strong></td>
-              <td><strong>Prescription Date</strong></td>
-              <td><strong>Status</strong></td>
+              <td><strong>Paciente</strong></td>
+              <td><strong>Fecha de prescripción</strong></td>
+              <td><strong>Estado</strong></td>
             </tr>
         </thead>
         <tbody>
@@ -66,10 +66,10 @@ if(isset($_GET['delid']))
         <table class="table table-hover table-bordered table-striped">
           <thead>
              <tr>
-              <td>Medicine</td>
-              <td>Cost</td>
-              <td>Unit</td>
-              <td>Dosage</td>
+              <td>Medicamento</td>
+              <td>Costo</td>
+              <td>Unidad</td>
+              <td>Dosis</td>
             </tr>
           </thead>
           <tbody>
@@ -91,7 +91,7 @@ if(isset($_GET['delid']))
             
           </tbody>
         </table>
-        <input type="submit" class="btn btn-lg" name="print" id="print" value="Print" onclick="myFunction()"/>
+        <input type="submit" class="btn btn-lg" name="print" id="print" value="Imprimir" onclick="myFunction()"/>
       </div>    
       
       <?php

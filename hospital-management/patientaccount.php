@@ -66,7 +66,7 @@ $rspatientappointment = mysqli_fetch_array($qsqlpatientappointment);
                         else
                         {
                             ?>
-                        <h3>Last Appointment taken on - <?php echo $rspatientappointment['appointmentdate']; ?>
+                        <h3>Última cita asumida -<?php echo $rspatientappointment['appointmentdate']; ?>
                             <?php echo $rspatientappointment['appointmenttime']; ?> </h3>
                         <?php
                         }
