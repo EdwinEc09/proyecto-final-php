@@ -55,8 +55,6 @@ $tim = date("H:i:s");
     </div>
   </div>
 </div>
-
-NAVEGACIÓN PRINCIPAL
   
   <!-- Header -->
   <header class="header-style-2">

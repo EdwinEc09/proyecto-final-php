@@ -76,9 +76,9 @@ if(isset($_GET['approveid']))
 		  {
 				  if(!(isset($_SESSION['patientid'])))
 				  {
-						  echo "<a href='appointmentapproval.php?editid=$rs[appointmentid]'>Approve</a><hr>";
+						  echo "<a href='appointmentapproval.php?editid=$rs[appointmentid]'>Aprobar</a><hr>";
 				  }
-				 echo "  <a href='viewappointment.php?delid=$rs[appointmentid]'>Delete</a>";
+				 echo "  <a href='viewappointment.php?delid=$rs[appointmentid]'>Eliminar</a>";
 		  }
 		  else
 		  {

@@ -73,7 +73,7 @@ if(isset($_GET['delid']))
           <td>
           <input class="form-control" type="hidden" name="patientid" value="<?php echo $_GET['patientid']; ?>" />
 <?php
-$sqlpatient= "SELECT * FROM patient WHERE status='Activo' AND patientid='$_GET[patientid]'";
+$sqlpatient= "SELECT * FROM patient WHERE status='Active' AND patientid='$_GET[patientid]'";
 $qsqlpatient = mysqli_query($con,$sqlpatient);
 $rspatient=mysqli_fetch_array($qsqlpatient);
 ?>			
@@ -257,12 +257,12 @@ function validateform()
 		return false;
 	}
 	else if(document.frmtreatrec.select3.value == "")
-	{
-		alert("La identificación del paciente no debe estar vacía.");
-		document.frmtreatrec.select3.focus();
-		return false;
-	}
-	else if(document.frmtreatrec.select5.value == "")
+	// {
+	// 	alert("La identificación del paciente no debe estar vacía.");
+	// 	document.frmtreatrec.select3.focus();
+	// 	return false;
+	// }
+	// else if(document.frmtreatrec.select5.value == "")
 	{
 		alert("La identificación del médico no debe estar vacía.");
 		document.frmtreatrec.select5.focus();

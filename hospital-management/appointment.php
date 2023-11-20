@@ -85,7 +85,7 @@ if (isset($_GET['editid'])) {
                                 <div class="form-group">
                                     <div class="form-line">
                                         <select name="select5" id="select5" class=" form-control show-tick">
-                                            <option value="">Seleccionar</option>
+                                            <option value="">Seleccionar tratamiento</option>
                                             <?php
                                             $sqldepartment = "SELECT * FROM department WHERE status='Activo'";
                                             $qsqldepartment = mysqli_query($con, $sqldepartment);

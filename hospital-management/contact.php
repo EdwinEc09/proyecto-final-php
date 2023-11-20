@@ -11,9 +11,9 @@
       <div class="container"> 
         <!-- Tittle -->
         <div class="heading-block">
-          <h4>GET IN TOUCH</h4>
+          <h4>PONERSE EN CONTACTO</h4>
           <hr>
-          <span>Duis autem vel eum iriure dolor in hendrerit n vuew lputate velit esse molestie conseu vel illum dolore eufe ugiat nulla facilisis at vero.</span> </div>
+          <span>Sin embargo, si quiere ser empleado de Hendrerit n vuew lputate, o si quiere ser empleado, o si está sufriendo, no hay una salida fácil.</span> </div>
         <div class="contact">
           <div class="contact-form"> 
             <!-- FORM  -->
@@ -23,17 +23,17 @@
                   <ul class="row">
                     <li class="col-sm-12">
                       <label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="*Name">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="*Nombre">
                       </label>
                     </li>
                     <li class="col-sm-12">
                       <label>
-                        <input type="text" class="form-control" name="email" id="email" placeholder="*Email">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="*Correo electronico">
                       </label>
                     </li>
                     <li class="col-sm-12">
                       <label>
-                        <input type="text" class="form-control" name="company" id="company" placeholder="Phone">
+                        <input type="text" class="form-control" name="company" id="company" placeholder="Telefono">
                       </label>
                     </li>
                   </ul>
@@ -42,16 +42,16 @@
                   <ul class="row">
                     <li class="col-sm-12">
                       <label>
-                        <input type="text" class="form-control" name="website" id="website" placeholder="Department">
+                        <input type="text" class="form-control" name="website" id="website" placeholder="Departamento">
                       </label>
                     </li>
                     <li class="col-sm-12">
                       <label>
-                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="*Message"></textarea>
+                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="*Mensaje"></textarea>
                       </label>
                     </li>
                     <li class="col-sm-12 no-margin">
-                      <button type="submit" value="submit" class="btn" id="btn_submit" onClick="proceed();">SEND MESSAGE</button>
+                      <button type="submit" value="submit" class="btn" id="btn_submit" onClick="proceed();">ENVIAR MENSAJE</button>
                     </li>
                   </ul>
                 </div>

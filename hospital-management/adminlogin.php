@@ -63,17 +63,17 @@ if(isset($_POST['submit']))
 ?></div>
     <div class="card-top"></div>
     <div class="card">
-        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login <span class="msg">Inicie sesión</span></h1>
+        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login<span class="msg">Hola, Admin!</span></h1>
         <div class="col-md-12">
 
     <form method="post" action="" name="frmadminlogin" id="sign_in" onSubmit="return validateform()">
     <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-account"></i> </span>
                     <div class="form-line">
-					<input type="text" name="loginid" id="loginid" class="form-control" placeholder="Username" /></div>
+					<input type="text" name="loginid" id="loginid" class="form-control" placeholder="Usuario"/></div>
                 </div>
                 <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
                     <div class="form-line">
-					<input type="password" name="password" id="password" class="form-control"  placeholder="Password" /> </div>
+					<input type="password" name="password" id="password" class="form-control"  placeholder="Contraseña" /> </div>
                 </div>
                 <div>
                     <div class="">

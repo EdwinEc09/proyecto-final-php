@@ -64,11 +64,11 @@ if(isset($_POST['submit']))
     <form method="post" action="" name="frmadminlogin" id="sign_in" onSubmit="return validateform()">
     <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-account"></i> </span>
                     <div class="form-line">
-					<input type="text" name="loginid" id="loginid" class="form-control" placeholder="Username" /></div>
+					<input type="text" name="loginid" id="loginid" class="form-control" placeholder="Usuario" /></div>
                 </div>
                 <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
                     <div class="form-line">
-					<input type="password" name="password" id="password" class="form-control"  placeholder="Password" /> </div>
+					<input type="password" name="password" id="password" class="form-control"  placeholder="Contraseña" /> </div>
                 </div>
                 <div>
                     <div class="">
