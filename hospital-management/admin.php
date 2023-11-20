@@ -56,7 +56,7 @@ if(isset($_GET['editid']))
 						<div class="row clearfix">
 							<div class="col-sm-12">   
 								<div class="form-group">
-									<label> Nombre del Administrador</label>
+									<label> Usuario del Administrador</label>
 									<div class="form-line">
 										<input type="text" class="form-control"  name="adminname" id="adminname" value="<?php echo $rsedit['adminname']; ?>"/>
 									</div>
@@ -68,7 +68,7 @@ if(isset($_GET['editid']))
 						<div class="row clearfix"> 
 							<div class="col-sm-12">                           
 								<div class="form-group">
-									<label>Usuario del administrador</label>
+									<label>Identificacion del administrador</label>
 									<div class="form-line">
 										<input type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rsedit['loginid']; ?>" />
 									</div>
@@ -166,31 +166,31 @@ function validateform()
 	}
 	else if(!document.frmadmin.loginid.value.match(alphanumericExp))
 	{
-		alert("Login ID not valid..");
+		alert("Identificacion not valida..");
 		document.frmadmin.loginid.focus();
 		return false;
 	}
 	else if(document.frmadmin.password.value == "")
 	{
-		alert("Password should not be empty..");
+		alert("La contraseña no debe estar vacía ..");
 		document.frmadmin.password.focus();
 		return false;
 	}
 	else if(document.frmadmin.password.value.length < 8)
 	{
-		alert("Password length should be more than 8 characters...");
+		alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
 		document.frmadmin.password.focus();
 		return false;
 	}
 	else if(document.frmadmin.password.value != document.frmadmin.cnfirmpassword.value )
 	{
-		alert("Password and confirm password should be equal..");
+		alert("La contraseña y la contraseña de confirmación deben ser iguales..");
 		document.frmadmin.password.focus();
 		return false;
 	}
 	else if(document.frmadmin.select.value == "" )
 	{
-		alert("Kindly select the status..");
+		alert("Por favor, seleccione el estado ..");
 		document.frmadmin.select.focus();
 		return false;
 	}
