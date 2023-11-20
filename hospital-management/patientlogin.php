@@ -58,7 +58,7 @@ if(isset($_POST['submit']))
 ?></div>
     <div class="card-top"></div>
     <div class="card">
-        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login <span class="msg">Hola, Paciente!</span></h1>
+        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login<span class="msg">Hola, Paciente!</span></h1>
         <div class="col-md-12">
 
     <form method="post" action="" name="frmadminlogin" id="sign_in" onSubmit="return validateform()">
@@ -98,13 +98,13 @@ function validateform()
 {
 	if(document.frmpatlogin.loginid.value == "")
 	{
-		alert("ID de inicio de sesión no debe estar vacío ..");
+		alert("ID de inicio de sesión no debe estar vacío...");
 		document.frmpatlogin.loginid.focus();
 		return false;
 	}
 	else if(document.frmpatlogin.password.value == "")
 	{
-		alert("La contraseña no debe estar vacía ..");
+		alert("La contraseña no debe estar vacía...");
 		document.frmpatlogin.password.focus();
 		return false;
 	}

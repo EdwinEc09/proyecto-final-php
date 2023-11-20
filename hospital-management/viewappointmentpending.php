@@ -8,7 +8,7 @@ if(isset($_GET['delid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('appointment record deleted successfully..');</script>";
+		echo "<script>alert('Registro de cita eliminado exitosamente...');</script>";
 	}
 }
 if(isset($_GET['approveid']))
@@ -20,7 +20,7 @@ if(isset($_GET['approveid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('Appointment record Approved successfully..');</script>";
+		echo "<script>alert('Registro de cita Aprobado exitosamente...');</script>";
 		echo "<script>window.location='viewappointmentpending.php';</script>";
 	}	
 }
@@ -49,7 +49,7 @@ if(isset($_GET['approveid']))
 			</thead>
 			<tbody>
 				<?php
-				$sql ="SELECT * FROM appointment WHERE (status='Pending' OR status='Inactivo')";
+				$sql ="SELECT * FROM appointment WHERE (status='Pendiente' OR status='Inactivo')";
 				if(isset($_SESSION['patientid']))
 				{
 					$sql  = $sql . " AND patientid='$_SESSION[patientid]'";

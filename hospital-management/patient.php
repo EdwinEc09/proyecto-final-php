@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE patient SET patientname='$_POST[patientname]',admissiondate='$_POST[admissiondate]',admissiontime='$_POST[admissiontme]',address='$_POST[address]',mobileno='$_POST[mobilenumber]',city='$_POST[city]',pincode='$_POST[pincode]',loginid='$_POST[loginid]',password='$_POST[password]',bloodgroup='$_POST[select2]',gender='$_POST[select3]',dob='$_POST[dateofbirth]',status='$_POST[select]' WHERE patientid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('ficha del paciente actualizada correctamente...');</script>";
+			echo "<script>alert('Ficha del paciente actualizada correctamente...');</script>";
 		}
 		else
 		{
@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,mobileno,city,pincode,loginid,password,bloodgroup,gender,dob,status) values('$_POST[patientname]','$dt','$tim','$_POST[address]','$_POST[mobilenumber]','$_POST[city]','$_POST[pincode]','$_POST[loginid]','$_POST[password]','$_POST[select2]','$_POST[select3]','$_POST[dateofbirth]','Activo')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('registro de pacientes insertado con éxito...');</script>";
+			echo "<script>alert('Registro de pacientes insertado con éxito...');</script>";
 			$insid= mysqli_insert_id($con);
 			if(isset($_SESSION['adminid']))
 			{

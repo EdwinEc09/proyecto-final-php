@@ -7,7 +7,7 @@ if(isset($_GET['delid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('appointment record deleted successfully..');</script>";
+		echo "<script>alert('Registro de cita eliminado exitosamente...');</script>";
 	}
 }
 if(isset($_GET['approveid']))
@@ -16,7 +16,7 @@ if(isset($_GET['approveid']))
 	$qsql=mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('Appointment record Approved successfully..');</script>";
+		echo "<script>alert('Appointment record Approved successfully...');</script>";
 	}
 }
 ?>

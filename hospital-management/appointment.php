@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     if (isset($_GET['editid'])) {
         $sql = "UPDATE appointment SET patientid='$_POST[select4]',departmentid='$_POST[select5]',appointmentdate='$_POST[appointmentdate]',appointmenttime='$_POST[time]',doctorid='$_POST[select6]',status='$_POST[select]' WHERE appointmentid='$_GET[editid]'";
         if ($qsql = mysqli_query($con, $sql)) {
-            echo "<script>alert('appointment record updated successfully...');</script>";
+            echo "<script>alert('Registro de cita actualizado exitosamente...');</script>";
         } else {
             echo mysqli_error($con);
         }
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         if ($qsql = mysqli_query($con, $sql)) {
 
             include("insertbillingrecord.php");
-            echo "<script>alert('Appointment record inserted successfully...');</script>";
+            echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
             echo "<script>window.location='patientreport.php?patientid=$_POST[select4]';</script>";
         } else {
             echo mysqli_error($con);
