@@ -9,6 +9,7 @@
 
 <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script> <!-- Sparkline Plugin Js -->
 <script src="assets/plugins/chartjs/Chart.bundle.min.js"></script> <!-- Chart Plugins Js --> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  
 
 
