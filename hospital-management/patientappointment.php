@@ -1,13 +1,5 @@
 
-<!-- // include("header.php");
-// include("dbconnection.php");
-// if(isset($_POST[submit]))
-// {
-// 	if(isset($_SESSION[patientid]))
-// 	{
-// 		$lastinsid =$_SESSION[patientid];
-// 	}
-// 	else
+
 // 	{
 // 		$dt = date("Y-m-d");
 // 		$tim = date("H:i:s");
@@ -21,7 +13,7 @@
 // 			echo mysqli_error($con);
 // 		}
 // 		$lastinsid = mysqli_insert_id($con);
-// 	} -->
+// 	}
 <?php
 
 include("header.php");
