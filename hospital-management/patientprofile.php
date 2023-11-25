@@ -148,7 +148,7 @@ if (isset($_SESSION['patientid'])) {
 											<select name="select3" id="select3" class="form-control show-tick">
 												<option value="" selected="" hidden="">Seleccionar</option>
 												<?php
-												$arr = array("MASCULINO", "FEMENINO");
+												$arr = array("Masculino", "Femenino");
 												foreach ($arr as $val) {
 													if ($val == $rsedit['gender']) {
 														echo "<option value='$val' selected>$val</option>";
