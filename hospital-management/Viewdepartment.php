@@ -11,8 +11,8 @@ if (isset($_GET['delid'])) {
         if (mysqli_affected_rows($con) == 1) {
             echo "<script>
             Swal.fire({
-                title: 'Deleted!',
-                text: 'Your file has been deleted.',
+                title: 'Eliminado!',
+                text: 'Se ha eliminado con exito',
                 icon: 'success'
             }).then(function() {
                 window.location.href = 'Viewdepartment.php'; // Redirect to desired page after deletion
@@ -23,13 +23,15 @@ if (isset($_GET['delid'])) {
         // If confirmation is not set, show confirmation dialog
         echo "<script>
         Swal.fire({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this!',
+            title: 'Estas seguro?',
+            text: 'No podras revertir!',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            cancelButtonText: 'No, cancelar!',
+
+            confirmButtonText: 'Si, eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'Viewdepartment.php?delid=" . $_GET['delid'] . "&confirm=true';

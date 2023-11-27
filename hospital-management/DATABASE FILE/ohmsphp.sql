@@ -161,7 +161,7 @@ INSERT INTO `department` (`departmentid`, `departmentname`, `description`, `stat
 -- Table structure for table `doctor`
 --
 
-CREATE TABLE `doctor` (
+CREATE TABLE `doctor` ( 
   `doctorid` int(10) NOT NULL,
   `doctorname` varchar(50) NOT NULL,
   `mobileno` varchar(15) NOT NULL,

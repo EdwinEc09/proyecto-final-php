@@ -1,14 +1,42 @@
 <?php
 include("adformheader.php");
 include("dbconnection.php");
-if(isset($_GET['delid']))
-{
-	$sql ="DELETE FROM doctor WHERE doctorid='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('Registro médico eliminado exitosamente..');</script>";
-	}
+
+if (isset($_GET['delid'])) {
+    if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
+        $sql = "DELETE FROM doctor WHERE doctorid='$_GET[delid]'";
+        $qsql = mysqli_query($con, $sql);
+
+        if (mysqli_affected_rows($con) == 1) {
+            echo "<script>
+            Swal.fire({
+				title: 'Eliminado!',
+                text: 'Se ha eliminado con exito',
+                icon: 'success'
+            }).then(function() {
+                window.location.href = 'viewdoctor.php'; // Redirect to desired page after deletion
+            });
+            </script>";
+        }
+    } else {
+        echo "<script>
+        Swal.fire({
+            title: 'Estas seguro?',
+            text: 'No podras revertir!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'No, cancelar!',
+
+            confirmButtonText: 'Si, eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'viewdoctor.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }
+        });
+        </script>";
+    }
 }
 ?>
 <div class="container-fluid">
