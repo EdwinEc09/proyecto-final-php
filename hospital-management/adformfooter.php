@@ -11,6 +11,7 @@
 <script src="assets/js/morphing.js"></script><!-- Custom Js -->
 <script src="assets/js/pages/tables/jquery-datatable.js"></script>
 <script src="assets/js/pages/forms/editors.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 

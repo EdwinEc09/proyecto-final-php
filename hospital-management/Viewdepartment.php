@@ -91,4 +91,6 @@ if (isset($_GET['delid'])) {
 
 <?php
 include("adformfooter.php");
+
 ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

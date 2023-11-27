@@ -76,17 +76,17 @@ if(isset($_GET['approveid']))
 					<td>&nbsp;$rs[app_reason]</td>
 					<td>&nbsp;$rs[status]</td>
 					<td><div align='center'>";
-					if($rs['status'] != "Approved")
+					if($rs['status'] != "Aprobado")
 					{
 						if(!(isset($_SESSION['patientid'])))
 						{
-							echo "<a href='appointmentapproval.php?editid=$rs[appointmentid]' class='btn btn-raised g-bg-cyan>Approve</a><hr>";
+							echo "<a href='appointmentapproval.php?editid=$rs[appointmentid]' class='btn btn-raised g-bg-cyan>Aprobar</a><hr>";
 						}
-						echo "  <a href='viewappointment.php?delid=$rs[appointmentid]' class='btn btn-raised g-bg-blush2'>Delete</a>";
+						echo "  <a href='viewappointment.php?delid=$rs[appointmentid]' class='btn btn-raised g-bg-blush2'>Eliminar</a>";
 					}
 					else
 					{
-						echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised bg-cyan'>Vista del Reporte</a>";
+						echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised bg-cyan'>Ver  Reporte</a>";
 					}
 					echo "</center></td></tr>";
 				}

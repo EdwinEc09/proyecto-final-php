@@ -1,14 +1,42 @@
 <?php
 include("adformheader.php");
 include("dbconnection.php");
-if(isset($_GET['delid']))
-{
-	$sql ="DELETE FROM patient WHERE patientid='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('registro de paciente borrado con éxito ..');</script>";
-	}
+
+if (isset($_GET['delid'])) {
+  if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
+    $sql = "DELETE FROM patient WHERE patientid='$_GET[delid]'";
+    $qsql = mysqli_query($con, $sql);
+
+    if (mysqli_affected_rows($con) == 1) {
+      echo "<script>
+            Swal.fire({
+              title: 'Eliminado!',
+                text: 'Se ha eliminado con exito',
+                icon: 'success'
+            }).then(function() {
+                window.location.href = 'viewpatient.php'; // Redirect to desired page after deletion
+            });
+            </script>";
+    }
+  } else {
+    echo "<script>
+        Swal.fire({
+          title: 'Estas seguro?',
+          text: 'No podras revertir!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          cancelButtonText: 'No, cancelar!',
+
+          confirmButtonText: 'Si, eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'viewpatient.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }
+        });
+        </script>";
+  }
 }
 ?>
 <div class="container-fluid">
@@ -17,27 +45,36 @@ if(isset($_GET['delid']))
 
   </div>
 
-<div class="card">
+  <div class="card">
 
-  <section class="container">
-    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+    <section class="container">
+      <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
 
-      <thead>
-        <tr>
-          <th width="15%" height="36"><div align="center">Nombre</div></th>
-          <th width="20%"><div align="center">Admisión</div></th>
-          <th width="28%"><div align="center">Dirección, Contacto</div></th>    
-          <th width="20%"><div align="center">Perfil del paciente</div></th>
-          <th width="17%"><div align="center">Acción</div></th>
-        </tr>
-      </thead>
-      <tbody>
-       <?php
-       $sql ="SELECT * FROM patient";
-       $qsql = mysqli_query($con,$sql);
-       while($rs = mysqli_fetch_array($qsql))
-       {
-        echo "<tr>
+        <thead>
+          <tr>
+            <th width="15%" height="36">
+              <div align="center">Nombre</div>
+            </th>
+            <th width="20%">
+              <div align="center">Admisión</div>
+            </th>
+            <th width="28%">
+              <div align="center">Dirección, Contacto</div>
+            </th>
+            <th width="20%">
+              <div align="center">Perfil del paciente</div>
+            </th>
+            <th width="17%">
+              <div align="center">Acción</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $sql = "SELECT * FROM patient";
+          $qsql = mysqli_query($con, $sql);
+          while ($rs = mysqli_fetch_array($qsql)) {
+            echo "<tr>
         <td>$rs[patientname]<br>
         <strong>Usuario:</strong> $rs[loginid] </td>
         <td>
@@ -49,19 +86,18 @@ if(isset($_GET['delid']))
         <strong>Género</strong> - &nbsp;$rs[gender]<br>
         <strong>FECHA DE NACIMIENTO</strong> - &nbsp;$rs[dob]</td>
         <td align='center'>Estado - $rs[status] <br>";
-        if(isset($_SESSION['adminid']))
-        {
-          echo "<a href='patient.php?editid=$rs[patientid]' class='btn btn-sm btn-raised bg-green'>Editar</a><a href='viewpatient.php?delid=$rs[patientid]' class='btn btn-sm btn-raised bg-blush'>Eliminar</a> <hr>
+            if (isset($_SESSION['adminid'])) {
+              echo "<a href='patient.php?editid=$rs[patientid]' class='btn btn-sm btn-raised bg-green'>Editar</a><a href='viewpatient.php?delid=$rs[patientid]' class='btn btn-sm btn-raised bg-blush'>Eliminar</a> <hr>
           <a href='patientreport.php?patientid=$rs[patientid]' class='btn btn-sm btn-raised bg-cyan'>Ver el informe</a>";
-        }
-        echo "</td></tr>";
-      }
-      ?>
-    </tbody>
-  </table>
-</section>
+            }
+            echo "</td></tr>";
+          }
+          ?>
+        </tbody>
+      </table>
+    </section>
 
-</div>
+  </div>
 </div>
 <?php
 include("adformfooter.php");
