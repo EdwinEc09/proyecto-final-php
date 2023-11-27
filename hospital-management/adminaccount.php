@@ -2,13 +2,13 @@
 include("adheader.php");
 include("dbconnection.php");
 
-    session_start();
-    if(!isset($_SESSION['adminid'])){
-        echo "<script>window.location='adminlogin.php';</script>";
-    }
-    if(!isset($_SESSION['adminid'])){
-        echo "<script>window.location='adminlogin.php';</script>";
-    }
+session_start();
+if (!isset($_SESSION['adminid'])) {
+    echo "<script>window.location='adminlogin.php';</script>";
+}
+if (!isset($_SESSION['adminid'])) {
+    echo "<script>window.location='adminlogin.php';</script>";
+}
 
 ?>
 
@@ -28,7 +28,7 @@ include("dbconnection.php");
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM patient WHERE status='Activo'";
-                        $qsql = mysqli_query($con,$sql);
+                        $qsql = mysqli_query($con, $sql);
                         echo mysqli_num_rows($qsql);
                         ?>
                     </div>
@@ -43,7 +43,7 @@ include("dbconnection.php");
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM doctor WHERE status='Activo' ";
-                        $qsql = mysqli_query($con,$sql);
+                        $qsql = mysqli_query($con, $sql);
                         echo mysqli_num_rows($qsql);
                         ?>
                     </div>
@@ -58,7 +58,7 @@ include("dbconnection.php");
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM admin WHERE status='Activo'";
-                        $qsql = mysqli_query($con,$sql);
+                        $qsql = mysqli_query($con, $sql);
                         echo mysqli_num_rows($qsql);
                         ?>
                     </div>
@@ -70,15 +70,14 @@ include("dbconnection.php");
                 <div class="icon"> <i class="zmdi zmdi-money col-green"></i> </div>
                 <div class="content">
                     <div class="text">Ingresos hospitalarios</div>
-                    <div class="number">$ 
-                        <?php 
-              $sql = "SELECT sum(bill_amount) as total  FROM `billing_records` ";
-              $qsql = mysqli_query($con,$sql);
-              while ($row = mysqli_fetch_assoc($qsql))
-              { 
-               echo $row['total'];
-             }
-              ?>
+                    <div class="number">$
+                        <?php
+                        $sql = "SELECT sum(bill_amount) as total  FROM `billing_records` ";
+                        $qsql = mysqli_query($con, $sql);
+                        while ($row = mysqli_fetch_assoc($qsql)) {
+                            echo $row['total'];
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -86,7 +85,7 @@ include("dbconnection.php");
     </div>
 
 
-   
+
 
     <div class="clear"></div>
 </div>

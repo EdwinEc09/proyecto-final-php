@@ -74,7 +74,7 @@ if (isset($_GET['editid'])) {
                                         } else {
                                             ?>
                                             <select name="select4" id="select4" class=" form-control show-tick">
-                                                <option value="">Seleccionar Paciente</option>
+                                                <option value="">Seleccionar paciente</option>
                                                 <?php
                                                 $sqlpatient = "SELECT * FROM patient WHERE status='Activo'";
                                                 $qsqlpatient = mysqli_query($con, $sqlpatient);
@@ -138,7 +138,7 @@ if (isset($_GET['editid'])) {
                                 <div class="form-group">
                                     <div class="form-line">
                                         <select name="select6" id="select6" class=" form-control show-tick">
-                                            <option value="">Seleccionar Doctor</option>
+                                            <option value="">Seleccionar medico</option>
                                             <?php
                                             $sqldoctor = "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo'";
                                             $qsqldoctor = mysqli_query($con, $sqldoctor);

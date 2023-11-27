@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 								<div class="form-group">
 									<div class="form-line">
 										<input class="form-control" type="password" name="oldpassword" id="oldpassword"
-											placeholder="Contraseña Anterior" />
+											placeholder="Contraseña anterior" />
 									</div>
 								</div>
 
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
 								<div class="form-group">
 									<div class="form-line">
 										<input class="form-control" type="password" name="newpassword" id="newpassword"
-											placeholder="Nueva Contraseña" />
+											placeholder="Nueva contraseña" />
 									</div>
 								</div>
 							</div>
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
 								<div class="form-group">
 									<div class="form-line">
 										<input class="form-control" type="password" name="password" id="password"
-											placeholder="Confirmar Contraseña" />
+											placeholder="Confirmar contraseña" />
 									</div>
 								</div>
 							</div>

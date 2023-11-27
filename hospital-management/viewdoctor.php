@@ -30,7 +30,7 @@ if(isset($_GET['delid']))
 					<td>Cargo por consultoría</td>
 					<td>Educación</td>
 					<td>Experiencia</td>
-					<td>Estatado</td>
+					<td>Estado</td>
 					<td>Acción</td>
 				</tr>
 			</thead>
@@ -55,7 +55,7 @@ if(isset($_GET['delid']))
 					<td>&nbsp;$rs[experience] year</td>
 					<td>$rs[status]</td>
 					<td>&nbsp;
-					<a href='doctor.php?editid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-cyan'>Editar</a> <a href='viewdoctor.php?delid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-blush2'>Borrar</a> </td>
+					<a href='doctor.php?editid=$rs[doctorid]'class='btn btn-sm btn-raised g-bg-cyan'>Editar</a> <a href='viewdoctor.php?delid=$rs[doctorid]' class='btn btn-sm btn-raised g-bg-blush2'>Borrar</a> </td>
 					</tr>";
 				}
 				?>      </tbody>

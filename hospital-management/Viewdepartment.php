@@ -1,19 +1,46 @@
 <?php
 include("adformheader.php");
 include("dbconnection.php");
+
 if (isset($_GET['delid'])) {
-  $sql = "DELETE FROM department WHERE departmentid='$_GET[delid]'";
-  $qsql = mysqli_query($con, $sql);
-  if (mysqli_affected_rows($con) == 1) {
-    echo "<script>
-    Swal.fire({
-      title: 'Done!',
-      text: 'Departamento eliminado exitosamente',
-      type: 'success',
-      
-    });
-    </script>";
-  }
+  $delid = mysqli_real_escape_string($con, $_GET['delid']);
+  echo "<script>
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'You won\'t be able to revert this!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonTgexit t: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: 'Deleted!',
+        text: 'Your file has been deleted.',
+        icon: 'success'
+      });
+      \$sql = \"DELETE FROM department WHERE departmentid='$delid'\";
+      \$qsql = mysqli_query(\$con, \$sql);
+      if (mysqli_affected_rows(\$con) == 1) {
+          // Deletion successful
+      } else {
+          // Deletion failed
+      }
+    }
+  });
+  </script>";
+  // $sql = "DELETE FROM department WHERE departmentid='$_GET[delid]'";
+  // $qsql = mysqli_query($con, $sql);
+  // if (mysqli_affected_rows($con) == 1) {
+    
+  //   echo "<script>
+  //   Swal.fire({
+  //     title: 'Deleted!',
+  //     text: 'Your file has been deleted.',
+  //     icon: 'success'
+  //   });</script>";
+  // }
 }
 ?>
 
@@ -51,7 +78,7 @@ if (isset($_GET['delid'])) {
           <td>&nbsp;$rs[status]</td>";
             if (isset($_SESSION['adminid'])) {
               echo "<td>&nbsp;
-            <a href='department.php?editid=$rs[departmentid]'>Editar</a> | <a href='viewdepartment.php?delid=$rs[departmentid]'>Borrar</a> </td>";
+            <a href='department.php?editid=$rs[departmentid]' class='btn btn-sm btn-raised g-bg-cyan' >Editar</a> <a href='viewdepartment.php?delid=$rs[departmentid]'  class='btn btn-sm btn-raised g-bg-blush2'>Borrar</a> </td>";
             }
             echo "</tr>";
           }

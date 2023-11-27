@@ -26,7 +26,6 @@ if (isset($_GET['editid'])) {
 	$sql = "SELECT * FROM admin WHERE adminid='$_GET[editid]' ";
 	$qsql = mysqli_query($con, $sql);
 	$rsedit = mysqli_fetch_array($qsql);
-
 }
 ?>
 
@@ -45,10 +44,9 @@ if (isset($_GET['editid'])) {
 						<div class="row clearfix">
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label> nombre del Administrador</label>
+									<label> Nombre del administrador</label>
 									<div class="form-line">
-										<input type="text" class="form-control" name="adminname" id="adminname"
-											value="<?php echo $rsedit['adminname']; ?>" />
+										<input type="text" class="form-control" name="adminname" id="adminname" value="<?php echo $rsedit['adminname']; ?>" />
 									</div>
 								</div>
 
@@ -58,10 +56,9 @@ if (isset($_GET['editid'])) {
 						<div class="row clearfix">
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label>usuario del administrador</label>
+									<label>Usuario del administrador</label>
 									<div class="form-line">
-										<input type="text" class="form-control" name="loginid" id="loginid"
-											value="<?php echo $rsedit['loginid']; ?>" />
+										<input type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rsedit['loginid']; ?>" />
 									</div>
 								</div>
 							</div>
@@ -71,8 +68,7 @@ if (isset($_GET['editid'])) {
 								<div class="form-group">
 									<label> Contraseña de administrador</label>
 									<div class="form-line">
-										<input type="password" class="form-control" name="password" id="password"
-											value="<?php echo $rsedit['password']; ?>" />
+										<input type="password" class="form-control" name="password" id="password" value="<?php echo $rsedit['password']; ?>" />
 									</div>
 								</div>
 							</div>
@@ -82,8 +78,7 @@ if (isset($_GET['editid'])) {
 								<div class="form-group">
 									<label>Confirmar contraseña de administrador</label>
 									<div class="form-line">
-										<input type="password" class="form-control" name="cnfirmpassword"
-											id="cnfirmpassword" value="<?php echo $rsedit['confirmpassword']; ?>" />
+										<input type="password" class="form-control" name="cnfirmpassword" id="cnfirmpassword" value="<?php echo $rsedit['confirmpassword']; ?>" />
 									</div>
 								</div>
 							</div>
@@ -111,8 +106,7 @@ if (isset($_GET['editid'])) {
 						</div>
 
 						<div class="col-sm-12">
-							<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit"
-								value="Enviar" />
+							<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit" value="Enviar" />
 
 						</div>
 					</div>
@@ -138,100 +132,92 @@ include("adfooter.php");
 		if (document.frmadmin.adminname.value == "") {
 			// alert("El nombre del administrador no debe estar vacío..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Por favor, complete todos los campos.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Por favor, complete todos los campos.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.adminname.focus();
 			return false;
-		}
-		else if (!document.frmadmin.adminname.value.match(alphaspaceExp)) {
+		} else if (!document.frmadmin.adminname.value.match(alphaspaceExp)) {
 			// alert("El nombre del administrador no es válido..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'nombre del administrador no valido',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'nombre del administrador no valido',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.adminname.focus();
 			return false;
-		}
-		else if (document.frmadmin.loginid.value == "") {
+		} else if (document.frmadmin.loginid.value == "") {
 			// alert("El ID de inicio de sesión no debe estar vacío..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Por favor, complete todos los campos.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Por favor, complete todos los campos.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.loginid.focus();
 			return false;
-		}
-		else if (!document.frmadmin.loginid.value.match(alphanumericExp)) {
+		} else if (!document.frmadmin.loginid.value.match(alphanumericExp)) {
 			// alert("Identificacion not valida..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'usuario no valido',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'usuario no valido',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.loginid.focus();
 			return false;
-		}
-		else if (document.frmadmin.password.value == "") {
+		} else if (document.frmadmin.password.value == "") {
 			// alert("La contraseña no debe estar vacía ..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Por favor, complete todos los campos.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Por favor, complete todos los campos.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.password.focus();
 			return false;
-		}
-		else if (document.frmadmin.password.value.length < 8) {
+		} else if (document.frmadmin.password.value.length < 8) {
 			// alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'la contraseña debe ser superior a 8 caracteres',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'la contraseña debe ser superior a 8 caracteres',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.password.focus();
 			return false;
-		}
-		else if (document.frmadmin.password.value != document.frmadmin.cnfirmpassword.value) {
+		} else if (document.frmadmin.password.value != document.frmadmin.cnfirmpassword.value) {
 			// alert("La contraseña y la contraseña de confirmación deben ser iguales..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'las contraseñas deben coincidir ',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'las contraseñas deben coincidir ',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.password.focus();
 			return false;
-		}
-		else if (document.frmadmin.select.value == "") {
+		} else if (document.frmadmin.select.value == "") {
 			// alert("Por favor, seleccione el estado ..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Por favor, seleccione el estado',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Por favor, seleccione el estado',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmadmin.select.focus();
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
