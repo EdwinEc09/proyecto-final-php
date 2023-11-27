@@ -3,46 +3,43 @@ include("adformheader.php");
 include("dbconnection.php");
 
 if (isset($_GET['delid'])) {
-  $delid = mysqli_real_escape_string($con, $_GET['delid']);
-  echo "<script>
-  Swal.fire({
-    title: 'Are you sure?',
-    text: 'You won\'t be able to revert this!',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonTgexit t: 'Yes, delete it!'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        title: 'Deleted!',
-        text: 'Your file has been deleted.',
-        icon: 'success'
-      });
-      \$sql = \"DELETE FROM department WHERE departmentid='$delid'\";
-      \$qsql = mysqli_query(\$con, \$sql);
-      if (mysqli_affected_rows(\$con) == 1) {
-          // Deletion successful
-      } else {
-          // Deletion failed
-      }
+    // Check if the delete confirmation is set
+    if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
+        $sql = "DELETE FROM department WHERE departmentid='" . $_GET['delid'] . "'";
+        $qsql = mysqli_query($con, $sql);
+
+        if (mysqli_affected_rows($con) == 1) {
+            echo "<script>
+            Swal.fire({
+                title: 'Deleted!',
+                text: 'Your file has been deleted.',
+                icon: 'success'
+            }).then(function() {
+                window.location.href = 'Viewdepartment.php'; // Redirect to desired page after deletion
+            });
+            </script>";
+        }
+    } else {
+        // If confirmation is not set, show confirmation dialog
+        echo "<script>
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You won\'t be able to revert this!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'Viewdepartment.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }
+        });
+        </script>";
     }
-  });
-  </script>";
-  // $sql = "DELETE FROM department WHERE departmentid='$_GET[delid]'";
-  // $qsql = mysqli_query($con, $sql);
-  // if (mysqli_affected_rows($con) == 1) {
-    
-  //   echo "<script>
-  //   Swal.fire({
-  //     title: 'Deleted!',
-  //     text: 'Your file has been deleted.',
-  //     icon: 'success'
-  //   });</script>";
-  // }
 }
 ?>
+
 
 
 <div class="container-fluid">
