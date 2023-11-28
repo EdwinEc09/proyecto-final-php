@@ -47,8 +47,8 @@ if (isset($_POST['submit'])) {
         // if (mysqli_num_rows($qsqls) > 0) {
         //     echo "<script>alert('existe...');</script>";
         // } else {
-        //     $sql = "INSERT INTO appointment(appointmenttype, patientid, appointmentdate, appointmenttime, app_reason, status, departmentid, doctorid) 
-        //     VALUES ('ONLINE', '$lastinsid', '$_POST[appointmentdate]', '$_POST[appointmenttime]', '$_POST[app_reason]', 'Pendiente', '$_POST[department]', '$_POST[doct]')";
+        //     $sql = "INSERT INTO appointment(appointmenttype, patientid, appointmentdate, appointmenttime, app_reason, status, specialtyid, doctorid) 
+        //     VALUES ('ONLINE', '$lastinsid', '$_POST[appointmentdate]', '$_POST[appointmenttime]', '$_POST[app_reason]', 'Pendiente', '$_POST[specialty]', '$_POST[doct]')";
 
         //     // Ejecutar la consulta de inserción para la cita
         //     if ($qsql = mysqli_query($con, $sql)) {
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
         //     }
         // }
 
-        $sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pendiente','$_POST[department]','$_POST[doct]')";
+        $sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,specialtyid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pendiente','$_POST[specialty]','$_POST[doct]')";
         if($qsql = mysqli_query($con,$sql))
         {
             $sqle ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Activo')";
@@ -218,13 +218,13 @@ if (isset($_SESSION['patientid'])) {
                                             <li class="col-sm-6">
                                                 <label>
 
-                                                    <select name="department" class="selectpicker" id="department">
+                                                    <select name="specialty" class="selectpicker" id="specialty">
                                                         <option value="">Seleccionar Departamento</option>
                                                         <?php
-                                                        $sqldept = "SELECT * FROM department WHERE status='Activo'";
+                                                        $sqldept = "SELECT * FROM specialty WHERE status='Activo'";
                                                         $qsqldept = mysqli_query($con, $sqldept);
                                                         while ($rsdept = mysqli_fetch_array($qsqldept)) {
-                                                            echo "<option value='$rsdept[departmentid]'>$rsdept[departmentname]</option>";
+                                                            echo "<option value='$rsdept[specialtyid]'>$rsdept[specialtyname]</option>";
                                                         }
                                                         ?>
                                                     </select>
@@ -234,17 +234,17 @@ if (isset($_SESSION['patientid'])) {
                                             </li>
                                             <li class="col-sm-6">
                                                 <label>
-                                                    <select name="doct" class="selectpicker" id="department">
+                                                    <select name="doct" class="selectpicker" id="specialty">
                                                         <option value="">Seleccionar medico</option>
                                                         <?php
                                                         $sqldept = "SELECT * FROM doctor WHERE status='Activo'";
                                                         $qsqldept = mysqli_query($con, $sqldept);
                                                         while ($rsdept = mysqli_fetch_array($qsqldept)) {
                                                             echo "<option value='$rsdept[doctorid]'>$rsdept[doctorname] (";
-                                                            $sqldept = "SELECT * FROM department WHERE departmentid='$rsdept[departmentid]'";
+                                                            $sqldept = "SELECT * FROM specialty WHERE specialtyid='$rsdept[specialtyid]'";
                                                             $qsqldepta = mysqli_query($con, $sqldept);
                                                             $rsdept = mysqli_fetch_array($qsqldepta);
-                                                            echo $rsdept['departmentname'];
+                                                            echo $rsdept['specialtyname'];
 
                                                             echo ")</option>";
                                                         }
@@ -371,7 +371,7 @@ include("footer.php");
                 document.getElementById("divdoc").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "departmentDoctor.php?deptid=" + deptid, true);
+        xmlhttp.open("GET", "specialtyDoctor.php?deptid=" + deptid, true);
         xmlhttp.send();
     }
 </script>

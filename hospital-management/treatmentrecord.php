@@ -114,11 +114,11 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
           <td>Doctor</td>
           <td>
     		<?php
-				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
+				$sqldoctor= "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
 				$qsqldoctor = mysqli_query($con,$sqldoctor);
 				while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 				{
-					echo "$rsdoctor[doctorname] ( $rsdoctor[departmentname] )";
+					echo "$rsdoctor[doctorname] ( $rsdoctor[specialtyname] )";
 				}
 				?>
                 <input class="form-control" type="hidden" name="select5" value="<?php echo $_SESSION['doctorid']; ?>"  />
@@ -134,17 +134,17 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
           <select name="select5" id="select5">
     		<option value="">Seleccionar</option>
     		<?php
-				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo'";
+				$sqldoctor= "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo'";
 				$qsqldoctor = mysqli_query($con,$sqldoctor);
 				while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 				{
 					if($rsdoctor['doctorid'] == $rsedit['doctorid'])
 					{
-					echo "<option value='$rsdoctor[doctorid]' selected>$rsdoctor[doctorname] ( $rsdoctor[departmentname] ) </option>";
+					echo "<option value='$rsdoctor[doctorid]' selected>$rsdoctor[doctorname] ( $rsdoctor[specialtyname] ) </option>";
 					}
 					else
 					{
-					echo "<option value='$rsdoctor[doctorid]'>$rsdoctor[doctorname] ( $rsdoctor[departmentname] )</option>";				
+					echo "<option value='$rsdoctor[doctorid]'>$rsdoctor[doctorname] ( $rsdoctor[specialtyname] )</option>";				
 					}
 				}
 		  		?>

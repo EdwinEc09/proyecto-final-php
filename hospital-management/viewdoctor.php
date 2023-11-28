@@ -42,13 +42,13 @@ if(isset($_GET['delid']))
 				while($rs = mysqli_fetch_array($qsql))
 				{
 
-					$sqldept = "SELECT * FROM department WHERE departmentid='$rs[departmentid]'";
+					$sqldept = "SELECT * FROM specialty WHERE specialtyid='$rs[specialtyid]'";
 					$qsqldept = mysqli_query($con,$sqldept);
 					$rsdept = mysqli_fetch_array($qsqldept);
 					echo "<tr>
 					<td>&nbsp;$rs[doctorname]</td>
 					<td>&nbsp;$rs[mobileno]</td>
-					<td>&nbsp;$rsdept[departmentname]</td>
+					<td>&nbsp;$rsdept[specialtyname]</td>
 					<td>&nbsp;$rs[loginid]</td>
 					<td>&nbsp;$rs[consultancy_charge]</td>
 					<td>&nbsp;$rs[education]</td>

@@ -62,7 +62,7 @@ if(isset($_GET['approveid']))
 					$rspat = mysqli_fetch_array($qsqlpat);
 
 
-					$sqldept = "SELECT * FROM department WHERE departmentid='$rs[departmentid]'";
+					$sqldept = "SELECT * FROM specialty WHERE specialtyid='$rs[specialtyid]'";
 					$qsqldept = mysqli_query($con,$sqldept);
 					$rsdept = mysqli_fetch_array($qsqldept);
 
@@ -73,7 +73,7 @@ if(isset($_GET['approveid']))
 
 					<td>&nbsp;$rspat[patientname]<br>&nbsp;$rspat[mobileno]</td>		 
 					<td>&nbsp;" . date("d-M-Y",strtotime($rs['appointmentdate'])) . " &nbsp; " . date("H:i A",strtotime($rs['appointmenttime'])) . "</td> 
-					<td>&nbsp;$rsdept[departmentname]</td>
+					<td>&nbsp;$rsdept[specialtyname]</td>
 					<td>&nbsp;$rsdoc[doctorname]</td>
 					<td>&nbsp;$rs[app_reason]</td>
 					<td>&nbsp;$rs[status]</td>

@@ -2,7 +2,7 @@
 include("adformheader.php");
 include("dbconnection.php");
 if (isset($_GET['delid'])) {
-  $sql = "DELETE FROM department WHERE departmentid='$_GET[delid]'";
+  $sql = "DELETE FROM specialty WHERE specialtyid='$_GET[delid]'";
   $qsql = mysqli_query($con, $sql);
   if (mysqli_affected_rows($con) == 1) {
     echo "<script>
@@ -41,17 +41,17 @@ if (isset($_GET['delid'])) {
             ?>
           </tr>
           <?php
-          $sql = "SELECT * FROM department";
+          $sql = "SELECT * FROM specialty";
           $qsql = mysqli_query($con, $sql);
           while ($rs = mysqli_fetch_array($qsql)) {
             echo "<tr>
-          <td>$rs[departmentname]</td>
+          <td>$rs[specialtyname]</td>
           <td> $rs[description]</td>
           
           <td>&nbsp;$rs[status]</td>";
             if (isset($_SESSION['adminid'])) {
               echo "<td>&nbsp;
-            <a href='department.php?editid=$rs[departmentid]'>Editar</a> | <a href='viewdepartment.php?delid=$rs[departmentid]'>Borrar</a> </td>";
+            <a href='specialty.php?editid=$rs[specialtyid]'>Editar</a> | <a href='viewspecialty.php?delid=$rs[specialtyid]'>Borrar</a> </td>";
             }
             echo "</tr>";
           }

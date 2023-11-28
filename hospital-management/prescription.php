@@ -79,11 +79,11 @@ if(isset($_GET['editid']))
           <td>Doctor</td>
           <td>
     		<?php
-				$sqldoctor= "SELECT * FROM doctor INNER JOIN department ON department.departmentid=doctor.departmentid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
+				$sqldoctor= "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
 				$qsqldoctor = mysqli_query($con,$sqldoctor);
 				while($rsdoctor = mysqli_fetch_array($qsqldoctor))
 				{
-					echo "$rsdoctor[doctorname] ( $rsdoctor[departmentname] )";
+					echo "$rsdoctor[doctorname] ( $rsdoctor[specialtyname] )";
 				}
 				?>
                 <input type="hidden" name="select2" value="<?php echo $_SESSION['doctorid']; ?>"  />

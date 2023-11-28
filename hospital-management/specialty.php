@@ -5,7 +5,7 @@ if(isset($_POST['submit']))
 {
 	if(isset($_GET['editid']))
 	{
-			$sql ="UPDATE department SET departmentname='$_POST[departmentname]',description='$_POST[textarea]',status='$_POST[select]' WHERE departmentid='$_GET[editid]'";
+			$sql ="UPDATE specialty SET specialtyname='$_POST[specialtyname]',description='$_POST[textarea]',status='$_POST[select]' WHERE specialtyid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>alert('Registro del departamento actualizado exitosamente.');</script>";
@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-	$sql ="INSERT INTO department(departmentname,description,status) values('$_POST[departmentname]','$_POST[textarea]','$_POST[select]')";
+	$sql ="INSERT INTO specialty(specialtyname,description,status) values('$_POST[specialtyname]','$_POST[textarea]','$_POST[select]')";
 	if($qsql = mysqli_query($con,$sql))
 	{
 		echo "<script>alert('Registro de departamento insertado exitosamente.');</script>";
@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
 }
 if(isset($_GET['editid']))
 {
-	$sql="SELECT * FROM department WHERE departmentid='$_GET[editid]' ";
+	$sql="SELECT * FROM specialty WHERE specialtyid='$_GET[editid]' ";
 	$qsql = mysqli_query($con,$sql);
 	$rsedit = mysqli_fetch_array($qsql);
 	
@@ -50,7 +50,7 @@ if(isset($_GET['editid']))
       <tbody>
         <tr>
           <td width="34%">Nombre de Departamento</td>
-          <td width="66%"><input placeholder=" Entre aquí " class="form-control" type="text" name="departmentname" id="departmentname" value="<?php echo $rsedit['departmentname']; ?>" /></td>
+          <td width="66%"><input placeholder=" Entre aquí " class="form-control" type="text" name="specialtyname" id="specialtyname" value="<?php echo $rsedit['specialtyname']; ?>" /></td>
         </tr>
         <tr>
           <td>Descripción</td>
@@ -101,16 +101,16 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmdept.departmentname.value == "")
+	if(document.frmdept.specialtyname.value == "")
 	{
 		alert("El nombre del departamento no debe estar vacío.");
-		document.frmdept.departmentname.focus();
+		document.frmdept.specialtyname.focus();
 		return false;
 	}
-	else if(!document.frmdept.departmentname.value.match(alphaspaceExp))
+	else if(!document.frmdept.specialtyname.value.match(alphaspaceExp))
 	{
 		alert("Nombre del departamento no válido.");
-		document.frmdept.departmentname.focus();
+		document.frmdept.specialtyname.focus();
 		return false;
 	}
 	else if(document.frmdept.select.value == "" )

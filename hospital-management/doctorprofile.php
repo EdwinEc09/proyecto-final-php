@@ -6,7 +6,7 @@ if(isset($_POST['submit']))
 {
 	if(isset($_SESSION['doctorid']))
 	{
-		$sql ="UPDATE doctor SET doctorname='$_POST[doctorname]',mobileno='$_POST[mobilenumber]',departmentid='$_POST[select3]',loginid='$_POST[loginid]',education='$_POST[education]',experience='$_POST[experience]',consultancy_charge='$_POST[consultancy_charge]' WHERE doctorid='$_SESSION[doctorid]'";
+		$sql ="UPDATE doctor SET doctorname='$_POST[doctorname]',mobileno='$_POST[mobilenumber]',specialtyid='$_POST[select3]',loginid='$_POST[loginid]',education='$_POST[education]',experience='$_POST[experience]',consultancy_charge='$_POST[consultancy_charge]' WHERE doctorid='$_SESSION[doctorid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>alert('Doctor profile updated successfully...');</script>";
@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO doctor(doctorname,mobileno,departmentid,loginid,password,status,education,experience) values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','$_POST[select]','$_POST[education]','$_POST[experience]')";
+		$sql ="INSERT INTO doctor(doctorname,mobileno,specialtyid,loginid,password,status,education,experience) values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','$_POST[select]','$_POST[education]','$_POST[experience]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>alert('Doctor record inserted successfully...');</script>";
@@ -72,17 +72,17 @@ if(isset($_SESSION['doctorid']))
                                     <select name="select3" id="select3" class="form-control show-tick">
                                         <option value="">Seleccionar</option>
                                         <?php
-													$sqldepartment= "SELECT * FROM department WHERE status='Activo'";
-													$qsqldepartment = mysqli_query($con,$sqldepartment);
-													while($rsdepartment=mysqli_fetch_array($qsqldepartment))
+													$sqlspecialty= "SELECT * FROM specialty WHERE status='Activo'";
+													$qsqlspecialty = mysqli_query($con,$sqlspecialty);
+													while($rsspecialty=mysqli_fetch_array($qsqlspecialty))
 													{
-														if($rsdepartment['departmentid'] == $rsedit['departmentid'])
+														if($rsspecialty['specialtyid'] == $rsedit['specialtyid'])
 														{
-															echo "<option value='$rsdepartment[departmentid]' selected>$rsdepartment[departmentname]</option>";
+															echo "<option value='$rsspecialty[specialtyid]' selected>$rsspecialty[specialtyname]</option>";
 														}
 														else
 														{
-															echo "<option value='$rsdepartment[departmentid]'>$rsdepartment[departmentname]</option>";
+															echo "<option value='$rsspecialty[specialtyid]'>$rsspecialty[specialtyname]</option>";
 														}
 
 													}
@@ -170,7 +170,7 @@ function validateform() {
         document.frmdoctprfl.mobilenumber.focus();
         return false;
     } else if (document.frmdoctprfl.select3.value == "") {
-        alert("Department ID should not be empty..");
+        alert("specialty ID should not be empty..");
         document.frmdoctprfl.select3.focus();
         return false;
     } else if (document.frmdoctprfl.loginid.value == "") {

@@ -113,8 +113,8 @@ $tim = date("H:i:s");
 
                         <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-settings-square"></i><span>Servicio</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="department.php">Añadir departamento</a></li>
-                                <li><a href="viewdepartment.php">Ver departamento</a></li>
+                                <li><a href="specialty.php">Añadir departamento</a></li>
+                                <li><a href="viewspecialty.php">Ver departamento</a></li>
                                 <li><a href="treatment.php">Añadir tipo de tratamiento</a></li>
                                 <li><a href="viewtreatment.php">Ver tipos de tratamiento</a></li>
                                 <li><a href="medicine.php">Añadir medicamentos</a></li>

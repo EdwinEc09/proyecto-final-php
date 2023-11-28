@@ -106,16 +106,16 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmmedicine.departmentname.value == "")
+	if(document.frmmedicine.specialtyname.value == "")
 	{
-		alert("Department name should not be empty..");
-		document.frmdept.departmentname.focus();
+		alert("specialty name should not be empty..");
+		document.frmdept.specialtyname.focus();
 		return false;
 	}
-	else if(!document.frmmedicine.departmentname.value.match(alphaExp))
+	else if(!document.frmmedicine.specialtyname.value.match(alphaExp))
 	{
-		alert("Department name not valid..");
-		document.frmdept.departmentname.focus();
+		alert("specialty name not valid..");
+		document.frmdept.specialtyname.focus();
 		return false;
 	}
 	else if(document.frmmedicine.select.value == "" )

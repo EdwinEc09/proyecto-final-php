@@ -53,7 +53,7 @@ CREATE TABLE `appointment` (
   `appointmenttype` varchar(25) NOT NULL,
   `patientid` int(10) NOT NULL,
   `roomid` int(10) NOT NULL,
-  `departmentid` int(10) NOT NULL,
+  `dspecialtyid` int(10) NOT NULL,
   `appointmentdate` date NOT NULL,
   `appointmenttime` time NOT NULL,
   `doctorid` int(10) NOT NULL,
@@ -130,21 +130,21 @@ INSERT INTO `billing_records` (`billingservice_id`, `billingid`, `bill_type_id`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `department`
+-- Table structure for table `specialty`
 --
 
-CREATE TABLE `department` (
-  `departmentid` int(10) NOT NULL,
-  `departmentname` varchar(100) NOT NULL,
+CREATE TABLE `specialty` (
+  `specialtyid` int(10) NOT NULL,
+  `specialtyname` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `department`
+-- Dumping data for table `specialty`
 --
 
-INSERT INTO `department` (`departmentid`, `departmentname`, `description`, `status`) VALUES
+INSERT INTO `specialty` (`specialtyid`, `specialtyname`, `description`, `status`) VALUES
 (1, 'Medicine', 'Medicine', 'Activo'),
 (2, 'Cardiology', 'Provides medical care to patients who have problems with their heart or circulation.', 'Activo'),
 (3, 'Gynecology', 'Investigates and treats problems relating to the female urinary tract and reproductive organs, such as Endometriosis, infertility and incontinence', 'Activo'),
@@ -165,7 +165,7 @@ CREATE TABLE `doctor` (
   `doctorid` int(10) NOT NULL,
   `doctorname` varchar(50) NOT NULL,
   `mobileno` varchar(15) NOT NULL,
-  `departmentid` int(10) NOT NULL,
+  `specialtyid` int(10) NOT NULL,
   `loginid` varchar(25) NOT NULL,
   `password` varchar(25) NOT NULL,
   `status` varchar(10) NOT NULL,
@@ -178,7 +178,7 @@ CREATE TABLE `doctor` (
 -- Dumping data for table `doctor`
 --
 
-INSERT INTO `doctor` (`doctorid`, `doctorname`, `mobileno`, `departmentid`, `loginid`, `password`, `status`, `education`, `experience`, `consultancy_charge`) VALUES
+INSERT INTO `doctor` (`doctorid`, `doctorname`, `mobileno`, `dspecialtyid`, `loginid`, `password`, `status`, `education`, `experience`, `consultancy_charge`) VALUES
 (1, 'Carol Bosworth', '7002225650', 1, 'carol', 'password', 'Activo', 'MBBS', 7.0, 7.00);
 
 -- --------------------------------------------------------
@@ -552,10 +552,10 @@ ALTER TABLE `billing_records`
   ADD PRIMARY KEY (`billingservice_id`);
 
 --
--- Indexes for table `department`
+-- Indexes for table `specialty`
 --
-ALTER TABLE `department`
-  ADD PRIMARY KEY (`departmentid`);
+ALTER TABLE `specialty`
+  ADD PRIMARY KEY (`specialtyid`);
 
 --
 -- Indexes for table `doctor`
@@ -661,10 +661,10 @@ ALTER TABLE `billing`
 ALTER TABLE `billing_records`
   MODIFY `billingservice_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT for table `department`
+-- AUTO_INCREMENT for table `specialty`
 --
-ALTER TABLE `department`
-  MODIFY `departmentid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `specialty`
+  MODIFY `specialtyid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `doctor`
 --

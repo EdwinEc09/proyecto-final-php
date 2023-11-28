@@ -3,7 +3,7 @@ session_start();
 include("dbconnection.php");
 if(isset($_POST['submitapp']))
 {
-	$sql ="INSERT INTO appointment(appointmenttype,roomid,departmentid,appointmentdate,appointmenttime,doctorid) values('$_POST[select]','$_POST[select2]','$_POST[select3]','$_POST[date]','$_POST[time]','$_POST[select5]')";
+	$sql ="INSERT INTO appointment(appointmenttype,roomid,specialtyid,appointmentdate,appointmenttime,doctorid) values('$_POST[select]','$_POST[select2]','$_POST[select3]','$_POST[date]','$_POST[time]','$_POST[select5]')";
 	if($qsql = mysqli_query($con,$sql))
 	{
 		echo "<script>alert('appointment record inserted successfully...');</script>";
@@ -44,9 +44,9 @@ else
 	$qsqlroom = mysqli_query($con,$sqlroom);
 	$rsroom =mysqli_fetch_array($qsqlroom);
 	
-	$sqldepartment = "SELECT * FROM department where departmentid='$rsappointment[departmentid]'";
-	$qsqldepartment = mysqli_query($con,$sqldepartment);
-	$rsdepartment =mysqli_fetch_array($qsqldepartment);
+	$sqlspecialty = "SELECT * FROM specialty where specialtyid='$rsappointment[specialtyid]'";
+	$qsqlspecialty = mysqli_query($con,$sqlspecialty);
+	$rsspecialty =mysqli_fetch_array($qsqlspecialty);
 	
 	$sqldoctor = "SELECT * FROM doctor where doctorid='$rsappointment[doctorid]'";
 	$qsqldoctor = mysqli_query($con,$sqldoctor);
@@ -57,7 +57,7 @@ else
   
   <tr>
     <td>Departamento</td>
-    <td>&nbsp;<?php echo $rsdepartment['departmentname']; ?></td>
+    <td>&nbsp;<?php echo $rsspecialty['specialtyname']; ?></td>
   </tr>
   <tr>
     <td>Doctor</td>
@@ -93,7 +93,7 @@ function validateform()
 	}
 	else if(document.frmappntdetail.select3.value == "")
 	{
-		alert("Department name should not be empty..");
+		alert("specialty name should not be empty..");
 		document.frmappntdetail.select3.focus();
 		return false;
 	}
