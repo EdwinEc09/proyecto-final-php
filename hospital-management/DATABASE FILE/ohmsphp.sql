@@ -178,7 +178,7 @@ CREATE TABLE `doctor` (
 -- Dumping data for table `doctor`
 --
 
-INSERT INTO `doctor` (`doctorid`, `doctorname`, `mobileno`, `dspecialtyid`, `loginid`, `password`, `status`, `education`, `experience`, `consultancy_charge`) VALUES
+INSERT INTO `doctor` (`doctorid`, `doctorname`, `mobileno`, `specialtyid`, `loginid`, `password`, `status`, `education`, `experience`, `consultancy_charge`) VALUES
 (1, 'Carol Bosworth', '7002225650', 1, 'carol', 'password', 'Activo', 'MBBS', 7.0, 7.00);
 
 -- --------------------------------------------------------
