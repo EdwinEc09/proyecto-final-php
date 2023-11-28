@@ -49,7 +49,7 @@ if(isset($_POST['btnsub']))
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Left Sidebar</title>
+	<title>Barra lateral izquierda</title>
 
 	<link rel="stylesheet" href="pt_css/assets/demo.css">
 	<link rel="stylesheet" href="pt_css/assets/sidebar-left.css">

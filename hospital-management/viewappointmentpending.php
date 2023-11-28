@@ -1,28 +1,61 @@
 <?php
-
 include("adformheader.php");
 include("dbconnection.php");
-if(isset($_GET['delid']))
-{
-	$sql ="DELETE FROM appointment WHERE appointmentid='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('Registro de cita eliminado exitosamente...');</script>";
-	}
+
+if (isset($_GET['delid'])) {
+    if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
+        $sql = "DELETE FROM appointment WHERE appointmentid='$_GET[delid]'";
+        $qsql = mysqli_query($con, $sql);
+
+        if (mysqli_affected_rows($con) == 1) {
+            echo "<script>
+            Swal.fire({
+                title: 'Deleted!',
+                text: 'Appointment record deleted successfully.',
+                icon: 'success'
+            }).then(function() {
+                window.location.href = 'viewappointment.php'; // Redirect to desired page after deletion
+            });
+            </script>";
+        }
+    } else {
+        echo "<script>
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You won\'t be able to revert this!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'viewappointmentpending.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }
+        });
+        </script>";
+    }
 }
-if(isset($_GET['approveid']))
-{
-	$sql ="UPDATE patient SET status='Activo' WHERE patientid='$_GET[patientid]'";
-	$qsql=mysqli_query($con,$sql);
-	
-	$sql ="UPDATE appointment SET status='Approved' WHERE appointmentid='$_GET[approveid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('Registro de cita Aprobado exitosamente...');</script>";
-		echo "<script>window.location='viewappointmentpending.php';</script>";
-	}	
+
+if(isset($_GET['approveid'])) {
+    $sql ="UPDATE patient SET status='Activo' WHERE patientid='$_GET[patientid]'";
+    $qsql=mysqli_query($con,$sql);
+    
+    $sql ="UPDATE appointment SET status='Approved' WHERE appointmentid='$_GET[approveid]'";
+    $qsql=mysqli_query($con,$sql);
+    if(mysqli_affected_rows($con) == 1) {
+        echo "<script>
+        Swal.fire({
+            title: 'Approved!',
+            text: 'Appointment record approved successfully.',
+            icon: 'success'
+        }).then(function() {
+            window.location.href = 'viewappointmentpending.php';
+        });
+        </script>";
+    } else {
+        echo "<script>alert('Error approving appointment');</script>";
+    }
 }
 ?>
 <div class="container-fluid">
@@ -78,7 +111,7 @@ if(isset($_GET['approveid']))
 					<td>&nbsp;$rs[app_reason]</td>
 					<td>&nbsp;$rs[status]</td>
 					<td>";
-					if($rs['status'] != "Approved")
+					if($rs['status'] != "Aprobado")
 					{
 						if(!(isset($_SESSION['patientid'])))
 						{
@@ -88,7 +121,7 @@ if(isset($_GET['approveid']))
 					}
 					else
 					{
-						echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised'>View Report</a>";
+						echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised'>Ver reporte</a>";
 					}
 					echo "</td></tr>";
 				}

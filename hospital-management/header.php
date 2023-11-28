@@ -11,7 +11,7 @@ $tim = date("H:i:s");
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="M_Adnan" />
 <!-- Document Title -->
-<title>HMS</title>
+<title>ACO</title>
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
