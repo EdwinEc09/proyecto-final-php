@@ -3,7 +3,7 @@ include("dbconnection.php");
 $dt = date("Y-m-d");
 $tim = date("H:i:s");
 //LAST APPOINTMENT ID
-$sqlappointment1 = "SELECT max(appointmentid) FROM appointment where patientid='$_GET[patientid]' AND (status='Active' OR status='Approved')";
+$sqlappointment1 = "SELECT max(appointmentid) FROM appointment where patientid='$_GET[patientid]' AND (status='Activo' OR status='Aprobado')";
 $qsqlappointment1 = mysqli_query($con,$sqlappointment1);
 $rsappointment1=mysqli_fetch_array($qsqlappointment1);
 
@@ -31,7 +31,7 @@ if($billtype == "Room Rent")
 		$qsqlroomtariff = mysqli_query($con,$sqlroomtariff);
 		$rsroomtariff = mysqli_fetch_array($qsqlroomtariff);
 	//Room tariff
-	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$roomid','Room Rent','$rsroomtariff[room_tariff]','$dt','Active')";
+	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$roomid','Room Rent','$rsroomtariff[room_tariff]','$dt','Activo')";
 	$qsql=mysqli_query($con,$sql);
 	}
 }
@@ -48,7 +48,7 @@ if($billtype == "Doctor Charge" && $billtype1="Treatment Cost")
 	
 	if(mysqli_affected_rows($con) == 0)
 	{
-		$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$doctorid','Consultancy Charge','$rsdoctor[consultancy_charge]','$dt','Active')";
+		$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$doctorid','Consultancy Charge','$rsdoctor[consultancy_charge]','$dt','Activo')";
 		$qsql=mysqli_query($con,$sql);
 	}
 	
@@ -57,7 +57,7 @@ if($billtype == "Doctor Charge" && $billtype1="Treatment Cost")
 	$qsqltreatment = mysqli_query($con,$sqltreatment);
 	$rstreatment = mysqli_fetch_array($qsqltreatment);
 	
-	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$treatmentid','Treatment','$rstreatment[treatment_cost]','$dt','Active')";
+	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$treatmentid','Treatment','$rstreatment[treatment_cost]','$dt','Activo')";
 	$qsql=mysqli_query($con,$sql);
 }
 
@@ -67,7 +67,7 @@ if($billtype == "Prescription charge")
 	$qsqltreatment = mysqli_query($con,$sqltreatment);
 	$rstreatment = mysqli_fetch_array($qsqltreatment);
 	//Prescription charge
-	 $sql ="INSERT INTO billing_records(billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$prescriptionid','Prescription Charge','$presamt','$dt','Active')";
+	 $sql ="INSERT INTO billing_records(billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$prescriptionid','Prescription Charge','$presamt','$dt','Activo')";
 	$qsql=mysqli_query($con,$sql);
 }
 
@@ -84,7 +84,7 @@ if($billtype == "Prescription update")
 if($billtype == "Consultancy Charge")
 {
 //Consultancy Charge
-$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$doctorid','Consultancy Charge','$billamt','$dt','Active')";
+$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$doctorid','Consultancy Charge','$billamt','$dt','Activo')";
 $qsql=mysqli_query($con,$sql);
 }
 
@@ -93,9 +93,9 @@ if($billtype == "Service Charge")
 	$sqlservice_type = "SELECT * FROM service_type WHERE service_type_id='$servicetypeid'";
 	$qsqlservice_type = mysqli_query($con,$sqlservice_type);
 	$rsservice_type = mysqli_fetch_array($qsqlservice_type);
-	$servicecharge = $rsservice_type[servicecharge] + $_POST[amount];
+	$servicecharge = $rsservice_type['servicecharge'] + $_POST['amount'];
 	//Prescription charge
-	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$servicetypeid','Service Charge','$servicecharge','$_POST[date]','Active')";
+	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$servicetypeid','Service Charge','$servicecharge','$_POST[date]','Activo')";
 	$qsql=mysqli_query($con,$sql);
 	echo "<script>alert('Service charge added successfully..');</script>";
 }
