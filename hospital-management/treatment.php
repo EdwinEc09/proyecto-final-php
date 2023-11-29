@@ -97,7 +97,7 @@ if(isset($_GET['editid']))
 					<div class="col-sm-12">
 						<div class="form-group">
 							<label for="">Nota</label>
-							<div class="form-line">
+							<div class="form-line"> 
 								<textarea name="textarea" class="form-control no-resize" id="textarea" cols="45"
 								rows="5"><?php echo $rsedit['note'] ; ?></textarea>
 
