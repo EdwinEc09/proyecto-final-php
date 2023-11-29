@@ -1,6 +1,8 @@
 
 
-**nombre de base de datos: ohmsphp**
+**nombre de base de datos principal: ohmsphp**
+**nombre de base de datos segundaria la diferencia es que tiene relaciones: ohmsphp2**
+**nombre de base de datos tercera la diferencia es que tiene relaciones esta en español nada mas los nombres de las tablas: ohmsphp-spain**
 
 
 esta son las contraseñas
