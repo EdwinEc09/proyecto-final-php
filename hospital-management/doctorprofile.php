@@ -67,7 +67,7 @@ if(isset($_SESSION['doctorid']))
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <div class="form-group">
-                                <label>Departamento</label>
+                                <label>especialidad</label>
                                 <div class="form-line">
                                     <select name="select3" id="select3" class="form-control show-tick">
                                         <option value="">Seleccionar</option>

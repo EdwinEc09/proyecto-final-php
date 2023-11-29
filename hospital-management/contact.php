@@ -42,7 +42,7 @@
                   <ul class="row">
                     <li class="col-sm-12">
                       <label>
-                        <input type="text" class="form-control" name="website" id="website" placeholder="Departamento">
+                        <input type="text" class="form-control" name="website" id="website" placeholder="especialidad">
                       </label>
                     </li>
                     <li class="col-sm-12">

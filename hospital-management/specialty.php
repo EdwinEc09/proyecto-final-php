@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
 			  
             Swal.fire({
                 title: '¡Exito!',
-                text: '¡departamento actualizado exitosamente!',
+                text: '¡especialidad actualizado exitosamente!',
                 icon: 'success'
               });
 			</script>";
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 			echo "<script>
 		Swal.fire({
 			title: '¡Exito!',
-			text: '¡departamento registrado exitosamente!',
+			text: '¡especialidad registrada exitosamente!',
 			icon: 'success'
 		  });
 		</script>";
@@ -42,7 +42,7 @@ if (isset($_GET['editid'])) {
 
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center">Agregar nuevo departamento</h2>
+		<h2 class="text-center">Agregar nueva especialidad</h2>
 
 	</div>
 	<div class="card">
@@ -51,7 +51,7 @@ if (isset($_GET['editid'])) {
 			<table class="table table-hover">
 				<tbody>
 					<tr>
-						<td width="34%">Nombre de Departamento</td>
+						<td width="34%">Nombre de especialidad</td>
 						<td width="66%"><input placeholder=" Entre aquí " class="form-control" type="text"
 								name="specialtyname" id="specialtyname"
 								value="<?php echo $rsedit['specialtyname']; ?>" /></td>
@@ -103,11 +103,11 @@ include("adfooter.php");
 
 	function validateform() {
 		if (document.frmdept.specialtyname.value == "") {
-			// alert("El nombre del departamento no debe estar vacío.");
+			// alert("El nombre del especialidad no debe estar vacío.");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'Nombre de departamento no debe ir vacio.',
+                title: 'Nombre de especialidad no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -116,11 +116,11 @@ include("adfooter.php");
 			return false;
 		}
 		else if (!document.frmdept.specialtyname.value.match(alphaspaceExp)) {
-			// alert("Nombre del departamento no válido.");
+			// alert("Nombre del especialidad no válido.");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'Nombre de departamento no valido.',
+                title: 'Nombre de especialidad no valido.',
                 showConfirmButton: false,
                 timer: 2000,
             });

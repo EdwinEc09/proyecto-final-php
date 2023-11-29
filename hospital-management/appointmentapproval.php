@@ -80,7 +80,7 @@ if (isset($_GET['editid'])) {
 			</tr>
 
 			<tr>
-				<td>Departamento</td>
+				<td>especialidad</td>
 				<td><select name="select5" id="select5" class="form-control show-tick">
 						<option value="">Seleccionar</option>
 						<?php
@@ -178,7 +178,7 @@ include("adfooter.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'Departamento no debe ir vacio.',
+                title: 'especialidad no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });

@@ -98,7 +98,7 @@ if (isset($_GET['editid'])) {
                                 <div class="form-group">
                                     <div class="form-line">
                                         <select name="select5" id="select5" class=" form-control show-tick">
-                                            <option value="">Seleccionar departamento</option>
+                                            <option value="">Seleccionar especialidad</option>
                                             <?php
                                             $sqlspecialty= "SELECT * FROM specialty WHERE status='Activo'";
                                             $qsqlspecialty = mysqli_query($con, $sqlspecialty);
@@ -240,7 +240,7 @@ if (isset($_GET['editid'])) {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'El departamento no debe estar vacio.',
+                title: 'El especialidad no debe estar vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });

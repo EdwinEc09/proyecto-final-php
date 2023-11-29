@@ -34,7 +34,7 @@ if(isset($_GET['approveid']))
 
 					<td>Detalles del paciente</td>
 					<td>Fecha y hora</td>
-					<td>Departamento</td>
+					<td>especialidad</td>
 					<td>Doctor</td>
 					<td>Motivo de la cita</td>
 					<td>Estado</td>

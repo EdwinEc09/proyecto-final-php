@@ -207,7 +207,7 @@ if (isset($_SESSION['patientid'])) {
                                                 <label>
 
                                                     <select name="specialty" class="selectpicker" id="specialty">
-                                                        <option value="">Seleccionar Departamento</option>
+                                                        <option value="">Seleccionar especialidad</option>
                                                         <?php
                                                         $sqldept = "SELECT * FROM specialty WHERE status='Activo'";
                                                         $qsqldept = mysqli_query($con, $sqldept);

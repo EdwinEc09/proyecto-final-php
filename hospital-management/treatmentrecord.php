@@ -166,7 +166,7 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
         </tr>
         <tr>
           <td>Fecha de tratamiento</td>
-          <td><input class="form-control" type="date" max="<?php echo date("Y-m-d"); ?>" name="treatmentdate" id="treatmentdate" value="<?php echo $rsedit['treatment_date']; ?>" /></td>
+          <td><input class="form-control" type="date" min="<?php echo date("Y-m-d"); ?>" name="treatmentdate" id="treatmentdate" value="<?php echo $rsedit['treatment_date']; ?>" /></td>
          
         </tr>
         <tr>

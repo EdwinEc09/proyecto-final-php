@@ -53,7 +53,7 @@ if (isset($_GET['delid'])) {
 				<tr>
 					<td>Nombre</td>
 					<td>Contacto</td>
-					<td>Departamento</td>
+					<td>especialidad</td>
 					<td>Ingresar identificación</td>
 					<td>Cargo por consultoría</td>
 					<td>Educación</td>

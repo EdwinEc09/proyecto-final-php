@@ -52,7 +52,7 @@ if (mysqli_num_rows($qsqlappointment) == 0) {
   
   
   <tr>
-    <td>Departamento</td>
+    <td>especialidad</td>
     <td>&nbsp;<?php echo $rsspecialty['specialtyname']; ?></td>
   </tr>
   <tr>
@@ -103,7 +103,7 @@ if (mysqli_num_rows($qsqlappointment) == 0) {
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'departamento no debe ir vacio.',
+                title: 'especialidad no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });

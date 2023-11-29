@@ -9,7 +9,7 @@ if (isset($_GET['delid'])) {
     echo "<script>
     Swal.fire({
       title: 'Done!',
-      text: 'Departamento eliminado exitosamente',
+      text: 'especialidad eliminada exitosamente',
       type: 'success',
       
     });
@@ -22,7 +22,7 @@ if (isset($_GET['delid'])) {
 
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center">Ver registro del departamento</h2>
+    <h2 class="text-center">Ver registro de la especialidad</h2>
 
   </div>
   <div class="card">
@@ -32,7 +32,7 @@ if (isset($_GET['delid'])) {
         <tbody>
           <tr>
             <td><strong>Nombre</strong></td>
-            <td><strong>Descripción del Departamento</strong></td>
+            <td><strong>Descripción de la especialidad</strong></td>
             <td><strong>Estado</strong></td>
             <?php
             if (isset($_SESSION['adminid'])) {

@@ -201,7 +201,7 @@ function validateform()
 	}
 	else if(document.frmdoct.select3.value == "")
 	{
-		alert("El ID del departamento no debe estar vacío.");
+		alert("El ID del especialidad no debe estar vacío.");
 		document.frmdoct.select3.focus();
 		return false;
 	}

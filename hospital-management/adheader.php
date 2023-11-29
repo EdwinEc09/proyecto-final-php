@@ -113,8 +113,8 @@ $tim = date("H:i:s");
                     <li> <a href="javascript:void(0);" class="menu-toggle toggled waves-effect waves-block"><i
                                 class="zmdi zmdi-copy"></i><span>Servicio</span> </a>
                         <ul class="ml-menu" style="display: block;">
-                            <li><a href="specialty.php" class=" waves-effect waves-block">Añadir departamento</a></li>
-                            <li><a href="viewspecialty.php" class=" waves-effect waves-block">Ver Departamento</a></li>
+                            <li><a href="specialty.php" class=" waves-effect waves-block">Añadir especialidad</a></li>
+                            <li><a href="viewspecialty.php" class=" waves-effect waves-block">Ver especialidad</a></li>
                             <li><a href="treatment.php" class=" waves-effect waves-block">Añadir tipo de tratamiento</a></li>
                             <li><a href="viewtreatment.php" class=" waves-effect waves-block">Ver tipos de tratamiento</a></li>
                             <li><a href="medicine.php" class=" waves-effect waves-block">Añadir medicamentos</a></li>
@@ -131,7 +131,7 @@ $tim = date("H:i:s");
             <?php } ?>
 
 
-            <!-- doctor Menu -->
+            <!-- odontologo Menu -->
             <!-- esto es si el doctor esta logueado le va a mostrar este menu -->
 
             <?php
