@@ -1,23 +1,49 @@
+
 <?php
 include("adformheader.php");
 include("dbconnection.php");
 
 if (isset($_GET['delid'])) {
-  $sql = "DELETE FROM specialty WHERE specialtyid='$_GET[delid]'";
-  $qsql = mysqli_query($con, $sql);
-  if (mysqli_affected_rows($con) == 1) {
-    echo "<script>
-    Swal.fire({
-      title: 'Done!',
-      text: 'especialidad eliminada exitosamente',
-      type: 'success',
-      
-    });
-    </script>";
-  }
+    // Check if the delete confirmation is set
+    if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
+        $sql = "DELETE FROM specialty WHERE specialtyid='" . $_GET['delid'] . "'";
+        $qsql = mysqli_query($con, $sql);
+
+        if (mysqli_affected_rows($con) == 1) {
+            echo "<script>
+            Swal.fire({
+                title: 'Eliminado!',
+                text: 'Se ha eliminado con exito',
+                icon: 'success'
+            }).then(function() {
+                window.location.href = 'Viewspecialty.php'; // Redirect to desired page after deletion
+            });
+            </script>";
+        }
+    } else {
+        // If confirmation is not set, show confirmation dialog
+        echo "<script>
+        Swal.fire({
+            title: 'Estas seguro?',
+            text: 'No podras revertir!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'No, cancelar!',
+
+            confirmButtonText: 'Si, eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'Viewspecialty.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }else{
+              window.location.href = 'Viewspecialty.php';
+            }
+        });
+        </script>";
+    }
 }
 ?>
-
 
 
 <div class="container-fluid">
@@ -53,7 +79,7 @@ if (isset($_GET['delid'])) {
           <td>&nbsp;$rs[status]</td>";
             if (isset($_SESSION['adminid'])) {
               echo "<td>&nbsp;
-            <a href='specialty.php?editid=$rs[specialtyid]'>Editar</a> | <a href='viewspecialty.php?delid=$rs[specialtyid]'>Borrar</a> </td>";
+            <a href='specialty.php?editid=$rs[specialtyid]' class='btn btn-sm btn-raised g-bg-cyan'>Editar</a>  <a href='viewspecialty.php?delid=$rs[specialtyid]'  class='btn btn-sm btn-raised g-bg-blush2'>Borrar</a> </td>";
             }
             echo "</tr>";
           }
