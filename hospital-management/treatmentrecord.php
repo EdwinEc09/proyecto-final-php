@@ -73,7 +73,7 @@ if(isset($_GET['delid']))
           <td>
           <input class="form-control" type="hidden" name="patientid" value="<?php echo $_GET['patientid']; ?>" />
 <?php
-$sqlpatient= "SELECT * FROM patient WHERE status='Active' AND patientid='$_GET[patientid]'";
+$sqlpatient= "SELECT * FROM patient WHERE status='Activo' AND patientid='$_GET[patientid]'";
 $qsqlpatient = mysqli_query($con,$sqlpatient);
 $rspatient=mysqli_fetch_array($qsqlpatient);
 ?>			

@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
 	<a href="#" title="Title of Toggle" class="toggle-trigger">Registro de cita</a>
 	<!-- Toggle Content to display -->
 	<div class="toggle-content">
-		<p><?php include("appointmentdetail.php"); ?></p>
+		<p><?php include("appointmentdetail.php"); ?></p> 
 	</div><!-- .toggle-content (end) -->
 </div><!-- .toggle (end) -->
 

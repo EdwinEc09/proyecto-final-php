@@ -21,7 +21,7 @@ if (isset($_GET['editid'])) {
 
 }
 
-$sqlappointment1 = "SELECT max(appointmentid) FROM appointment where patientid='$_GET[patientid]' AND (status='Activo' OR status='Approved')";
+$sqlappointment1 = "SELECT max(appointmentid) FROM appointment where patientid='$_GET[patientid]' AND (status='Activo' OR status='Aprobado')";
 $qsqlappointment1 = mysqli_query($con, $sqlappointment1);
 $rsappointment1 = mysqli_fetch_array($qsqlappointment1);
 
@@ -30,7 +30,7 @@ $qsqlappointment = mysqli_query($con, $sqlappointment);
 $rsappointment = mysqli_fetch_array($qsqlappointment);
 
 if (mysqli_num_rows($qsqlappointment) == 0) {
-	echo "<center><h2>No Appointment records found..</h2></center>";
+	echo "<center><h2>Cita no encontrada..</h2></center>";
 } else {
 	$sqlappointment = "SELECT * FROM appointment where appointmentid='$rsappointment1[0]'";
 	$qsqlappointment = mysqli_query($con, $sqlappointment);
