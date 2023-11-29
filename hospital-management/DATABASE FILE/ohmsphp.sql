@@ -53,7 +53,7 @@ CREATE TABLE `appointment` (
   `appointmenttype` varchar(25) NOT NULL,
   `patientid` int(10) NOT NULL,
   `roomid` int(10) NOT NULL,
-  `dspecialtyid` int(10) NOT NULL,
+  `specialtyid` int(10) NOT NULL,
   `appointmentdate` date NOT NULL,
   `appointmenttime` time NOT NULL,
   `doctorid` int(10) NOT NULL,
