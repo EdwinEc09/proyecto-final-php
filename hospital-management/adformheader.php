@@ -89,7 +89,7 @@ $tim = date("H:i:s");
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                             <ul class="ml-menu">
                                 <li><a href="appointment.php">Nueva Cita</a></li>
-                                <li><a href="viewappointmentpending.php">Ver pacientes pendientes</a>
+                                <li><a href="viewappointmentpending.php">Ver citas pendientes</a>
                                 </li>
                                 <li><a href="viewappointmentapproved.php">Ver citas
                                         aprobadas</a></li>
