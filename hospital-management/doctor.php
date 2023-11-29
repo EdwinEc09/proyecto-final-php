@@ -177,96 +177,174 @@ function validateform()
 {
 	if(document.frmdoct.doctorname.value == "")
 	{
-		alert("El nombre del Odontologo no debe estar vacío.");
+		Swal.fire({
+				position: 'top-center',
+				icon: 'error',
+				title: 'El nombre del Odontologo no debe estar vacío.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 		document.frmdoct.doctorname.focus();
 		return false;
 	}
 	else if(!document.frmdoct.doctorname.value.match(alphaspaceExp))
 	{
-		alert("Nombre del Odontologo no válido.");
+		Swal.fire({
+				position: 'top-center',
+				icon: 'error',
+				title: 'Nombre del Odontologo no válido.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 		document.frmdoct.doctorname.focus();
 		return false;
 	}
 	else if(document.frmdoct.mobilenumber.value == "")
 	{
-		alert("El número de móvil no debe estar vacío.");
+		Swal.fire({
+				position: 'top-center',
+				icon: 'error',
+				title: 'El número de móvil no debe estar vacío.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 		document.frmdoct.mobilenumber.focus();
 		return false;
 	}
 	else if(!document.frmdoct.mobilenumber.value.match(numericExpression))
 	{
-		alert("Número de móvil no válido.");
+		Swal.fire({
+				position: 'top-center',
+				icon: 'error',
+				title: 'Número de móvil no válido.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 		document.frmdoct.mobilenumber.focus();
 		return false;
 	}
-	else if(document.frmdoct.select3.value == "")
-	{
-		alert("El ID del especialidad no debe estar vacío.");
-		document.frmdoct.select3.focus();
+	else if (document.frmdoct.select3.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID del especialidad no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoct.select3.focus();
 		return false;
 	}
-	else if(document.frmdoct.loginid.value == "")
-	{
-		alert("La identificación no debe estar vacía .");
+	else if (document.frmdoct.loginid.value == "") {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'La identificación no debe estar vacía.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.loginid.focus();
 		return false;
 	}
-	else if(!document.frmdoct.loginid.value.match(alphanumericExp))
-	{
-		alert("La identificación no es valida.");
+	else if (!document.frmdoct.loginid.value.match(alphanumericExp)) {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'La identificación no es válida.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.loginid.focus();
 		return false;
 	}
-	else if(document.frmdoct.password.value == "")
-	{
-		alert("La contraseña no debe estar vacía.");
+	else if (document.frmdoct.password.value == "") {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'La contraseña no debe estar vacía.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.password.focus();
 		return false;
 	}
-	else if(document.frmdoct.password.value.length < 8)
-	{
-		alert("La longitud de la contraseña debe tener más de 8 caracteres...");
+	else if (document.frmdoct.password.value.length < 8) {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'La longitud de la contraseña debe ser mayor a 8 caracteres.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.password.focus();
 		return false;
 	}
-	else if(document.frmdoct.password.value != document.frmdoct.cnfirmpassword.value )
-	{
-		alert("La contraseña y la contraseña de confirmación deben ser iguales.");
+	else if (document.frmdoct.password.value != document.frmdoct.cnfirmpassword.value) {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'La contraseña y la contraseña de confirmación deben ser iguales.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.password.focus();
 		return false;
 	}
-	else if(document.frmdoct.education.value == "")
-	{
-		alert("La educación no debe estar vacía.");
+	else if (document.frmdoct.education.value == "") {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'La educación no debe estar vacía.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.education.focus();
 		return false;
 	}
-	else if(!document.frmdoct.education.value.match(alphaExp))
-	{
-		alert("Educación no válida.");
+	else if (!document.frmdoct.education.value.match(alphaExp)) {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'Educación no válida.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.education.focus();
 		return false;
 	}
-	else if(document.frmdoct.experience.value == "")
-	{
-		alert("La experiencia no debe estar vacía.");
+	else if (document.frmdoct.experience.value == "") {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'La experiencia no debe estar vacía.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.experience.focus();
 		return false;
 	}
-	else if(!document.frmdoct.experience.value.match(numericExpression))
-	{
-		alert("Experiencia no válida.");
+	else if (!document.frmdoct.experience.value.match(numericExpression)) {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'Experiencia no válida.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.experience.focus();
 		return false;
 	}
-	else if(document.frmdoct.select.value == "" )
-	{
-		alert("Por favor seleccione el estado.");
+	else if (document.frmdoct.select.value == "") {
+		Swal.fire({
+			position: 'top-center',
+			icon: 'error',
+			title: 'Por favor, seleccione el estado.',
+			showConfirmButton: false,
+			timer: 2000,
+		});
 		document.frmdoct.select.focus();
 		return false;
 	}
-	else
-	{
+	else {
 		return true;
 	}
 }

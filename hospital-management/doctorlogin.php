@@ -103,30 +103,50 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	 if(document.frmdoctlogin.loginid.value == "")
-	{
-		alert("ID de inicio de sesión no debe estar vacío ..");
-		document.frmdoctlogin.loginid.focus();
-		return false;
-	}
-	else if(!document.frmdoctlogin.loginid.value.match(alphanumericExp))
-	{
-		alert("Login ID no válido..");
-		document.frmdoctlogin.loginid.focus();
-		return false;
-	}
-	else if(document.frmdoctlogin.password.value == "")
-	{
-		alert("La contraseña no debe estar vacía ..");
-		document.frmdoctlogin.password.focus();
-		return false;
-	}
-	else if(document.frmdoctlogin.password.value.length < 8)
-	{
-		alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
-		document.frmdoctlogin.password.focus();
-		return false;
-	}
+	if (document.frmdoctlogin.loginid.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID de inicio de sesión no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctlogin.loginid.focus();
+    return false;
+}
+else if (!document.frmdoctlogin.loginid.value.match(alphanumericExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Login ID no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctlogin.loginid.focus();
+    return false;
+}
+else if (document.frmdoctlogin.password.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctlogin.password.focus();
+    return false;
+}
+else if (document.frmdoctlogin.password.value.length < 8) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctlogin.password.focus();
+    return false;
+}
 	
 }
 </script>
