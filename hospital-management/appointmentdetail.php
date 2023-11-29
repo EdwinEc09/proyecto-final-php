@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("dbconnection.php");
-<<<<<<< HEAD
 if(isset($_POST['submitapp']))
 {
 	$sql ="INSERT INTO appointment(appointmenttype,roomid,specialtyid,appointmentdate,appointmenttime,doctorid) values('$_POST[select]','$_POST[select2]','$_POST[select3]','$_POST[date]','$_POST[time]','$_POST[select5]')";
@@ -11,21 +10,6 @@ if(isset($_POST['submitapp']))
 	}
 	else
 	{
-=======
-if (isset($_POST['submitapp'])) {
-	$sql = "INSERT INTO appointment(appointmenttype,roomid,departmentid,appointmentdate,appointmenttime,doctorid) values('$_POST[select]','$_POST[select2]','$_POST[select3]','$_POST[date]','$_POST[time]','$_POST[select5]')";
-	if ($qsql = mysqli_query($con, $sql)) {
-		echo "<script>
-	
-		  
-		Swal.fire({
-			title: '¡Exito!',
-			text: '¡ Cita registrada exitosamente!',
-			icon: 'success'
-		  });
-		</script>";
-	} else {
->>>>>>> df7e56eadfd3502cf1210718d3c445f7418eb1af
 		echo mysqli_error($con);
 	}
 }
@@ -53,7 +37,6 @@ if (mysqli_num_rows($qsqlappointment) == 0) {
 	$rsappointment = mysqli_fetch_array($qsqlappointment);
 
 	$sqlroom = "SELECT * FROM room where roomid='$rsappointment[roomid]' ";
-<<<<<<< HEAD
 	$qsqlroom = mysqli_query($con,$sqlroom);
 	$rsroom =mysqli_fetch_array($qsqlroom);
 	
@@ -86,48 +69,6 @@ if (mysqli_num_rows($qsqlappointment) == 0) {
   </tr>
 </table>
 <?php
-=======
-	$qsqlroom = mysqli_query($con, $sqlroom);
-	$rsroom = mysqli_fetch_array($qsqlroom);
-
-	$sqldepartment = "SELECT * FROM department where departmentid='$rsappointment[departmentid]'";
-	$qsqldepartment = mysqli_query($con, $sqldepartment);
-	$rsdepartment = mysqli_fetch_array($qsqldepartment);
-
-	$sqldoctor = "SELECT * FROM doctor where doctorid='$rsappointment[doctorid]'";
-	$qsqldoctor = mysqli_query($con, $sqldoctor);
-	$rsdoctor = mysqli_fetch_array($qsqldoctor);
-	?>
-	<table class="table table-bordered table-striped">
-
-
-		<tr>
-			<td>Departamento</td>
-			<td>&nbsp;
-				<?php echo $rsdepartment['departmentname']; ?>
-			</td>
-		</tr>
-		<tr>
-			<td>Doctor</td>
-			<td>&nbsp;
-				<?php echo $rsdoctor['doctorname']; ?>
-			</td>
-		</tr>
-		<tr>
-			<td>Día de la cita</td>
-			<td>&nbsp;
-				<?php echo date("d-M-Y", strtotime($rsappointment['appointmentdate'])); ?>
-			</td>
-		</tr>
-		<tr>
-			<td>Hora de la cita</td>
-			<td>&nbsp;
-				<?php echo date("h:i A", strtotime($rsappointment['appointmenttime'])); ?>
-			</td>
-		</tr>
-	</table>
-	<?php
->>>>>>> df7e56eadfd3502cf1210718d3c445f7418eb1af
 }
 ?>
 <script type="application/javascript">
@@ -209,42 +150,4 @@ if (mysqli_num_rows($qsqlappointment) == 0) {
 			return true;
 		}
 	}
-<<<<<<< HEAD
-	else if(document.frmappntdetail.select2.value == "")
-	{
-		alert("Room type should not be empty..");
-		document.frmappntdetail.select2.focus();
-		return false;
-	}
-	else if(document.frmappntdetail.select3.value == "")
-	{
-		alert("specialty name should not be empty..");
-		document.frmappntdetail.select3.focus();
-		return false;
-	}
-	else if(document.frmappntdetail.date.value == "")
-	{
-		alert("Appointment date should not be empty..");
-		document.frmappntdetail.date.focus();
-		return false;
-	}
-	else if(document.frmappntdetail.time.value == "")
-	{
-		alert("Appointment time should not be empty..");
-		document.frmappntdetail.time.focus();
-		return false;
-	}
-	else if(document.frmappntdetail.select5.value == "")
-	{
-		alert("Doctor name should not be empty..");
-		document.frmappntdetail.select5.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
-}
-=======
->>>>>>> df7e56eadfd3502cf1210718d3c445f7418eb1af
 </script>

@@ -110,7 +110,6 @@ $tim = date("H:i:s");
                         </li>
 
 
-<<<<<<< HEAD
                     <li> <a href="javascript:void(0);" class="menu-toggle toggled waves-effect waves-block"><i
                                 class="zmdi zmdi-copy"></i><span>Servicio</span> </a>
                         <ul class="ml-menu" style="display: block;">
@@ -122,18 +121,6 @@ $tim = date("H:i:s");
                             <li><a href="viewmedicine.php" class=" waves-effect waves-block">Ver Medicina</a></li>
                         </ul>
                     </li>
-=======
-                        <li> <a href="javascript:void(0);" class="menu-toggle toggled waves-effect waves-block"><i class="zmdi zmdi-copy"></i><span>Servicio</span> </a>
-                            <ul class="ml-menu" style="display: block;">
-                                <li><a href="department.php" class=" waves-effect waves-block">Añadir departamento</a></li>
-                                <li><a href="viewdepartment.php" class=" waves-effect waves-block">Ver Departamento</a></li>
-                                <li><a href="treatment.php" class=" waves-effect waves-block">Añadir tipo de tratamiento</a></li>
-                                <li><a href="viewtreatment.php" class=" waves-effect waves-block">Ver tipos de tratamiento</a></li>
-                                <li><a href="medicine.php" class=" waves-effect waves-block">Añadir medicamentos</a></li>
-                                <li><a href="viewmedicine.php" class=" waves-effect waves-block">Ver Medicina</a></li>
-                            </ul>
-                        </li>
->>>>>>> df7e56eadfd3502cf1210718d3c445f7418eb1af
 
 
                         </li>
