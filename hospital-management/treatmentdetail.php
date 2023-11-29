@@ -7,7 +7,7 @@ include("dbconnection.php");
           <tr>
             <td><strong>Tipo de tratamiento</strong></td>
             <td><strong>Fecha y hora del tratamiento</strong></td>
-            <td><strong>Doctor</strong></td>
+            <td><strong>Odontologo</strong></td>
             <td><strong>Descripción del tratamiento</strong></td>
             <td><strong>Descripción del tratamiento</strong></td>
           </tr>
@@ -70,7 +70,7 @@ function validateform()
 	
 	else if(document.frmtreatdetail.select2.value == "")
 	{
-		alert("Doctor name should not be empty..");
+		alert("Odontologo name should not be empty..");
 		document.frmtreatdetail.select2.focus();
 		return false;
 	}

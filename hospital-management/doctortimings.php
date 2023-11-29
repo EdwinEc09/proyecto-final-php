@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 			 $sql ="UPDATE doctor_timings SET doctorid='$_POST[select2]',start_time='$_POST[ftime]',end_time='$_POST[ttime]',status='$_POST[select]'  WHERE doctor_timings_id='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Registro de horarios medicos actualizado exitosamente...');</script>";
+			echo "<script>alert('Registro de horarios odontologos actualizado exitosamente...');</script>";
 		}
 		else
 		{

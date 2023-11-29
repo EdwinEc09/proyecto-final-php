@@ -94,11 +94,11 @@ $tim = date("H:i:s");
                                 <li><a href="viewappointmentapproved.php">Ver citas aprobadas</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctor</span> </a>
+                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Odontologo</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="doctor.php">Añadir doctor</a>
+                                <li><a href="doctor.php">Añadir Odontologo</a>
                                 </li>
-                                <li><a href="viewdoctor.php">Ver Doctor</a></li>
+                                <li><a href="viewdoctor.php">Ver Odontologo</a></li>
 
                             </ul>
                         </li>
@@ -132,7 +132,7 @@ $tim = date("H:i:s");
 
 
             <!-- odontologo Menu -->
-            <!-- esto es si el doctor esta logueado le va a mostrar este menu -->
+            <!-- esto es si el odontologo esta logueado le va a mostrar este menu -->
 
             <?php
             if (isset($_SESSION['doctorid'])) {
@@ -157,7 +157,7 @@ $tim = date("H:i:s");
                                 <li><a href="viewappointmentapproved.php" style="width:250px;">Ver citas aprobadas</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctor</span> </a>
+                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Odontologo</span> </a>
                             <ul class="ml-menu">
 
                                 <li><a href="doctortimings.php">Añadir hora de visita</a></li>
@@ -185,7 +185,7 @@ $tim = date("H:i:s");
                 </div>
 
             <?php }; ?>
-            <!-- doctor Menu -->
+            <!-- Odontologo Menu -->
 
 
 

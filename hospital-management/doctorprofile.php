@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE doctor SET doctorname='$_POST[doctorname]',mobileno='$_POST[mobilenumber]',specialtyid='$_POST[select3]',loginid='$_POST[loginid]',education='$_POST[education]',experience='$_POST[experience]',consultancy_charge='$_POST[consultancy_charge]' WHERE doctorid='$_SESSION[doctorid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Doctor profile updated successfully...');</script>";
+			echo "<script>alert('Odontologo profile updated successfully...');</script>";
 		}
 		else
 		{
@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO doctor(doctorname,mobileno,specialtyid,loginid,password,status,education,experience) values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','$_POST[select]','$_POST[education]','$_POST[experience]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Doctor record inserted successfully...');</script>";
+			echo "<script>alert('Odontologo record inserted successfully...');</script>";
 		}
 		else
 		{
@@ -154,11 +154,11 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform() {
     if (document.frmdoctprfl.doctorname.value == "") {
-        alert("Doctor name should not be empty..");
+        alert("Odontologo name should not be empty..");
         document.frmdoctprfl.doctorname.focus();
         return false;
     } else if (!document.frmdoctprfl.doctorname.value.match(alphaspaceExp)) {
-        alert("Doctor name not valid..");
+        alert("Odontologo name not valid..");
         document.frmdoctprfl.doctorname.focus();
         return false;
     } else if (document.frmdoctprfl.mobilenumber.value == "") {

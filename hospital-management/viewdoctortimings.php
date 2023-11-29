@@ -23,7 +23,7 @@ if(isset($_GET['delid']))
     <table class="table table-bordered table-striped table-hover js-exportable dataTable" >
       <thead>
         <tr>
-          <td>Doctor</td>
+          <td>Odontologo</td>
           <td>Horarios disponibles</td>
           <td>Estado</td>
           <td>Acción</td>

@@ -76,7 +76,7 @@ if(isset($_GET['editid']))
 		{
 		?>
         <tr>
-          <td>Doctor</td>
+          <td>Odontologo</td>
           <td>
     		<?php
 				$sqldoctor= "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
@@ -140,7 +140,7 @@ function validateform()
 {
 	if(document.frmpres.select2.value == "")
 	{
-		alert("Doctor name should not be empty..");
+		alert("Odontologo name should not be empty..");
 		document.frmpres.select2.focus();
 		return false;
 	}

@@ -56,7 +56,7 @@ if (mysqli_num_rows($qsqlappointment) == 0) {
     <td>&nbsp;<?php echo $rsspecialty['specialtyname']; ?></td>
   </tr>
   <tr>
-    <td>Doctor</td>
+    <td>Odontologo</td>
     <td>&nbsp;<?php echo $rsdoctor['doctorname']; ?></td>
   </tr>
   <tr>
@@ -135,11 +135,11 @@ if (mysqli_num_rows($qsqlappointment) == 0) {
 			return false;
 		}
 		else if (document.frmappntdetail.select5.value == "") {
-			// alert("Doctor name should not be empty..");
+			// alert("Odontologo name should not be empty..");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'doctor no debe ir vacio.',
+                title: 'Odontologo no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });

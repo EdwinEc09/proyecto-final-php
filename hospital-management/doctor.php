@@ -39,7 +39,7 @@ if(isset($_GET['editid']))
 
 <div class="container-fluid">
 	<div class="block-header">
-		<h2 class="text-center"> Agregar nuevo doctor </h2>
+		<h2 class="text-center"> Agregar nuevo Odontologo </h2>
 	</div>
 	<div class="row clearfix">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -50,7 +50,7 @@ if(isset($_GET['editid']))
 
 
 					
-					<div class="form-group"><label>Nombre del medico</label> 
+					<div class="form-group"><label>Nombre del Odontologo</label> 
 					<div class="form-line">
 					<input class="form-control" type="text" name="doctorname" id="doctorname" value="<?php echo $rsedit['doctorname']; ?>" />
 				</div>
@@ -177,13 +177,13 @@ function validateform()
 {
 	if(document.frmdoct.doctorname.value == "")
 	{
-		alert("El nombre del médico no debe estar vacío.");
+		alert("El nombre del Odontologo no debe estar vacío.");
 		document.frmdoct.doctorname.focus();
 		return false;
 	}
 	else if(!document.frmdoct.doctorname.value.match(alphaspaceExp))
 	{
-		alert("Nombre del médico no válido.");
+		alert("Nombre del Odontologo no válido.");
 		document.frmdoct.doctorname.focus();
 		return false;
 	}

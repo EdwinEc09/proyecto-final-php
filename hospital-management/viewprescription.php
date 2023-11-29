@@ -37,7 +37,7 @@ while($rs = mysqli_fetch_array($qsql))
     <table width="200" border="3">
           <tbody>
             <tr>
-              <td><strong>Doctor</strong></td>
+              <td><strong>Odontologo</strong></td>
               <td><strong>Patient</strong></td>
               <td><strong>Prescription Date</strong></td>
               <td><strong>Status</strong></td>

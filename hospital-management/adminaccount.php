@@ -39,7 +39,7 @@ if (!isset($_SESSION['adminid'])) {
             <div class="info-box-4 hover-zoom-effect">
                 <div class="icon"> <i class="zmdi zmdi-account-circle col-cyan"></i> </div>
                 <div class="content">
-                    <div class="text">Total Doctores </div>
+                    <div class="text">Total Odontologos </div>
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM doctor WHERE status='Activo' ";

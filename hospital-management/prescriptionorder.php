@@ -82,7 +82,7 @@ if(isset($_GET['orderid']))
 		  ?></td>
         </tr>
         <tr>
-          <td width="34%">Doctor</td>
+          <td width="34%">Odontologo</td>
           <td width="66%">
             <?php
           	$sqldoctor= "SELECT * FROM doctor WHERE status='Activo'";

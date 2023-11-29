@@ -95,11 +95,11 @@ $tim = date("H:i:s");
                                         aprobadas</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctor</span> </a>
+                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Odontologo</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="doctor.php">Añadir doctor</a>
+                                <li><a href="doctor.php">Añadir Odontologo</a>
                                 </li>
-                                <li><a href="viewdoctor.php">Ver doctor</a></li>
+                                <li><a href="viewdoctor.php">Ver Odontologo</a></li>
 
                             </ul>
                         </li>
@@ -128,7 +128,7 @@ $tim = date("H:i:s");
             <?php } ?>
 
 
-            <!-- Doctor Menu -->
+            <!-- Odontologo Menu -->
             <?php
             if (isset($_SESSION['doctorid'])) {
             ?>
@@ -152,7 +152,7 @@ $tim = date("H:i:s");
                                 <li><a href="viewappointmentapproved.php" style="width:250px;">Ver citas aprovadas</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctores</span> </a>
+                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Odontologos</span> </a>
                             <ul class="ml-menu">
 
                                 <li><a href="doctortimings.php">Agregar hora de visita</a></li>
@@ -178,7 +178,7 @@ $tim = date("H:i:s");
                 </div>
 
             <?php }; ?>
-            <!-- Doctor Menu -->
+            <!-- Odontologo Menu -->
 
 
 

@@ -119,7 +119,7 @@ if (isset($_SESSION['patientid'])) {
                                 <div class="form-group">
                                     <div class="form-line">
                                         <select name="select6" id="select6" class=" form-control show-tick">
-                                            <option value="">Seleccionar medico</option>
+                                            <option value="">Seleccionar Odontologo</option>
                                             <?php
                                             $sqldoctor = "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo'";
                                             $qsqldoctor = mysqli_query($con, $sqldoctor);

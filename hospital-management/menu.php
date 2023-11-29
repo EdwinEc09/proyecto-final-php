@@ -199,12 +199,12 @@ if(isset($_SESSION['adminid']))
 </li>
 <li><a href="viewtreatmentrecord.php">Treatment</a></li>
 <li>
-<a href=" ######### ">Doctor</a>
+<a href=" ######### ">Odontologo</a>
     <ul>
-    <li><a href="doctor.php">Add Doctor</a></li>
-    <li><a href="Viewdoctor.php">View Doctor</a></li>
-     <li><a href="doctortimings.php">Add Doctor Timings</a></li>
-    <li><a href="viewdoctortimings.php">View Doctor Timings</a></li>
+    <li><a href="doctor.php">Add Odontologo</a></li>
+    <li><a href="Viewdoctor.php">View Odontologo</a></li>
+     <li><a href="doctortimings.php">Add Odontologo Timings</a></li>
+    <li><a href="viewdoctortimings.php">View Odontologo Timings</a></li>
  </ul>
 </li>
     
@@ -251,7 +251,7 @@ if(isset($_SESSION['doctorid']))
        <li><a href="viewpatient.php">View Patient</a></li>
         </ul>
     </li>
-       <li><a href=" ######### ">Doctor Timings</a>
+       <li><a href=" ######### ">Odontologo Timings</a>
         <ul>
        <li><a href="doctortimings.php">Add Timings</a></li>
        <li><a href="viewdoctortimings.php">View Timings</a></li>

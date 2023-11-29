@@ -59,7 +59,7 @@ if(isset($_GET['editid']))
  <table class="table table-bordered table-striped">
       <tbody>
         <tr>
-          <td><strong>Doctor</strong></td>
+          <td><strong>Odontologo</strong></td>
           <td><strong>Paciente</strong></td>
           <td><strong>Fecha de prescripción</strong></td>
           <td><strong>Estado</strong></td>

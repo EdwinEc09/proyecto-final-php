@@ -58,7 +58,7 @@ if(isset($_POST['submit']))
 ?></div>
     <div class="card-top"></div>
     <div class="card">
-        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login <span class="msg">Hola, Doctor!</span></h1>
+        <h1 class="title"><span>Sistema de Gestión Hospitalaria</span>Login <span class="msg">Hola, Odontologo!</span></h1>
         <div class="col-md-12">
 
     <form method="post" action="" name="frmadminlogin" id="sign_in" onSubmit="return validateform()">

@@ -99,7 +99,7 @@ if (isset($_POST['btnsub'])) {
 	<div class="w3ls-banner">
 		<!---728x90--->
 		<div class="heading">
-			<h1>Appoint My Doctor</h1>
+			<h1>Appoint My Odontologo</h1>
 
 		</div>
 		<!---728x90--->
@@ -164,7 +164,7 @@ if (isset($_POST['btnsub'])) {
 
 	</div>
 	<div class="copyright">
-		<p>© 2017 Appoint My Doctor Form. All rights reserved | Design by <a href="www.w3layouts.com">W3layouts</a></p>
+		<p>© 2017 Appoint My Odontologo Form. All rights reserved | Design by <a href="www.w3layouts.com">W3layouts</a></p>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script>

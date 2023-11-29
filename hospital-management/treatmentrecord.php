@@ -111,7 +111,7 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
 		{
 		?>
         <tr>
-          <td>Doctor</td>
+          <td>Odontologo</td>
           <td>
     		<?php
 				$sqldoctor= "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo' AND doctor.doctorid='$_SESSION[doctorid]'";
@@ -185,7 +185,7 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
         <tbody>
           <tr>
             <td width="71">Tipo de tratamiento</td>
-            <td width="78">Doctor</td>
+            <td width="78">Odontologo</td>
             <td width="82">Descripción del tratamiento</td>
             <td width="103">Subidas</td>
             <td width="43">Fecha de tratamiento</td>

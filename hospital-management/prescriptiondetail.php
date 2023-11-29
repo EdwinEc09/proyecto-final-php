@@ -1,7 +1,7 @@
 <table class="table table-bordered table-striped">
       <tbody>
         <tr>
-          <th>Doctor</th>
+          <th>Odontologo</th>
           <th>Paciente</th>
           <th>Fecha de prescripción</th>
           <th>Vista</th>              

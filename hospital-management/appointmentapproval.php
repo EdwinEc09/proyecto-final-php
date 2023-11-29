@@ -99,7 +99,7 @@ if (isset($_GET['editid'])) {
 			</tr>
 
 			<tr>
-				<td>Doctor</td>
+				<td>Odontologo</td>
 				<td><select name="select6" id="select6" class="form-control show-tick">
 						<option value="">Seleccionar</option>
 						<?php
@@ -210,11 +210,11 @@ include("adfooter.php");
 			return false;
 		}
 		else if (document.frmappnt.select6.value == "") {
-			// alert("Doctor name should not be empty..");
+			// alert("Odontologo name should not be empty..");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'nombre de doctor no debe ir vacio',
+                title: 'nombre de Odontologo no debe ir vacio',
                 showConfirmButton: false,
                 timer: 2000,
             });

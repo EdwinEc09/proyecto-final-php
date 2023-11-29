@@ -40,7 +40,7 @@ if(isset($_GET['delid']))
 
         <thead>
            <tr>
-              <td><strong>Doctor</strong></td>
+              <td><strong>Odontologo</strong></td>
               <td><strong>Paciente</strong></td>
               <td><strong>Fecha de prescripción</strong></td>
               <td><strong>Estado</strong></td>

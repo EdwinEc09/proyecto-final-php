@@ -54,7 +54,7 @@ if(isset($_GET['editid']))
     <table width="490" border="3">
       <tbody>
         <tr>
-          <td>Select Doctor</td>
+          <td>Select Odontologo</td>
           <td><select name="docid" id="docid">
             <option value="">Select</option>
             <?php
