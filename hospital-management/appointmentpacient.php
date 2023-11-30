@@ -252,4 +252,36 @@ if (isset($_SESSION['patientid'])) {
             return true;
         }
     }
+    function updateDoctors() {
+        var specialtyId = document.getElementById("select5").value;
+        var select6 = document.getElementById("select6");
+
+        // Limpiar las opciones actuales en el segundo select
+        while (select6.options.length > 0) {
+            select6.remove(0);
+        }
+
+        // Añadir la opción predeterminada
+        var defaultOption = document.createElement("option");
+        defaultOption.text = "Seleccionar Odontologo";
+        defaultOption.value = "";
+        select6.add(defaultOption);
+
+        if (specialtyId !== "") {
+            // Obtener los doctores de la especialidad seleccionada mediante una llamada AJAX o recargar la página
+            // Puedes hacer una llamada AJAX o recargar la página con los parámetros necesarios para obtener
+            // los doctores según la especialidad seleccionada.
+            <?php
+            $sqldoctor = "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo' AND doctor.specialtyid = " . $rsedit['specialtyid'];
+            $qsqldoctor = mysqli_query($con, $sqldoctor);
+
+            while ($rsdoctor = mysqli_fetch_array($qsqldoctor)) {
+                echo "var option = document.createElement('option');";
+                echo "option.value = '$rsdoctor[doctorid]';";
+                echo "option.text = '$rsdoctor[doctorname] ( $rsdoctor[specialtyname] )';";
+                echo "select6.add(option);";
+            }
+            ?>
+        }
+    }
 </script>
