@@ -33,6 +33,8 @@ if (isset($_GET['delid'])) {
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'viewappointment.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }else{
+                window.location.href = 'viewappointment.php';
             }
         });
         </script>";

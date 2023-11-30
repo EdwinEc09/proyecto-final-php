@@ -17,7 +17,7 @@ if (isset($_GET['delid'])) {
                 window.location.href = 'viewadmin.php'; // Redirect to desired page after deletion
             });
             </script>";
-    }
+    } 
   } else {
     echo "<script>
         Swal.fire({
@@ -32,6 +32,8 @@ if (isset($_GET['delid'])) {
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'viewadmin.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }else{
+              window.location.href = 'viewadmin.php'; 
             }
         });
         </script>";

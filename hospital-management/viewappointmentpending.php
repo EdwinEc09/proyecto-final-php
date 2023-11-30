@@ -10,8 +10,8 @@ if (isset($_GET['delid'])) {
         if (mysqli_affected_rows($con) == 1) {
             echo "<script>
             Swal.fire({
-                title: 'Deleted!',
-                text: 'Appointment record deleted successfully.',
+                title: 'Eliminado!',
+                text: 'Cita eliminada .',
                 icon: 'success'
             }).then(function() {
                 window.location.href = 'viewappointment.php'; // Redirect to desired page after deletion
@@ -21,17 +21,19 @@ if (isset($_GET['delid'])) {
     } else {
         echo "<script>
         Swal.fire({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this!',
+            title: 'estas seguro?',
+            text: 'No podras revertir!',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'si eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'viewappointmentpending.php?delid=" . $_GET['delid'] . "&confirm=true';
-            }
+            }else{
+				window.location.href = 'viewappointmentpending.php';
+			}
         });
         </script>";
     }
@@ -117,7 +119,7 @@ if(isset($_GET['approveid'])) {
 						{
 							echo "<a href='appointmentapproval.php?editid=$rs[appointmentid]&patientid=$rs[patientid]' class='btn btn-sm btn-raised g-bg-cyan'>Aprobar</a>";
 						}
-						echo "  <a href='viewappointment.php?delid=$rs[appointmentid]' class='btn btn-sm btn-raised g-bg-blush2'>Eliminar</a>";
+						echo "  <a href='viewappointmentpending.php?delid=$rs[appointmentid]' class='btn btn-sm btn-raised g-bg-blush2'>Eliminar</a>";
 					}
 					else
 					{
