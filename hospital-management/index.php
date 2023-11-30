@@ -9,7 +9,7 @@
           <!-- SLIDE  -->
           <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" > 
             <!-- MAIN IMAGE --> 
-            <img src="images/hms.jpg"  alt="slider"  data-bgposition=" center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+            <img src="images/agc.jpg"  alt="slider"  data-bgposition=" center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
             
             <!-- LAYER NR. 1 -->
             <div class="tp-caption sfl tp-resizeme" 
@@ -23,7 +23,7 @@
                 data-elementdelay="0.03" 
                 data-endelementdelay="0.4" 
                 data-endspeed="300"
-                style="z-index: 5; font-size:50px; font-weight:500; color:black;  max-width: auto; max-height: auto; white-space: nowrap;">Sistema de Gestión Hospitalaria</div>
+                style="z-index: 5; font-size:50px; font-weight:500; color:black;  max-width: auto; max-height: auto; white-space: nowrap;">Agendamiento de citas odontologicas</div>
             
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfr tp-resizeme" 
@@ -37,7 +37,7 @@
                 data-elementdelay="0.03" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 6; font-size:40px; color:gray; font-weight:500; white-space: nowrap;">NOS PREOCUPAMOS POR TU SALUD</div>
+                style="z-index: 6; font-size:40px; color:gray; font-weight:500; white-space: nowrap;">NOS PREOCUPAMOS POR TU SALUD BUCAL</div>
             
             <!-- LAYER NR. 3 -->
             <div class="tp-caption sfb tp-resizeme" 
@@ -64,7 +64,7 @@
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
                 data-scrolloffset="0"
-                style="z-index: 8;"><a href="#." class="btn">Reservar ahora</a> </div>
+                style="z-index: 8;"><a href="#." class="btn">Reserva tu cita ahora</a> </div>
           </li>
           
           <!-- SLIDE  -->
