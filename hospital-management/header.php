@@ -59,7 +59,7 @@ $tim = date("H:i:s");
   <!-- Header -->
   <header class="header-style-2">
     <div class="container">
-      <div class="logo"> <a href="index.html"><img src="images/hmslogo.png" alt="" style="height: 51px;"></a> </div>
+      <div class="logo"> <a href="index.html"><img src="images/adcologo.png" alt="" style="height: 51px; margin-top: -44px;"></a> <P style="font-weight: 900; font-family: Arial, Helvetica, sans-serif; color: #005187;display: inline-block; margin-left: 3px; line-height: 15px;">AGENDAMIENTO DE<br>CITAS<br>ODONTOLOGICAS</P></div>
       <div class="head-info">
         <ul>
           <li> <i class="fa fa-phone"></i>
