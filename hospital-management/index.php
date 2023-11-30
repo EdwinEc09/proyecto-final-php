@@ -70,7 +70,7 @@
           <!-- SLIDE  -->
           <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" > 
             <!-- MAIN IMAGE --> 
-            <img src="images/hms2.jpg"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+            <img src="images/ini3.jpg"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
             
             <!-- LAYER NR. 1 -->
             <div class="tp-caption sfl tp-resizeme" 
@@ -131,7 +131,7 @@
           <!-- SLIDE  -->
           <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" > 
             <!-- MAIN IMAGE --> 
-            <img src="images/hms3.jpg"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+            <img src="images/ini2.jpg"  alt="slider" style="opacity: 0.5;" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
             
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfb tp-resizeme" 
