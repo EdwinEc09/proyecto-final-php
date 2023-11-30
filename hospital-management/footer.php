@@ -6,7 +6,9 @@
       <div class="col-sm-7">
         <h6>SOBRE NOSOTROS</h6>
         <div class="about-foot">
-          <p>Una preocupación de Care and Cure Group es el único hospital multidisciplinario de atención terciaria de superespecialidad en Bangladesh, que brinda con confianza atención médica integral con las últimas instalaciones médicas, quirúrgicas y de diagnóstico. Estos servicios son brindados por profesionales médicos expertos, enfermeras calificadas y tecnólogos que utilizan tecnología de punta.</p>
+          <p>
+          ¡Bienvenido a nuestro mundo de códigos y creatividad! Somos un apasionado equipo de programadores que, durante el último año, ha estado dedicado a la creación de soluciones innovadoras y a la resolución de desafíos tecnológicos.
+          </p>
         </div>
       </div>
 
@@ -16,15 +18,20 @@
       <div class="col-sm-5">
         <div class="con-info">
           <h6>CONTÁCTENOS</h6>
-          <p>1942 Poe Lane, Kansas City</p>
+          <p>Atlantico, Ciudad de Barranquilla</p>
           <ul>
             <li class="mobile">
-              <p>1010 2020 36360</p>
-              <p>9-269-690-HMS</p>
+              <p>324-662-5511</p>
+              <p>304-281-8397</p>
+              <p>300-331-9020</p>
+              <p>301-564-4968</p>
+              <p></p>
             </li>
             <li class="email">
-              <p>hmsphp@gmail.com</p>
-              <p>info@hmsphp.com</p>
+              <p>escorciacaballeroe@gmail.com</p>
+              <p>gonzaloaraujo001@gmail.com</p>
+              <p>haderdonado2021@gmail.com</p>
+              <p>bolivarsierrajesusdavid54@gmail.com</p>
             </li>
           </ul>
         </div>

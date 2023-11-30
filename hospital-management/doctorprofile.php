@@ -154,67 +154,172 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform() {
     if (document.frmdoctprfl.doctorname.value == "") {
-        alert("Odontologo name should not be empty..");
-        document.frmdoctprfl.doctorname.focus();
-        return false;
-    } else if (!document.frmdoctprfl.doctorname.value.match(alphaspaceExp)) {
-        alert("Odontologo name not valid..");
-        document.frmdoctprfl.doctorname.focus();
-        return false;
-    } else if (document.frmdoctprfl.mobilenumber.value == "") {
-        alert("Mobile number should not be empty..");
-        document.frmdoctprfl.mobilenumber.focus();
-        return false;
-    } else if (!document.frmdoctprfl.mobilenumber.value.match(numericExpression)) {
-        alert("Mobile number not valid..");
-        document.frmdoctprfl.mobilenumber.focus();
-        return false;
-    } else if (document.frmdoctprfl.select3.value == "") {
-        alert("specialty ID should not be empty..");
-        document.frmdoctprfl.select3.focus();
-        return false;
-    } else if (document.frmdoctprfl.loginid.value == "") {
-        alert("Login ID should not be empty..");
-        document.frmdoctprfl.loginid.focus();
-        return false;
-    } else if (!document.frmdoctprfl.loginid.value.match(alphanumericExp)) {
-        alert("loginid not valid..");
-        document.frmdoctprfl.loginid.focus();
-        return false;
-    } else if (document.frmdoctprfl.password.value == "") {
-        alert("Password should not be empty..");
-        document.frmdoctprfl.password.focus();
-        return false;
-    } else if (document.frmdoctprfl.password.value.length < 8) {
-        alert("Password length should be more than 8 characters...");
-        document.frmdoctprfl.password.focus();
-        return false;
-    } else if (document.frmdoctprfl.password.value != document.frmdoctprfl.cnfirmpassword.value) {
-        alert("Password and confirm password should be equal..");
-        document.frmdoctprfl.password.focus();
-        return false;
-    } else if (document.frmdoctprfl.education.value == "") {
-        alert("Education should not be empty..");
-        document.frmdoctprfl.education.focus();
-        return false;
-    } else if (!document.frmdoctprfl.education.value.match(alphaExp)) {
-        alert("Education not valid..");
-        document.frmdoctprfl.education.focus();
-        return false;
-    } else if (document.frmdoctprfl.experience.value == "") {
-        alert("Experience should not be empty..");
-        document.frmdoctprfl.experience.focus();
-        return false;
-    } else if (!document.frmdoctprfl.experience.value.match(numericExpression)) {
-        alert("Experience not valid..");
-        document.frmdoctprfl.experience.focus();
-        return false;
-    } else if (document.frmdoctprfl.select.value == "") {
-        alert("Kindly select the status..");
-        document.frmdoctprfl.select.focus();
-        return false;
-    } else {
-        return true;
-    }
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del Odontólogo no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.doctorname.focus();
+    return false;
+}
+else if (!document.frmdoctprfl.doctorname.value.match(alphaspaceExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del Odontólogo no es válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.doctorname.focus();
+    return false;
+}
+else if (document.frmdoctprfl.mobilenumber.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de teléfono móvil no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.mobilenumber.focus();
+    return false;
+}
+else if (!document.frmdoctprfl.mobilenumber.value.match(numericExpression)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de teléfono móvil no es válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.mobilenumber.focus();
+    return false;
+}
+else if (document.frmdoctprfl.select3.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID de especialidad no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.select3.focus();
+    return false;
+}
+else if (document.frmdoctprfl.loginid.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID de inicio de sesión no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.loginid.focus();
+    return false;
+}
+else if (!document.frmdoctprfl.loginid.value.match(alphanumericExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID de inicio de sesión no es válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.loginid.focus();
+    return false;
+}
+else if (document.frmdoctprfl.password.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.password.focus();
+    return false;
+}
+else if (document.frmdoctprfl.password.value.length < 8) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.password.focus();
+    return false;
+}
+else if (document.frmdoctprfl.password.value != document.frmdoctprfl.cnfirmpassword.value) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña y la confirmación de la contraseña deben ser iguales.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.password.focus();
+    return false;
+}
+else if (document.frmdoctprfl.education.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La educación no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.education.focus();
+    return false;
+}
+else if (!document.frmdoctprfl.education.value.match(alphaExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La educación no es válida.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.education.focus();
+    return false;
+}
+else if (document.frmdoctprfl.experience.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La experiencia no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.experience.focus();
+    return false;
+}
+else if (!document.frmdoctprfl.experience.value.match(numericExpression)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La experiencia no es válida.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.experience.focus();
+    return false;
+}
+else if (document.frmdoctprfl.select.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Por favor, selecciona el estado.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctprfl.select.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>

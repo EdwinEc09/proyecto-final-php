@@ -64,15 +64,15 @@ $tim = date("H:i:s");
         <ul>
           <li> <i class="fa fa-phone"></i>
             <p>1010 2020 36360<br>
-              9-269-690-HMSS</p>
+              304-586-6954-ADCO</p>
           </li>
           <li> <i class="fa fa-envelope-o"></i>
-            <p>hmsphp@gmail.com<br>
-              info@hmsphp.com</p>
+            <p>adco@gmail.com<br>
+              info@adco.com</p>
           </li>
           <li> <i class="fa fa-map-marker"></i>
             <p>1942  Poe Lane<br>
-             Kansas City</p>
+            Ciudad de Barranquilla</p>
           </li>
         </ul>
       </div>

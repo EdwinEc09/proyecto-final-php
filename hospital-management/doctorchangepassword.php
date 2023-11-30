@@ -63,23 +63,51 @@ include("adfooter.php");
 <script type="application/javascript">
 function validateform1() {
     if (document.frmdoctchangepass.oldpassword.value == "") {
-        alert("Old password should not be empty..");
-        document.frmdoctchangepass.oldpassword.focus();
-        return false;
-    } else if (document.frmdoctchangepass.newpassword.value == "") {
-        alert("New Password should not be empty..");
-        document.frmdoctchangepass.newpassword.focus();
-        return false;
-    } else if (document.frmdoctchangepass.newpassword.value.length < 8) {
-        alert("New Password length should be more than 8 characters...");
-        document.frmdoctchangepass.newpassword.focus();
-        return false;
-    } else if (document.frmdoctchangepass.newpassword.value != document.frmdoctchangepass.password.value) {
-        alert(" New Password and confirm password should be equal..");
-        document.frmdoctchangepass.password.focus();
-        return false;
-    } else {
-        return true;
-    }
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña antigua no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctchangepass.oldpassword.focus();
+    return false;
+}
+else if (document.frmdoctchangepass.newpassword.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La nueva contraseña no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctchangepass.newpassword.focus();
+    return false;
+}
+else if (document.frmdoctchangepass.newpassword.value.length < 8) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La longitud de la nueva contraseña debe ser superior a 8 caracteres.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctchangepass.newpassword.focus();
+    return false;
+}
+else if (document.frmdoctchangepass.newpassword.value != document.frmdoctchangepass.password.value) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La nueva contraseña y la confirmación de la contraseña deben ser iguales.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdoctchangepass.password.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>
