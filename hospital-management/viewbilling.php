@@ -1,19 +1,48 @@
 <?php
 session_start();
 include("dbconnection.php");
-if(isset($_GET['delid']))
-{
-	$sql ="DELETE FROM billing_records WHERE billingid='$_GET[delid]'";
-	$qsql=mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('billing record deleted successfully..');</script>";
-	}
+if (isset($_GET['delid'])) {
+    if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
+        $sql = "DELETE FROM billing_records WHERE billingid='$_GET[delid]'";
+        $qsql = mysqli_query($con, $sql);
+
+        if (mysqli_affected_rows($con) == 1) {
+            echo "<script>
+            Swal.fire({
+              title: 'Eliminado!',
+              text: 'Se ha eliminado el registro de facturación con éxito',
+              icon: 'success'
+            }).then(function() {
+                window.location.href = 'viewbilling.php'; // Redirige a la página deseada después de la eliminación
+            });
+            </script>";
+        }
+    } else {
+        echo "<script>
+        Swal.fire({
+          title: '¿Estás seguro?',
+          text: 'No podrás revertirlo.',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          cancelButtonText: 'No, cancelar',
+          confirmButtonText: 'Sí, eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'viewbilling.php?delid=" . $_GET['delid'] . "&confirm=true';
+            } else {
+                window.location.href = 'viewbilling.php'; 
+            }
+        });
+        </script>";
+    }
 }
 ?>
+
+
+
  <section class="container">
-
-
 <?php
 $sqlbilling_records ="SELECT * FROM billing WHERE appointmentid='$billappointmentid'";
 $qsqlbilling_records = mysqli_query($con,$sqlbilling_records);
