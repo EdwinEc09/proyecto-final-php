@@ -95,17 +95,36 @@ if (isset($_POST['submit'])) {
 
 		function validateform() {
 			if (document.frmpatlogin.loginid.value == "") {
-				alert("ID de inicio de sesión no debe estar vacío...");
+				Swal.fire({
+					position: 'top-center',
+					icon: 'error',
+					title: 'ID de inicio de sesión no debe estar vacío.',
+					showConfirmButton: false,
+					timer: 2000,
+				});
 				document.frmpatlogin.loginid.focus();
 				return false;
 			} else if (document.frmpatlogin.password.value == "") {
-				alert("La contraseña no debe estar vacía...");
+				Swal.fire({
+					position: 'top-center',
+					icon: 'error',
+					title: 'La contraseña no debe estar vacía.',
+					showConfirmButton: false,
+					timer: 2000,
+				});
 				document.frmpatlogin.password.focus();
 				return false;
 			} else if (document.frmpatlogin.password.value.length < 8) {
-				alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
+				Swal.fire({
+					position: 'top-center',
+					icon: 'error',
+					title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
+					showConfirmButton: false,
+					timer: 2000,
+				});
 				document.frmpatlogin.password.focus();
 				return false;
 			}
+
 		}
 	</script>

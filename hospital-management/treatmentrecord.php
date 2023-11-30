@@ -243,58 +243,64 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmtreatrec.select2.value == "")
-	{
-		alert("ID de cita no debe estar vacía .");
-		document.frmtreatrec.select2.focus();
-		return false;
-	}
-	
-	else if(document.frmtreatrec.select4.value == "")
-	{
-		alert("El ID del tratamiento no debe estar vacío.");
-		document.frmtreatrec.select4.focus();
-		return false;
-	}
-	else if(document.frmtreatrec.select3.value == "")
-	// {
-	// 	alert("La identificación del paciente no debe estar vacía.");
-	// 	document.frmtreatrec.select3.focus();
-	// 	return false;
-	// }
-	// else if(document.frmtreatrec.select5.value == "")
-	{
-		alert("La identificación del médico no debe estar vacía.");
-		document.frmtreatrec.select5.focus();
-		return false;
-	}
-	else if(document.frmtreatrec.textarea.value == "")
-	{
-		alert("La descripción del tratamiento no debe estar vacía.");
-		document.frmtreatrec.textarea.focus();
-		return false;
-	}
-	else if(document.frmtreatrec.treatmentdate.value == "")
-	{
-		alert("La fecha del tratamiento no debe estar vacía.");
-		document.frmtreatrec.treatmentdate.focus();
-		return false;
-	}
-	else if(document.frmtreatrec.treatmenttime.value == "")
-	{
-		alert("El tiempo de tratamiento no debe estar vacío.");
-		document.frmtreatrec.treatmenttime.focus();
-		return false;
-	}
-	else if(document.frmtreatrec.select.value == "" )
-	{
-		alert("Por favor seleccione el estado.");
-		document.frmtreatrec.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmtreatrec.select2.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El ID de la cita no debe estar vacío.',
+    });
+    document.frmtreatrec.select2.focus();
+    return false;
+} else if (document.frmtreatrec.select4.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El ID del tratamiento no debe estar vacío.',
+    });
+    document.frmtreatrec.select4.focus();
+    return false;
+} else if (document.frmtreatrec.select3.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La identificación del médico no debe estar vacía.',
+    });
+    document.frmtreatrec.select5.focus();
+    return false;
+} else if (document.frmtreatrec.textarea.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La descripción del tratamiento no debe estar vacía.',
+    });
+    document.frmtreatrec.textarea.focus();
+    return false;
+} else if (document.frmtreatrec.treatmentdate.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La fecha del tratamiento no debe estar vacía.',
+    });
+    document.frmtreatrec.treatmentdate.focus();
+    return false;
+} else if (document.frmtreatrec.treatmenttime.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El tiempo de tratamiento no debe estar vacío.',
+    });
+    document.frmtreatrec.treatmenttime.focus();
+    return false;
+} else if (document.frmtreatrec.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor seleccione el estado.',
+    });
+    document.frmtreatrec.select.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>

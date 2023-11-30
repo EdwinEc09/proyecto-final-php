@@ -223,87 +223,227 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform() {
     if (document.frmpatient.patientname.value == "") {
-        alert("El nombre del paciente no debe estar vacío ..");
-        document.frmpatient.patientname.focus();
-        return false;
-    } else if (!document.frmpatient.patientname.value.match(alphaspaceExp)) {
-        alert("El nombre del paciente no es válido ..");
-        document.frmpatient.patientname.focus();
-        return false;
-    } else if (document.frmpatient.admissiondate.value == "") {
-        alert("La fecha de admisión no debe estar vacía..");
-        document.frmpatient.admissiondate.focus();
-        return false;
-    } else if (document.frmpatient.admissiontme.value == "") {
-        alert("El tiempo de admisión no debe estar vacío ..");
-        document.frmpatient.admissiontme.focus();
-        return false;
-    } else if (document.frmpatient.address.value == "") {
-        alert("ALa dirección no debe estar vacía ..");
-        document.frmpatient.address.focus();
-        return false;
-    } else if (document.frmpatient.mobilenumber.value == "") {
-        alert("El número de móvil no debe estar vacío ..");
-        document.frmpatient.mobilenumber.focus();
-        return false;
-    } else if (!document.frmpatient.mobilenumber.value.match(numericExpression)) {
-        alert("Número de móvil no válido ..");
-        document.frmpatient.mobilenumber.focus();
-        return false;
-    } else if (document.frmpatient.city.value == "") {
-        alert("Ciudad no debe estar vacía ..");
-        document.frmpatient.city.focus();
-        return false;
-    } else if (!document.frmpatient.city.value.match(alphaspaceExp)) {
-        alert("Ciudad no válida ..");
-        document.frmpatient.city.focus();
-        return false;
-    } else if (document.frmpatient.pincode.value == "") {
-        alert("Pincode no debe estar vacío ..");
-        document.frmpatient.pincode.focus();
-        return false;
-    } else if (!document.frmpatient.pincode.value.match(numericExpression)) {
-        alert("Pincode no válido ..");
-        document.frmpatient.pincode.focus();
-        return false;
-    } else if (document.frmpatient.loginid.value == "") {
-        alert("ID de inicio de sesión no debe estar vacío ..");
-        document.frmpatient.loginid.focus();
-        return false;
-    } else if (!document.frmpatient.loginid.value.match(alphanumericExp)) {
-        alert("Login ID no válido..");
-        document.frmpatient.loginid.focus();
-        return false;
-    } else if (document.frmpatient.password.value == "") {
-        alert("La contraseña no debe estar vacía ..");
-        document.frmpatient.password.focus();
-        return false;
-    } else if (document.frmpatient.password.value.length < 8) {
-        alert("La longitud de la contraseña debe ser superior a 8 caracteres...");
-        document.frmpatient.password.focus();
-        return false;
-    } else if (document.frmpatient.password.value != document.frmpatient.confirmpassword.value) {
-        alert("La contraseña y la contraseña de confirmación deben ser iguales..");
-        document.frmpatient.confirmpassword.focus();
-        return false;
-    } else if (document.frmpatient.select2.value == "") {
-        alert("Grupo sanguíneo no debe estar vacío ..");
-        document.frmpatient.select2.focus();
-        return false;
-    } else if (document.frmpatient.select3.value == "") {
-        alert("El género no debe estar vacío..");
-        document.frmpatient.select3.focus();
-        return false;
-    } else if (document.frmpatient.dateofbirth.value == "") {
-        alert("Fecha de nacimiento no debe estar vacía ..");
-        document.frmpatient.dateofbirth.focus();
-        return false;
-    } else if (document.frmpatient.select.value == "") {
-        alert("Por favor, seleccione el estado ..");
-        document.frmpatient.select.focus();
-        return false;
-    } else {
-        return true;
-    }
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del paciente no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.patientname.focus();
+    return false;
+}
+else if (!document.frmpatient.patientname.value.match(alphaspaceExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del paciente no es válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.patientname.focus();
+    return false;
+}
+else if (document.frmpatient.admissiondate.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha de admisión no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.admissiondate.focus();
+    return false;
+}
+else if (document.frmpatient.admissiontme.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El tiempo de admisión no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.admissiontme.focus();
+    return false;
+}
+else if (document.frmpatient.address.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La dirección no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.address.focus();
+    return false;
+}
+else if (document.frmpatient.mobilenumber.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de móvil no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.mobilenumber.focus();
+    return false;
+}
+else if (!document.frmpatient.mobilenumber.value.match(numericExpression)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Número de móvil no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.mobilenumber.focus();
+    return false;
+}
+else if (document.frmpatient.city.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Ciudad no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.city.focus();
+    return false;
+}
+else if (!document.frmpatient.city.value.match(alphaspaceExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Ciudad no válida.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.city.focus();
+    return false;
+}
+else if (document.frmpatient.pincode.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Pincode no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.pincode.focus();
+    return false;
+}
+else if (!document.frmpatient.pincode.value.match(numericExpression)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Pincode no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.pincode.focus();
+    return false;
+}
+else if (document.frmpatient.loginid.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'ID de inicio de sesión no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.loginid.focus();
+    return false;
+}
+else if (!document.frmpatient.loginid.value.match(alphanumericExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Login ID no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.loginid.focus();
+    return false;
+}
+else if (document.frmpatient.password.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.password.focus();
+    return false;
+}
+else if (document.frmpatient.password.value.length < 8) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.password.focus();
+    return false;
+}
+else if (document.frmpatient.password.value != document.frmpatient.confirmpassword.value) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña y la contraseña de confirmación deben ser iguales.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.confirmpassword.focus();
+    return false;
+}
+else if (document.frmpatient.select2.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Grupo sanguíneo no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.select2.focus();
+    return false;
+}
+else if (document.frmpatient.select3.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El género no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.select3.focus();
+    return false;
+}
+else if (document.frmpatient.dateofbirth.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Fecha de nacimiento no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.dateofbirth.focus();
+    return false;
+}
+else if (document.frmpatient.select.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Por favor, seleccione el estado.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatient.select.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>

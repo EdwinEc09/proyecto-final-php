@@ -128,19 +128,31 @@ var alphanumericExp = /^[0-9a-zA-Z]+$/; //Variable to validate numbers and alpha
 var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable to validate Email ID 
 function validateform() {
 	if (document.frmtreat.treatmenttype.value == "") {
-		alert("El tipo de tratamiento no debe estar vacío.");
-		document.frmtreat.treatmenttype.focus();
-		return false;
-	} else if (!document.frmtreat.treatmenttype.value.match(alphaspaceExp)) {
-		alert("Tipo de tratamiento no válido.");
-		document.frmtreat.treatmenttype.focus();
-		return false;
-	} else if (document.frmtreat.select.value == "") {
-		alert("Por favor seleccione el estado.");
-		document.frmtreat.select.focus();
-		return false;
-	} else {
-		return true;
-	}
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El tipo de tratamiento no debe estar vacío.',
+    });
+    document.frmtreat.treatmenttype.focus();
+    return false;
+} else if (!document.frmtreat.treatmenttype.value.match(alphaspaceExp)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Tipo de tratamiento no válido.',
+    });
+    document.frmtreat.treatmenttype.focus();
+    return false;
+} else if (document.frmtreat.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, seleccione el estado.',
+    });
+    document.frmtreat.select.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>

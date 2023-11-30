@@ -71,33 +71,52 @@ include("adfooter.php");
 <script type="application/javascript">
 function validateform()
 {
-	if(document.frmpatchange.oldpassword.value == "")
-	{
-		alert("La contraseña anterior no debe estar vacía.");
-		document.frmpatchange.oldpassword.focus();
-		return false;
-	}
-	else if(document.frmpatchange.newpassword.value == "")
-	{
-		alert("La nueva contraseña no debe estar vacía.");
-		document.frmpatchange.newpassword.focus();
-		return false;
-	}
-	else if(document.frmpatchange.newpassword.value.length < 6)
-	{
-		alert("La longitud de la nueva contraseña debe tener más de 6 caracteres...");
-		document.frmpatchange.newpassword.focus();
-		return false;
-	}
-	else if(document.frmpatchange.newpassword.value != document.frmpatchange.password.value )
-	{
-		alert("La nueva contraseña y la confirmación de contraseña deben ser iguales.");
-		document.frmpatchange.password.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+    if (document.frmpatchange.oldpassword.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña anterior no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatchange.oldpassword.focus();
+    return false;
+}
+else if (document.frmpatchange.newpassword.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La nueva contraseña no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatchange.newpassword.focus();
+    return false;
+}
+else if (document.frmpatchange.newpassword.value.length < 6) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La longitud de la nueva contraseña debe tener más de 6 caracteres.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatchange.newpassword.focus();
+    return false;
+}
+else if (document.frmpatchange.newpassword.value != document.frmpatchange.password.value) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La nueva contraseña y la confirmación de contraseña deben ser iguales.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatchange.password.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>

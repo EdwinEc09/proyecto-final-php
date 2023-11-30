@@ -112,52 +112,85 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmorders.select2.value == "")
-	{
-		alert("Patient name should not be empty..");
-		document.frmorders.select2.focus();
-		return false;
-	}
-	
-	else if(document.frmorders.orderdate.value == "")
-	{
-		alert("Order date should not be empty..");
-		document.frmorders.orderdate.focus();
-		return false;
-	}
-	else if(document.frmorders.deliverydate.value == "")
-	{
-		alert("Delivery date should not be empty..");
-		document.frmorders.deliverydate.focus();
-		return false;
-	}
-	else if(document.frmorders.address.value == "")
-	{
-		alert("Address should not be empty..");
-		document.frmorders.address.focus();
-		return false;
-	}
-	else if(document.frmorders.mobilenumber.value == "")
-	{
-		alert("Mobile number should not be empty..");
-		document.frmorders.mobilenumber.focus();
-		return false;
-	}
-	else if(!document.frmorders.mobilenumber.value.match(numericExpression))
-	{
-		alert("Mobile number not valid..");
-		document.frmorders.mobilenumber.focus();
-		return false;
-	}
-	else if(document.frmorders.select.value == "" )
-	{
-		alert("Kindly select the status..");
-		document.frmorders.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmorders.select2.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del paciente no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmorders.select2.focus();
+    return false;
+}
+else if (document.frmorders.orderdate.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha del pedido no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmorders.orderdate.focus();
+    return false;
+}
+else if (document.frmorders.deliverydate.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha de entrega no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmorders.deliverydate.focus();
+    return false;
+}
+else if (document.frmorders.address.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La dirección no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmorders.address.focus();
+    return false;
+}
+else if (document.frmorders.mobilenumber.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de teléfono móvil no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmorders.mobilenumber.focus();
+    return false;
+}
+else if (!document.frmorders.mobilenumber.value.match(numericExpression)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de teléfono móvil no es válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmorders.mobilenumber.focus();
+    return false;
+}
+else if (document.frmorders.select.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Por favor, selecciona el estado.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmorders.select.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>

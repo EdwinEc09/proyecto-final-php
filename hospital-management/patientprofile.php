@@ -209,88 +209,168 @@ include("adfooter.php");
 
 	function validateform() {
 		if (document.frmpatprfl.patientname.value == "") {
-			swal.fire("Error", "El nombre del paciente no debe estar vacío.", "error");
-			document.frmpatprfl.patientname.focus();
-			return false;
-		} else if (!document.frmpatprfl.patientname.value.match(alphaspaceExp)) {
-			swal.fire("Error", "El nombre del paciente no es válido.", "error");
-			document.frmpatprfl.patientname.focus();
-			return false;
-		} else if (document.frmpatprfl.admissiondate.value == "") {
-			swal.fire("Error", "La fecha de admisión no debe estar vacía.", "error");
-			document.frmpatprfl.admissiondate.focus();
-			return false;
-		} else if (document.frmpatprfl.admissiontme.value == "") {
-			swal.fire("Error", "La hora de admisión no debe estar vacía.", "error");
-			document.frmpatprfl.admissiontme.focus();
-			return false;
-		} else if (document.frmpatprfl.address.value == "") {
-			swal.fire("Error", "La dirección no debe estar vacía.", "error");
-			document.frmpatprfl.address.focus();
-			return false;
-		} else if (document.frmpatprfl.mobilenumber.value == "") {
-			swal.fire("Error", "El número de móvil no debe estar vacío.", "error");
-			document.frmpatprfl.mobilenumber.focus();
-			return false;
-		} else if (!document.frmpatprfl.mobilenumber.value.match(numericExpression)) {
-			swal.fire("Error", "El número de móvil no es válido.", "error");
-			document.frmpatprfl.mobilenumber.focus();
-			return false;
-		} else if (document.frmpatprfl.city.value == "") {
-			swal.fire("Error", "La ciudad no debe estar vacía.", "error");
-			document.frmpatprfl.city.focus();
-			return false;
-		} else if (!document.frmpatprfl.city.value.match(alphaspaceExp)) {
-			swal.fire("Error", "La ciudad no es válida.", "error");
-			document.frmpatprfl.city.focus();
-			return false;
-		} else if (document.frmpatprfl.pincode.value == "") {
-			swal.fire("Error", "El código postal no debe estar vacío.", "error");
-			document.frmpatprfl.pincode.focus();
-			return false;
-		} else if (!document.frmpatprfl.pincode.value.match(numericExpression)) {
-			swal.fire("Error", "El código postal no es válido.", "error");
-			document.frmpatprfl.pincode.focus();
-			return false;
-		} else if (document.frmpatprfl.loginid.value == "") {
-			swal.fire("Error", "El ID de inicio de sesión no debe estar vacío.", "error");
-			document.frmpatprfl.loginid.focus();
-			return false;
-		} else if (!document.frmpatprfl.loginid.value.match(emailExp)) {
-			swal.fire("Error", "El ID de inicio de sesión no es válido.", "error");
-			document.frmpatprfl.loginid.focus();
-			return false;
-		} else if (document.frmpatprfl.password.value == "") {
-			swal.fire("Error", "La contraseña no debe estar vacía.", "error");
-			document.frmpatprfl.password.focus();
-			return false;
-		} else if (document.frmpatprfl.password.value.length < 8) {
-			swal.fire("Error", "La longitud de la contraseña debe ser de al menos 8 caracteres.", "error");
-			document.frmpatprfl.password.focus();
-			return false;
-		} else if (document.frmpatprfl.password.value != document.frmpatprfl.confirmpassword.value) {
-			swal.fire("Error", "La contraseña y la confirmación de la contraseña deben coincidir.", "error");
-			document.frmpatprfl.confirmpassword.focus();
-			return false;
-		} else if (document.frmpatprfl.select2.value == "") {
-			swal.fire("Error", "El grupo sanguíneo no debe estar vacío.", "error");
-			document.frmpatprfl.select2.focus();
-			return false;
-		} else if (document.frmpatprfl.select3.value == "") {
-			swal.fire("Error", "El género no debe estar vacío.", "error");
-			document.frmpatprfl.select3.focus();
-			return false;
-		} else if (document.frmpatprfl.dateofbirth.value == "") {
-			swal.fire("Error", "La fecha de nacimiento no debe estar vacía.", "error");
-			document.frmpatprfl.dateofbirth.focus();
-			return false;
-		} else if (document.frmpatprfl.select.value == "") {
-			swal.fire("Error", "Por favor, seleccione el estado.", "error");
-			document.frmpatprfl.select.focus();
-			return false;
-		} else {
-			return true;
-		}
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del paciente no debe estar vacío.',
+    });
+    document.frmpatprfl.patientname.focus();
+    return false;
+} else if (!document.frmpatprfl.patientname.value.match(alphaspaceExp)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del paciente no es válido.',
+    });
+    document.frmpatprfl.patientname.focus();
+    return false;
+} else if (document.frmpatprfl.admissiondate.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La fecha de admisión no debe estar vacía.',
+    });
+    document.frmpatprfl.admissiondate.focus();
+    return false;
+} else if (document.frmpatprfl.admissiontme.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La hora de admisión no debe estar vacía.',
+    });
+    document.frmpatprfl.admissiontme.focus();
+    return false;
+} else if (document.frmpatprfl.address.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La dirección no debe estar vacía.',
+    });
+    document.frmpatprfl.address.focus();
+    return false;
+} else if (document.frmpatprfl.mobilenumber.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El número de móvil no debe estar vacío.',
+    });
+    document.frmpatprfl.mobilenumber.focus();
+    return false;
+} else if (!document.frmpatprfl.mobilenumber.value.match(numericExpression)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El número de móvil no es válido.',
+    });
+    document.frmpatprfl.mobilenumber.focus();
+    return false;
+} else if (document.frmpatprfl.city.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La ciudad no debe estar vacía.',
+    });
+    document.frmpatprfl.city.focus();
+    return false;
+} else if (!document.frmpatprfl.city.value.match(alphaspaceExp)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La ciudad no es válida.',
+    });
+    document.frmpatprfl.city.focus();
+    return false;
+} else if (document.frmpatprfl.pincode.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El código postal no debe estar vacío.',
+    });
+    document.frmpatprfl.pincode.focus();
+    return false;
+} else if (!document.frmpatprfl.pincode.value.match(numericExpression)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El código postal no es válido.',
+    });
+    document.frmpatprfl.pincode.focus();
+    return false;
+} else if (document.frmpatprfl.loginid.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El ID de inicio de sesión no debe estar vacío.',
+    });
+    document.frmpatprfl.loginid.focus();
+    return false;
+} else if (!document.frmpatprfl.loginid.value.match(emailExp)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El ID de inicio de sesión no es válido.',
+    });
+    document.frmpatprfl.loginid.focus();
+    return false;
+} else if (document.frmpatprfl.password.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La contraseña no debe estar vacía.',
+    });
+    document.frmpatprfl.password.focus();
+    return false;
+} else if (document.frmpatprfl.password.value.length < 8) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La longitud de la contraseña debe ser de al menos 8 caracteres.',
+    });
+    document.frmpatprfl.password.focus();
+    return false;
+} else if (document.frmpatprfl.password.value != document.frmpatprfl.confirmpassword.value) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La contraseña y la confirmación de la contraseña deben coincidir.',
+    });
+    document.frmpatprfl.confirmpassword.focus();
+    return false;
+} else if (document.frmpatprfl.select2.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El grupo sanguíneo no debe estar vacío.',
+    });
+    document.frmpatprfl.select2.focus();
+    return false;
+} else if (document.frmpatprfl.select3.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El género no debe estar vacío.',
+    });
+    document.frmpatprfl.select3.focus();
+    return false;
+} else if (document.frmpatprfl.dateofbirth.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La fecha de nacimiento no debe estar vacía.',
+    });
+    document.frmpatprfl.dateofbirth.focus();
+    return false;
+} else if (document.frmpatprfl.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, seleccione el estado.',
+    });
+    document.frmpatprfl.select.focus();
+    return false;
+} else {
+    return true;
+}
 	}
 
 </script>

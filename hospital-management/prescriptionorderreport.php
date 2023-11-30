@@ -150,46 +150,40 @@ include("footer.php");
 <script type="application/javascript">
 function validateform()
 {
-	if(document.frmpresrecord.prescriptionid.value == "")
-	{
-		alert("Prescription id should not be empty..");
-		document.frmpresrecord.prescriptionid.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.medicine.value == "")
-	{
-		alert("Medicine field should not be empty..");
-		document.frmpresrecord.medicine.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.cost.value == "")
-	{
-		alert("Cost should not be empty..");
-		document.frmpresrecord.cost.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.unit.value == "")
-	{
-		alert("Unit should not be empty..");
-		document.frmpresrecord.unit.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.select2.value == "")
-	{
-		alert("Dosage should not be empty..");
-		document.frmpresrecord.select2.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.select.value == "" )
-	{
-		alert("Kindly select the status..");
-		document.frmpresrecord.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
-	
+	if (document.frmpres.select2.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del odontólogo no debe estar vacío.',
+    });
+    document.frmpres.select2.focus();
+    return false;
+} else if (document.frmpres.select3.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del paciente no debe estar vacío.',
+    });
+    document.frmpres.select3.focus();
+    return false;
+} else if (document.frmpres.date.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La fecha de la prescripción no debe estar vacía.',
+    });
+    document.frmpres.date.focus();
+    return false;
+} else if (document.frmpres.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, seleccione el estado.',
+    });
+    document.frmpres.select.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>

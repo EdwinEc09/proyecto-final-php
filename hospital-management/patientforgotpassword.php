@@ -69,29 +69,49 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmpatlogin.loginid.value == "")
-	{
-		alert("Login ID should not be empty..");
-		document.frmpatlogin.loginid.focus();
-		return false;
-	}
-	else if(!document.frmpatlogin.loginid.value.match(alphanumericExp))
-	{
-		alert("loginid not valid..");
-		document.frmpatlogin.loginid.focus();
-		return false;
-	}
-	else if(document.frmpatlogin.password.value == "")
-	{
-		alert("Password should not be empty..");
-		document.frmpatlogin.password.focus();
-		return false;
-	}
-	else if(document.frmpatlogin.password.value.length < 8)
-	{
-		alert("Password length should be more than 8 characters...");
-		document.frmpatlogin.password.focus();
-		return false;
-	}
+	if (document.frmpatlogin.loginid.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID de inicio de sesión no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatlogin.loginid.focus();
+    return false;
+}
+else if (!document.frmpatlogin.loginid.value.match(alphanumericExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'ID de inicio de sesión no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatlogin.loginid.focus();
+    return false;
+}
+else if (document.frmpatlogin.password.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatlogin.password.focus();
+    return false;
+}
+else if (document.frmpatlogin.password.value.length < 8) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatlogin.password.focus();
+    return false;
+}
 }
 	</script>

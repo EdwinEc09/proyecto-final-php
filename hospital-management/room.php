@@ -129,45 +129,56 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmroom.select2.value == "")
-	{
-		alert("Room type should not be empty..");
-		document.frmroom.select2.focus();
-		return false;
-	}
-	else if(document.frmroom.roomnumber.value == "")
-	{
-		alert("Room number should not be empty..");
-		document.frmroom.roomnumber.focus();
-		return false;
-	}
-	else if(!document.frmroom.roomnumber.value.match(numericExpression))
-	{
-		alert("Room number not valid..");
-		document.frmroom.roomnumber.focus();
-		return false;
-	}
-	else if(document.frmroom.numberofbeds.value == "")
-	{
-		alert("Number of beds should not be empty..");
-		document.frmroom.numberofbeds.focus();
-		return false;
-	}
-	else if(!document.frmroom.numberofbeds.value.match(numericExpression))
-	{
-		alert("Number of beds not valid..");
-		document.frmroom.numberofbeds.focus();
-		return false;
-	}
-	else if(document.frmroom.select.value == "" )
-	{
-		alert("Kindly select the status..");
-		document.frmroom.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmroom.select2.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El tipo de habitación no debe estar vacío.',
+    });
+    document.frmroom.select2.focus();
+    return false;
+} else if (document.frmroom.roomnumber.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El número de habitación no debe estar vacío.',
+    });
+    document.frmroom.roomnumber.focus();
+    return false;
+} else if (!document.frmroom.roomnumber.value.match(numericExpression)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Número de habitación no válido.',
+    });
+    document.frmroom.roomnumber.focus();
+    return false;
+} else if (document.frmroom.numberofbeds.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El número de camas no debe estar vacío.',
+    });
+    document.frmroom.numberofbeds.focus();
+    return false;
+} else if (!document.frmroom.numberofbeds.value.match(numericExpression)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Número de camas no válido.',
+    });
+    document.frmroom.numberofbeds.focus();
+    return false;
+} else if (document.frmroom.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, seleccione el estado.',
+    });
+    document.frmroom.select.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>

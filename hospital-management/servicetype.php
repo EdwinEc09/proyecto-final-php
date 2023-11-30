@@ -107,45 +107,56 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmserv.servicetype.value == "")
-	{
-		alert("Service Type should not be empty..");
-		document.frmserv.servicetype.focus();
-		return false;
-	}
-	else if(!document.frmserv.servicetype.value.match(alphaExp))
-	{
-		alert("Service Type not valid..");
-		document.frmserv.servicetype.focus();
-		return false;
-	}
-	else if(document.frmserv.servicecharge.value == "")
-	{
-		alert("Service charge should not be empty..");
-		document.frmserv.servicecharge.focus();
-		return false;
-	}
-	else if(!document.frmserv.servicecharge.value.match(numericExpression))
-	{
-		alert("Service charge not valid..");
-		document.frmserv.servicecharge.focus();
-		return false;
-	}
-	else if(document.frmserv.textarea.value == "")
-	{
-		alert("Description should not be empty..");
-		document.frmserv.textarea.focus();
-		return false;
-	}
-	else if(document.frmserv.select.value == "" )
-	{
-		alert("Kindly select the status..");
-		document.frmserv.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmserv.servicetype.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El tipo de servicio no debe estar vacío.',
+    });
+    document.frmserv.servicetype.focus();
+    return false;
+} else if (!document.frmserv.servicetype.value.match(alphaExp)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Tipo de servicio no válido.',
+    });
+    document.frmserv.servicetype.focus();
+    return false;
+} else if (document.frmserv.servicecharge.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El cargo del servicio no debe estar vacío.',
+    });
+    document.frmserv.servicecharge.focus();
+    return false;
+} else if (!document.frmserv.servicecharge.value.match(numericExpression)) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Cargo del servicio no válido.',
+    });
+    document.frmserv.servicecharge.focus();
+    return false;
+} else if (document.frmserv.textarea.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La descripción no debe estar vacía.',
+    });
+    document.frmserv.textarea.focus();
+    return false;
+} else if (document.frmserv.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, seleccione el estado.',
+    });
+    document.frmserv.select.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>

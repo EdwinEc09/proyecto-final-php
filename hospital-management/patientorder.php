@@ -96,40 +96,63 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmpatorder.select2.value == "")
-	{
-		alert("Patient name should not be empty..");
-		document.frmpatorder.select2.focus();
-		return false;
-	}
-	
-	else if(document.frmpatorder.orderdate.value == "")
-	{
-		alert("Order date should not be empty..");
-		document.frmpatorder.orderdate.focus();
-		return false;
-	}
-	else if(document.frmpatorder.address.value == "")
-	{
-		alert("Address should not be empty..");
-		document.frmpatorder.address.focus();
-		return false;
-	}
-	else if(document.frmpatorder.mobilenumber.value == "")
-	{
-		alert("Mobile number should not be empty..");
-		document.frmpatorder.mobilenumber.focus();
-		return false;
-	}
-	else if(!document.frmpatorder.mobilenumber.value.match(numericExpression))
-	{
-		alert("Mobile number not valid..");
-		document.frmpatorder.mobilenumber.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmpatorder.select2.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del paciente no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatorder.select2.focus();
+    return false;
+}
+else if (document.frmpatorder.orderdate.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha del pedido no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatorder.orderdate.focus();
+    return false;
+}
+else if (document.frmpatorder.address.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La dirección no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatorder.address.focus();
+    return false;
+}
+else if (document.frmpatorder.mobilenumber.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de móvil no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatorder.mobilenumber.focus();
+    return false;
+}
+else if (!document.frmpatorder.mobilenumber.value.match(numericExpression)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Número de móvil no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatorder.mobilenumber.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>

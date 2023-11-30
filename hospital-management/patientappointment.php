@@ -282,68 +282,173 @@ include("footer.php");
 
     function validateform() {
         if (document.frmpatapp.patiente.value == "") {
-            alert("El nombre del paciente no debe estar vacío...");
-            document.frmpatapp.patiente.focus();
-            return false;
-        } else if (!document.frmpatapp.patiente.value.match(alphaspaceExp)) {
-            alert("Nombre del paciente no válido...");
-            document.frmpatapp.patiente.focus();
-            return false;
-        } else if (document.frmpatapp.textarea.value == "") {
-            alert("La dirección no debe estar vacía...");
-            document.frmpatapp.textarea.focus();
-            return false;
-        } else if (document.frmpatapp.city.value == "") {
-            alert("La ciudad no debería estar vacía...");
-            document.frmpatapp.city.focus();
-            return false;
-        } else if (!document.frmpatapp.city.value.match(alphaspaceExp)) {
-            alert("Nombre de la ciudad no es válida..");
-            document.frmpatapp.city.focus();
-            return false;
-        } else if (document.frmpatapp.mobileno.value == "") {
-            alert("El número de móvil no debe estar vacío...");
-            document.frmpatapp.mobileno.focus();
-            return false;
-        } else if (!document.frmpatapp.mobileno.value.match(numericExpression)) {
-            alert("Número de móvil no válido...");
-            document.frmpatapp.mobileno.focus();
-            return false;
-        } else if (document.frmpatapp.loginid.value == "") {
-            alert("El ID de inicio de sesión no debe estar vacío.");
-            document.frmpatapp.loginid.focus();
-            return false;
-        } else if (!document.frmpatapp.loginid.value.match(alphanumericExp)) {
-            alert("ID de inicio de sesión no válido...");
-            document.frmpatapp.loginid.focus();
-            return false;
-        } else if (document.frmpatapp.password.value == "") {
-            alert("La contraseña no debe estar vacía...");
-            document.frmpatapp.password.focus();
-            return false;
-        } else if (document.frmpatapp.password.value.length < 8) {
-            alert("La longitud de la contraseña debe tener más de 8 caracteres...");
-            document.frmpatapp.password.focus();
-            return false;
-        } else if (document.frmpatapp.select6.value == "") {
-            alert("El género no debe estar vacío...");
-            document.frmpatapp.select6.focus();
-            return false;
-        } else if (document.frmpatapp.dob.value == "") {
-            alert("La fecha de nacimiento no debe estar vacía...");
-            document.frmpatapp.dob.focus();
-            return false;
-        } else if (document.frmpatapp.appointmentdate.value == "") {
-            alert("La fecha de la cita no debe estar vacía...");
-            document.frmpatapp.appointmentdate.focus();
-            return false;
-        } else if (document.frmpatapp.appointmenttime.value == "") {
-            alert("El tiempo de la cita no debe estar vacío...");
-            document.frmpatapp.appointmenttime.focus();
-            return false;
-        } else {
-            return true;
-        }
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del paciente no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.patiente.focus();
+    return false;
+}
+else if (!document.frmpatapp.patiente.value.match(alphaspaceExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Nombre del paciente no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.patiente.focus();
+    return false;
+}
+else if (document.frmpatapp.textarea.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La dirección no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.textarea.focus();
+    return false;
+}
+else if (document.frmpatapp.city.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La ciudad no debería estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.city.focus();
+    return false;
+}
+else if (!document.frmpatapp.city.value.match(alphaspaceExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Nombre de la ciudad no es válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.city.focus();
+    return false;
+}
+else if (document.frmpatapp.mobileno.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de móvil no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.mobileno.focus();
+    return false;
+}
+else if (!document.frmpatapp.mobileno.value.match(numericExpression)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Número de móvil no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.mobileno.focus();
+    return false;
+}
+else if (document.frmpatapp.loginid.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID de inicio de sesión no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.loginid.focus();
+    return false;
+}
+else if (!document.frmpatapp.loginid.value.match(alphanumericExp)) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'ID de inicio de sesión no válido.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.loginid.focus();
+    return false;
+}
+else if (document.frmpatapp.password.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La contraseña no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.password.focus();
+    return false;
+}
+else if (document.frmpatapp.password.value.length < 8) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.password.focus();
+    return false;
+}
+else if (document.frmpatapp.select6.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El género no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.select6.focus();
+    return false;
+}
+else if (document.frmpatapp.dob.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha de nacimiento no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.dob.focus();
+    return false;
+}
+else if (document.frmpatapp.appointmentdate.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha de la cita no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.appointmentdate.focus();
+    return false;
+}
+else if (document.frmpatapp.appointmenttime.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El tiempo de la cita no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatapp.appointmenttime.focus();
+    return false;
+}
+else {
+    return true;
+}
     }
 
     function loaddoctor(deptid) {

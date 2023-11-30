@@ -264,46 +264,56 @@ function calctotalcost(cost,qty)
 
 function validateform()
 {
-	if(document.frmpresrecord.prescriptionid.value == "")
-	{
-		alert("Prescription id should not be empty..");
-		document.frmpresrecord.prescriptionid.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.medicine.value == "")
-	{
-		alert("Medicine field should not be empty..");
-		document.frmpresrecord.medicine.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.cost.value == "")
-	{
-		alert("Cost should not be empty..");
-		document.frmpresrecord.cost.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.unit.value == "")
-	{
-		alert("Unit should not be empty..");
-		document.frmpresrecord.unit.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.select2.value == "")
-	{
-		alert("Dosage should not be empty..");
-		document.frmpresrecord.select2.focus();
-		return false;
-	}
-	else if(document.frmpresrecord.select.value == "" )
-	{
-		alert("Kindly select the status..");
-		document.frmpresrecord.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
-	
+	if (document.frmpresrecord.prescriptionid.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El ID de la prescripción no debe estar vacío.',
+    });
+    document.frmpresrecord.prescriptionid.focus();
+    return false;
+} else if (document.frmpresrecord.medicine.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El campo de medicamento no debe estar vacío.',
+    });
+    document.frmpresrecord.medicine.focus();
+    return false;
+} else if (document.frmpresrecord.cost.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El costo no debe estar vacío.',
+    });
+    document.frmpresrecord.cost.focus();
+    return false;
+} else if (document.frmpresrecord.unit.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La unidad no debe estar vacía.',
+    });
+    document.frmpresrecord.unit.focus();
+    return false;
+} else if (document.frmpresrecord.select2.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La dosis no debe estar vacía.',
+    });
+    document.frmpresrecord.select2.focus();
+    return false;
+} else if (document.frmpresrecord.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, seleccione el estado.',
+    });
+    document.frmpresrecord.select.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>

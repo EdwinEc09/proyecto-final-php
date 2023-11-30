@@ -168,58 +168,96 @@ $rspatient=mysqli_fetch_array($qsqlpatient);
 <script type="application/javascript">
 function validateform()
 {
-	if(document.frmpatdet.patientname.value == "")
-	{
-		alert("Patient name should not be empty..");
-		document.frmpatdet.patientname.focus();
-		return false;
-	}
-	else if(document.frmpatdet.patientid.value == "")
-	{
-		alert("Patient ID should not be empty..");
-		document.frmpatdet.patientid.focus();
-		return false;
-	}
-	else if(document.frmpatdet.admissiondate.value == "")
-	{
-		alert("Admission date should not be empty..");
-		document.frmpatdet.admissiondate.focus();
-		return false;
-	}
-	else if(document.frmpatdet.admissiontime.value == "")
-	{
-		alert("Admission time should not be empty..");
-		document.frmpatdet.admissiontime.focus();
-		return false;
-	}
-	else if(document.frmpatdet.address.value == "")
-	{
-		alert("Address should not be empty..");
-		document.frmpatdet.address.focus();
-		return false;
-	}
-	else if(document.frmpatdet.select.value == "")
-	{
-		alert("Gender should not be empty..");
-		document.frmpatdet.select.focus();
-		return false;
-	}
-	else if(document.frmpatdet.mobilenumber.value == "")
-	{
-		alert("Contact number should not be empty..");
-		document.frmpatdet.mobilenumber.focus();
-		return false;
-	}
-	else if(document.frmpatdet.dateofbirth.value == "")
-	{
-		alert("Date Of Birth should not be empty..");
-		document.frmpatdet.dateofbirth.focus();
-		return false;
-	}
-	
-	else
-	{
-		return true;
-	}
+    if (document.frmpatdet.patientname.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del paciente no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.patientname.focus();
+    return false;
+}
+else if (document.frmpatdet.patientid.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El ID del paciente no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.patientid.focus();
+    return false;
+}
+else if (document.frmpatdet.admissiondate.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha de admisión no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.admissiondate.focus();
+    return false;
+}
+else if (document.frmpatdet.admissiontime.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La hora de admisión no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.admissiontime.focus();
+    return false;
+}
+else if (document.frmpatdet.address.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La dirección no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.address.focus();
+    return false;
+}
+else if (document.frmpatdet.select.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El género no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.select.focus();
+    return false;
+}
+else if (document.frmpatdet.mobilenumber.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El número de contacto no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.mobilenumber.focus();
+    return false;
+}
+else if (document.frmpatdet.dateofbirth.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'La fecha de nacimiento no debe estar vacía.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmpatdet.dateofbirth.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>

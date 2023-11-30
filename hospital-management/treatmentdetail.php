@@ -61,46 +61,56 @@ if(isset($_SESSION['doctorid']))
 <script type="application/javascript">
 function validateform()
 {
-	if(document.frmtreatdetail.select.value == "")
-	{
-		alert("Treatment name should not be empty..");
-		document.frmtreatdetail.select.focus();
-		return false;
-	}
-	
-	else if(document.frmtreatdetail.select2.value == "")
-	{
-		alert("Odontologo name should not be empty..");
-		document.frmtreatdetail.select2.focus();
-		return false;
-	}
-	else if(document.frmtreatdetail.textarea.value == "")
-	{
-		alert(" Treatment description should not be empty..");
-		document.frmtreatdetail.textarea.focus();
-		return false;
-	}
-	else if(document.frmtreatdetail.treatmentfile.value == "")
-	{
-		alert("Upload file should not be empty..");
-		document.frmtreatdetail.treatmentfile.focus();
-		return false;
-	}
-	else if(document.frmtreatdetail.date.value == "")
-	{
-		alert("Treatment date should not be empty..");
-		document.frmtreatdetail.date.focus();
-		return false;
-	}
-	else if(document.frmtreatdetail.time.value == "")
-	{
-		alert("Treatment time should not be empty..");
-		document.frmtreatdetail.time.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmtreatdetail.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del tratamiento no debe estar vacío.',
+    });
+    document.frmtreatdetail.select.focus();
+    return false;
+} else if (document.frmtreatdetail.select2.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del odontólogo no debe estar vacío.',
+    });
+    document.frmtreatdetail.select2.focus();
+    return false;
+} else if (document.frmtreatdetail.textarea.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La descripción del tratamiento no debe estar vacía.',
+    });
+    document.frmtreatdetail.textarea.focus();
+    return false;
+} else if (document.frmtreatdetail.treatmentfile.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La carga del archivo no debe estar vacía.',
+    });
+    document.frmtreatdetail.treatmentfile.focus();
+    return false;
+} else if (document.frmtreatdetail.date.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La fecha del tratamiento no debe estar vacía.',
+    });
+    document.frmtreatdetail.date.focus();
+    return false;
+} else if (document.frmtreatdetail.time.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La hora del tratamiento no debe estar vacía.',
+    });
+    document.frmtreatdetail.time.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>

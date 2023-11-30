@@ -129,34 +129,52 @@ include("adfooter.php");
 <script type="application/javascript">
 function validateform()
 {
-	if(document.frmdocttimings.select2.value == "")
-	{
-		alert("El nombre del médico no debe estar vacío.");
-		document.frmdocttimings.select2.focus();
-		return false;
-	}
-	else if(document.frmdocttimings.ftime.value == "")
-	{
-		alert("Desde el momento no debe estar vacía .");
-		document.frmdocttimings.ftime.focus();
-		return false;
-	}
-	else if(document.frmdocttimings.ttime.value == "")
-	{
-		alert("Hasta el momento no debe estar vacía .");
-		document.frmdocttimings.ttime.focus();
-		return false;
-	}
-	
-	else if(document.frmdocttimings.select.value == "" )
-	{
-		alert("Por favor seleccione el estado.");
-		document.frmdocttimings.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmdocttimings.select2.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El nombre del Odontologo no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdocttimings.select2.focus();
+    return false;
+}
+else if (document.frmdocttimings.ftime.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El campo "Desde el momento" no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdocttimings.ftime.focus();
+    return false;
+}
+else if (document.frmdocttimings.ttime.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'El campo "Hasta el momento" no debe estar vacío.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdocttimings.ttime.focus();
+    return false;
+}
+else if (document.frmdocttimings.select.value == "") {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Por favor, selecciona el estado.',
+        showConfirmButton: false,
+        timer: 2000,
+    });
+    document.frmdocttimings.select.focus();
+    return false;
+}
+else {
+    return true;
+}
 }
 </script>

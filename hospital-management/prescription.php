@@ -138,34 +138,40 @@ include("adfooter.php");
 <script type="application/javascript">
 function validateform()
 {
-	if(document.frmpres.select2.value == "")
-	{
-		alert("Odontologo name should not be empty..");
-		document.frmpres.select2.focus();
-		return false;
-	}
-	
-	else if(document.frmpres.select3.value == "")
-	{
-		alert("Patient name should not be empty..");
-		document.frmpres.select3.focus();
-		return false;
-	}
-	else if(document.frmpres.date.value == "")
-	{
-		alert("Prescription date should not be empty..");
-		document.frmpres.date.focus();
-		return false;
-	}
-	else if(document.frmpres.select.value == "" )
-	{
-		alert("Kindly select the status..");
-		document.frmpres.select.focus();
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if (document.frmpres.select2.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del odontólogo no debe estar vacío.',
+    });
+    document.frmpres.select2.focus();
+    return false;
+} else if (document.frmpres.select3.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El nombre del paciente no debe estar vacío.',
+    });
+    document.frmpres.select3.focus();
+    return false;
+} else if (document.frmpres.date.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La fecha de la receta no debe estar vacía.',
+    });
+    document.frmpres.date.focus();
+    return false;
+} else if (document.frmpres.select.value == "") {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, seleccione el estado.',
+    });
+    document.frmpres.select.focus();
+    return false;
+} else {
+    return true;
+}
 }
 </script>
