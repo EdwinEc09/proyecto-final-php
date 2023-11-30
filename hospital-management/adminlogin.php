@@ -15,7 +15,7 @@ $tim = date("H:i:s");
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<title>ACO ~ Login Administración</title>
+<title>ADCO ~ Login Administración</title>
 <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 <link rel="icon" href="images/den-icon.png" type="image/x-icon">
