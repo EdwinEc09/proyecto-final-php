@@ -15,7 +15,7 @@ $tim = date("H:i:s");
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="images/den-icon.png" type="image/x-icon">
+<link rel="icon" href="images/adcologo.png" type="image/x-icon">
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
