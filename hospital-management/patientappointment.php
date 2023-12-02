@@ -104,7 +104,7 @@ if (isset($_SESSION['patientid'])) {
                                         <h4>Haga una cita</h4>
 
                                     </div>
-                                    <form method="post" action="" name="frmpatapp" onSubmit="return validateform()"
+                                    <form method="post" action="" name="frmpatientapp" onSubmit="return validateform()"
                                         class="appointment-form">
                                         <ul class="row">
                                             <li class="col-sm-6">
@@ -268,7 +268,7 @@ if (isset($_SESSION['patientid'])) {
                                                         <select name="select6" id="select6" class="selectpicker">
                                                             <option value="" selected="" hidden="">Selecione EPS</option>
                                                             <?php
-                                                            $arr = array("Sura", "Conmeva","Sanitas", "Coosalud");
+                                                            $arr = array("Sura", "Conmeva", "Sanitas", "Coosalud");
                                                             foreach ($arr as $val) {
                                                                 echo "<option value='$val'>$val</option>";
                                                             }
@@ -291,9 +291,10 @@ if (isset($_SESSION['patientid'])) {
                                                     } else {
                                                         ?>
                                                         <select name="select6" id="select6" class="selectpicker">
-                                                            <option value="" selected="" hidden="">Selecione padecimiento</option>
+                                                            <option value="" selected="" hidden="">Selecione padecimiento
+                                                            </option>
                                                             <?php
-                                                            $arr = array("Hipertensión", "Diabetes","Alergia", "Artritis","Problemas auditivos o visión");
+                                                            $arr = array("Hipertensión", "Diabetes", "Alergia", "Artritis", "Problemas auditivos o visión");
                                                             foreach ($arr as $val) {
                                                                 echo "<option value='$val'>$val</option>";
                                                             }
@@ -346,8 +347,9 @@ include("footer.php");
     var alphanumericExp = /^[0-9a-zA-Z]+$/; //Variable to validate numbers and alphabets
     var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable to validate Email ID 
 
+ 
     function validateform() {
-        if (document.frmpatapp.patiente.value == "") {
+        if (document.frmpatientapp.patiente.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -355,10 +357,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.patiente.focus();
+            document.frmpatientapp.patiente.focus();
             return false;
         }
-        else if (!document.frmpatapp.patiente.value.match(alphaspaceExp)) {
+        else if (!document.frmpatientapp.patiente.value.match(alphaspaceExp)) {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -366,10 +368,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.patiente.focus();
+            document.frmpatientapp.patiente.focus();
             return false;
         }
-        else if (document.frmpatapp.textarea.value == "") {
+        else if (document.frmpatientapp.textarea.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -377,10 +379,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.textarea.focus();
+            document.frmpatientapp.textarea.focus();
             return false;
         }
-        else if (document.frmpatapp.city.value == "") {
+        else if (document.frmpatientapp.city.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -388,10 +390,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.city.focus();
+            document.frmpatientapp.city.focus();
             return false;
         }
-        else if (!document.frmpatapp.city.value.match(alphaspaceExp)) {
+        else if (!document.frmpatientapp.city.value.match(alphaspaceExp)) {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -399,10 +401,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.city.focus();
+            document.frmpatientapp.city.focus();
             return false;
         }
-        else if (document.frmpatapp.mobileno.value == "") {
+        else if (document.frmpatientapp.mobileno.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -410,10 +412,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.mobileno.focus();
+            document.frmpatientapp.mobileno.focus();
             return false;
         }
-        else if (!document.frmpatapp.mobileno.value.match(numericExpression)) {
+        else if (!document.frmpatientapp.mobileno.value.match(numericExpression)) {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -421,10 +423,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.mobileno.focus();
+            document.frmpatientapp.mobileno.focus();
             return false;
         }
-        else if (document.frmpatapp.loginid.value == "") {
+        else if (document.frmpatientapp.loginid.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -432,10 +434,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.loginid.focus();
+            document.frmpatientapp.loginid.focus();
             return false;
         }
-        else if (!document.frmpatapp.loginid.value.match(alphanumericExp)) {
+        else if (!document.frmpatientapp.loginid.value.match(alphanumericExp)) {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -443,10 +445,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.loginid.focus();
+            document.frmpatientapp.loginid.focus();
             return false;
         }
-        else if (document.frmpatapp.password.value == "") {
+        else if (document.frmpatientapp.password.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -454,10 +456,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.password.focus();
+            document.frmpatientapp.password.focus();
             return false;
         }
-        else if (document.frmpatapp.password.value.length < 8) {
+        else if (document.frmpatientapp.password.value.length < 8) {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -465,10 +467,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.password.focus();
+            document.frmpatientapp.password.focus();
             return false;
         }
-        else if (document.frmpatapp.select6.value == "") {
+        else if (document.frmpatientapp.select6.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -476,10 +478,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.select6.focus();
+            document.frmpatientapp.select6.focus();
             return false;
         }
-        else if (document.frmpatapp.dob.value == "") {
+        else if (document.frmpatientapp.dob.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -487,10 +489,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.dob.focus();
+            document.frmpatientapp.dob.focus();
             return false;
         }
-        else if (document.frmpatapp.appointmentdate.value == "") {
+        else if (document.frmpatientapp.appointmentdate.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -498,10 +500,10 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.appointmentdate.focus();
+            document.frmpatientapp.appointmentdate.focus();
             return false;
         }
-        else if (document.frmpatapp.appointmenttime.value == "") {
+        else if (document.frmpatientapp.appointmenttime.value == "") {
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -509,7 +511,7 @@ include("footer.php");
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmpatapp.appointmenttime.focus();
+            document.frmpatientapp.appointmenttime.focus();
             return false;
         }
         else {
