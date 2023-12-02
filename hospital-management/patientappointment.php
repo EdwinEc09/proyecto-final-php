@@ -347,7 +347,7 @@ include("footer.php");
     var alphanumericExp = /^[0-9a-zA-Z]+$/; //Variable to validate numbers and alphabets
     var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable to validate Email ID 
 
- 
+
     function validateform() {
         if (document.frmpatientapp.patiente.value == "") {
             Swal.fire({
