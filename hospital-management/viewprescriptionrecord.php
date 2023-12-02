@@ -59,7 +59,7 @@ if (isset($_GET['delid'])) {
           <td>Unit</td>
           <td>Dosage</td>
           <td>Status</td>
-          <td>Acxxxtion</td>
+          <td>Action</td>
         </tr>
          <?php
 		$sql ="SELECT * FROM prescription_records";
