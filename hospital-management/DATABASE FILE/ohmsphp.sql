@@ -297,6 +297,8 @@ CREATE TABLE `patient` (
   `loginid` varchar(50) NOT NULL,
   `password` varchar(25) NOT NULL,
   `bloodgroup` varchar(20) NOT NULL,
+  `EPS` varchar(25) NOT NULL,
+  `suffering` varchar(25) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `dob` date NOT NULL,
   `status` varchar(10) NOT NULL
@@ -307,7 +309,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patientid`, `patientname`, `admissiondate`, `admissiontime`, `address`, `mobileno`, `city`, `pincode`, `loginid`, `password`, `bloodgroup`, `gender`, `dob`, `status`) VALUES
-(1, 'Johnny', '2019-06-15', '18:47:22', 'Dhanmondi', '2125798361', 'Dhaka', '1207', 'admin', '123456789', 'O+', 'MALE', '1990-01-01', 'Activo');
+(1, 'Johnny', '2019-06-15', '18:47:22', 'Dhanmondi', '2125798361', 'Dhaka', '1207', 'admin', '123456789', 'O+', 'Masculino', '1990-01-01', 'Activo');
 
 -- --------------------------------------------------------
 

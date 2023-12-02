@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     } else {
         $dt = date("Y-m-d");
         $tim = date("H:i:s");
-        $sql = "INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Activo')";
+        $sql = "INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,EPS,suffering,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select7]','$_POST[select8]','$_POST[select6]','$_POST[dob]','Activo')";
         if ($qsql = mysqli_query($con, $sql)) {
             /* echo "<script>alert('patient record inserted successfully...');</script>"; */
         } else {
@@ -262,10 +262,10 @@ if (isset($_SESSION['patientid'])) {
 
                                                     <?php
                                                     if (isset($_SESSION['patientid'])) {
-                                                        echo $rspatient['gender'];
+                                                        echo $rspatient['EPS'];
                                                     } else {
                                                         ?>
-                                                        <select name="select6" id="select6" class="selectpicker">
+                                                        <select name="select7" id="select7" class="selectpicker">
                                                             <option value="" selected="" hidden="">Selecione EPS</option>
                                                             <?php
                                                             $arr = array("Sura", "Conmeva", "Sanitas", "Coosalud");
@@ -287,10 +287,10 @@ if (isset($_SESSION['patientid'])) {
 
                                                     <?php
                                                     if (isset($_SESSION['patientid'])) {
-                                                        echo $rspatient['gender'];
+                                                        echo $rspatient['suffering'];
                                                     } else {
                                                         ?>
-                                                        <select name="select6" id="select6" class="selectpicker">
+                                                        <select name="select8" id="select8" class="selectpicker">
                                                             <option value="" selected="" hidden="">Selecione padecimiento
                                                             </option>
                                                             <?php
