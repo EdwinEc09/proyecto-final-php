@@ -265,7 +265,7 @@ if (isset($_SESSION['patientid'])) {
                                                         echo $rspatient['gender'];
                                                     } else {
                                                         ?>
-                                                        <select name="select6" id="select6" class="selectpicker">
+                                                        <select name="epsapp" id="epsapp" class="selectpicker">
                                                             <option value="" selected="" hidden="">Selecione EPS</option>
                                                             <?php
                                                             $arr = array("Sura", "Conmeva", "Sanitas", "Coosalud");
@@ -290,7 +290,7 @@ if (isset($_SESSION['patientid'])) {
                                                         echo $rspatient['gender'];
                                                     } else {
                                                         ?>
-                                                        <select name="select6" id="select6" class="selectpicker">
+                                                        <select name="padeciapp" id="padeciapp" class="selectpicker">
                                                             <option value="" selected="" hidden="">Selecione padecimiento
                                                             </option>
                                                             <?php
@@ -347,7 +347,7 @@ include("footer.php");
     var alphanumericExp = /^[0-9a-zA-Z]+$/; //Variable to validate numbers and alphabets
     var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable to validate Email ID 
 
- 
+
     function validateform() {
         if (document.frmpatientapp.patiente.value == "") {
             Swal.fire({
