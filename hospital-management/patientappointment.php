@@ -470,6 +470,30 @@ include("footer.php");
             document.frmpatientapp.password.focus();
             return false;
         }
+        else if (document.frmpatientapp.select8.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'El Padecimiento no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.select6.focus();
+            return false;
+        }
+
+        else if (document.frmpatientapp.select7.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La EPS no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.select6.focus();
+            return false;
+        }
+
         else if (document.frmpatientapp.select6.value == "") {
             Swal.fire({
                 position: 'top-center',
