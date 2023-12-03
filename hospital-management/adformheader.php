@@ -149,7 +149,7 @@ $tim = date("H:i:s");
                             <ul class="ml-menu">
                                 <li><a href="viewappointmentpending.php" style="width:250px;">Ver citas pendientes</a>
                                 </li>
-                                <li><a href="viewappointmentapproved.php" style="width:250px;">Ver citas aprovadas</a></li>
+                                <li><a href="viewappointmentapproved.php" style="width:250px;">Ver citas aprobadas</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Odontologos</span> </a>
