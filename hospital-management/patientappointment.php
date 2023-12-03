@@ -45,7 +45,14 @@ if (isset($_POST['submit'])) {
 
         $sql = "INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,specialtyid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pendiente','$_POST[specialty]','$_POST[doct]')";
         if ($qsql = mysqli_query($con, $sql)) {
-            echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
+            echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro de cita insertado exitosamente',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>";   
         } else {
             echo mysqli_error($con);
         }

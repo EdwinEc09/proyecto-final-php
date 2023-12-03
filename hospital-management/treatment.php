@@ -8,7 +8,14 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE treatment SET treatmenttype='$_POST[treatmenttype]',treatment_cost='$_POST[treatmentcost]',note='$_POST[textarea]',status='$_POST[select]' WHERE treatmentid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Registro de tratamiento actualizado exitosamente.');</script>";
+			echo "<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: 'Registro de tratamiento insertado exitosamente.'',
+					icon: 'success'
+				});
+			}, 100);
+		  </script>";
 		}
 		else
 		{
@@ -20,7 +27,14 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO treatment(treatmenttype,treatment_cost,note,status) values('$_POST[treatmenttype]','$_POST[treatmentcost]', '$_POST[textarea]','$_POST[select]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Registro de tratamiento insertado exitosamente.');</script>";
+			echo "<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: 'Registro de tratamiento actualizado exitosamente.',
+					icon: 'success'
+				});
+			}, 100);
+		  </script>";
 		}
 		else
 		{
