@@ -79,8 +79,8 @@ if (isset($_GET['editid'])) {
 							</select></td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit"
-								id="submit" value="Entregar" /></td>
+						<td colspan="2" align="center"><input class="btn btn-raised g-bg-cyan" type="submit" name="submit"
+								id="submit" value="Enviar" /></td>
 					</tr>
 				</tbody>
 			</table>

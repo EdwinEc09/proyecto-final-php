@@ -87,7 +87,7 @@ if(isset($_GET['editid']))
           <td><input class="form-control"  type="time" name="ftime" id="ftime" value="<?php echo $rsedit['start_time']; ?>"></td>
         </tr>
         <tr>
-          <td height="34">Para</td>
+          <td height="34">Hasta</td>
           <td><input  class="form-control" type="time" name="ttime" id="ttime"  value="<?php echo $rsedit['end_time']; ?>" ></td>
         </tr>
         <tr>
@@ -111,7 +111,7 @@ if(isset($_GET['editid']))
            </select></td>
         </tr>
         <tr>
-          <td height="36" colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Entregar" /></td>
+          <td height="36" colspan="2" align="center"><input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Enviar" /></td>
         </tr>
       </tbody>
     </table>

@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
                 icon: 'success'
               });
             </script>";
-            echo "<script>window.location='patientreport.php?patientid=$_POST[select4]';</script>";
+            echo "<script>window.location='patientreport.php?patientid=$_SESSION[patientid]';</script>";
         } else {
             echo mysqli_error($con);
         }
@@ -156,7 +156,7 @@ if (isset($_SESSION['patientid'])) {
                             <div class="col-sm-12">
 
                                 <input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit"
-                                    value="Entregar" />
+                                    value="Enviar" />
 
                             </div>
                         </div>

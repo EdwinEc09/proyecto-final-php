@@ -98,14 +98,14 @@ $tim = date("H:i:s");
                             <ul class="ml-menu">
                                 <li><a href="doctor.php">Añadir Odontologo</a>
                                 </li>
-                                <li><a href="viewdoctor.php">Ver Odontologo</a></li>
+                                <li><a href="viewdoctor.php">Ver Odontologos</a></li>
 
                             </ul>
                         </li>
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Pacientes</span> </a>
                             <ul class="ml-menu">
                                 <li><a href="patient.php">Añadir paciente</a></li>
-                                <li><a href="viewpatient.php">Ver el historial del paciente</a></li>
+                                <li><a href="viewpatient.php">Ver el historial de los pacientes</a></li>
                             </ul>
                         </li>
 
@@ -166,7 +166,7 @@ $tim = date("H:i:s");
                         </li>
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Pacientes</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="viewpatient.php">Ver Paciente</a>
+                                <li><a href="viewpatient.php">Ver Pacientes</a>
                                 </li>
                             </ul>
                         </li>
@@ -212,12 +212,12 @@ $tim = date("H:i:s");
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Cita</span> </a>
                             <ul class="ml-menu">
                                 <li><a href="appointmentpacient.php">Agregar cita</a></li>
-                                <li><a href="viewappointment.php">Ver cita</a></li>
+                                <li><a href="viewappointment.php">Ver citas</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Prescripción</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="patviewprescription.php">Ver registros de prescripción</a>
+                                <li><a href="patviewprescription.php">Ver prescripción de recetas</a>
                                 </li>
                             </ul>
                         </li>

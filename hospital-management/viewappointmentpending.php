@@ -43,12 +43,12 @@ if(isset($_GET['approveid'])) {
     $sql ="UPDATE patient SET status='Activo' WHERE patientid='$_GET[patientid]'";
     $qsql=mysqli_query($con,$sql);
     
-    $sql ="UPDATE appointment SET status='Approved' WHERE appointmentid='$_GET[approveid]'";
+    $sql ="UPDATE appointment SET status='Aprobado' WHERE appointmentid='$_GET[approveid]'";
     $qsql=mysqli_query($con,$sql);
     if(mysqli_affected_rows($con) == 1) {
         echo "<script>
         Swal.fire({
-            title: 'Approved!',
+            title: 'Aprobado!',
             text: 'Appointment record approved successfully.',
             icon: 'success'
         }).then(function() {

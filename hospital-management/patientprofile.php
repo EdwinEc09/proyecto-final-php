@@ -224,7 +224,7 @@ if (isset($_SESSION['patientid'])) {
 
 							<div class="col-sm-12">
 								<input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit"
-									value="Actualizar" />
+									value="Enviar" />
 							</div>
 						</div>
 					</div>

@@ -46,7 +46,7 @@ if(isset($_POST['submit']))
                         </div>
                     </div>
 
-                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Entregar" />
+                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Enviar" />
 
 
                 </form>
