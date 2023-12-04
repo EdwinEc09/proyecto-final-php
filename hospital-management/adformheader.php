@@ -203,7 +203,7 @@ $tim = date("H:i:s");
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Citas</span> </a>
                             <ul class="ml-menu">
                                 <li><a href="appointmentpacient.php">Agregar cita</a></li>
-                                <li><a href="appointment.php">Ver citas</a></li>
+                                <li><a href="viewappointment.php">Ver citas</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Prescripción</span> </a>

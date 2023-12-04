@@ -9,17 +9,25 @@ if(isset($_POST['submit']))
 	$qsql= mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<div class='alert alert-success'>
-                            La contraseña se ha actualizado correctamente
-                        </div>
-                        <script>alert('..');</script>";
+		echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'La contraseña se ha actualizado exitosamente',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>"; 
 	}
 	else
 	{
-		echo "<div class='alert alert-danger'>
-                            Actualización fallida
-                        </div>
-                       ";		
+		echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Algo malo ha sucedido',
+                    icon: 'warning'
+                });
+            }, 100);
+          </script>"; 	
 	}
 }
 ?>
@@ -53,7 +61,7 @@ if(isset($_POST['submit']))
                         </div>
                     </div>
 
-                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Entregar" />
+                    <input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Enviar" />
 
 
                 </form>

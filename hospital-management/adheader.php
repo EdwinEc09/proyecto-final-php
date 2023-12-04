@@ -12,7 +12,7 @@ $tim = date("H:i:s");
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>ADCO</title>
-    <link rel="icon" href="images/den-icon.png" type="image/x-icon">
+    <link rel="icon" href="images/adcologo.png" type="image/x-icon">
     <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     <link href="assets/plugins/morrisjs/morris.css" rel="stylesheet" />
@@ -105,7 +105,7 @@ $tim = date("H:i:s");
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Pacientes</span> </a>
                             <ul class="ml-menu">
                                 <li><a href="patient.php">Añadir paciente</a></li>
-                                <li><a href="viewpatient.php">Ver el historial del paciente</a></li>
+                                <li><a href="viewpatient.php">Ver el historial de los pacientes</a></li>
                             </ul>
                         </li>
 
@@ -217,7 +217,7 @@ $tim = date("H:i:s");
                         </li>
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Prescripción</span> </a>
                             <ul class="ml-menu">
-                                <li><a href="patviewprescription.php">Ver registros de prescripción</a>
+                                <li><a href="patviewprescription.php">Ver prescripción de recetas</a>
                                 </li>
                             </ul>
                         </li>

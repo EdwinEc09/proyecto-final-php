@@ -2,27 +2,20 @@
 
 include("header.php");
 include("dbconnection.php");
-if(isset($_POST['submit']))
-{
-	if(isset($_SESSION['patientid']))
-	{
-		$lastinsid =$_SESSION['patientid'];
-	}
-	else
-	{
-		$dt = date("Y-m-d");
-		$tim = date("H:i:s");
-		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select6]','$_POST[dob]','Activo')";
-		if($qsql = mysqli_query($con,$sql))
-		{
-			/* echo "<script>alert('patient record inserted successfully...');</script>"; */
-		}
-		else
-		{
-			echo mysqli_error($con);
-		}
-		$lastinsid = mysqli_insert_id($con);
-	}
+if (isset($_POST['submit'])) {
+    if (isset($_SESSION['patientid'])) {
+        $lastinsid = $_SESSION['patientid'];
+    } else {
+        $dt = date("Y-m-d");
+        $tim = date("H:i:s");
+        $sql = "INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,EPS,suffering,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[select7]','$_POST[select8]','$_POST[select6]','$_POST[dob]','Activo')";
+        if ($qsql = mysqli_query($con, $sql)) {
+            /* echo "<script>alert('patient record inserted successfully...');</script>"; */
+        } else {
+            echo mysqli_error($con);
+        }
+        $lastinsid = mysqli_insert_id($con);
+    }
     $sqlappointment = "SELECT * FROM appointment WHERE appointmentdate='$_POST[appointmentdate]' AND appointmenttime='$_POST[appointmenttime]' AND doctorid='$_POST[doct]' AND status='Aprobado'";
     $qsqlappointment = mysqli_query($con, $sqlappointment);
     if (mysqli_num_rows($qsqlappointment) >= 1) {
@@ -50,14 +43,18 @@ if(isset($_POST['submit']))
         //     }
         // }
 
-        $sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,specialtyid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pendiente','$_POST[specialty]','$_POST[doct]')";
-        if($qsql = mysqli_query($con,$sql))
-        {
-        	echo "<script>alert('Registro de cita insertado exitosamente...');</script>";
-        }
-        else
-        {
-        	echo mysqli_error($con);
+        $sql = "INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,specialtyid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pendiente','$_POST[specialty]','$_POST[doct]')";
+        if ($qsql = mysqli_query($con, $sql)) {
+            echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro de cita insertado exitosamente',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>";   
+        } else {
+            echo mysqli_error($con);
         }
     }
 }
@@ -94,7 +91,7 @@ if (isset($_SESSION['patientid'])) {
                 }
             }
         } else {
-        ?>
+            ?>
             <!-- Content -->
             <div id="content">
 
@@ -114,51 +111,61 @@ if (isset($_SESSION['patientid'])) {
                                         <h4>Haga una cita</h4>
 
                                     </div>
-                                    <form method="post" action="" name="frmpatapp" onSubmit="return validateform()" class="appointment-form">
+                                    <form method="post" action="" name="frmpatientapp" onSubmit="return validateform()"
+                                        class="appointment-form">
                                         <ul class="row">
                                             <li class="col-sm-6">
                                                 <label>
-
-
-                                                    <input placeholder="Nombre del paciente" type="text" class="form-control" name="patiente" id="patiente" value="<?php echo $rspatient['patientname'];  ?>" <?php echo $readonly; ?>>
+                                                    <input placeholder="Nombre del paciente" type="text"
+                                                        class="form-control" name="patiente" id="patiente"
+                                                        value="<?php echo $rspatient['patientname']; ?>" <?php echo $readonly; ?>>
                                                     <i class="icon-user"></i>
                                                 </label>
-
                                             </li>
 
                                             <li class="col-sm-6">
-                                                <label><input placeholder="Dirección" type="text" class="form-control" name="textarea" id="textarea" value="<?php echo $rspatient['address'];  ?>" <?php echo $readonly; ?>><i class="icon-compass"></i>
+                                                <label><input placeholder="Dirección" type="text" class="form-control"
+                                                        name="textarea" id="textarea"
+                                                        value="<?php echo $rspatient['address']; ?>" <?php echo $readonly; ?>><i class="icon-compass"></i>
                                                 </label>
 
                                             </li>
                                             <li class="col-sm-6">
-                                                <label><input placeholder="Ciudad" type="text" class="form-control" name="city" id="city" value="<?php echo $rspatient['city'];  ?>" <?php echo $readonly; ?>><i class="icon-pin"></i>
+                                                <label><input placeholder="Ciudad" type="text" class="form-control"
+                                                        name="city" id="city" value="<?php echo $rspatient['city']; ?>"
+                                                        <?php echo $readonly; ?>><i class="icon-pin"></i>
                                                 </label>
 
                                             </li>
                                             <li class="col-sm-6">
                                                 <label>
-                                                    <input placeholder="Numero de contacto" type="text" class="form-control" name="mobileno" id="mobileno" value="<?php echo $rspatient['mobileno'];  ?>" <?php echo $readonly; ?>><i class="icon-phone"></i>
+                                                    <input placeholder="Numero de contacto" type="text" class="form-control"
+                                                        name="mobileno" id="mobileno"
+                                                        value="<?php echo $rspatient['mobileno']; ?>" <?php echo $readonly; ?>><i class="icon-phone"></i>
                                                 </label>
 
                                             </li>
                                             <?php
                                             if (!isset($_SESSION['patientid'])) {
-                                            ?>
+                                                ?>
                                                 <li class="col-sm-6">
                                                     <label>
-                                                        <input placeholder="Ingresar usuario" type="text" class="form-control" name="loginid" id="loginid" value="<?php echo $rspatient['loginid'];  ?>" <?php echo $readonly; ?>><i class="icon-login"></i>
+                                                        <input placeholder="Ingresar usuario" type="text" class="form-control"
+                                                            name="loginid" id="loginid"
+                                                            value="<?php echo $rspatient['loginid']; ?>" <?php echo $readonly; ?>><i class="icon-login"></i>
                                                     </label>
 
                                                 </li>
                                                 <li class="col-sm-6">
                                                     <label>
 
-                                                        <input placeholder="Contraseña" type="password" class="form-control" name="password" id="password" value="<?php echo $rspatient['password'];  ?>" <?php echo $readonly; ?>><i class="icon-lock"></i>
+                                                        <input placeholder="Contraseña" type="password" class="form-control"
+                                                            name="password" id="password"
+                                                            value="<?php echo $rspatient['password']; ?>" <?php echo $readonly; ?>><i class="icon-lock"></i>
                                                     </label>
 
                                                 </li>
-                                            <?php
+                                                <?php
                                             }
                                             ?>
                                             <li class="col-sm-6">
@@ -168,7 +175,7 @@ if (isset($_SESSION['patientid'])) {
                                                     if (isset($_SESSION['patientid'])) {
                                                         echo $rspatient['gender'];
                                                     } else {
-                                                    ?>
+                                                        ?>
                                                         <select name="select6" id="select6" class="selectpicker">
                                                             <option value="" selected="" hidden="">Selecione genero</option>
                                                             <?php
@@ -178,28 +185,39 @@ if (isset($_SESSION['patientid'])) {
                                                             }
                                                             ?>
                                                         </select>
-                                                    <?php
+                                                        <?php
                                                     }
                                                     ?>
                                                     <i class="ion-transgender"></i>
                                                 </label>
 
                                             </li>
+
                                             <li class="col-sm-6">
                                                 <label>
-                                                    <input placeholder="Fecha de nacimiento" type="text" class="form-control" name="dob" id="dob" onfocus="(this.type='date')" value="<?php echo $rspatient['dob']; ?>" <?php echo $readonly; ?>><i class="ion-calendar"></i>
+                                                    <input placeholder="Fecha de nacimiento" type="text"
+                                                        class="form-control" name="dob" id="dob"
+                                                        onfocus="(this.type='date')"
+                                                        value="<?php echo $rspatient['dob']; ?>" <?php echo $readonly; ?>><i
+                                                        class="ion-calendar"></i>
                                                 </label>
 
                                             </li>
                                             <li class="col-sm-6">
                                                 <label>
-                                                    <input placeholder="Dia de la cita" type="text" class="form-control" min="<?php echo date("Y-m-d"); ?>" name="appointmentdate" onfocus="(this.type='date')" id="appointmentdate"><i class="ion-calendar"></i>
+                                                    <input placeholder="Dia de la cita" type="text" class="form-control"
+                                                        min="<?php echo date("Y-m-d"); ?>" name="appointmentdate"
+                                                        onfocus="(this.type='date')" id="appointmentdate"><i
+                                                        class="ion-calendar"></i>
                                                 </label>
 
                                             </li>
                                             <li class="col-sm-6">
                                                 <label>
-                                                    <input placeholder="Hora de la cita" type="text" onfocus="(this.type='time')" class="form-control" name="appointmenttime" id="appointmenttime"><i class="ion-ios-clock"></i>
+                                                    <input placeholder="Hora de la cita" type="text"
+                                                        onfocus="(this.type='time')" class="form-control"
+                                                        name="appointmenttime" id="appointmenttime"><i
+                                                        class="ion-ios-clock"></i>
                                                 </label>
 
                                             </li>
@@ -220,6 +238,7 @@ if (isset($_SESSION['patientid'])) {
                                                 </label>
 
                                             </li>
+
                                             <li class="col-sm-6">
                                                 <label>
                                                     <select name="doct" class="selectpicker" id="specialty">
@@ -243,13 +262,68 @@ if (isset($_SESSION['patientid'])) {
                                                 </label>
 
                                             </li>
+
+                                            <!-- Seleccionar de eps hace falta la función -->
+                                            <li class="col-sm-6">
+                                                <label>
+
+                                                    <?php
+                                                    if (isset($_SESSION['patientid'])) {
+                                                        echo $rspatient['EPS'];
+                                                    } else {
+                                                        ?>
+                                                        <select name="select7" id="select7" class="selectpicker">
+                                                            <option value="" selected="" hidden="">Selecione EPS</option>
+                                                            <?php
+                                                            $arr = array("Sura", "Conmeva", "Sanitas", "Coosalud");
+                                                            foreach ($arr as $val) {
+                                                                echo "<option value='$val'>$val</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                    <i class="icon-browser"></i>
+                                                </label>
+
+                                            </li>
+
+                                            <li class="col-sm-6">
+                                                <label>
+
+                                                    <?php
+                                                    if (isset($_SESSION['patientid'])) {
+                                                        echo $rspatient['suffering'];
+                                                    } else {
+                                                        ?>
+                                                        <select name="select8" id="select8" class="selectpicker">
+                                                            <option value="" selected="" hidden="">Selecione padecimiento
+                                                            </option>
+                                                            <?php
+                                                            $arr = array("Hipertensión", "Diabetes", "Alergia", "Artritis", "Problemas auditivos o visión");
+                                                            foreach ($arr as $val) {
+                                                                echo "<option value='$val'>$val</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                    <i class="icon-puzzle"></i>
+                                                </label>
+
+                                            </li>
+
                                             <li class="col-sm-12">
                                                 <label>
-                                                    <textarea class="form-control" name="app_reason" placeholder="Motivo de la cita"></textarea>
+                                                    <textarea class="form-control" name="app_reason"
+                                                        placeholder="Motivo de la cita"></textarea>
                                                 </label>
                                             </li>
                                             <li class="col-sm-12">
-                                                <button type="submit" class="btn" name="submit" id="submit">Hacer cita</button>
+                                                <button type="submit" class="btn" name="submit" id="submit">Hacer
+                                                    cita</button>
                                             </li>
                                     </form>
                                 </div>
@@ -258,11 +332,11 @@ if (isset($_SESSION['patientid'])) {
                     </div>
 
 
-                <?php
-            }
-                ?>
+                    <?php
+        }
+        ?>
 
-            </div>
+        </div>
     </div>
 </div>
 </section>
@@ -280,175 +354,200 @@ include("footer.php");
     var alphanumericExp = /^[0-9a-zA-Z]+$/; //Variable to validate numbers and alphabets
     var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable to validate Email ID 
 
+
     function validateform() {
-        if (document.frmpatapp.patiente.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'El nombre del paciente no debe estar vacío.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.patiente.focus();
-    return false;
-}
-else if (!document.frmpatapp.patiente.value.match(alphaspaceExp)) {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'Nombre del paciente no válido.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.patiente.focus();
-    return false;
-}
-else if (document.frmpatapp.textarea.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'La dirección no debe estar vacía.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.textarea.focus();
-    return false;
-}
-else if (document.frmpatapp.city.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'La ciudad no debería estar vacía.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.city.focus();
-    return false;
-}
-else if (!document.frmpatapp.city.value.match(alphaspaceExp)) {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'Nombre de la ciudad no es válido.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.city.focus();
-    return false;
-}
-else if (document.frmpatapp.mobileno.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'El número de móvil no debe estar vacío.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.mobileno.focus();
-    return false;
-}
-else if (!document.frmpatapp.mobileno.value.match(numericExpression)) {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'Número de móvil no válido.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.mobileno.focus();
-    return false;
-}
-else if (document.frmpatapp.loginid.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'El ID de inicio de sesión no debe estar vacío.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.loginid.focus();
-    return false;
-}
-else if (!document.frmpatapp.loginid.value.match(alphanumericExp)) {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'ID de inicio de sesión no válido.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.loginid.focus();
-    return false;
-}
-else if (document.frmpatapp.password.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'La contraseña no debe estar vacía.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.password.focus();
-    return false;
-}
-else if (document.frmpatapp.password.value.length < 8) {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.password.focus();
-    return false;
-}
-else if (document.frmpatapp.select6.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'El género no debe estar vacío.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.select6.focus();
-    return false;
-}
-else if (document.frmpatapp.dob.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'La fecha de nacimiento no debe estar vacía.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.dob.focus();
-    return false;
-}
-else if (document.frmpatapp.appointmentdate.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'La fecha de la cita no debe estar vacía.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.appointmentdate.focus();
-    return false;
-}
-else if (document.frmpatapp.appointmenttime.value == "") {
-    Swal.fire({
-        position: 'top-center',
-        icon: 'error',
-        title: 'El tiempo de la cita no debe estar vacío.',
-        showConfirmButton: false,
-        timer: 2000,
-    });
-    document.frmpatapp.appointmenttime.focus();
-    return false;
-}
-else {
-    return true;
-}
+        if (document.frmpatientapp.patiente.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'El nombre del paciente no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.patiente.focus();
+            return false;
+        }
+        else if (!document.frmpatientapp.patiente.value.match(alphaspaceExp)) {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'Nombre del paciente no válido.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.patiente.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.textarea.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La dirección no debe estar vacía.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.textarea.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.city.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La ciudad no debería estar vacía.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.city.focus();
+            return false;
+        }
+        else if (!document.frmpatientapp.city.value.match(alphaspaceExp)) {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'Nombre de la ciudad no es válido.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.city.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.mobileno.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'El número de móvil no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.mobileno.focus();
+            return false;
+        }
+        else if (!document.frmpatientapp.mobileno.value.match(numericExpression)) {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'Número de móvil no válido.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.mobileno.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.loginid.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'El ID de inicio de sesión no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.loginid.focus();
+            return false;
+        }
+        else if (!document.frmpatientapp.loginid.value.match(alphanumericExp)) {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'ID de inicio de sesión no válido.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.loginid.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.password.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La contraseña no debe estar vacía.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.password.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.password.value.length < 8) {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La longitud de la contraseña debe ser superior a 8 caracteres.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.password.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.select8.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'El Padecimiento no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.select6.focus();
+            return false;
+        }
+
+        else if (document.frmpatientapp.select7.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La EPS no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.select6.focus();
+            return false;
+        }
+
+        else if (document.frmpatientapp.select6.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'El género no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.select6.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.dob.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La fecha de nacimiento no debe estar vacía.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.dob.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.appointmentdate.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'La fecha de la cita no debe estar vacía.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.appointmentdate.focus();
+            return false;
+        }
+        else if (document.frmpatientapp.appointmenttime.value == "") {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'El tiempo de la cita no debe estar vacío.',
+                showConfirmButton: false,
+                timer: 2000,
+            });
+            document.frmpatientapp.appointmenttime.focus();
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     function loaddoctor(deptid) {
@@ -459,7 +558,7 @@ else {
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("divdoc").innerHTML = this.responseText;
             }

@@ -6,13 +6,13 @@ if (isset($_POST['submit'])) {
 		$sql = "UPDATE specialty SET specialtyname='$_POST[specialtyname]',description='$_POST[textarea]',status='$_POST[select]' WHERE specialtyid='$_GET[editid]'";
 		if ($qsql = mysqli_query($con, $sql)) {
 			echo "<script>
-			  
-            Swal.fire({
-                title: '¡Exito!',
-                text: '¡especialidad actualizado exitosamente!',
-                icon: 'success'
-              });
-			</script>";
+			setTimeout(function() {
+				Swal.fire({
+					title: 'Especialidad actualizada exitosamente!',
+					icon: 'success'
+				});
+			}, 100);
+		  </script>";
 		} else {
 			echo mysqli_error($con);
 		}
@@ -20,12 +20,13 @@ if (isset($_POST['submit'])) {
 		$sql = "INSERT INTO specialty(specialtyname,description,status) values('$_POST[specialtyname]','$_POST[textarea]','$_POST[select]')";
 		if ($qsql = mysqli_query($con, $sql)) {
 			echo "<script>
-		Swal.fire({
-			title: '¡Exito!',
-			text: '¡especialidad registrada exitosamente!',
-			icon: 'success'
-		  });
-		</script>";
+			setTimeout(function() {
+				Swal.fire({
+					title: 'Especialidad actualizado exitosamente!',
+					icon: 'success'
+				});
+			}, 100);
+		  </script>";
 		} else {
 			echo mysqli_error($con);
 		}
@@ -78,8 +79,8 @@ if (isset($_GET['editid'])) {
 							</select></td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit"
-								id="submit" value="Entregar" /></td>
+						<td colspan="2" align="center"><input class="btn btn-raised g-bg-cyan" type="submit" name="submit"
+								id="submit" value="Enviar" /></td>
 					</tr>
 				</tbody>
 			</table>

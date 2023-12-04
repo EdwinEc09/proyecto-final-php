@@ -7,7 +7,9 @@
         <h6>SOBRE NOSOTROS</h6>
         <div class="about-foot">
           <p>
-          ¡Bienvenido a nuestro mundo de códigos y creatividad! Somos un apasionado equipo de programadores que, durante el último año, ha estado dedicado a la creación de soluciones innovadoras y a la resolución de desafíos tecnológicos.
+            ¡Bienvenido a nuestro mundo de códigos y creatividad! Somos un apasionado equipo de programadores que,
+            durante el último año, ha estado dedicado a la creación de soluciones innovadoras y a la resolución de
+            desafíos tecnológicos.
           </p>
         </div>
       </div>
@@ -21,7 +23,7 @@
           <p>Atlantico, Ciudad de Barranquilla</p>
           <ul>
             <li class="mobile">
-              <p>324-662-5511</p>
+              <p>324-562-5511</p>
               <p>304-281-8397</p>
               <p>300-331-9020</p>
               <p>301-564-4968</p>
@@ -64,6 +66,7 @@
 <script src="js/vendors/jquery.sticky.js"></script>
 <script src="js/vendors/owl.carousel.min.js"></script>
 <script src="js/vendors/jquery.magnific-popup.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
 <script type="text/javascript" src="rs-plugin/js/jquery.tp.t.min.js"></script>

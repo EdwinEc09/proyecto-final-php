@@ -35,7 +35,7 @@ if(!isset($_SESSION['doctorid']))
           <div class="content">
             <div class="text">Nueva cita</div>
             <div class="number"><?php
-            $sql = "SELECT * FROM appointment WHERE `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' ".date("Y-m-d")."'";
+            $sql = "SELECT * FROM appointment WHERE `doctorid`= '$_SESSION[doctorid]'";
             $qsql = mysqli_query($con,$sql);
             echo mysqli_num_rows($qsql);
             ?></div>
@@ -62,7 +62,7 @@ if(!isset($_SESSION['doctorid']))
             <div class="text">La cita de hoy</div>
             <div class="number">
               <?php
-              $sql = "SELECT * FROM appointment WHERE status='Approved' AND `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' ".date("Y-m-d")."'" ;
+              $sql = "SELECT * FROM appointment WHERE status='Aprobado' AND `doctorid`= '$_SESSION[doctorid]' AND appointmentdate=' ".date("Y-m-d")."'" ;
             $qsql = mysqli_query($con,$sql);
             echo mysqli_num_rows($qsql);
             ?>

@@ -15,7 +15,7 @@ if(isset($_GET['delid']))
 
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center">Ver registro de recetas</h2>
+    <h2 class="text-center">Ver registro de prescripcion</h2>
 
   </div>
 

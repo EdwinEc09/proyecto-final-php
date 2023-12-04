@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
                 icon: 'success'
               });
             </script>";
-            echo "<script>window.location='patientreport.php?patientid=$_POST[select4]';</script>";
+            echo "<script>window.location='patientreport.php?patientid=$_SESSION[patientid]';</script>";
         } else {
             echo mysqli_error($con);
         }
@@ -156,7 +156,7 @@ if (isset($_SESSION['patientid'])) {
                             <div class="col-sm-12">
 
                                 <input type="submit" class="btn btn-raised g-bg-cyan" name="submit" id="submit"
-                                    value="Entregar" />
+                                    value="Enviar" />
 
                             </div>
                         </div>
@@ -170,7 +170,7 @@ if (isset($_SESSION['patientid'])) {
 <?php include 'adfooter.php'; ?>
 <script type="application/javascript">
     function validateform() {
-        if (document.frmappnt.select4.value == "") {
+        if (document.frmpatientapp.select4.value == "") {
             // alert("El nombre del paciente no debe estar vacío.");
             Swal.fire({
                 position: 'top-center',
@@ -179,10 +179,10 @@ if (isset($_SESSION['patientid'])) {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmappnt.select4.focus();
+            document.frmpatientapp.select4.focus();
             return false;
 
-        } else if (document.frmappnt.select5.value == "") {
+        } else if (document.frmpatientapp.select5.value == "") {
             // alert("El tipo de habitación no debe estar vacía.");
             Swal.fire({
                 position: 'top-center',
@@ -191,7 +191,7 @@ if (isset($_SESSION['patientid'])) {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmappnt.select5.focus();
+            document.frmpatientapp.select5.focus();
             return false;
         } else if (document.frmappnt.appointmentdate.value == "") {
             // alert("La fecha de la cita no debe estar vacía.");
