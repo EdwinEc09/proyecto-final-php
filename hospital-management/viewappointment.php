@@ -73,7 +73,7 @@ if (isset($_GET['approveid'])) {
         <tr>
           <th>Detalle del paciente</th>
           <th>Fecha y hora</th>
-          <th>especialidad</th>
+          <th>Especialidad</th>
           <th>Odontologo</th>
           <th>Razón</th>
           <th>Estado</th>

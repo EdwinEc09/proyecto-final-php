@@ -4,7 +4,14 @@ include("dbconnection.php");
 if (isset($_POST['submit'])) {
 	$sql = "UPDATE patient SET patientname='$_POST[patientname]',admissiondate='$_POST[admissiondate]',admissiontime='$_POST[admissiontme]',address='$_POST[address]',mobileno='$_POST[mobilenumber]',city='$_POST[city]',pincode='$_POST[pincode]',loginid='$_POST[loginid]',bloodgroup='$_POST[select2]',EPS='$_POST[select3]',suffering='$_POST[select4]',gender='$_POST[select5]',dob='$_POST[dateofbirth]' WHERE patientid='$_SESSION[patientid]'";
 	if ($qsql = mysqli_query($con, $sql)) {
-		echo "<script>alert('registro del paciente actualizado exitosamente...');</script>";
+		echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro del paciente actualizado exitosamente...',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>"; 
 	} else {
 		echo mysqli_error($con);
 	}

@@ -75,7 +75,7 @@ if(isset($_GET['approveid'])) {
 
 					<th>Detalles del paciente</th>
 					<th>Fecha y hora</th>
-					<th>especialidad</th>
+					<th>Especialidad</th>
 					<th>Odontologo</th>
 					<th>Motivo de la cita</th>
 					<th>Estado</th>

@@ -29,12 +29,13 @@ if (isset($_POST['submit'])) {
 		$sql = "INSERT INTO appointment(appointmenttype,patientid,roomid,specialtyid,appointmentdate,appointmenttime,doctorid,status) values('$_POST[select2]','$_POST[select4]','$_POST[select3]','$_POST[select5]','$_POST[appointmentdate]','$_POST[time]','$_POST[select6]','$_POST[select]')";
 		if ($qsql = mysqli_query($con, $sql)) {
 			echo "<script>
-				Swal.fire({
-					title: '¡Exito!',
-					text: '¡Cita registrada exitosamente!',
-					icon: 'success'
-				  });
-				</script>";
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Cita de cita insertado exitosamente',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>"; 
 		} else {
 			echo mysqli_error($con);
 		}
@@ -80,7 +81,7 @@ if (isset($_GET['editid'])) {
 			</tr>
 
 			<tr>
-				<td>especialidad</td>
+				<td>Especialidad</td>
 				<td><select name="select5" id="select5" class="form-control show-tick">
 						<option value="">Seleccionar</option>
 						<?php
@@ -178,7 +179,7 @@ include("adfooter.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'especialidad no debe ir vacio.',
+                title: 'Especialidad no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -190,7 +191,7 @@ include("adfooter.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'fecha no debe ir vacio',
+                title: 'Fecha no debe ir vacio',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -202,7 +203,7 @@ include("adfooter.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'hora no debe ir vacio.',
+                title: 'Hora no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -214,7 +215,7 @@ include("adfooter.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'nombre de Odontologo no debe ir vacio',
+                title: 'Nombre de Odontologo no debe ir vacio',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -226,7 +227,7 @@ include("adfooter.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'estado no debe ir vacio.',
+                title: 'Estado no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
