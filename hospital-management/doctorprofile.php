@@ -9,7 +9,14 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE doctor SET doctorname='$_POST[doctorname]',mobileno='$_POST[mobilenumber]',specialtyid='$_POST[select3]',loginid='$_POST[loginid]',education='$_POST[education]',experience='$_POST[experience]',consultancy_charge='$_POST[consultancy_charge]' WHERE doctorid='$_SESSION[doctorid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Odontologo profile updated successfully...');</script>";
+            echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Perfil de Odontologo actualizado exitosamente...',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>"; 
 		}
 		else
 		{
@@ -21,7 +28,14 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO doctor(doctorname,mobileno,specialtyid,loginid,password,status,education,experience) values('$_POST[doctorname]','$_POST[mobilenumber]','$_POST[select3]','$_POST[loginid]','$_POST[password]','$_POST[select]','$_POST[education]','$_POST[experience]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Odontologo record inserted successfully...');</script>";
+            echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro del paciente actualizado exitosamente...',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>"; 
 		}
 		else
 		{
