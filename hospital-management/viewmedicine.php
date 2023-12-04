@@ -43,7 +43,7 @@ if (isset($_GET['delid'])) {
 
 <div class="container-fluid">
   <div class="block-header">
-    <h2 class="text-center">View Medicine List</h2>
+    <h2 class="text-center">Ver lista de medicamentos</h2>
 
   </div>
 </div>
@@ -74,8 +74,8 @@ if (isset($_GET['delid'])) {
               <td>&nbsp;$rs[description]</td>
               <td>&nbsp;$rs[status]</td>
               <td>&nbsp;
-              <a href='medicine.php?editid=$rs[medicineid]' class='btn btn-raised bg-green'>Editar</a> 
-              <a href='viewmedicine.php?delid=$rs[medicineid]' class='btn btn-raised bg-blush'>Eliminar</a></td>
+              <a href='medicine.php?editid=$rs[medicineid]'class='btn btn-raised g-bg-cyan'>Editar</a>
+              <a href='viewmedicine.php?delid=$rs[medicineid]' class='btn btn-raised g-bg-blush2'>Eliminar</a></td>
               </tr>";
             }
             ?>

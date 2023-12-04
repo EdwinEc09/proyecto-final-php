@@ -82,7 +82,7 @@ if (isset($_SESSION['patientid'])) {
 						<div class="row clearfix">
 							<div class="col-sm-6 col-xs-12">
 								<div class="form-group">
-									<label for="">telefono</label>
+									<label for="">Telefono</label>
 									<div class="form-line">
 										<input class="form-control" type="text" name="mobilenumber" id="mobilenumber"
 											value="<?php echo $rsedit['mobileno']; ?>" />

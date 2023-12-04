@@ -9,13 +9,13 @@ if(isset($_POST['submit']))
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>
-			setTimeout(function() {
-				Swal.fire({
-					title: 'Registro de tratamiento insertado exitosamente.'',
-					icon: 'success'
-				});
-			}, 100);
-		  </script>";
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro de tratamiento actualizado exitosamente',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>";
 		}
 		else
 		{
@@ -28,13 +28,13 @@ if(isset($_POST['submit']))
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>
-			setTimeout(function() {
-				Swal.fire({
-					title: 'Registro de tratamiento actualizado exitosamente.',
-					icon: 'success'
-				});
-			}, 100);
-		  </script>";
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro de tratamiento insertado exitosamente',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>";
 		}
 		else
 		{

@@ -37,7 +37,7 @@ if(file_exists("treatmentfiles/$rs[uploads]"))
 {
 	if($rs['uploads'] != "")
 	{
-		echo "<br><a href='treatmentfiles/$rs[uploads]'>Download</a>";
+		echo "<br><a href='treatmentfiles/$rs[uploads]'>Descargar</a>";
 	}
 }
 					echo "</td>";

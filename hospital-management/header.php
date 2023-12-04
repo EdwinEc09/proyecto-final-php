@@ -94,8 +94,8 @@ $tim = date("H:i:s");
             <li><a href="contact.php">CONTACTO</a></li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCESO</a>
               <ul class="dropdown-menu multi-level" style="display: none;">
-                <li><a href="adminlogin.php">Administracion</a></li>
-                <li><a href="doctorlogin.php">Odontologo</a></li>
+                <li><a href="adminlogin.php">Administración</a></li>
+                <li><a href="doctorlogin.php">Odontólogo</a></li>
                 <li><a href="patientlogin.php">Paciente</a></li>
               </ul>
             </li>           

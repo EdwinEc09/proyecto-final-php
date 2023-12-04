@@ -8,7 +8,14 @@ if(isset($_POST['submit']))
 		$sql ="UPDATE medicine SET medicinename='$_POST[medicinename]',medicinecost='$_POST[medicinecost]',description='$_POST[description]',status='$_POST[status]' WHERE medicineid='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Registro de medicamentos actualizado exitosamente.');</script>";
+			echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro de medicamentos actualizado exitosamente',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>";
 		}
 		else
 		{
@@ -20,7 +27,14 @@ if(isset($_POST['submit']))
 		$sql ="INSERT INTO medicine(medicinename,medicinecost,description,status) values('$_POST[medicinename]','$_POST[medicinecost]','$_POST[description]','$_POST[status]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('Registro de medicamentos insertado exitosamente.');</script>";
+			echo "<script>
+            setTimeout(function() {
+                Swal.fire({
+                    title: 'Registro de medicamentos insertado exitosamente.',
+                    icon: 'success'
+                });
+            }, 100);
+          </script>";
 		}
 		else
 		{
@@ -97,7 +111,7 @@ if(isset($_GET['editid']))
 include("adfooter.php");
 ?>
 <script type="application/javascript">
-/*
+
 var alphaExp = /^[a-zA-Z]+$/; //Variable to validate only alphabets
 var alphaspaceExp = /^[a-zA-Z\s]+$/; //Variable to validate only alphabets and space
 var numericExpression = /^[0-9]+$/; //Variable to validate only numbers
@@ -106,22 +120,34 @@ var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable t
 
 function validateform()
 {
-	if(document.frmmedicine.specialtyname.value == "")
+	if(document.frmmedicine.medicinename.value == "")
 	{
-		alert("specialty name should not be empty..");
-		document.frmdept.specialtyname.focus();
+		Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Tipo de medicina no válido.',
+    });
+		document.frmmedicine.medicinename.focus();
 		return false;
 	}
-	else if(!document.frmmedicine.specialtyname.value.match(alphaExp))
+	else if(!document.frmmedicine.medicinecost.value.match(alphaExp))
 	{
-		alert("specialty name not valid..");
-		document.frmdept.specialtyname.focus();
+		Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Nombre de medicina no valido.',
+    });
+		document.frmmedicine.medicinecost.focus();
 		return false;
 	}
-	else if(document.frmmedicine.select.value == "" )
+	else if(document.frmmedicine.description.value == "" )
 	{
-		alert("Kindly select the status..");
-		document.frmdept.select.focus();
+		Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, selecciona el estado.',
+    });
+		document.frmmedicine.description.focus();
 		return false;
 	}
 	
@@ -130,5 +156,5 @@ function validateform()
 		return true;
 	}
 }
-*/
+
 </script>
