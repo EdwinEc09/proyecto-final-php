@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
 						<div class="text-center">
 							<input type="submit" name="submit" id="submit" value="Iniciar sesión" class="btn btn-raised waves-effect g-bg-cyan" />
 						</div>
-						<div class="text-center"> <a href="forgot-password.html">¿Ha olvidado su contraseña?</a></div>
+						<div class="text-center"> <a href="Forgotpassword.php">¿Ha olvidado su contraseña?</a></div>
 					</div>
 				</form>
 			</div>

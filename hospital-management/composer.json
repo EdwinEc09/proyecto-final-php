@@ -1,0 +1,21 @@
+{
+    "name": "escor/hospital-management",
+    "description": "solo se usara para recuperar contraseña",
+    "type": "project",
+    "license": "mit license",
+    "autoload": {
+        "psr-4": {
+            "Escor\\HospitalManagement\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "edwin",
+            "email": "escorciacaballeroe@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "twilio/sdk": "dev-main"
+    }
+}

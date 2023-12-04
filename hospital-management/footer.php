@@ -66,12 +66,14 @@
 <script src="js/vendors/jquery.sticky.js"></script>
 <script src="js/vendors/owl.carousel.min.js"></script>
 <script src="js/vendors/jquery.magnific-popup.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
 <script type="text/javascript" src="rs-plugin/js/jquery.tp.t.min.js"></script>
 <script type="text/javascript" src="rs-plugin/js/jquery.tp.min.js"></script>
 <script src="js/main.js"></script>
-</body>
+</body> 
 
 </html>

@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 				Swal.fire({
 					title: 'Especialidad actualizada exitosamente!',
 					icon: 'success'
-				});
+				}); 
 			}, 100);
 		  </script>";
 		} else {
@@ -36,7 +36,6 @@ if (isset($_GET['editid'])) {
 	$sql = "SELECT * FROM specialty WHERE specialtyid='$_GET[editid]' ";
 	$qsql = mysqli_query($con, $sql);
 	$rsedit = mysqli_fetch_array($qsql);
-
 }
 ?>
 
@@ -53,14 +52,11 @@ if (isset($_GET['editid'])) {
 				<tbody>
 					<tr>
 						<td width="34%">Nombre de especialidad</td>
-						<td width="66%"><input placeholder=" Entre aquí " class="form-control" type="text"
-								name="specialtyname" id="specialtyname"
-								value="<?php echo $rsedit['specialtyname']; ?>" /></td>
+						<td width="66%"><input placeholder=" Entre aquí " class="form-control" type="text" name="specialtyname" id="specialtyname" value="<?php echo $rsedit['specialtyname']; ?>" /></td>
 					</tr>
 					<tr>
 						<td>Descripción</td>
-						<td><textarea placeholder=" Entre aquí " class="form-control no-resize" name="textarea"
-								id="textarea" cols="45" rows="5"><?php echo $rsedit['description']; ?></textarea></td>
+						<td><textarea placeholder=" Entre aquí " class="form-control no-resize" name="textarea" id="textarea" cols="45" rows="5"><?php echo $rsedit['description']; ?></textarea></td>
 					</tr>
 					<tr>
 						<td>Estado</td>
@@ -79,8 +75,7 @@ if (isset($_GET['editid'])) {
 							</select></td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center"><input class="btn btn-raised g-bg-cyan" type="submit" name="submit"
-								id="submit" value="Enviar" /></td>
+						<td colspan="2" align="center"><input class="btn btn-raised g-bg-cyan" type="submit" name="submit" id="submit" value="Enviar" /></td>
 					</tr>
 				</tbody>
 			</table>
@@ -106,42 +101,38 @@ include("adfooter.php");
 		if (document.frmdept.specialtyname.value == "") {
 			// alert("El nombre del especialidad no debe estar vacío.");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Nombre de especialidad no debe ir vacio.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Nombre de especialidad no debe ir vacio.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 
 			document.frmdept.specialtyname.focus();
 			return false;
-		}
-		else if (!document.frmdept.specialtyname.value.match(alphaspaceExp)) {
+		} else if (!document.frmdept.specialtyname.value.match(alphaspaceExp)) {
 			// alert("Nombre del especialidad no válido.");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Nombre de especialidad no valido.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Nombre de especialidad no valido.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmdept.specialtyname.focus();
 			return false;
-		}
-		else if (document.frmdept.select.value == "") {
+		} else if (document.frmdept.select.value == "") {
 			// alert("Por favor seleccione el estado.");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'estado no debe ir vacio.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'estado no debe ir vacio.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmdept.select.focus();
 			return false;
-		}
-
-		else {
+		} else {
 			return true;
 		}
 	}
