@@ -23,7 +23,7 @@ while($rs = mysqli_fetch_array($qsql))
               		<td>&nbsp;$rsdoctor[doctorname]</td>
               		<td>&nbsp;$rspatient[patientname]</td>
                		<td>&nbsp;$rs[prescriptiondate]</td>
-					<td><a href='prescriptionrecord.php?prescriptionid=$rs[0]&patientid=$rs[patientid]' >Ver</td>
+					<td><a href='prescriptionrecord.php?prescriptionid=$rs[0]&patientid=$rs[patientid]&appid=$rs[appointmentid]' >Ver</td>
             </tr>";
 }
 ?>    
