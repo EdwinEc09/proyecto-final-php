@@ -114,7 +114,7 @@ include("adfooter.php");
 
 var alphaExp = /^[a-zA-Z]+$/; //Variable to validate only alphabets
 var alphaspaceExp = /^[a-zA-Z\s]+$/; //Variable to validate only alphabets and space
-var numericExpression = /^[0-9]+$/; //Variable to validate only numbers
+var numericExpression = /^[0-9]+(\.[0-9]+)?$/; //Variable to validate only numbers
 var alphanumericExp = /^[0-9a-zA-Z]+$/; //Variable to validate numbers and alphabets
 var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; //Variable to validate Email ID 
 
@@ -125,17 +125,17 @@ function validateform()
 		Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: 'Tipo de medicina no válido.',
+        text: 'Nombre de medicina no valido.',
     });
 		document.frmmedicine.medicinename.focus();
 		return false;
 	}
-	else if(!document.frmmedicine.medicinecost.value.match(alphaExp))
+	else if(!document.frmmedicine.medicinecost.value.match(numericExpression))
 	{
 		Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: 'Nombre de medicina no valido.',
+        text: 'Costo de medicina no valido.',
     });
 		document.frmmedicine.medicinecost.focus();
 		return false;

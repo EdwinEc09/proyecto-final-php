@@ -52,7 +52,7 @@ if (!isset($_SESSION['adminid'])) {
             <div class="info-box-4 hover-zoom-effect">
                 <div class="icon"> <i class="zmdi zmdi-account-box-mail col-blue"></i> </div>
                 <div class="content">
-                    <div class="text">Total Administratores</div>
+                    <div class="text">Total Administradores</div>
                     <div class="number">
                         <?php
                         $sql = "SELECT * FROM admin WHERE status='Activo'";

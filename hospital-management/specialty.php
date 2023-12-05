@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 			echo "<script>
 			setTimeout(function() {
 				Swal.fire({
-					title: 'Especialidad actualizado exitosamente!',
+					title: 'Especialidad insertada exitosamente!',
 					icon: 'success'
 				});
 			}, 100);

@@ -8,12 +8,24 @@ if(isset($_POST['submit']))
 	$qsql= mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('Password has been updated successfully..');</script>";
-	}
+        echo "<script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'La contraseña se ha actualizado con éxito.',
+                icon: 'success'
+            });
+        }, 100);
+      </script>";	}
 	else
 	{
-		echo "<script>alert('Failed to update password..');</script>";		
-	}
+        echo "<script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Error al actualizar la contraseña.',
+                icon: 'error'
+            });
+        }, 100);
+      </script>";	}
 }
 ?>
 
@@ -40,7 +52,7 @@ if(isset($_POST['submit']))
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>confirmar Contraseña</label>
+                        <label>Confirmar Contraseña</label>
                         <div class="form-line">
                             <input class="form-control" type="password" name="password" id="password" />
                         </div>
