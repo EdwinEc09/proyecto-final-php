@@ -120,7 +120,7 @@ if (isset($_GET['approveid'])) {
 		  }
 		  else
 		  {
-				echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised'>Ver reporte</a>";
+				echo "<a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-raised bg-cyan'>Ver reporte</a>";
 		  }
 		 echo "</center></td></tr>";
 		}

@@ -7,7 +7,14 @@ if(isset($_POST["submitfullamount"]))
   $sql ="INSERT INTO payment(patientid,appointmentid,paiddate,paidtime,paidamount,status) values('$_GET[patientid]','$_GET[appointmentid]','$dt','$tim','$_POST[paidamount]','Activo')";
   if($qsql = mysqli_query($con,$sql))
   {
-   echo "<script>alert('payment record inserted successfully...');</script>";
+   echo "<script>setTimeout(function(){
+                Swal.fire({
+                    title: 'Registro de pago exito!',
+                    icon: 'success',
+                    showConfirmButton: false,
+                });
+            }, 20);
+          </script>";
  }
  else
  {
@@ -18,7 +25,7 @@ if(isset($_POST["submitfullamount"]))
  $qsql = mysqli_query($con,$sql);
  echo mysqli_error($con);
 
- echo "<script>window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[appointmentid]'</script>";
+ echo "<script>setTimeout(function() {window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[appointmentid]'},660);</script>";
 }
 if(isset($_SESSION['patientid']))
 {
@@ -76,7 +83,7 @@ $billappointmentid = $_GET['appointmentid'];
               <td><textarea name="discountreason" id="discountreason"></textarea></td>
             </tr>
             <tr>
-              <td colspan="2" align="center"><input class="form-control" type="submit" name="submitfullamount" id="submitfullamount" value="Submit" /></td>
+              <td colspan="2" align="center"><input class="form-control btn btn-raised bg-cyan" type="submit" name="submitfullamount" id="submitfullamount" value="Enviar" style="font-size: 20px;font-weight: 500" /></td>
             </tr>
           </tbody>
         </table> 

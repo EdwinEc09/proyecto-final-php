@@ -222,12 +222,10 @@ if (isset($_GET['editid'])) {
 							?>
 
 
-							<a class="btn btn-raised"
+							<a class='btn btn-raised bg-cyan'
 								href="paymentdischarge.php?appointmentid=<?php echo $rsappointment[0]; ?>&patientid=<?php echo $_GET['patientid']; ?>">HACER
 								EL PAGO</a>
-
 							<?php
-
 						}
 						?>
 					</p>

@@ -151,7 +151,7 @@ if(isset($_GET['editid']))
           </select></td>
         </tr>
         <tr>
-          <td colspan="2" align="center"><input class="btn btn-default" type="submit" name="submit" id="submit" value="Entregar" /> </td>
+          <td colspan="2" align="center"><input class="btn btn-raised bg-cyan" type="submit" name="submit" id="submit" value="Entregar" /> </td>
         </tr>
       </tbody>
     </table>
@@ -207,7 +207,7 @@ if(isset($_GET['editid']))
           </tr>
         <tr>
           <td colspan="6"><div align="center">
-            <input Class="btn btn-default" type="submit" name="print" id="print" value="Imprimir" onclick="myFunction()"/>
+            <input Class="btn btn-raised bg-cyan" type="submit" name="print" id="print" value="Imprimir" onclick="myFunction()"/>
           </div></td>
           </tr>
       </tbody>
