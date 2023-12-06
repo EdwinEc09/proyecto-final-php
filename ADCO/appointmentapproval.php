@@ -15,7 +15,9 @@ if (isset($_POST['submit'])) {
 				Swal.fire({
 					title: '¡Exito!',
 					text: '¡Cita registrada exitosamente!',
-					icon: 'success'
+					icon: 'success',
+					showConfirmButton: false,
+					timer:920
 				  });
 				</script>";
 			echo "<script>window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[editid]';</script>";
@@ -32,7 +34,9 @@ if (isset($_POST['submit'])) {
             setTimeout(function() {
                 Swal.fire({
                     title: 'Cita de cita insertado exitosamente',
-                    icon: 'success'
+                    icon: 'success',
+					showConfirmButton: false,
+					timer:920
                 });
             }, 100);
           </script>"; 

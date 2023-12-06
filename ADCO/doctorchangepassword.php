@@ -12,7 +12,9 @@ if(isset($_POST['submit']))
         setTimeout(function() {
             Swal.fire({
                 title: 'La contraseña se ha actualizado con éxito.',
-                icon: 'success'
+                icon: 'success',
+                showConfirmButton: false,
+                timer:1000
             });
         }, 100);
       </script>";	}
@@ -22,7 +24,9 @@ if(isset($_POST['submit']))
         setTimeout(function() {
             Swal.fire({
                 title: 'Error al actualizar la contraseña.',
-                icon: 'error'
+                icon: 'error',
+                showConfirmButton: false,
+                timer:1000
             });
         }, 100);
       </script>";	}

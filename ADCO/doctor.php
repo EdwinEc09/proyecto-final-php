@@ -9,7 +9,9 @@ if (isset($_POST['submit'])) {
          setTimeout(function() {
              Swal.fire({
                  title: 'Registro de odontologo actualizado exitosamente...',
-                 icon: 'success'
+                 icon: 'success',
+				 showConfirmButton: false,
+				 timer:920
              });
          }, 100);
        </script>";
@@ -23,7 +25,9 @@ if (isset($_POST['submit'])) {
 		setTimeout(function() {
 			Swal.fire({
 				title: 'Registro de odontologo insertado exitosamente...',
-				icon: 'success'
+				icon: 'success',
+				showConfirmButton: false,
+                timer:920
 			});
 		}, 100);
 	  </script>";

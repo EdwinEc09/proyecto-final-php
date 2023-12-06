@@ -13,7 +13,9 @@ if(isset($_POST['submit']))
             setTimeout(function() {
                 Swal.fire({
                     title: 'Perfil de Odontologo actualizado exitosamente...',
-                    icon: 'success'
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer:920
                 });
             }, 100);
           </script>"; 
@@ -32,7 +34,9 @@ if(isset($_POST['submit']))
             setTimeout(function() {
                 Swal.fire({
                     title: 'Registro del paciente actualizado exitosamente...',
-                    icon: 'success'
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer:920
                 });
             }, 100);
           </script>"; 

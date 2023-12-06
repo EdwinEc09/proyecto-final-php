@@ -9,7 +9,9 @@ if (isset($_POST['submit'])) {
             setTimeout(function() {
                 Swal.fire({
                     title: 'Ficha del paciente actualizada correctamente...',
-                    icon: 'success'
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer:920
                 });
             }, 100);
           </script>";
@@ -23,7 +25,9 @@ if (isset($_POST['submit'])) {
             setTimeout(function() {
                 Swal.fire({
                     title: 'Registro de pacientes insertado con éxito...',
-                    icon: 'success'
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer:920
                 });
             }, 100);
           </script>";
