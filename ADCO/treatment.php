@@ -12,7 +12,9 @@ if(isset($_POST['submit']))
             setTimeout(function() {
                 Swal.fire({
                     title: 'Registro de tratamiento actualizado exitosamente',
-                    icon: 'success'
+                    icon: 'success',
+					showConfirmButton: false,
+					timer: 1500,
                 });
             }, 100);
           </script>";
@@ -31,7 +33,9 @@ if(isset($_POST['submit']))
             setTimeout(function() {
                 Swal.fire({
                     title: 'Registro de tratamiento insertado exitosamente',
-                    icon: 'success'
+                    icon: 'success',
+					showConfirmButton: false,
+					timer: 1500
                 });
             }, 100);
           </script>";

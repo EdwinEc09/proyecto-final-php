@@ -12,9 +12,11 @@ if (isset($_GET['delid'])) {
             Swal.fire({
               title: 'Eliminado!',
               text: 'Se ha eliminado el tratamiento con éxito',
-              icon: 'success'
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
             }).then(function() {
-                window.location.href = 'viewtreatment.php'; // Redirige a la página deseada después de la eliminación
+                // window.location.href = 'viewtreatment.php';
             });
             </script>";
         }
@@ -33,7 +35,7 @@ if (isset($_GET['delid'])) {
             if (result.isConfirmed) {
                 window.location.href = 'viewtreatment.php?delid=" . $_GET['delid'] . "&confirm=true';
             } else {
-                window.location.href = 'viewtreatment.php'; 
+                // window.location.href = 'viewtreatment.php'; 
             }
         });
         </script>";

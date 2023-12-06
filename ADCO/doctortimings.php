@@ -5,28 +5,33 @@ if (isset($_POST['submit'])) {
   if (isset($_GET['editid'])) {
     $sql = "UPDATE doctor_timings SET doctorid='$_POST[select2]',start_time='$_POST[ftime]',end_time='$_POST[ttime]',status='$_POST[select]'  WHERE doctor_timings_id='$_GET[editid]'";
     if ($qsql = mysqli_query($con, $sql)) {
-      echo "<script>
-            setTimeout(function() {
-                Swal.fire({
-                    title: 'Registro de horarios odontologicos actualizado exitosamente',
-                    icon: 'success'
-                });
-            }, 100);
-          </script>";
+      echo " <script>
+      setTimeout(function() { 
+        Swal.fire({
+            title: 'Registro de horarios actualizado exitosamente',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2500
+        });
+      },100);
+      </script>";
+
     } else {
       echo mysqli_error($con);
     }
   } else {
     $sql = "INSERT INTO doctor_timings(doctorid,start_time,end_time,status) values('$_POST[select2]','$_POST[ftime]','$_POST[ttime]','$_POST[select]')";
     if ($qsql = mysqli_query($con, $sql)) {
-      echo "<script>
-            setTimeout(function() {
-                Swal.fire({
-                    title: 'Registro de horarios odontologicos insertados exitosamente',
-                    icon: 'success'
-                });
-            }, 100);
-          </script>";
+      echo " <script>
+      setTimeout(function() { 
+        Swal.fire({
+            title: 'Registro de horarios insertado exitosamente',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2500
+        });
+      },100);
+      </script>";
     } else {
       echo mysqli_error($con);
     }

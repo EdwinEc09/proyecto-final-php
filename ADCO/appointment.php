@@ -7,11 +7,12 @@ if (isset($_POST['submit'])) {
         $sql = "UPDATE appointment SET patientid='$_POST[select4]',specialtyid='$_POST[select5]',appointmentdate='$_POST[appointmentdate]',appointmenttime='$_POST[time]',doctorid='$_POST[select6]',status='$_POST[select]' WHERE appointmentid='$_GET[editid]'";
         if ($qsql = mysqli_query($con, $sql)) {
             echo "<script>
-           
             Swal.fire({
                 title: '¡Exito!',
                 text: '¡Cita actualizada exitosamente!',
-                icon: 'success'
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500
               });
             </script>";
         } else {
@@ -26,13 +27,23 @@ if (isset($_POST['submit'])) {
 
             include("insertbillingrecord.php");
             echo "<script>
-            Swal.fire({
-                title: '¡Exito!',
-                text: '¡Cita insertada exitosamente!',
-                icon: 'success'
-              });
-            </script>";
-            echo "<script>window.location='patientreport.php?patientid=$_POST[select4]';</script>";
+    setTimeout(function() {
+        var alert = Swal.fire({
+            title: 'Cita insertada exitosamente',
+            icon: 'success',
+            showConfirmButton: false,
+        });
+
+        // Cerrar la alerta después de 3000 milisegundos (3 segundos)
+        setTimeout(function() {
+            alert.close();
+            window.location='patientreport.php?patientid=$_POST[select4]';
+        }, 3000);
+    }, 10);
+</script>";
+
+        
+
         } else {
             echo mysqli_error($con);
         }
@@ -100,7 +111,7 @@ if (isset($_GET['editid'])) {
                                         <select name="select5" id="select5" class=" form-control show-tick">
                                             <option value="">Seleccionar especialidad</option>
                                             <?php
-                                            $sqlspecialty= "SELECT * FROM specialty WHERE status='Activo'";
+                                            $sqlspecialty = "SELECT * FROM specialty WHERE status='Activo'";
                                             $qsqlspecialty = mysqli_query($con, $sqlspecialty);
                                             while ($rsspecialty = mysqli_fetch_array($qsqlspecialty)) {
                                                 if ($rsspecialty['specialtyid'] == $rsedit['specialtyid']) {

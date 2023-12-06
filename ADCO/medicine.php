@@ -12,7 +12,9 @@ if(isset($_POST['submit']))
             setTimeout(function() {
                 Swal.fire({
                     title: 'Registro de medicamentos actualizado exitosamente',
-                    icon: 'success'
+                    icon: 'success',
+					showConfirmButton: false,
+					timer: 1500
                 });
             }, 100);
           </script>";
@@ -31,7 +33,9 @@ if(isset($_POST['submit']))
             setTimeout(function() {
                 Swal.fire({
                     title: 'Registro de medicamentos insertado exitosamente.',
-                    icon: 'success'
+                    icon: 'success',
+					showConfirmButton: false,
+					timer: 2000
                 });
             }, 100);
           </script>";
@@ -126,6 +130,9 @@ function validateform()
         icon: 'error',
         title: 'Error',
         text: 'Nombre de medicina no valido.',
+		showConfirmButton: false,
+		timer: 2000
+
     });
 		document.frmmedicine.medicinename.focus();
 		return false;
@@ -136,6 +143,9 @@ function validateform()
         icon: 'error',
         title: 'Error',
         text: 'Costo de medicina no valido.',
+		showConfirmButton: false,
+		timer: 2000
+
     });
 		document.frmmedicine.medicinecost.focus();
 		return false;
@@ -146,6 +156,8 @@ function validateform()
         icon: 'error',
         title: 'Error',
         text: 'Por favor, selecciona el estado.',
+		showConfirmButton: false,
+		timer: 2000
     });
 		document.frmmedicine.description.focus();
 		return false;

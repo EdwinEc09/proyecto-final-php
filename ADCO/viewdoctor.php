@@ -12,9 +12,11 @@ if (isset($_GET['delid'])) {
             Swal.fire({
 				title: 'Eliminado!',
                 text: 'Se ha eliminado con exito',
-                icon: 'success'
+                icon: 'success',
+				showConfirmButton: false,
+				timer: 2000
             }).then(function() {
-                window.location.href = 'viewdoctor.php'; // Redirect to desired page after deletion
+                window.location.href = 'viewdoctor.php';
             });
             </script>";
         }
@@ -28,13 +30,12 @@ if (isset($_GET['delid'])) {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             cancelButtonText: 'No, cancelar!',
-
             confirmButtonText: 'Si, eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'viewdoctor.php?delid=" . $_GET['delid'] . "&confirm=true';
             }else{
-				window.location.href = 'viewdoctor.php';
+				// window.location.href = 'viewdoctor.php';
 			}
         });
         </script>";

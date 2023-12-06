@@ -11,8 +11,10 @@ if (isset($_GET['delid'])) {
             echo "<script>
             Swal.fire({
                 title: 'Eliminado!',
-                text: 'Cita eliminada .',
-                icon: 'success'
+                text: 'Cita eliminada exitosamente.',
+                icon: 'success',
+				showConfirmButton: false,
+				timer: 2000
             }).then(function() {
                 window.location.href = 'viewappointment.php'; // Redirect to desired page after deletion
             });
@@ -21,18 +23,19 @@ if (isset($_GET['delid'])) {
     } else {
         echo "<script>
         Swal.fire({
-            title: 'estas seguro?',
+            title: '¿Estas seguro?',
             text: 'No podras revertir!',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'si eliminar!'
+			cancelButtonText: 'No, cancelar',
+			confirmButtonText: 'Si, eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'viewappointmentpending.php?delid=" . $_GET['delid'] . "&confirm=true';
             }else{
-				window.location.href = 'viewappointmentpending.php';
+				// window.location.href = 'viewappointmentpending.php';
 			}
         });
         </script>";

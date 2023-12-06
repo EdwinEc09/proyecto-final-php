@@ -8,8 +8,10 @@ if (isset($_POST['submit'])) {
 			echo "<script>
          setTimeout(function() {
              Swal.fire({
-                 title: 'Registro de odontologo actualizado exitosamente...',
-                 icon: 'success'
+                title: 'Registro de odontologo actualizado exitosamente...',
+                icon: 'success',
+				showConfirmButton: false,
+				timer: 2000
              });
          }, 100);
        </script>";
@@ -23,7 +25,9 @@ if (isset($_POST['submit'])) {
 		setTimeout(function() {
 			Swal.fire({
 				title: 'Registro de odontologo insertado exitosamente...',
-				icon: 'success'
+				showConfirmButton: false,
+				icon: 'success',
+				timer: 2000
 			});
 		}, 100);
 	  </script>";

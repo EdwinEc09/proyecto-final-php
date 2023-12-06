@@ -23,7 +23,9 @@ if (isset($_POST['submit'])) {
 			setTimeout(function() {
 				Swal.fire({
 					title: 'Especialidad insertada exitosamente!',
-					icon: 'success'
+					icon: 'success',
+					showConfirmButton: false,
+					timer: 2000,
 				});
 			}, 100);
 		  </script>";
