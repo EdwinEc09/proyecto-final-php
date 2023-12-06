@@ -11,9 +11,7 @@ if (isset($_POST['submit'])) {
             Swal.fire({
                 title: '¡Exito!',
                 text: '¡Cita actualizada exitosamente!',
-                icon: 'success',
-                showConfirmButton: false,
-                timer:920
+                icon: 'success'
               });
             </script>";
         } else {
@@ -27,16 +25,16 @@ if (isset($_POST['submit'])) {
         if ($qsql = mysqli_query($con, $sql)) {
 
             include("insertbillingrecord.php");
-            echo "<script>
+            echo "<script>setTimeout( function() {
             Swal.fire({
                 title: '¡Exito!',
                 text: '¡Cita insertada exitosamente!',
                 icon: 'success',
                 showConfirmButton: false,
-                timer:920
               });
+            }, 80);
             </script>";
-            echo "<script>window.location='patientreport.php?patientid=$_SESSION[patientid]&appid=$_GET[appid]';;</script>";
+            echo "<script>setTimeout(function() {window.location='patientreport.php?patientid=$_SESSION[patientid]&appid=$_GET[appid]';},2000);</script>";
         } else {
             echo mysqli_error($con);
         }

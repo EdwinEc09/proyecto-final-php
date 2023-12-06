@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
         $sql = "UPDATE patient SET patientname='$_POST[patientname]',admissiondate='$_POST[admissiondate]',admissiontime='$_POST[admissiontme]',address='$_POST[address]',mobileno='$_POST[mobilenumber]',city='$_POST[city]',pincode='$_POST[pincode]',loginid='$_POST[loginid]',password='$_POST[password]',bloodgroup='$_POST[select2]',gender='$_POST[select3]',dob='$_POST[dateofbirth]',status='$_POST[select]' WHERE patientid='$_GET[editid]'";
         if ($qsql = mysqli_query($con, $sql)) {
             echo "<script>
+<<<<<<< HEAD
             setTimeout(function() {
                 Swal.fire({
                     title: 'Ficha del paciente actualizada correctamente...',
@@ -14,6 +15,15 @@ if (isset($_POST['submit'])) {
                     timer:920
                 });
             }, 100);
+=======
+          Swal.fire({
+              title: '¡Exito!',
+              text: '¡Ficha del paciente actualizada correctamente...',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500
+            });
+>>>>>>> a0973edd526cafe3716aa52798959b80a383dce6
           </script>";
         } else {
             echo mysqli_error($con);
@@ -33,7 +43,7 @@ if (isset($_POST['submit'])) {
           </script>";
             $insid = mysqli_insert_id($con);
             if (isset($_SESSION['adminid'])) {
-                echo "<script>window.location='appointment.php?patid=$insid';</script>";
+                echo "<script> setTimeout(function(){ window.location='appointment.php?patid=$insid'},3000);</script>";
             } else {
                 echo "<script>window.location='patientlogin.php';</script>";
             }

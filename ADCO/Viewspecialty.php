@@ -18,7 +18,7 @@ if (isset($_GET['delid'])) {
                 showConfirmButton: false,
                 timer:920
             }).then(function() {
-                window.location.href = 'Viewspecialty.php'; // Redirect to desired page after deletion
+                // window.location.href = 'Viewspecialty.php';
             });
             </script>";
         }
@@ -26,20 +26,19 @@ if (isset($_GET['delid'])) {
         // If confirmation is not set, show confirmation dialog
         echo "<script>
         Swal.fire({
-            title: 'Estas seguro?',
-            text: 'No podras revertir!',
+            title: '¿Estas seguro?',
+            text: '¡No podras revertir!',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            cancelButtonText: 'No, cancelar!',
-
-            confirmButtonText: 'Si, eliminar!'
+            cancelButtonText: '¡No, cancelar!',
+            confirmButtonText: '¡Si, eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'Viewspecialty.php?delid=" . $_GET['delid'] . "&confirm=true';
             }else{
-              window.location.href = 'Viewspecialty.php';
+              // window.location.href = 'Viewspecialty.php';
             }
         });
         </script>";

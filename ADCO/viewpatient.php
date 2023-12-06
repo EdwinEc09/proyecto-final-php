@@ -16,7 +16,7 @@ if (isset($_GET['delid'])) {
                 showConfirmButton: false,
                 timer:920
             }).then(function() {
-                window.location.href = 'viewpatient.php'; // Redirect to desired page after deletion
+                // window.location.href = 'viewpatient.php';
             });
             </script>";
     }
@@ -30,11 +30,12 @@ if (isset($_GET['delid'])) {
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
           cancelButtonText: 'No, cancelar!',
-
           confirmButtonText: 'Si, eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'viewpatient.php?delid=" . $_GET['delid'] . "&confirm=true';
+            }else{
+              // window.location.href = 'viewpatient.php';
             }
         });
         </script>";

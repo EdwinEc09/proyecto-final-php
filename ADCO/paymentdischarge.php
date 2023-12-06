@@ -25,7 +25,7 @@ if(isset($_POST["submitfullamount"]))
  $qsql = mysqli_query($con,$sql);
  echo mysqli_error($con);
 
- echo "<script>setTimeout(function() {window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[appointmentid]'},660);</script>";
+ echo "<script>setTimeout(function(){ window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[appointmentid]'},660);</script>";
 }
 if(isset($_SESSION['patientid']))
 {

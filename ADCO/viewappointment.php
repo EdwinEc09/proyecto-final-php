@@ -23,20 +23,19 @@ if (isset($_GET['delid'])) {
     } else {
         echo "<script>
         Swal.fire({
-			title: 'Estas seguro?',
-            text: 'No podras revertir!',
+			title: '¿Estas seguro?',
+            text: '¡No podras revertir!',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            cancelButtonText: 'No, cancelar!',
-
-            confirmButtonText: 'Si, eliminar!'
+            cancelButtonText: '¡No, cancelar!',
+            confirmButtonText: '¡Si, eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = 'viewappointment.php?delid=" . $_GET['delid'] . "&confirm=true';
             }else{
-                window.location.href = 'viewappointment.php';
+                // window.location.href = 'viewappointment.php';
             }
         });
         </script>";

@@ -11,16 +11,16 @@ if (isset($_POST['submit'])) {
 			$roomid = $_POST['select3'];
 			$billtype = "Room Rent";
 			include("insertbillingrecord.php");
-			echo "<script>
+			echo "<script>setTimeout(function(){
 				Swal.fire({
 					title: '¡Exito!',
-					text: '¡Cita registrada exitosamente!',
+					text: '¡Cita aprobada exitosamente!',
 					icon: 'success',
 					showConfirmButton: false,
-					timer:920
 				  });
+				},80)
 				</script>";
-			echo "<script>window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[editid]';</script>";
+			echo "<script>setTimeout(function(){window.location='patientreport.php?patientid=$_GET[patientid]&appointmentid=$_GET[editid]';},2000)</script>";
 		} else {
 			echo mysqli_error($con);
 		}
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 					timer:920
                 });
             }, 100);
-          </script>"; 
+          </script>";
 		} else {
 			echo mysqli_error($con);
 		}
@@ -157,84 +157,84 @@ include("adfooter.php");
 		if (document.frmappnt.select4.value == "") {
 			// alert("Patient name should not be empty..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Nombre de Paciente no debe ir vacio.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Nombre de Paciente no debe ir vacio.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmappnt.select4.focus();
 			return false;
 		}
 		else if (document.frmappnt.select3.value == "") {
 			// alert("Room type should not be empty..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'El tipo de habitación no debe estar vacía..',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'El tipo de habitación no debe estar vacía..',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmappnt.select3.focus();
 			return false;
 		}
 		else if (document.frmappnt.select5.value == "") {
 			// alert("specialty name should not be empty..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Especialidad no debe ir vacio.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Especialidad no debe ir vacio.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmappnt.select5.focus();
 			return false;
 		}
 		else if (document.frmappnt.appointmentdate.value == "") {
 			// alert("Appointment date should not be empty..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Fecha no debe ir vacio',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Fecha no debe ir vacio',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmappnt.appointmentdate.focus();
 			return false;
 		}
 		else if (document.frmappnt.time.value == "") {
 			// alert("Appointment time should not be empty..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Hora no debe ir vacio.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Hora no debe ir vacio.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmappnt.time.focus();
 			return false;
 		}
 		else if (document.frmappnt.select6.value == "") {
 			// alert("Odontologo name should not be empty..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Nombre de Odontologo no debe ir vacio',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Nombre de Odontologo no debe ir vacio',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmappnt.select6.focus();
 			return false;
 		}
 		else if (document.frmappnt.select.value == "") {
 			// alert("Kindly select the status..");
 			Swal.fire({
-                position: 'top-center',
-                icon: 'error',
-                title: 'Estado no debe ir vacio.',
-                showConfirmButton: false,
-                timer: 2000,
-            });
+				position: 'top-center',
+				icon: 'error',
+				title: 'Estado no debe ir vacio.',
+				showConfirmButton: false,
+				timer: 2000,
+			});
 			document.frmappnt.select.focus();
 			return false;
 		}

@@ -130,6 +130,9 @@ function validateform()
         icon: 'error',
         title: 'Error',
         text: 'Nombre de medicina no valido.',
+		showConfirmButton: false,
+		timer: 2000
+
     });
 		document.frmmedicine.medicinename.focus();
 		return false;
@@ -140,6 +143,9 @@ function validateform()
         icon: 'error',
         title: 'Error',
         text: 'Costo de medicina no valido.',
+		showConfirmButton: false,
+		timer: 2000
+
     });
 		document.frmmedicine.medicinecost.focus();
 		return false;
@@ -150,6 +156,8 @@ function validateform()
         icon: 'error',
         title: 'Error',
         text: 'Por favor, selecciona el estado.',
+		showConfirmButton: false,
+		timer: 2000
     });
 		document.frmmedicine.description.focus();
 		return false;

@@ -14,9 +14,9 @@ if (isset($_GET['delid'])) {
               text: 'Se ha eliminado el tratamiento con éxito',
               icon: 'success',
               showConfirmButton: false,
-              timer:920
+              timer: 1200,
             }).then(function() {
-                window.location.href = 'viewtreatment.php'; // Redirige a la página deseada después de la eliminación
+                // window.location.href = 'viewtreatment.php';
             });
             </script>";
         }
@@ -35,7 +35,7 @@ if (isset($_GET['delid'])) {
             if (result.isConfirmed) {
                 window.location.href = 'viewtreatment.php?delid=" . $_GET['delid'] . "&confirm=true';
             } else {
-                window.location.href = 'viewtreatment.php'; 
+                // window.location.href = 'viewtreatment.php'; 
             }
         });
         </script>";

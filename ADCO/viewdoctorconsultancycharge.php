@@ -16,7 +16,7 @@ if (isset($_GET['delid'])) {
 			  showConfirmButton: false,
 			  timer:920
             }).then(function() {
-                window.location.href = 'viewdoctorconsultancycharge.php'; // Redirige a la página deseada después de la eliminación
+                // window.location.href = 'viewdoctorconsultancycharge.php';
             });
             </script>";
         }
@@ -35,7 +35,7 @@ if (isset($_GET['delid'])) {
             if (result.isConfirmed) {
                 window.location.href = 'viewdoctorconsultancycharge.php?delid=" . $_GET['delid'] . "&confirm=true';
             } else {
-                window.location.href = 'viewdoctorconsultancycharge.php'; 
+                // window.location.href = 'viewdoctorconsultancycharge.php'; 
             }
         });
         </script>";

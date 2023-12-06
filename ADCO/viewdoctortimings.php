@@ -16,7 +16,7 @@ if (isset($_GET['delid'])) {
               showConfirmButton: false,
               timer:920
             }).then(function() {
-                window.location.href = 'viewdoctortimings.php'; // Redirige a la página deseada después de la eliminación
+                // window.location.href = 'viewdoctortimings.php';
             });
             </script>";
     }
@@ -35,7 +35,7 @@ if (isset($_GET['delid'])) {
             if (result.isConfirmed) {
                 window.location.href = 'viewdoctortimings.php?delid=" . $_GET['delid'] . "&confirm=true';
             } else {
-                window.location.href = 'viewdoctortimings.php'; 
+                // window.location.href = 'viewdoctortimings.php'; 
             }
         });
         </script>";

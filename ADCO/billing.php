@@ -92,7 +92,7 @@ include("footer.php");
 			Swal.fire({
 				position: 'top-center',
 				icon: 'error',
-				title: 'tratamiento no valido.',
+				title: 'Tratamiento no valido.',
 				showConfirmButton: false,
 				timer: 2000,
 			});
@@ -104,7 +104,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'fecha de facturacion no debe estar vacia .',
+                title: 'Fecha de facturacion no debe estar vacia .',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -116,7 +116,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'hora de facturacion no debe estar vacio.',
+                title: 'Hora de facturacion no debe estar vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -128,7 +128,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'la cantidad no debe ir vacia.',
+                title: 'La cantidad no debe ir vacia.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -140,7 +140,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'cantidad no valida.',
+                title: 'Cantidad no valida.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -152,7 +152,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'descuento no debe ir vacio.',
+                title: 'Descuento no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -164,7 +164,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'descuento no valido.',
+                title: 'Descuento no valido.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -176,7 +176,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'monto de impuesto no debe ir vacio.',
+                title: 'Monto de impuesto no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -188,7 +188,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'monto no valido',
+                title: 'Monto no valido',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -200,7 +200,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'el importe de la factura no debe ir vacio.',
+                title: 'El importe de la factura no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -212,7 +212,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'el importe de factura no es valido',
+                title: 'El importe de factura no es valido',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -224,7 +224,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'motivo de descuento no debe ir vacio.',
+                title: 'Motivo de descuento no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -236,7 +236,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'motivo no valido.',
+                title: 'Motivo no valido.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -248,7 +248,7 @@ include("footer.php");
 				Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'el monto de pago no debe ir vacio.',
+                title: 'El monto de pago no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -260,7 +260,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'monto de pago no valido.',
+                title: 'Monto de pago no valido.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -272,7 +272,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'tiempo de descarga no debe ir vacio.',
+                title: 'Tiempo de descarga no debe ir vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });
@@ -284,7 +284,7 @@ include("footer.php");
 			Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'la fecha de alta no debe estar vacio.',
+                title: 'La fecha de alta no debe estar vacio.',
                 showConfirmButton: false,
                 timer: 2000,
             });

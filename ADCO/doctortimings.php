@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
                     title: 'Registro de horarios odontologicos actualizado exitosamente',
                     icon: 'success',
                     showConfirmButton: false,
-                    timer:920
+                    timer:1200
                 });
             }, 100);
           </script>";
@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
                     title: 'Registro de horarios odontologicos insertados exitosamente',
                     icon: 'success',
                     showConfirmButton: false,
-                    timer:920
+                    timer:1200
                 });
             }, 100);
           </script>";
