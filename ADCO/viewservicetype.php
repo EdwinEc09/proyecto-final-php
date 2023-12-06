@@ -12,7 +12,9 @@ if (isset($_GET['delid'])) {
             Swal.fire({
               title: 'Eliminado!',
               text: 'Se ha eliminado el tipo de servicio con éxito',
-              icon: 'success'
+              icon: 'success',
+              showConfirmButton: false,
+              timer:920
             }).then(function() {
                 window.location.href = 'viewservicetype.php'; // Redirige a la página deseada después de la eliminación
             });

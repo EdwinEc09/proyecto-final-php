@@ -12,7 +12,9 @@ if (isset($_GET['delid'])) {
             Swal.fire({
               title: 'Eliminado!',
               text: 'Se ha eliminado la prescripción con éxito',
-              icon: 'success'
+              icon: 'success',
+              showConfirmButton: false,
+              timer:920
             }).then(function() {
                 window.location.href = 'viewprescription.php'; // Redirige a la página deseada después de la eliminación
             });

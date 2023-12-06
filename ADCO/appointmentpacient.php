@@ -11,7 +11,9 @@ if (isset($_POST['submit'])) {
             Swal.fire({
                 title: '¡Exito!',
                 text: '¡Cita actualizada exitosamente!',
-                icon: 'success'
+                icon: 'success',
+                showConfirmButton: false,
+                timer:920
               });
             </script>";
         } else {
@@ -29,10 +31,12 @@ if (isset($_POST['submit'])) {
             Swal.fire({
                 title: '¡Exito!',
                 text: '¡Cita insertada exitosamente!',
-                icon: 'success'
+                icon: 'success',
+                showConfirmButton: false,
+                timer:920
               });
             </script>";
-            echo "<script>window.location='patientreport.php?patientid=$_SESSION[patientid]&appid=$_GET[appid]';</script>";
+            echo "<script>window.location='patientreport.php?patientid=$_SESSION[patientid]&appid=$_GET[appid]';;</script>";
         } else {
             echo mysqli_error($con);
         }
@@ -63,8 +67,8 @@ if (isset($_SESSION['patientid'])) {
                     <h2>INFORMACIÓN DE LA CITA</h2>
 
                 </div>
-                <form method="post" action="" name="frmappnt" onSubmit="return validateform()">
-                    <input type="hidden" name="select2" value="Offline">
+                <form method="post" action="" name="frmpatientapp" onSubmit="return validateform()">
+                    <input type="hidden" name="select4" value="Offline">
                     <div class="body">
                     <div class="body">
                         <div class="row clearfix">
@@ -79,7 +83,7 @@ if (isset($_SESSION['patientid'])) {
                             <div class="col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <select name="select5" id="select5" class=" form-control show-tick">
+                                        <select name="select5" id="select5" class=" form-control show-tick" onchange="mostrarodontologo()">
                                             <option value="">Seleccionar especialidad</option>
                                             <?php
                                             $sqlspecialty= "SELECT * FROM specialty WHERE status='Activo'";
@@ -168,6 +172,29 @@ if (isset($_SESSION['patientid'])) {
 </div>
 
 <?php include 'adfooter.php'; ?>
+<script>
+    function mostrarodontologo() {
+        var specialtyId = document.getElementById("select5").value;
+        var select6 = document.getElementById("select6");
+
+        // Limpiar las opciones anteriores
+        select6.innerHTML = '<option value="">Seleccionar Odontologo</option>';
+
+        // Cargar dinámicamente las opciones de los odontólogos según la especialidad seleccionada
+        <?php
+        $sqldoctor = "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo'";
+        $qsqldoctor = mysqli_query($con, $sqldoctor);
+        while ($rsdoctor = mysqli_fetch_array($qsqldoctor)) {
+            echo "if (" . $rsdoctor['specialtyid'] . " == specialtyId) {";
+            echo "    var option = document.createElement('option');";
+            echo "    option.value = '" . $rsdoctor['doctorid'] . "';";
+            echo "    option.text = '" . $rsdoctor['doctorname'] . " ( " . $rsdoctor['specialtyname'] . " )';";
+            echo "    select6.add(option);";
+            echo "}";
+        }
+        ?>
+    }
+</script>
 <script type="application/javascript">
     function validateform() {
         if (document.frmpatientapp.select4.value == "") {
@@ -193,7 +220,7 @@ if (isset($_SESSION['patientid'])) {
             });
             document.frmpatientapp.select5.focus();
             return false;
-        } else if (document.frmappnt.appointmentdate.value == "") {
+        } else if (document.frmpatientapp.appointmentdate.value == "") {
             // alert("La fecha de la cita no debe estar vacía.");
             Swal.fire({
                 position: 'top-center',
@@ -202,9 +229,9 @@ if (isset($_SESSION['patientid'])) {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmappnt.appointmentdate.focus();
+            document.frmpatientapp.appointmentdate.focus();
             return false;
-        } else if (document.frmappnt.time.value == "") {
+        } else if (document.frmpatientapp.time.value == "") {
             // alert("El tiempo de la cita no debe estar vacío.");
             Swal.fire({
                 position: 'top-center',
@@ -213,9 +240,9 @@ if (isset($_SESSION['patientid'])) {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmappnt.time.focus();
+            document.frmpatientapp.time.focus();
             return false;
-        } else if (document.frmappnt.select6.value == "") {
+        } else if (document.frmpatientapp.select6.value == "") {
             // alert("El nombre del médico no debe estar vacío.");
             Swal.fire({
                 position: 'top-center',
@@ -224,9 +251,9 @@ if (isset($_SESSION['patientid'])) {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmappnt.select6.focus();
+            document.frmpatientapp.select6.focus();
             return false;
-        } else if (document.frmappnt.appreason.value == "") {
+        } else if (document.frmpatientapp.appreason.value == "") {
             // alert("Room type should not be empty..");
             Swal.fire({
                 position: 'top-center',
@@ -235,9 +262,9 @@ if (isset($_SESSION['patientid'])) {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmappnt.appreason.focus();
+            document.frmpatientapp.appreason.focus();
             return false;
-        } else if (document.frmappnt.select.value == "") {
+        } else if (document.frmpatientapp.select.value == "") {
             // alert("Por favor seleccione el estado.");
             Swal.fire({
                 position: 'top-center',
@@ -246,42 +273,10 @@ if (isset($_SESSION['patientid'])) {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            document.frmappnt.select.focus();
+            document.frmpatientapp.select.focus();
             return false;
         } else {
             return true;
-        }
-    }
-    function updateDoctors() {
-        var specialtyId = document.getElementById("select5").value;
-        var select6 = document.getElementById("select6");
-
-        // Limpiar las opciones actuales en el segundo select
-        while (select6.options.length > 0) {
-            select6.remove(0);
-        }
-
-        // Añadir la opción predeterminada
-        var defaultOption = document.createElement("option");
-        defaultOption.text = "Seleccionar Odontologo";
-        defaultOption.value = "";
-        select6.add(defaultOption);
-
-        if (specialtyId !== "") {
-            // Obtener los doctores de la especialidad seleccionada mediante una llamada AJAX o recargar la página
-            // Puedes hacer una llamada AJAX o recargar la página con los parámetros necesarios para obtener
-            // los doctores según la especialidad seleccionada.
-            <?php
-            $sqldoctor = "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo' AND doctor.specialtyid = " . $rsedit['specialtyid'];
-            $qsqldoctor = mysqli_query($con, $sqldoctor);
-
-            while ($rsdoctor = mysqli_fetch_array($qsqldoctor)) {
-                echo "var option = document.createElement('option');";
-                echo "option.value = '$rsdoctor[doctorid]';";
-                echo "option.text = '$rsdoctor[doctorname] ( $rsdoctor[specialtyname] )';";
-                echo "select6.add(option);";
-            }
-            ?>
         }
     }
 </script>

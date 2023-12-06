@@ -18,7 +18,14 @@ if(isset($_POST['submit']))
 			$sql ="UPDATE prescription_records SET prescription_id='$_POST[prescriptionid]',medicine_name='$_POST[medicine]',cost='$_POST[cost]',unit='$_POST[unit]',dosage='$_POST[select2]',status=' $_POST[select]' WHERE prescription_record_id='$_GET[editid]'";
 		if($qsql = mysqli_query($con,$sql))
 		{
-			echo "<script>alert('prescription record updated successfully...');</script>";
+			echo "<script>
+			Swal.fire({
+				title: 'Registro¡',
+				text: 'registro de prescripción actualizado exitosamente...',
+				icon: 'secces',
+				showConfirmButton: false,
+			  });
+			</script>";
 		}
 		else
 		{
@@ -35,7 +42,7 @@ if(isset($_POST['submit']))
 			$prescriptionid= $_POST['prescriptionid'];
 			include("insertbillingrecord.php");
 			echo "<script>alert('Registro de prescripción insertado exitosamente...');</script>";
-			echo "<script>window.location='prescriptionrecord.php?prescriptionid=$_GET[prescriptionid]&patientid=$_GET[patientid]&appid=$_GET[appid]';</script>";
+			echo "<script>setTimeout(function () {window.location='prescriptionrecord.php?prescriptionid=$_GET[prescriptionid]&patientid=$_GET[patientid]&appid=$_GET[appid]';},1000);</script>";
 		}
 		else
 		{

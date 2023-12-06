@@ -12,7 +12,9 @@ if (isset($_GET['delid'])) {
             Swal.fire({
               title: 'Eliminado!',
               text: 'Se ha eliminado el registro de tratamiento con éxito',
-              icon: 'success'
+              icon: 'success',
+			  showConfirmButton: false,
+			  timer:920
             }).then(function() {
                 window.location.href = 'viewdoctorconsultancycharge.php'; // Redirige a la página deseada después de la eliminación
             });

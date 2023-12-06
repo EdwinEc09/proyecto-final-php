@@ -12,7 +12,9 @@ if (isset($_GET['delid'])) {
             Swal.fire({
                 title: 'Eliminado!',
                 text: 'Cita eliminada .',
-                icon: 'success'
+                icon: 'success',
+				showConfirmButton: false,
+                timer:920
             }).then(function() {
                 window.location.href = 'viewappointment.php'; // Redirect to desired page after deletion
             });

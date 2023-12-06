@@ -224,7 +224,7 @@ if (isset($_SESSION['patientid'])) {
                                             <li class="col-sm-6">
                                                 <label>
 
-                                                    <select name="specialty" class="selectpicker" id="specialty">
+                                                    <select name="specialty" class="selectpicker" id="specialty" onchange="mostrarodontologo()">
                                                         <option value="">Seleccionar especialidad</option>
                                                         <?php
                                                         $sqldept = "SELECT * FROM specialty WHERE status='Activo'";
@@ -347,6 +347,29 @@ if (isset($_SESSION['patientid'])) {
 <?php
 include("footer.php");
 ?>
+<script>
+    function mostrarodontologo() {
+        var specialtyId = document.getElementById("select5").value;
+        var select6 = document.getElementById("select6");
+
+        // Limpiar las opciones anteriores
+        select6.innerHTML = '<option value="">Seleccionar Odontologo</option>';
+
+        // Cargar dinámicamente las opciones de los odontólogos según la especialidad seleccionada
+        <?php
+        $sqldoctor = "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo'";
+        $qsqldoctor = mysqli_query($con, $sqldoctor);
+        while ($rsdoctor = mysqli_fetch_array($qsqldoctor)) {
+            echo "if (" . $rsdoctor['specialtyid'] . " == specialtyId) {";
+            echo "    var option = document.createElement('option');";
+            echo "    option.value = '" . $rsdoctor['doctorid'] . "';";
+            echo "    option.text = '" . $rsdoctor['doctorname'] . " ( " . $rsdoctor['specialtyname'] . " )';";
+            echo "    select6.add(option);";
+            echo "}";
+        }
+        ?>
+    }
+</script>
 <script type="application/javascript">
     var alphaExp = /^[a-zA-Z]+$/; //Variable to validate only alphabets
     var alphaspaceExp = /^[a-zA-Z\s]+$/; //Variable to validate only alphabets and space

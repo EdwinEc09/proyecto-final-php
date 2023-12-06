@@ -11,7 +11,9 @@ if (isset($_POST['submit'])) {
             Swal.fire({
                 title: '¡Exito!',
                 text: '¡Cita actualizada exitosamente!',
-                icon: 'success'
+                icon: 'success',
+                showConfirmButton: false,
+                timer:920
               });
             </script>";
         } else {
@@ -97,7 +99,7 @@ if (isset($_GET['editid'])) {
                             <div class="col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <select name="select5" id="select5" class=" form-control show-tick">
+                                        <select name="select5" id="select5" class=" form-control show-tick" onchange="mostrarodontologo()">
                                             <option value="">Seleccionar especialidad</option>
                                             <?php
                                             $sqlspecialty= "SELECT * FROM specialty WHERE status='Activo'";
@@ -221,6 +223,29 @@ if (isset($_GET['editid'])) {
 
 
 <?php include 'adfooter.php'; ?>
+<script>
+    function mostrarodontologo() {
+        var specialtyId = document.getElementById("select5").value;
+        var select6 = document.getElementById("select6");
+
+        // Limpiar las opciones anteriores
+        select6.innerHTML = '<option value="">Seleccionar Odontologo</option>';
+
+        // Cargar dinámicamente las opciones de los odontólogos según la especialidad seleccionada
+        <?php
+        $sqldoctor = "SELECT * FROM doctor INNER JOIN specialty ON specialty.specialtyid=doctor.specialtyid WHERE doctor.status='Activo'";
+        $qsqldoctor = mysqli_query($con, $sqldoctor);
+        while ($rsdoctor = mysqli_fetch_array($qsqldoctor)) {
+            echo "if (" . $rsdoctor['specialtyid'] . " == specialtyId) {";
+            echo "    var option = document.createElement('option');";
+            echo "    option.value = '" . $rsdoctor['doctorid'] . "';";
+            echo "    option.text = '" . $rsdoctor['doctorname'] . " ( " . $rsdoctor['specialtyname'] . " )';";
+            echo "    select6.add(option);";
+            echo "}";
+        }
+        ?>
+    }
+</script>
 <script type="application/javascript">
     function validateform() {
         if (document.frmappnt.select4.value == "") {
