@@ -91,6 +91,9 @@ if(isset($_GET['approveid'])) {
 				if(isset($_SESSION['patientid']))
 				{
 					$sql  = $sql . " AND patientid='$_SESSION[patientid]'";
+				}elseif(isset($_SESSION['doctorid']))
+				{
+					$sql .= " AND doctorid='$_SESSION[doctorid]'";
 				}
 				$qsql = mysqli_query($con,$sql);
 				while($rs = mysqli_fetch_array($qsql))

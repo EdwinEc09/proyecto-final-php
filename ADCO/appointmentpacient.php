@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
                 icon: 'success'
               });
             </script>";
-            echo "<script>window.location='patientreport.php?patientid=$_SESSION[patientid]';</script>";
+            echo "<script>window.location='patientreport.php?patientid=$_SESSION[patientid]&appid=$_GET[appid]';</script>";
         } else {
             echo mysqli_error($con);
         }
